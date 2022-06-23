@@ -358,17 +358,21 @@ nav {
 	background-color: rgb(var(--color-graylight));
 	text-transform: uppercase;
 	border-radius: 2px;
+	text-decoration: none;
 }
 .topic-live {
 	color: rgb(var(--color-offwhite));
 	background-image: linear-gradient(225deg, #E04105 0%, #B60505 100%);
+}
+a.topic:hover {
+	box-shadow: 0 0 0 1px rgb(var(--color-offblack)) inset;
 }
 .article-header h1 {
 	margin: 10px 0 15px 0;
 	font-family: "PublicoHeadline-Bold", serif;
 	font-size: 24px;
 	line-height: 1.2;
-	color: rgba(var(--color-offblack),1);
+	color: rgb(var(--color-offblack));
 }
 .article-header h2,
 .article-header h3 {
@@ -376,14 +380,16 @@ nav {
 	font-size: 11px;
 	letter-spacing: 1.7px;
 	text-transform: uppercase;
-	color: rgba(var(--color-offblack),1);
+	color: rgb(var(--color-offblack));
 }
 .article-header h2 {
 	margin: 0 0 7px 0;
 }
 .article-meta-wrapper {
 	margin: 0 0 20px 0;
+	padding: 15px 0 0 0;
 	display: flex;
+	border-top: 1px solid rgb(var(--color-graylight));
 }
 .article-meta {
 	margin: 0 0 0 20px;
@@ -391,7 +397,14 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	border-top: 1px solid rgb(var(--color-graylight));
+	/* border-top: 1px solid rgb(var(--color-graylight)); */
+}
+.article-meta a {
+	text-decoration: none;
+	color: rgb(var(--color-offblack));
+}
+.article-meta a:hover {
+	text-decoration: underline;
 }
 .article-social {
 	display: none;
@@ -401,15 +414,17 @@ nav {
 	height: 60px;
 }
 .disclaimer {
-	margin: 0 0 20px 0;
+	/* 
 	padding: 10px;
 	border: 1px solid rgb(var(--color-essentials));
 	color: rgb(var(--color-essentials));
 	border-radius: 5px;
+	*/
+	margin: 0 0 20px 0;
+	color: rgb(var(--color-offblack));
 	font-family: "ProximaNova-Regular", sans-serif;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 1.2;
-	fill: rgb(var(--color-essentials));
 }
 
 @media only screen and (min-width: 768px) {
@@ -428,11 +443,12 @@ nav {
 		font-size: 12px;
 		letter-spacing: 2px;
 	}
-}
-@media only screen and (min-width: 1020px) {
-	.article-header,
-	.article-body {
-		margin: 20px 0;
+	.article-meta-wrapper {
+		padding: 0;
+		border: none;
+	}
+	.article-meta {
+		border-top: 1px solid rgb(var(--color-graylight));
 	}
 	.article-social {
 		display: flex;
@@ -444,6 +460,15 @@ nav {
 		width: 20px;
 		height: 20px;
 		fill: rgba(var(--color-offblack),1);
+	}
+	.disclaimer {
+		font-size: 15px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	.article-header,
+	.article-body {
+		margin: 20px 0;
 	}
 }
 @media only screen and (min-width: 1360px) {
