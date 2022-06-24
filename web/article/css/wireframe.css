@@ -152,11 +152,6 @@ svg path {
 	color: rgb(var(--color-sg));
 	text-transform: uppercase;
 }
-.adadad {
-	/* nonsensense name to fool adblocker */
-	width: 300px;
-	height: 600px;
-}
 hr {
 	margin: 0 0 20px 0;
 	border: 0;
@@ -242,7 +237,6 @@ nav {
 	border-right: 1px solid rgb(var(--color-graydark));
 	font-family: "ProximaNova-Bold", sans-serif;
 	font-size: 13px;
-	color: rgb(var(--color-offblack));
 }
 .supernav li:first-child {
 	padding-left: 0;
@@ -250,6 +244,13 @@ nav {
 .supernav li:last-child {
 	padding-right: 0;
 	border: none;
+}
+.supernav a {
+	text-decoration: none;
+	color: rgb(var(--color-offblack));
+}
+.supernav a:hover {
+	text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
 	.supernav ul {
@@ -457,7 +458,7 @@ a.topic:hover {
 	.article-social svg {
 		width: 20px;
 		height: 20px;
-		fill: rgba(var(--color-offblack),1);
+		fill: rgb(var(--color-offblack));
 	}
 	.disclaimer {
 		font-size: 15px;
@@ -571,14 +572,29 @@ a.topic:hover {
 
 
 
+/*
+/
+/		RIGHT RAIL
+/
+*/
 
 
 
-
-
-
-
-
+.adadad {
+	/* nonsensense name to fool adblocker */
+	width: 300px;
+	height: 600px;
+}
+.recirc {
+	margin: 40px 0 0 0;
+	width: 300px;
+	height: 430px;
+}
+.newsletter {
+	margin: 40px 0 0 0;
+	width: 300px;
+	height: 200px;
+}
 
 
 
