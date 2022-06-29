@@ -36,6 +36,9 @@
 		<symbol id="icon-share" viewBox="0 0 100 100">
 			<path fill-rule="evenodd" d="m54.6846011 92.5324675c2.2727273 0 4.1280149-.9276438 6.3543599-3.0148423l36.5955473-34.554731c1.7625232-1.6697588 2.3654917-3.432282 2.3654917-4.9628942 0-1.5769944-.5565863-3.2931354-2.3654917-5.0092764l-36.5955473-34.2300557c-2.458256-2.31910946-3.9888682-3.29313543-6.2615955-3.29313543-3.2467533 0-5.5658627 2.55102043-5.5658627 5.65862713v17.5324675h-1.3450835c-33.3487941 0-47.8664193 21.3821892-47.8664193 55.6586271 0 3.9888682 2.27272727 6.2152133 4.77736549 6.2152133 1.94805195 0 4.08163265-.4638219 5.70500931-3.432282 8.0705009-15.1669759 19.4341373-19.7124304 37.3840445-19.7124304h1.3450835v17.7179963c0 3.1076067 2.3191094 5.4267161 5.4730983 5.4267161zm2.6437848-9.9721707c-.3710575 0-.6493506-.2782931-.6493506-.6957328v-17.9499072c0-1.0667904-.4638219-1.5306123-1.5306123-1.5306123h-6.2152134c-22.0315398 0-36.0853432 7.6530613-41.55844151 19.2949908-.13914657.3246753-.23191095.4638218-.46382189.4638218-.18552876 0-.32467533-.1391465-.32467533-.510204.92764379-21.8923934 10.48237473-43.9703154 42.34693873-43.9703154h6.2152134c1.0667904 0 1.5306123-.4638219 1.5306123-1.5306123v-18.4137291c0-.3710575.2782931-.6493507.6957328-.6493507.2782931 0 .5565863.1855288.7884972.3710576l33.0241187 31.6790352c.3246754.3246753.4638219.6029685.4638219.8812616s-.0927643.5102041-.4638219.8812616l-33.0705009 31.2615955c-.2319109.2782932-.5102041.4174397-.7884972.4174397z"/>
 		</symbol>
+		<symbol id="modal-notch" viewBox="0 0 10 5">
+			<g fill="none" fill-rule="evenodd"><path d="m0 5 5-5 5 5z" fill="#101010"/><path d="m1 5 4-4 4 4z" fill="#fff"/></g>
+		</symbol>
 	</svg>
 
 
@@ -98,18 +101,15 @@
 
 
 
-						<!-- share (inline style is necessary) -->
-						<div id="share-wrapper">
-							<button id="share-btn"><svg><use xlink:href="#icon-share"/></svg></button>
-							<div id="share-modal" style="display: none;">
-								<img src="img/modal-notch.png">
-								<ul>
-									<li><a href=""><svg><use xlink:href="#icon-facebook"/></svg> Facebook</a></li>
-									<li><a href=""><svg><use xlink:href="#icon-twitter"></use></svg> Twitter</a></li>
-									<li><a href=""><svg><use xlink:href="#icon-reddit"></use></svg> Reddit</a></li>
-									<li><a href=""><svg><use xlink:href="#icon-link"></use></svg> Copy Link</a></li>
-								</ul>
-							</div>
+						<!-- share -->
+						<div class="share-wrapper">
+							<button class="share-btn"><svg><use xlink:href="#icon-share"/></svg></button>
+							<ul class="share-modal">
+								<li><a href=""><svg><use xlink:href="#icon-facebook"/></svg> Facebook</a></li>
+								<li><a href=""><svg><use href="#icon-twitter"></use></svg> Twitter</a></li>
+								<li><a href=""><svg><use href="#icon-reddit"></use></svg> Reddit</a></li>
+								<li><a href=""><svg><use href="#icon-link"></use></svg> Copy Link</a></li>
+							</ul>
 						</div>
 						<!-- share -->
 
@@ -174,67 +174,7 @@
 
 <script>
 
-
-
-//document.addEventListener('click', function handleClickOutsideBox(event) {
-//	var box = document.getElementById('share-modal');
-//	if (box.contains(event.target)) {
-//		box.style.display = 'none';
-//	}
-//});
-
-
-
-//const elPopup = document.getElementById('share-modal');
-//addEventListener('click', (evt) => {
-//if (!evt.target.closest(elPopup)) elPopup.style.display = 'none';
-//});
-
-
-
-//window.onload = function(){
-	//var divToHide = document.getElementById('share-modal');
-	//document.onclick = function(e) {
-		//if(e.target.id !== 'share-modal') {
-			//element clicked wasn't the div; hide the div
-			//divToHide.style.display = 'none';
-//		}
-//	};
-//};
-
-
-//$(document).click(function() {
-//	if (x.style.display === 'none') {		// if not displayed
-//	}
-//    if(this != $(".article-meta")[0]) {
-//	    alert('clicked outside of article-meta');
-        //$("#share-modal").hide();
-//    }
-//});
-
-
-
-
 	$(document).ready(function() {
-
-		// share modal
-		var x = document.getElementById('share-modal');
-		var y = document.getElementById('share-btn');
-		y.onclick = function() {
-			if (x.style.display === 'none') {		// if hidden
-				x.style.display = 'block';			// then show
-			} else {								// if displayed
-				x.style.display = 'none';			// then hide
-			}
-		}
-		document.addEventListener('mouseup', function(e) {
-			var container = document.getElementById('share-wrapper');
-			if (!container.contains(e.target)) {		// if click outside
-				if (x.style.display === 'block') {		// if displayed
-					x.style.display = 'none';			// then hide
-				}
-			}
-		});
 
 		// quotes
 		smartquotes();
@@ -265,14 +205,6 @@
 		});
 
 	});
-
-
-
-
-
-
-
-
 
 </script>
 
