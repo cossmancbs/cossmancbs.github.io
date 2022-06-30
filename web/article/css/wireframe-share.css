@@ -394,12 +394,12 @@ a.topic:hover {
 	font-family: "ProximaNova-Regular", sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 1;
 	color: rgb(var(--color-offblack));
 }
 .article-byline li:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 .article-byline a {
 	font-family: "ProximaNova-Bold", sans-serif;
@@ -442,7 +442,7 @@ a.topic:hover {
 		*/
 	}
 	.article-byline li {
-		font-size: 13px;
+		font-size: 15px;
 	}
 	.disclaimer {
 		font-size: 15px;
