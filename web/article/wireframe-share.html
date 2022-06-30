@@ -86,22 +86,20 @@
 			<div class="article-header">
 				<p class="disclaimer">Disclaimer totam at eius excepturi deleniti sed, error repellat itaque omnis maiores tempora ratione dolor velit minus porro aspernatur.</p>
 				<a href="" class="topic">Topic</a>
-				<span class="topic topic-live">Live Updates</span>
+				<span class="topic topic-live">Badge</span>
 				<h1>Headline lorem ipsum dolor sit amet consectetur adipiscing elit sed doeius aperiam</h1>
 				<div class="article-meta-wrapper">
 					<img src="img/chip-en.png" alt="CBS Evening News" class="chip"></li>
 					<div class="article-meta">
-						<div>
-							<h2>By <a href="https://www.cbsnews.com/team/norah-odonnell/">Norah O'Donnell</a>, <a href="https://www.cbsnews.com/team/margaret-brennan/">Margaret Brennan</a>, <a href="https://www.cbsnews.com/team/gayle-king/">Gayle King</a>, <a href="https://www.cbsnews.com/team/vladimir-duthiers/">Vladimir Duthiers</a></h2>
-							<h3>Updated on: June 22, 2022 / 12:43 PM / CBS News</h3>
-						</div>
-
-
-
+						<ul class="article-byline">
+							<li>By <a href="">Caitlin Yilek</a>, <a href="https://www.cbsnews.com/team/norah-odonnell/">Norah O'Donnell</a></li>
+							<li><a href="">Caitlin O'Kane</a>, <a href="https://www.cbsnews.com/team/gayle-king/">Gayle King</a> also contributed reporting</li>
+							<li>Updated on: June 22, 2022 / 12:43 PM / CBS News</li>
+						</ul>
 						<!-- share (inline style is necessary) -->
-						<div id="share-wrapper">
-							<button id="share-btn"><svg><use xlink:href="#icon-share"/></svg></button>
-							<div id="share-modal" style="display: none;">
+						<div id="share-wrapper" class="share-clicker">
+							<button id="share-btn" class="share-clicker"><svg><use xlink:href="#icon-share"/></svg></button>
+							<div id="share-modal" class="share-clicker" style="display: none;">
 								<img src="img/modal-notch.png">
 								<ul>
 									<li><a href=""><svg><use xlink:href="#icon-facebook"/></svg> Facebook</a></li>
@@ -112,9 +110,6 @@
 							</div>
 						</div>
 						<!-- share -->
-
-
-
 					</div>
 				</div>
 			</div>
@@ -174,47 +169,6 @@
 
 <script>
 
-
-
-//document.addEventListener('click', function handleClickOutsideBox(event) {
-//	var box = document.getElementById('share-modal');
-//	if (box.contains(event.target)) {
-//		box.style.display = 'none';
-//	}
-//});
-
-
-
-//const elPopup = document.getElementById('share-modal');
-//addEventListener('click', (evt) => {
-//if (!evt.target.closest(elPopup)) elPopup.style.display = 'none';
-//});
-
-
-
-//window.onload = function(){
-	//var divToHide = document.getElementById('share-modal');
-	//document.onclick = function(e) {
-		//if(e.target.id !== 'share-modal') {
-			//element clicked wasn't the div; hide the div
-			//divToHide.style.display = 'none';
-//		}
-//	};
-//};
-
-
-//$(document).click(function() {
-//	if (x.style.display === 'none') {		// if not displayed
-//	}
-//    if(this != $(".article-meta")[0]) {
-//	    alert('clicked outside of article-meta');
-        //$("#share-modal").hide();
-//    }
-//});
-
-
-
-
 	$(document).ready(function() {
 
 		// share modal
@@ -228,6 +182,8 @@
 			}
 		}
 		document.addEventListener('mouseup', function(e) {
+			//var container = document.getElementsByClassName('share-clicker');
+			//var container = document.querySelectorAll('#share-wrapper, #share-btn, #share-modal');
 			var container = document.getElementById('share-wrapper');
 			if (!container.contains(e.target)) {		// if click outside
 				if (x.style.display === 'block') {		// if displayed
