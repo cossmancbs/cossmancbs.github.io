@@ -327,20 +327,11 @@ nav div {
 	}
 	#lockup .show-logo {
 		display: block;
-		/*
-		width: 200px;
-		height: 50px;
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 1px solid rgb(var(--color-placeholder));
-		*/
 	}
 	#lockup svg {
 		fill: rgba(var(--color-offwhite),1);
 		width: 200px;
-		height: 50px;
+		height: 30px;
 	}
 	#lockup h1 {
 		display: none;
@@ -360,11 +351,9 @@ nav div {
 		position: relative;
 		left: -50%;
 	}
-	#lockup .show-logo {
-	}
 	#lockup svg {
 		width: 300px;
-		height: 75px;
+		height: 45px;
 	}
 	#lockup h2 {
 		font-size: 24px;
@@ -374,11 +363,9 @@ nav div {
 	#lockup {
 		width: 1320px;
 	}
-	#lockup .show-logo {
-	}
 	#lockup svg {
 		width: 400px;
-		height: 100px;
+		height: 60px;
 	}
 	#lockup h2 {
 		font-size: 30px;
