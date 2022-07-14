@@ -82,10 +82,8 @@ svg path {
 	--color-graylight: 232,232,232;
 	--color-live: 182,5,5;
 	--color-placeholder: 50,197,255;
-	--color-cw31: 111,41,24;
+	--color-mn: 0,97,160;
 }
-
-
 
 @font-face {
 	font-family: 'ProximaNova-Regular';
@@ -198,7 +196,7 @@ nav .eye {
 	margin: 0 2px 0 0;
 }
 nav .locality {
-	width: 122.34px;
+	width: 157.97px;
 	height: 15px;
 }
 nav svg {
@@ -221,7 +219,7 @@ nav svg {
 		margin: 0 4px 0 0;
 	}
 	nav .locality {
-		width: 171.28px;
+		width: 221.16px;
 		height: 21px;
 	}
 }
@@ -243,14 +241,14 @@ nav svg {
 
 #showheader {
 	position: relative;
-	background-color: rgb(111,41,24);
+	background-color: rgb(var(--color-mn));
 }
 @media only screen and (min-width: 768px) {
 	#showheader {
 		background-image:
 			/* NOTE: cannot use both CSS variables and background images in Safari! */
-			linear-gradient(rgba(111,41,24,0), rgba(111,41,24,1)),
-			url('../img/header-cw31-sacramento.jpg');
+			linear-gradient(rgba(0,97,160,0), rgba(0,97,160,1)),
+			url('../img/header-minnesota-state-fair.jpg');
 		background-size:
 			100% 35%,
 			cover;
@@ -267,10 +265,11 @@ nav svg {
 }
 @media only screen and (min-width: 1360px) {
 	#showheader {
+		background-color: rgba(var(--color-mn),1);
 		background-image:
-			linear-gradient(rgba(111,41,24,0), rgba(111,41,24,1)),
-			linear-gradient(to right, rgba(111,41,24,1), rgba(111,41,24,0) 200px, rgba(111,41,24,0) 1120px, rgba(111,41,24,1)),
-			url('../img/header-cw31-sacramento.jpg');
+			linear-gradient(rgba(0,97,160,0), rgba(0,97,160,1)),
+			linear-gradient(to right, rgba(0,97,160,1), rgba(0,97,160,0) 200px, rgba(0,97,160,0) 1120px, rgba(0,97,160,1)),
+			url('../img/header-minnesota-state-fair.jpg');
 		background-size:
 			100% 35%,
 			1320px 371.25px,
@@ -286,11 +285,6 @@ nav svg {
 		height: 371.25px;
 	}
 }
-
-
-
-
-
 
 
 
@@ -335,16 +329,17 @@ nav svg {
 		position: absolute;
 		margin: 0 20px;
 		padding: 0;
-		top: 55%; /* compentsate for no subnav */
+		top: 50%;
 		transform: translateY(-50%);
 	}
 	#lockup .show-logo {
 		display: block;
 	}
-	#lockup svg {
+	#lockup svg,
+	#lockup .show-logo img {
 		fill: rgba(var(--color-offwhite),1);
 		width: 200px;
-		height: 42px;
+		height: 68px;
 	}
 	#lockup h1 {
 		display: none;
@@ -358,16 +353,17 @@ nav svg {
 	#lockup {
 		margin: 0;
 		left: 50%;
-		top: 55%; /* compentsate for no subnav */
+		top: 50%;
 		width: 980px;
 	}
 	#lockup .wrapper {
 		position: relative;
 		left: -50%;
 	}
-	#lockup svg {
+	#lockup svg,
+	#lockup .show-logo img {
 		width: 300px;
-		height: 63px;
+		height: 102px;
 	}
 	#lockup h2 {
 		font-size: 24px;
@@ -377,14 +373,210 @@ nav svg {
 	#lockup {
 		width: 1320px;
 	}
-	#lockup svg {
+	#lockup svg,
+	#lockup .show-logo img {
 		width: 400px;
-		height: 84px;
+		height:136px;
 	}
 	#lockup h2 {
 		font-size: 30px;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	SUBNAV
+/
+*/
+
+#subnav {
+	position: absolute;
+	bottom: -40px;
+	width: 100%;
+	height: 40px;
+	background-color: rgb(var(--color-mn));
+	border-top: 1px solid rgba(242,242,242,.15);
+}
+#subnav .wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+@media only screen and (min-width: 768px) {
+	#subnav {
+		bottom: 20px;
+		height: auto;
+		background-color: transparent;
+		border: none;
+	}
+	#subnav .wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 20px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	#subnav .wrapper {
+		margin: 0 auto;
+		width: 980px;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	#subnav .wrapper {
+		width: 1320px;
+	}
+}
+
+
+
+
+
+
+
+
+
+/*
+/
+/	SUBNAV LINKS
+/
+*/
+
+#links {
+	padding: 0 10px;
+}
+#links li {
+	padding: 0 10px;
+	display: inline-flex;
+	flex: auto;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	color: rgba(var(--color-offwhite),1);
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 11px;
+	letter-spacing: 1.7px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+#links li:first-child span {
+	border-bottom: 2px solid rgba(var(--color-offwhite),1);
+}
+#links li:first-child span span {
+	/* prevent excess underline */
+	letter-spacing: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	#links {
+		padding: 0;
+		display: inline-flex;
+	}
+	#links li {
+		margin: 0 20px 0 0;
+		padding: 0;
+		display: flex;
+		height: 35px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	#links li {
+		margin: 0 30px 0 0;
+		font-size: 14px;
+		letter-spacing: 2px;
+		height: 50px;
+	}
+	#links li:first-child span span {
+		/* prevent excess underline */
+		letter-spacing: 0;
+	}
+}
+@media only screen and (min-width: 1360px) {
+}
+
+
+
+
+
+/*
+/
+/	SOCIAL (ICONS)
+/
+*/
+
+.social-icons {
+	display: none;
+}
+.social-icons li {
+	margin: 0 10px;
+	/* don't be a grid */
+	display: flex !important;
+	flex: auto;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+.social-icons svg {
+	fill: rgba(var(--color-offwhite),1);
+	width: 20px;
+	height: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+	.social-icons {
+		/* don't understand why I have to force height here. It's somehow inheriting the height from the subnav list, but it shouldn't */
+		/* height: 30px; */
+		display: inline-flex;
+	}
+	.social-icons li {
+		margin: 0;
+	}
+	.social-icons li:not(:first-child) {
+		margin: 0 0 0 5px;
+	}
+	.social-icons li:hover {
+		background-color: rgba(var(--color-offwhite),1);
+		border-radius: 50%;
+	}
+	.social-icons li:hover svg {
+		fill: rgba(var(--color-cw),1);
+	}
+}
+@media only screen and (min-width: 1020px) {
+	/* force height for some reason */
+	.social-icons {
+		height: 40px;
+		position: relative;
+		top: 5px;
+	}
+	.social-icons li {
+		width: 40px;
+		height: 40px;
+	}
+	.social-icons li:not(:first-child) {
+		margin: 0 0 0 10px;
+	}
+	.social-icons svg {
+		width: 25px;
+		height: 25px;
+	}
+}
+
 
 
 
