@@ -328,7 +328,7 @@ nav svg {
 		position: absolute;
 		margin: 0 20px;
 		padding: 0;
-		top: 55%;
+		top: 55%; /* compensate for no subnav */
 		transform: translateY(-50%);
 	}
 	#lockup .show-logo {
@@ -351,7 +351,7 @@ nav svg {
 	#lockup {
 		margin: 0;
 		left: 50%;
-		top: 55%;
+		top: 55%; /* compensate for no subnav */
 		width: 980px;
 	}
 	#lockup .wrapper {

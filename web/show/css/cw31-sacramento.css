@@ -300,3 +300,99 @@ nav svg {
 
 
 
+
+
+/*
+/
+/	LOCKUP (LOGO & DETAILS)
+/
+*/
+
+#lockup {
+	margin: 10px 20px 0 20px;
+	padding: 0 0 20px 0;
+}
+#lockup .show-logo {
+	display: none;
+}
+#lockup h1 {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1;
+	color: rgb(var(--color-offwhite));
+}
+#lockup h2 {
+	margin: 5px 0 0 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	line-height: 1;
+	color: rgb(var(--color-offwhite));
+}
+@media only screen and (min-width: 768px) {
+	#lockup {
+		position: absolute;
+		margin: 0 20px;
+		padding: 0;
+		top: 55%; /* compentsate for no subnav */
+		transform: translateY(-50%);
+	}
+	#lockup .show-logo {
+		display: block;
+	}
+	#lockup svg {
+		fill: rgba(var(--color-offwhite),1);
+		width: 200px;
+		height: 42px;
+		background: salmon;
+	}
+	#lockup h1 {
+		display: none;
+	}
+	#lockup h2 {
+		margin: 10px 0 0 0;
+		font-size: 16px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	#lockup {
+		margin: 0;
+		left: 50%;
+		top: 55%; /* compentsate for no subnav */
+		width: 980px;
+	}
+	#lockup .wrapper {
+		position: relative;
+		left: -50%;
+	}
+	#lockup svg {
+		width: 300px;
+		height: 63px;
+	}
+	#lockup h2 {
+		font-size: 24px;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	#lockup {
+		width: 1320px;
+	}
+	#lockup svg {
+		width: 400px;
+		height: 84px;
+	}
+	#lockup h2 {
+		font-size: 30px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
