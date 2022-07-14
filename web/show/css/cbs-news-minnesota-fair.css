@@ -554,7 +554,7 @@ nav svg {
 		border-radius: 50%;
 	}
 	.social-icons li:hover svg {
-		fill: rgba(var(--color-cw),1);
+		fill: rgba(var(--color-mn),1);
 	}
 }
 @media only screen and (min-width: 1020px) {
@@ -579,6 +579,50 @@ nav svg {
 
 
 
+
+
+/*
+/
+/	PAGE CONTENT
+/
+*/
+
+.page-content {
+	position: relative;
+	top: 40px;
+}
+section.branded {
+	background-color: rgba(var(--color-mn),1);
+	padding: 0 20px 20px 20px;
+}
+section {
+	padding: 20px;
+}
+section div {
+	height: 100px;
+}
+@media only screen and (min-width: 768px) {
+	.page-content {
+		top: 0;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	section.branded {
+		padding: 0 0 40px 0;
+	}
+	section {
+		padding: 40px 0 40px 0;
+	}
+	section div {
+		margin: 0 auto;
+		width: 980px;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	section div {
+		width: 1320px;
+	}
+}
 
 
 
