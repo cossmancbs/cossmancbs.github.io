@@ -67,8 +67,6 @@ svg path {
 
 
 
-
-
 /*
 /
 /	COLORS & FONTS
@@ -339,7 +337,7 @@ nav svg {
 	}
 	#lockup .show-logo img {
 		width: 200px;
-		height: 68px;
+		height: 64px;
 	}
 	#lockup h1 {
 		display: none;
@@ -362,7 +360,7 @@ nav svg {
 	}
 	#lockup .show-logo img {
 		width: 300px;
-		height: 102px;
+		height: 96px;
 	}
 	#lockup h2 {
 		font-size: 24px;
@@ -375,7 +373,7 @@ nav svg {
 	#lockup svg,
 	#lockup .show-logo img {
 		width: 400px;
-		height:136px;
+		height: 128px;
 	}
 	#lockup h2 {
 		font-size: 30px;
@@ -472,7 +470,7 @@ nav svg {
 	cursor: pointer;
 }
 #links li:first-child span {
-	border-bottom: 2px solid rgba(var(--color-offwhite),1);
+	/* border-bottom: 2px solid rgba(var(--color-offwhite),1); */
 }
 #links li:first-child span span {
 	/* prevent excess underline */
