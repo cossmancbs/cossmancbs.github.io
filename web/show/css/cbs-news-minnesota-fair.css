@@ -337,9 +337,7 @@ nav svg {
 	#lockup .show-logo {
 		display: block;
 	}
-	#lockup svg,
 	#lockup .show-logo img {
-		fill: rgba(var(--color-offwhite),1);
 		width: 200px;
 		height: 68px;
 	}
@@ -362,7 +360,6 @@ nav svg {
 		position: relative;
 		left: -50%;
 	}
-	#lockup svg,
 	#lockup .show-logo img {
 		width: 300px;
 		height: 102px;
@@ -593,30 +590,32 @@ nav svg {
 	position: relative;
 	top: 40px;
 }
-section.branded {
-	background-color: rgba(var(--color-mn),1);
-	padding: 0 20px 20px 20px;
-}
 section {
 	padding: 20px;
 }
+section.branded {
+	padding: 0 20px 20px 20px;
+	background-color: rgba(var(--color-mn),1);
+}
 section div {
+	margin: 0 auto;
 	height: 100px;
 }
 @media only screen and (min-width: 768px) {
+	section.branded {
+	}
 	.page-content {
 		top: 0;
 	}
 }
 @media only screen and (min-width: 1020px) {
+	section {
+		padding: 40px 0;
+	}
 	section.branded {
 		padding: 0 0 40px 0;
 	}
-	section {
-		padding: 40px 0 40px 0;
-	}
 	section div {
-		margin: 0 auto;
 		width: 980px;
 	}
 }
