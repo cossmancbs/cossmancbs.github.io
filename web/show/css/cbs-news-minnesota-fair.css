@@ -337,7 +337,7 @@ nav svg {
 	}
 	#lockup .show-logo img {
 		width: 200px;
-		height: 64px;
+		height: 68px;
 	}
 	#lockup h1 {
 		display: none;
@@ -360,7 +360,7 @@ nav svg {
 	}
 	#lockup .show-logo img {
 		width: 300px;
-		height: 96px;
+		height: 102px;
 	}
 	#lockup h2 {
 		font-size: 24px;
@@ -373,7 +373,7 @@ nav svg {
 	#lockup svg,
 	#lockup .show-logo img {
 		width: 400px;
-		height: 128px;
+		height: 136px;
 	}
 	#lockup h2 {
 		font-size: 30px;
