@@ -82,14 +82,7 @@ svg path {
 	--color-graylight: 232,232,232;
 	--color-live: 182,5,5;
 	--color-placeholder: 50,197,255;
-	--color-48: 39,95,145;
-	--color-60: 166,10,2;
-	--color-cbsnam: 48,65,85;
-	--color-ctm: 63,137,201;
-	--color-en: 10,75,170;
-	--color-ftn-red: 157,3,3;
-	--color-ftn-blue: 0,120,157;
-	--color-sm: 222,150,21;
+	--color-en: 16,49,86;
 }
 
 @font-face {
@@ -184,7 +177,7 @@ body {
 	#showheader {
 		background-image:
 			/* NOTE: cannot use both CSS variables and background images in Safari! */
-			linear-gradient(rgba(10,75,170,0), rgba(10,75,170,1)),
+			linear-gradient(rgba(16,49,86,0), rgba(16,49,86,1)),
 			url('../img/header-evening-news.jpg');
 		background-size:
 			100% 35%,
@@ -203,8 +196,8 @@ body {
 	#showheader {
 		background-color: rgba(var(--color-en),1);
 		background-image:
-			linear-gradient(rgba(10,75,170,0), rgba(10,75,170,1)),
-			linear-gradient(to right, rgba(10,75,170,1), rgba(10,75,170,0) 200px, rgba(10,75,170,0) 1120px, rgba(10,75,170,1)),
+			linear-gradient(rgba(16,49,86,0), rgba(16,49,86,1)),
+			linear-gradient(to right, rgba(16,49,86,1), rgba(16,49,86,0) 200px, rgba(16,49,86,0) 1120px, rgba(16,49,86,1)),
 			url('../img/header-evening-news.jpg');
 		background-size:
 			100% 35%,
@@ -315,7 +308,7 @@ nav div {
 	#lockup svg {
 		fill: rgba(var(--color-offwhite),1);
 		width: 200px;
-		height: 30px;
+		height: 26px;
 	}
 	#lockup h1 {
 		display: none;
@@ -337,7 +330,7 @@ nav div {
 	}
 	#lockup svg {
 		width: 300px;
-		height: 45px;
+		height: 39px;
 	}
 	#lockup h2 {
 		font-size: 24px;
@@ -349,7 +342,7 @@ nav div {
 	}
 	#lockup svg {
 		width: 400px;
-		height: 60px;
+		height: 52px;
 	}
 	#lockup h2 {
 		font-size: 30px;
@@ -517,33 +510,26 @@ nav div {
 .social-icons {
 	display: none;
 }
-.social-icons li {
-	margin: 0 10px;
-	/* don't be a grid */
-	display: flex !important;
-	flex: auto;
-	justify-content: center;
-	align-items: center;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-}
-.social-icons svg {
-	fill: rgba(var(--color-offwhite),1);
-	width: 20px;
-	height: 20px;
-}
 
 @media only screen and (min-width: 768px) {
 	.social-icons {
-		/* don't understand why I have to force height here. It's somehow inheriting the height from the subnav list, but it shouldn't */
-		/* height: 30px; */
 		display: inline-flex;
-		/*position: relative;
-		top: 5px;*/
 	}
 	.social-icons li {
 		margin: 0;
+		/* don't be a grid */
+		display: flex !important;
+		flex: auto;
+		justify-content: center;
+		align-items: center;
+		width: 35px;
+		height: 35px;
+		cursor: pointer;
+	}
+	.social-icons svg {
+		fill: rgba(var(--color-offwhite),1);
+		width: 20px;
+		height: 20px;
 	}
 	.social-icons li:not(:first-child) {
 		margin: 0 0 0 5px;
