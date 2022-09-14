@@ -407,14 +407,14 @@ nav div {
 		border-radius: 50%;
 	}
 	.social-icons li:hover svg {
-		fill: rgba(var(--color-ftn-red),1);
+		fill: rgba(var(--color-48-hours-red-dark),1);
 	}
 	/* if inside a bio component */
 	.bios .social-icons {
 		top: 0;
 	}
 	.bios .social-icons li:hover svg {
-		fill: rgba(var(--color-sm),1) !important;
+		fill: rgba(var(--color-48-hours-red-dark),1) !important;
 	}
 }
 @media only screen and (min-width: 1020px) {
