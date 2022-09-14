@@ -45,7 +45,7 @@ body {
 	#showheader {
 		background-image:
 			/* NOTE: cannot use both CSS variables and background images in Safari! */
-			linear-gradient(rgba(152,42,6,0), rgba(152,42,6,1)),
+			linear-gradient(rgba(36,44,59,0), rgba(36,44,59,1)),
 			url('../img/header-48-hours-fingerprint.jpg');
 		background-size:
 			100% 35%,
@@ -64,8 +64,8 @@ body {
 	#showheader {
 		background-color: rgba(var(--color-48-hours),1);
 		background-image:
-			linear-gradient(rgba(152,42,6,0), rgba(152,42,6,1)),
-			linear-gradient(to right, rgba(152,42,6,1), rgba(152,42,6,0) 200px, rgba(152,42,6,0) 1120px, rgba(152,42,6,1)),
+			linear-gradient(rgba(36,44,59,0), rgba(36,44,59,1)),
+			linear-gradient(to right, rgba(36,44,59,1), rgba(36,44,59,0) 200px, rgba(36,44,59,0) 1120px, rgba(36,44,59,1)),
 			url('../img/header-48-hours-fingerprint.jpg');
 		background-size:
 			100% 35%,
