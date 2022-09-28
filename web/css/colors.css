@@ -4,7 +4,9 @@
 	--color-graydark: 127,127,127;
 	--color-graylight: 232,232,232;
 	--color-live: 182,5,5;
-	--color-placeholder: 50,197,255;
+	/* --color-placeholder: 50,197,255; */
+	--color-placeholder: 118,188,237;
+	--color-placeholder-fill: 221,238,250;
 	--color-48-hours: 36,44,59;
 	--color-48-hours-red-light: 152,42,6;
 	--color-48-hours-red-dark: 69,32,25;
