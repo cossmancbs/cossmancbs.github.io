@@ -373,15 +373,21 @@ a.topic:hover {
 */
 
 .lead-video-mobile {
-	width: 100%;
-	position: sticky;
-	top: 0;
 	margin: 0 0 24px 0;
+	max-width: 100%;
+}
+.lead-video-mobile.affix {
+	margin: 0;
+	position: fixed;
+	top: 0;
 }
 
 @media only screen and (min-width: 768px) {
 	.lead-video-mobile {
-		margin: 0 auto;
+	}
+	.lead-video-mobile.affix {
+		/* viewport width hack because video pops out of grid??? */
+		max-width: 72.5vw;
 	}
 }
 
