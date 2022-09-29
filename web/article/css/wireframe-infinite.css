@@ -31,7 +31,7 @@
 }
 .recirc {
 	width: 100%;
-	height: 430px;
+	height: 200px;
 }
 @media only screen and (min-width: 768px) {
 	.taboola {
@@ -48,7 +48,7 @@
 		top: 0;
 		width: 100%;
 		aspect-ratio: 5;
-		/* transition: all 1s; */
+		transition: all 1s;
 	}
 	.skybox-expanded {
 		aspect-ratio: 5;
