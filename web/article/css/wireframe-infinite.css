@@ -413,31 +413,31 @@ a.topic:hover {
 /
 */
 
-.article-body p {
+article p {
 	margin: 0 0 1em 0;
 	font-family: "PublicoText-Roman", serif;
 	font-size: 18px;
 	line-height: 25px;
 	color: rgb(var(--color-offblack));
 }
-.article-body em {
+article em {
 	font-family: "PublicoText-Italic", serif;
 }
-.article-body hr {
+article hr {
 	border: 0;
 	height: 1px;
 	background: rgb(var(--color-graylight));
 }
 
 @media only screen and (min-width: 768px) {
-	.article-body p {
+	article p {
 		font-size: 21px;
 		line-height: 31px;
 	}
 }
 
 @media only screen and (min-width: 1028px) {
-	.article-body hr {
+	article hr {
 		margin: 0 0 32px 0;
 	}
 }
