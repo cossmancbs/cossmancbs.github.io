@@ -129,13 +129,6 @@ nav ul {
 	.supernav ul {
 		margin: 0 32px;
 	}
-	/*
-	nav {
-		position: sticky;
-		top: 105px;
-		border-bottom: 1px solid rgb(var(--color-graylight));
-	}
-	*/
 	nav,
 	.nav-scrolldown {
 		position: block;
@@ -181,10 +174,6 @@ nav ul {
 /
 */
 
-.grid {
-}
-.column-main {
-}
 .column-rail {
 	display: none;
 }
@@ -213,8 +202,13 @@ nav ul {
 		display: block;
 		grid-column: 9/13;
 	}
-	.column-rail .sticky {
+	.column-rail .sticky,
+	.column-rail .sticky-scrolldown {
 		position: sticky;
+		/* skybox + vertical spacing */
+		top: calc(105px + 24px);
+	}
+	.column-rail .sticky-scrollup {
 		/* skybox + nav + vertical spacing */
 		top: calc(105px + 70px + 24px);
 	}

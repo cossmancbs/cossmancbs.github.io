@@ -306,10 +306,14 @@
 				// downscroll code
 				$('nav').addClass('nav-scrolldown');
 				$('nav').removeClass('nav-scrollup');
+				$('.column-rail .sticky').addClass('sticky-scrolldown');
+				$('.column-rail .sticky').removeClass('sticky-scrollup');
 			} else {
 				// upscroll code
 				$('nav').addClass('nav-scrollup');
 				$('nav').removeClass('nav-scrolldown');
+				$('.column-rail .sticky').addClass('sticky-scrollup');
+				$('.column-rail .sticky').removeClass('sticky-scrolldown');
 			}
 			lastScrollTop = st;
 
