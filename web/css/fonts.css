@@ -1,33 +1,36 @@
+/* PROXIMA NOVA */
+
 @font-face {
 	font-family: 'ProximaNova-Regular';
 	src: url('../fonts/ProximaNova-Regular-webfont.woff2') format('woff2'),
 		 url('../fonts/ProximaNova-Regular-webfont.woff') format('woff');
 }
-
 @font-face {
 	font-family: 'ProximaNova-Bold';
 	src: url('../fonts/ProximaNova-Bold-webfont.woff2') format('woff2'),
 		 url('../fonts/ProximaNova-Bold-webfont.woff') format('woff');
 }
 
+/* PUBLICO HEADLINE */
+
 @font-face {
 	font-family: 'PublicoHeadline-Bold';
 	src: url('../fonts/PublicoHeadline-Bold-Web.woff2') format('woff2'),
 		 url('../fonts/PublicoHeadline-Bold-Web.woff') format('woff');
 }
-
 @font-face {
 	font-family: 'PublicoHeadline-Black';
 	src: url('../fonts/PublicoHeadline-Black-Web.woff2') format('woff2'),
 		 url('../fonts/PublicoHeadline-Black-Web.woff') format('woff');
 }
 
+/* PUBLICO TEXT */
+
 @font-face {
 	font-family: 'PublicoText-Roman';
 	src: url('../fonts/PublicoText-Roman-Web.woff2') format('woff2'),
 		 url('../fonts/PublicoText-Roman-Web.woff') format('woff');
 }
-
 @font-face {
 	font-family: 'PublicoText-Italic';
 	src: url('../fonts/PublicoText-Italic-Web.woff2') format('woff2'),

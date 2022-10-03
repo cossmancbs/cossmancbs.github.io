@@ -76,7 +76,16 @@
 */
 
 nav {
+	background-color: white;
+}
+nav ul {
 	height: 45px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav-desktop {
+	display: none;
 }
 .supernav {
 	display: flex;
@@ -120,11 +129,32 @@ nav {
 	.supernav ul {
 		margin: 0 32px;
 	}
+	/*
 	nav {
-		margin: 0 32px;
-		height: 70px;
 		position: sticky;
 		top: 105px;
+		border-bottom: 1px solid rgb(var(--color-graylight));
+	}
+	*/
+	nav,
+	.nav-scrolldown {
+		position: block;
+		top: 105px;
+	}
+	.nav-scrollup {
+		position: sticky;
+		top: 105px;
+		border-bottom: 1px solid rgb(var(--color-graylight));
+	}
+	nav ul {
+		margin: 0 32px;
+		height: 70px;
+	}
+	.nav-mobile {
+		display: none;;
+	}
+	.nav-desktop {
+		display: block;
 	}
 }
 @media only screen and (min-width: 1520px) {
@@ -132,7 +162,7 @@ nav {
 		margin: 0 auto;
 		width: 1456px;
 	}
-	nav {
+	nav ul {
 		margin: 0 auto;
 		width: 1456px;
 	}
@@ -378,10 +408,76 @@ a.topic:hover {
 	top: 0;
 	margin: 0 0 24px 0;
 }
+.lead-video-embed {
+	margin: 0 0 24px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 16 / 9;
+	background-image:
+		linear-gradient(to right top, rgba(34,34,34,0.55), rgba(65,65,65,0)),
+		url("../../img/16-9-trump-documents.jpg");
+	background-size:
+		cover,
+		cover;
+	text-align: center;
+}
+.lead-video-embed ul {
+}
+.lead-video-embed ul li {
+}
+.lead-video-embed div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 8px auto;
+	background-color: rgba(var(--color-offblack),0.35);
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+.lead-video-embed div svg {
+	margin: 0 0 0 5px;
+	height: 25px;
+	width: 25px;
+	fill: rgb(var(--color-offwhite));
+}
+.lead-video-embed li:nth-child(2) {
+	margin: 0 0 4px 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-size: 13px;
+	color: rgb(var(--color-offwhite));
+	letter-spacing: 0.3px;
+	line-height: 1.05;
+}
+.lead-video-embed li:nth-child(3) {
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 11px;
+	color: rgb(var(--color-offwhite));
+	letter-spacing: 1.7px;
+}
 
 @media only screen and (min-width: 768px) {
 	.lead-video-mobile {
 		margin: 0 auto;
+	}
+	.lead-video-embed div {
+		height: 80px;
+		width: 80px;
+	}
+	.lead-video-embed div svg {
+		height: 35px;
+		width: 35px;
+	}
+	.lead-video-embed li:nth-child(2) {
+		margin: 0 0 8px 0;
+		font-family: "PublicoHeadline-Bold", serif;
+		font-size: 17px;
+	}
+	.lead-video-embed li:nth-child(3) {
+		font-family: "ProximaNova-Bold", sans-serif;
+		font-size: 12px;
+		letter-spacing: 2px;
 	}
 }
 
@@ -407,7 +503,7 @@ a.topic:hover {
 		font-family: "ProximaNova-Regular", sans-serif;
 		font-size: 18px;
 		line-height: 1;
-		color: rgb(var(--color-offwhite));;
+		color: rgb(var(--color-offwhite));
 	}
 }
 

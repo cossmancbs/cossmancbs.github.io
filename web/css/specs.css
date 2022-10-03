@@ -7,6 +7,8 @@
 }
 .wireframe {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: rgb(var(--color-placeholder));
 	background-color: rgba(var(--color-placeholder),.25);
 	box-shadow: inset 0 0 0 1px rgb(var(--color-placeholder));
@@ -14,11 +16,11 @@
 	font-size: small;
 	font-weight: bold;
 	text-transform: uppercase;
-	align-items: center;
-	justify-content: center;
 }
 .wireframe-opaque {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: rgb(var(--color-placeholder));
 	background-color: rgb(var(--color-placeholder-fill));
 	box-shadow: inset 0 0 0 1px rgb(var(--color-placeholder));
@@ -26,6 +28,4 @@
 	font-size: small;
 	font-weight: bold;
 	text-transform: uppercase;
-	align-items: center;
-	justify-content: center;
 }

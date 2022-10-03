@@ -1,12 +1,18 @@
 :root {
+
+	/* CORE */
 	--color-offblack: 16,16,16;
 	--color-offwhite: 242,242,242;
 	--color-graydark: 127,127,127;
 	--color-graylight: 232,232,232;
 	--color-live: 182,5,5;
+
+	/* SPECS */
 	/* --color-placeholder: 50,197,255; */
 	--color-placeholder: 118,188,237;
 	--color-placeholder-fill: 221,238,250;
+
+	/* BRANDS */
 	--color-48-hours: 36,44,59;
 	--color-48-hours-red-light: 152,42,6;
 	--color-48-hours-red-dark: 69,32,25;
@@ -17,4 +23,5 @@
 	--color-face-the-nation-blue: 0,120,157;
 	--color-minnesota: 0,97,160;
 	--color-uplift: 27,110,184;
+
 }
