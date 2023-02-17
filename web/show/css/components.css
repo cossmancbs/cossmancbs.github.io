@@ -254,6 +254,7 @@ body {
 .bios-single .wrapper a:hover .more {
 	text-decoration: underline;
 }
+
 @media only screen and (min-width: 768px) {
 	.bios-single .bios-inner-wrapper {
 		background-image: url('../img/headshot-pauley.png');
@@ -278,11 +279,13 @@ body {
 		display: none;
 	}
 }
+
 @media only screen and (min-width: 1020px) {
 	.bios-single .grid {
 		padding: 20px 0 40px 0;
 	}
 }
+
 @media only screen and (min-width: 1360px) {
 }
 
@@ -353,6 +356,7 @@ body {
 		fill: rgba(var(--color-sm),1) !important;
 	}
 }
+
 @media only screen and (min-width: 1020px) {
 	/* force height for some reason */
 	.social-icons {
@@ -394,6 +398,7 @@ body {
 .social-links {
 	display: none;
 }
+
 @media only screen and (min-width: 768px) {
 	.social-links {
 		margin: 0;
@@ -524,6 +529,7 @@ body {
 	height: 16px;
 	width: 16px;
 }
+
 @media only screen and (min-width: 768px) {
 	.podcast h1 {
 		font-family: "PublicoHeadline-Black", serif;
@@ -555,6 +561,7 @@ body {
 		width: 20px;
 	}
 }
+
 @media only screen and (min-width: 1020px) {
 	.podcast .inner-wrapper {
 		margin: 40px auto 30px auto;
@@ -570,6 +577,7 @@ body {
 		margin: 0 0 0 40px;
 	}
 }
+
 @media only screen and (min-width: 1360px) {
 	.podcast .inner-wrapper {
 		width: 1320px;
@@ -647,6 +655,8 @@ body {
 
 
 
+
+
 /*
 /
 /	MORE BUTTON (desktop)
@@ -656,6 +666,7 @@ body {
 .button-more-desktop {
 	display: none;
 }
+
 @media only screen and (min-width: 768px) {
 	.button-more-desktop {
 		margin: 0 0 0 20px;
@@ -675,20 +686,6 @@ body {
 		color: rgba(var(--color-offblack),1);
 	}
 }
-
-
-
-
-
-
-/*
-/
-/	Z-INDICIES
-/
-*/
-
-
-
 
 
 
