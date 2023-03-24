@@ -41,7 +41,7 @@ section {
 	margin: 0 20px;
 	display: grid;
 	grid-gap: 20px;
-	align-items: start;
+	align-items: stretch;
 }
 .item1,
 .item2,
@@ -54,6 +54,9 @@ section {
 .item4 ul {
 	display: grid;
 	grid-gap: 20px;
+}
+.item4 ul li {
+	box-shadow:inset 0 0 0 1px lime;
 }
 /* ad */
 .item5 {
@@ -251,13 +254,6 @@ section {
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
 		overflow: hidden;
-	}
-	.list1 h1,
-	.list2 h1,
-	.list3 h1,
-	.list4 h1,
-	.list5 h1,
-	.list6 h1 {
 	}
 }
 @media only screen and (min-width: 1360px) {
