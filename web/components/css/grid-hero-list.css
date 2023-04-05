@@ -276,6 +276,20 @@ section {
 	font-size: 17px;
 	line-height: 1.05;
 }
+.item2 h1,
+.item3 h1,
+.item4 h1,
+.item5 h1,
+.item6 h1,
+.item7 h1,
+.item8 h1,
+.item9 h1 {
+	/* truncate */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
 .dek {
 	display: none;
 }
@@ -284,8 +298,15 @@ section {
 }
 @media only screen and (min-width: 1020px) {
 	.cardHero h1 {
-		font-family: "PublicoHeadline-Bold", serif;
+		font-family: "PublicoHeadline-Black", serif;
+		font-size: 32px;
+	}
+	.item2 h1,
+	.item3 h1 {
 		font-size: 24px;
+		/* don't truncate */
+		-webkit-line-clamp: none;
+		overflow: visible;
 	}
 	.dek {
 		display: block;
@@ -294,34 +315,9 @@ section {
 		font-size: 18px;
 		line-height: 22px;
 		color: rgb(var(--color-offblack));
-		/* truncate */
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
-	}
-	.item2 h1,
-	.item3 h1 {
-		font-size: 24px;
-	}
-	.item4 h1,
-	.item5 h1,
-	.item6 h1,
-	.item7 h1,
-	.item8 h1,
-	.item9 h1 {
-		/* truncate */
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		overflow: hidden;
 	}
 }
 @media only screen and (min-width: 1360px) {
-	.dek {
-		/* truncate */
-		-webkit-line-clamp: 4;
-	}
 }
 
 
