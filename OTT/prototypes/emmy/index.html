@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News Live Alerts</title>
+
+	<!-- <link rel="stylesheet" href="css/main.css"> -->
+
+<style>
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+ul {
+	list-style: none;
+}
+/* fix vertical spacing */
+li {
+	font-size: 0;
+}
+/* allow styling of individual svg symbol instances */
+svg path {
+	fill: inherit;
+}
+:root {
+	--color-offblack: 16,16,16;				/* #101010 */
+	--color-offwhite: 242,242,242;			/* #F2F2F2 */
+}
+@font-face {
+	font-family: "ProximaNova-Regular";
+	src: url('fonts/proximanova-regular-webfont.woff2') format('woff2'),
+		 url('fonts/proximanova-regular-webfont.woff') format('woff');
+}
+@font-face {
+	font-family: "ProximaNova-Bold";
+	src: url('fonts/proximanova-bold-webfont.woff2') format('woff2'),
+		 url('fonts/proximanova-bold-webfont.woff') format('woff');
+}
+@font-face {
+	font-family: "PublicoHeadline-Black";
+	src: url('fonts/publicoheadline-black-web.woff2') format('woff2'),
+		 url('fonts/publicoheadline-black-web.woff') format('woff');
+}
+@font-face {
+	font-family: "PublicoText-Roman";
+	src: url('fonts/publicotext-roman-web.woff2') format('woff2'),
+		 url('fonts/publicotext-roman-web.woff') format('woff');
+}
+header {
+	padding: 20px;
+	text-align: center;
+	background-image:
+		linear-gradient(180deg, rgba(16,16,16,0.25) 25%, rgba(25,26,40,0.95) 70%),
+		linear-gradient(-35deg, rgba(5,118,176,0.00) 0%, rgba(3,128,246,0.45) 100%);
+	background-color: black;
+}
+header svg {
+	width: 142.86px;
+	height: 20px;
+	fill: rgb(var(--color-offwhite));
+}
+header h1 {
+	margin: 20px auto;
+	font-family: "PublicoHeadline-Black", sans-serif;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 1;
+	color: rgb(var(--color-offwhite));
+}
+header ul {
+	margin: 0 0 20px 0;
+}
+header li {
+	margin: 0 0 10px 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	color: rgb(var(--color-offwhite));
+}
+header li strong {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+main {
+	padding: 20px;	
+}
+main p {
+	margin: 0 0 1em 0;
+	font-family: "PublicoText-Roman", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: rgb(var(--color-offblack));
+}
+video {
+	width: 100%;
+	height: auto;
+}
+@media only screen and (min-width: 768px) {
+	header {
+	}
+	header h1 {
+		width: 640px;
+	}
+	header ul {
+		display: flex;
+		justify-content: center;
+	}
+	header li {
+		margin: 0 20px;
+	}
+	main {
+		margin: 0 auto;
+		padding: 20px 0;
+		width: 560px;
+	}
+	video {
+		width: 640px;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	header {
+		padding: 40px;
+	}
+	header svg {
+		width: 214.29px;
+		height: 30px;
+	}
+	header h1 {
+		margin: 40px auto;
+		font-size: 45px;
+		width: 880px;
+	}
+	header ul {
+		margin: 0 0 40px 0;
+	}
+	header li {
+		font-size: 20px;
+	}
+	main {
+		width: 680px;
+	}
+	main p {
+		font-size: 21px;
+		line-height: 31px;
+	}
+	video {
+		width: 880px;
+	}
+}
+@media only screen and (min-width: 1440px) {
+	header h1 {
+		width: 1120px;
+	}
+	video {
+		width: 1120px;
+	}
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+	<svg style="display:none;">
+		<symbol id="logo" viewBox="0 0 100 14">
+			<path fill-rule="evenodd" d="M13.3702999,6.9911626 C13.3702999,8.84375267 12.7176922,10.4227913 11.4127488,11.7277348 C10.1075334,13.0329502 8.53474891,13.6852859 6.6938514,13.6852859 C4.85268197,13.6852859 3.27690634,13.0329502 1.96625257,11.7277348 C0.655326883,10.4227913 1.41220369e-13,8.84375267 1.41220369e-13,6.9911626 C1.41220369e-13,5.15026509 0.655326883,3.57720866 1.96625257,2.27226521 C3.27690634,0.967593678 4.85268197,0.314714074 6.6938514,0.314714074 C8.53474891,0.314714074 10.1075334,0.967593678 11.4127488,2.27226521 C12.7176922,3.57720866 13.3702999,5.15026509 13.3702999,6.9911626 M12.9684024,6.99986404 C12.4430532,5.84393268 11.6324601,4.90390569 10.5355353,4.17978308 C9.3804197,3.39746962 8.09695792,3.00617693 6.68514997,3.00617693 C5.27334201,3.00617693 3.98362607,3.39746962 2.81708984,4.17978308 C1.73185764,4.90390569 0.926702912,5.84393268 0.401897566,6.99986404 C0.926702912,8.15606732 1.73185764,9.10180462 2.81708984,9.83761979 C3.98362607,10.6085126 5.27334201,10.9938231 6.68514997,10.9938231 C8.09695792,10.9938231 9.3804197,10.6085126 10.5355353,9.83761979 C11.6324601,9.10180462 12.4430532,8.15606732 12.9684024,6.99986404 M6.68514997,10.55 C8.64576083,10.55 10.23515,8.96061086 10.23515,7 C10.23515,5.03938914 8.64576083,3.45 6.68514997,3.45 C4.7245391,3.45 3.13514997,5.03938914 3.13514997,7 C3.13514997,8.96061086 4.7245391,10.55 6.68514997,10.55 Z M14.5610098,7.00019034 C14.5610098,3.54816761 17.4090985,0.700078911 21.119989,0.700078911 C24.4858131,0.700078911 26.2119604,3.11663078 26.2119604,3.11663078 L24.4858131,4.84250619 C24.4858131,4.84250619 23.2776731,3.11663078 21.119989,3.11663078 C18.9625768,3.11663078 17.2364294,4.84250619 17.2364294,7.00019034 C17.2364294,9.1578745 18.9625768,10.8837499 21.119989,10.8837499 C23.3638717,10.8837499 24.5720117,9.1578745 24.5720117,9.1578745 L26.298159,10.8837499 C26.298159,10.8837499 24.5720117,13.3003018 21.119989,13.3003018 C17.4090985,13.3003018 14.5610098,10.4522131 14.5610098,7.00019034 M27.2647526,0.95900101 L32.3567241,0.95900101 C34.773004,0.95900101 36.2402836,2.42628062 36.2402836,4.15215603 C36.2402836,6.05097247 34.6006068,6.65490649 34.6006068,6.65490649 C34.6006068,6.65490649 36.8442177,7.25911244 36.8442177,9.5891938 C36.8442177,11.4880102 35.2910114,13.0414884 32.7017904,13.0414884 L27.2647526,13.0414884 L27.2647526,0.95900101 Z M32.1840006,5.61935406 C33.0470742,5.61935406 33.5648097,5.10161863 33.5648097,4.41121408 C33.5648097,3.72080954 33.0470742,3.20280219 32.1840006,3.20280219 L29.8539192,3.20280219 L29.8539192,5.61935406 L32.1840006,5.61935406 Z M32.52923,10.7975241 C33.5649728,10.7975241 34.1689068,10.1933182 34.1689068,9.3302445 C34.1689068,8.46744276 33.5649728,7.86323681 32.52923,7.86323681 L29.8538104,7.86323681 L29.8538104,10.7975241 L32.52923,10.7975241 Z M37.1547773,11.4016213 L38.8809247,9.67547397 C38.8809247,9.67547397 39.9163955,10.9700845 41.7287414,10.9700845 C43.1095505,10.9700845 43.7137565,10.3658785 43.7137565,9.58927537 C43.7137565,7.51806173 37.6725128,8.46733399 37.6725128,4.2384362 C37.6725128,2.33989168 39.3124615,0.700214871 42.0740797,0.700214871 C44.7494993,0.700214871 46.1303084,2.33989168 46.1303084,2.33989168 L44.404161,4.06576708 C44.404161,4.06576708 43.5410874,3.03029622 42.1602783,3.03029622 C40.8656678,3.03029622 40.3479323,3.54803165 40.3479323,4.2384362 C40.3479323,6.30964984 46.3891761,5.36037758 46.3891761,9.58927537 C46.3891761,11.5742904 44.6630287,13.3001658 41.815212,13.3001658 C38.7082555,13.3001658 37.1547773,11.4016213 37.1547773,11.4016213 M50.7038918,0.95900101 L53.0339731,0.95900101 L58.9025477,8.46725242 L58.9025477,0.95900101 L61.4917687,0.95900101 L61.4917687,13.0414884 L59.1616874,13.0414884 L53.2928408,5.53296512 L53.2928408,13.0414884 L50.7038918,13.0414884 L50.7038918,0.95900101 Z M63.2523139,0.95900101 L72.2278449,0.95900101 L72.2278449,3.37555288 L65.841263,3.37555288 L65.841263,5.70563423 L70.8470358,5.70563423 L70.8470358,8.03571559 L65.841263,8.03571559 L65.841263,10.6249366 L72.400514,10.6249366 L72.400514,13.0414884 L63.2523139,13.0414884 L63.2523139,0.95900101 Z M73.0045296,0.95900101 L75.6799492,0.95900101 L78.1826997,9.07145837 L78.2688983,9.07145837 L80.7716488,0.95900101 L83.1882006,0.95900101 L85.6909511,9.07145837 L85.7774216,9.07145837 L88.2801721,0.95900101 L90.9555917,0.95900101 L86.9855616,13.0414884 L84.4828111,13.0414884 L82.0317254,5.1878988 L81.928124,5.1878988 L79.4773102,13.0414884 L76.9745597,13.0414884 L73.0045296,0.95900101 Z M90.7656013,11.4016213 L92.4917486,9.67547397 C92.4917486,9.67547397 93.5272195,10.9700845 95.3395654,10.9700845 C96.7203745,10.9700845 97.3245804,10.3658785 97.3245804,9.58927537 C97.3245804,7.51806173 91.2833367,8.46733399 91.2833367,4.2384362 C91.2833367,2.33989168 92.9232854,0.700214871 95.6849036,0.700214871 C98.3603232,0.700214871 99.7411323,2.33989168 99.7411323,2.33989168 L98.014985,4.06576708 C98.014985,4.06576708 97.1519113,3.03029622 95.7711022,3.03029622 C94.4764917,3.03029622 93.9587563,3.54803165 93.9587563,4.2384362 C93.9587563,6.30964984 100,5.36037758 100,9.58927537 C100,11.5742904 98.2738527,13.3001658 95.4260359,13.3001658 C92.3190795,13.3001658 90.7656013,11.4016213 90.7656013,11.4016213"/>
+		</symbol>
+	</svg>
+
+
+
+
+
+
+
+
+	<header>
+		<svg><use xlink:href="#logo"></use></svg>
+		<h1>Video Push Alerts on CBSN</h1>
+		<ul>
+			<li><strong>On tvOS:</strong> January 29, 2020</li>
+			<li><strong>On Roku:</strong> October 19, 2020</li>
+		</ul>
+		<video controls poster="video/ott-pushalerts-poster.jpg">
+			<source src="video/ott-pushalerts.mp4" type="video/mp4">
+		</video>
+	</header>
+
+
+
+
+
+
+
+	<main>
+		<p>CBSN, the 24/7 free streaming news service, launched a new, interactive product feature in 2020 that enables viewers to instantly switch among multiple live news streams for breaking coverage. The feature, called Video Push Alerts, offers immediate access to breaking coverage within CBSN's entire network of 13 national and local live streams, plus the CBS Sports HQ and ET Live streaming services.</p>
+		<p>The interactive graphics are produced by the CBSN editorial team and appear in the upper right corner of the screen. If interested in the live coverage featured in the alert, viewers can simply click the graphic and instantly join coverage of the story in progress. CBSN was one of the first news streaming services to launch an in-stream, interactive alert feature of this kind.</p>
+		<p>Video Push Alerts make it easy for CBSN viewers to stay on top of multiple breaking stories at once. This functionality is a practical use of digital technology to showcase the depth of CBSN's editorial coverage and to provide even better service to viewers across the national livestream, which originally launched in November 2014 and delivered a record one billion streams in 2020, and the network of 10 CBSN Local services across the country, which initially began rolling out with CBSN New York in December 2018.</p>
+		<p>CBSN first launched Video Push Alerts on Apple TV in January 2020, and utilized them to notify viewers when governors from multiple states gave daily briefings, often at the same time, to communicate vital public information in the early months of the COVID-19 pandemic.</p>
+		<p>CBSN expanded the availability of Video Push Alerts to Roku in October 2020 ahead of the presidential election. The live alerts played a crucial role in CBSN's election day coverage, allowing audiences to seamlessly toggle between national coverage and the CBSN Local services delivering the latest reporting and updates from major markets around the country, including results in critical down ballot races.</p>
+		<p>CBSN sent out 29 Video Push Alerts on election day and 82 alerts for the week of November 2 - November 8. They have driven strong engagement in CBSN since launch: in the fourth quarter of 2020, users who interacted with Video Push Alerts spent 3.5X more time in CBSN compared to average viewers, and 53% of Video Push Alert users returned within 1 day.</p>
+	</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News OTT VPA Animations</title>
+
+	<link rel="stylesheet" href="css/toast-animations.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/smartquotes.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+	<!-- <div id="guides"></div> -->
+
+
+
+
+
+	<div id="specs">
+		<h1>Prototype Notes</h1>
+		<p>This prototype demonstrates only:</p>
+		<ul>
+			<li>animation of new alert appearing</li>
+			<li>animation of expired alert disappearing</li>
+		</ul>
+		<p>This prototype is not interactive. Refresh the page to replay the animation.</p>
+	</div>
+
+
+
+
+
+	<div id="vpa-panel">
+
+
+
+
+
+			<div class="card" id="card1">
+				<div class="cardBody">
+					<div class="videoWrapper">
+						<div class="videoOverlay">
+							<div class="metadataWrapper">
+								<ul class="metadata">
+									<li class="live">impeachment update</li>
+								</ul>
+							</div>
+						</div>
+						 <video loop muted autoplay poster="../video/moneywatch.jpg">
+							 <source src="../video/moneywatch.mp4" type="video/mp4">
+						 </video>
+					</div>
+					<div class="headlineWrapper">
+						<h1>International condemnation as White House abandons Kurdish allies</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="card" id="card2">
+				<div class="cardBody">
+					<div class="videoWrapper">
+						<div class="videoOverlay">
+							<div class="metadataWrapper">
+								<ul class="metadata">
+									<li class="live">breaking</li>
+								</ul>
+							</div>
+						</div>
+						 <video loop muted autoplay poster="../video/helicopter-rescue.jpg">
+							 <source src="../video/helicopter-rescue.mp4" type="video/mp4">
+						 </video>
+					</div>
+					<div class="headlineWrapper">
+						<h1>Over one dozen aftershocks hit southern California</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="card" id="card3">
+				<div class="cardBody">
+					<div class="videoWrapper">
+						<div class="videoOverlay">
+							<div class="metadataWrapper">
+								<ul class="metadata">
+									<li class="live">happening soon</li>
+								</ul>
+							</div>
+						</div>
+						 <video loop muted autoplay poster="../video/cbsn-dorian-480p.jpg">
+							 <source src="../video/cbsn-dorian-480p.mp4" type="video/mp4">
+						 </video>
+					</div>
+					<div class="headlineWrapper">
+						<h1>NOAA spokesperson to address Trump's inaccurate Dorian assertions</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="card" id="card4">
+				<div class="cardBody">
+					<button>close alerts</button>
+				</div>
+			</div>
+
+
+
+
+
+			<div id="coachmark">
+				swipe <img src="../img/coach-tvos-left@2x.png" alt=""> for alerts
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<!-- BACKGROUND VIDEO -->
+
+<div class="fullscreen-bg">
+	<video loop muted autoplay poster="../video/cbsn-texas-shooting-720p.jpg"> <!-- autoplay -->
+		<source src="../video/cbsn-texas-shooting-720p.mp4" type="video/mp4">
+	</video>
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+	/* PANEL */
+
+	function panelOpen() {
+		// OLD CARDS
+		$( '#card4' ).delay(05).animate({ top: '550px' }, { duration: 350 });
+		$( '#card3' ).delay(35).animate({ top: '385px' }, { duration: 350 });
+		$( '#card2' ).delay(65).animate({ top: '220px' }, { duration: 350 });
+		// NEW CARD (addclass won't work, and can't use animate with transform)
+		setTimeout( function() {
+			$( '#card1' ).css({
+				opacity: 1,
+				transform: 'scale(1)'
+			});
+		}, 300);
+		// REMOVE CARD
+		setTimeout( function() {
+			$( '#card3' ).css({
+				transition: 'all .2s ease-in-out'
+			});
+			$( '#card3' ).css({
+				opacity: 0,
+				transform: 'scale(0.8)'
+			});
+			$( '#card4' ).delay(25).animate({ top: '385px' }, { duration: 350 });
+		}, 3000);
+	}
+
+
+
+
+
+	/* ON LOAD */
+
+	$(document).ready(function() {
+
+		/* SMART QUOTES */
+		smartquotes();
+
+		// FOCUS
+		$( '#card2' ).addClass( 'cardFocus' );
+
+		/* PANEL */
+		setTimeout( function() {
+			panelOpen();
+		}, 4000);
+
+	});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

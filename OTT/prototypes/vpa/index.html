@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News OTT VPA Panel</title>
+
+	<link rel="stylesheet" href="css/vpa.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/smartquotes.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+<!-- SVG: METADATA ICON -->
+
+<svg style="display:none;">
+	<symbol id="icon-meta" viewBox="0 0 100 100">
+		<polygon fill-rule="evenodd" points="10 0 10 100 90 50"/>
+	</symbol>
+</svg>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+	<div id="vpa-panel">
+
+
+
+
+
+		<ul id="clock">
+			<li id="date">date</li>
+			<li id="time">time</li>
+		</ul>
+
+
+
+
+
+
+
+		<div id="now-watching">
+
+			<div class="card" id="card1">
+				<ul class="metadata">
+					<li>Aug 12, 2019 <svg><use xlink:href="#icon-meta"></use></svg>8:54</li>
+					<li><img src="../now-playing/img/now-playing-2s.gif" width="20" height="20"></li>
+				</ul>
+				<h2>DNI Dan Coats to resign over WH suppression of Russia warnings</h2>
+				<button>continue watching</button>
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="alerts">
+
+			<h1>Alerts</h1>
+
+			<div class="card" id="card2">
+				<div class="videoWrapper">
+					<div class="videoOverlay">
+						<div class="metadataWrapper">
+							<ul class="metadata">
+								<li class="live"><div></div>live</li>
+								<li class="channel">CBSN Los Angeles</li>
+								<li><img src="../now-playing/img/now-playing-2s.gif" width="20" height="20"></li>
+							</ul>
+						</div>
+					</div>
+				    <video loop muted autoplay poster="../video/helicopter-rescue.jpg">
+				        <source src="../video/helicopter-rescue.mp4" type="video/mp4">
+				    </video>
+				</div>
+				<h2>Over one dozen aftershocks hit Ridgecrest, Southern California</h2>
+			</div>
+
+			<div class="card" id="card3">
+				<div class="videoWrapper">
+					<div class="videoOverlay">
+						<div class="metadataWrapper">
+							<ul class="metadata">
+								<li class="live"><div></div>live</li>
+								<li class="channel">ET Live</li>
+								<li><img src="../now-playing/img/now-playing-2s.gif" width="20" height="20"></li>
+							</ul>
+						</div>
+					</div>
+				    <video loop muted autoplay poster="../video/et-live.jpg">
+				        <source src="../video/et-live.mp4" type="video/mp4">
+				    </video>
+				</div>
+				<h2>Crowds gather along Nipsey Hussle L.A. funeral procession route</h2>
+			</div>
+
+			<div class="card" id="card4">
+				<div class="videoWrapper">
+					<div class="videoOverlay">
+						<div class="metadataWrapper">
+							<ul class="metadata">
+								<li class="live"><div></div>live</li>
+								<li class="channel">CBSN New York</li>
+								<li><img src="../now-playing/img/now-playing-2s.gif" width="20" height="20"></li>
+							</ul>
+						</div>
+					</div>
+				    <video loop muted autoplay poster="../video/moneywatch.jpg">
+				        <source src="../video/moneywatch.mp4" type="video/mp4">
+				    </video>
+				</div>
+				<h2>Rockland County bans unvaccinated children from public spaces</h2>
+			</div>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+</main>
+
+
+
+
+
+
+
+<!-- BACKGROUND VIDEO -->
+
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="../video/dan-coats.jpg"> <!-- autoplay -->
+        <source src="../video/dan-coats.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+	var whereAmI;
+	var panelState;
+
+
+
+
+
+	/* DATE */
+
+	n = new Date();
+	m = n.getMonth() + 1;
+	w = n.getDay() + 1;
+	d = n.getDate();
+	if (m == 1) {
+		month = "jan";
+	} else if (m == 2) {
+		month = "feb";
+	} else if (m == 3) {
+		month = "mar";
+	} else if (m == 4) {
+		month = "apr";
+	} else if (m == 5) {
+		month = "may";
+	} else if (m == 6) {
+		month = "jun";
+	} else if (m == 7) {
+		month = "jul";
+	} else if (m == 8) {
+		month = "aug";
+	} else if (m == 9) {
+		month = "sep";
+	} else if (m == 10) {
+		month = "oct";
+	} else if (m == 11) {
+		month = "nov";
+	} else if (m == 12) {
+		month = "dec";
+	}
+	if (w == 1) {
+		day = "sun";
+	} else if (w == 2) {
+		day = "mon";
+	} else if (w == 3) {
+		day = "tue";
+	} else if (w == 4) {
+		day = "wed";
+	} else if (w == 5) {
+		day = "thu";
+	} else if (w == 6) {
+		day = "fri";
+	} else if (w == 7) {
+		day = "sat";
+	}
+	document.getElementById("date").innerHTML = day + ", " + month + " " + d;
+
+
+
+
+
+
+
+
+
+	/* TIME */
+
+	function formatAMPM(date) {
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var ampm = hours >= 12 ? 'pm' : 'am';
+		hours = hours % 12;
+		hours = hours ? hours : 12; // the hour '0' should be '12'
+		minutes = minutes < 10 ? '0'+minutes : minutes;
+		var strTime = hours + ':' + minutes + ' ' + ampm;
+		return strTime;
+	}
+	function displayTime() {
+		currentTime = formatAMPM(new Date);
+		document.getElementById("time").innerHTML = currentTime;
+	}
+	setInterval(displayTime, 1000);
+
+
+
+
+
+
+
+
+
+
+
+	/* PANEL */
+
+	function panelOpen() {
+		// RESET EVERYTHING
+		card1focus();
+		card2defocus();
+		card3defocus();
+		card4defocus();
+		$( '#clock' ).removeClass( 'clockLock' );
+		$( '#now-watching,#alerts' ).css({ top: '0' });
+		// OPEN PANEL
+		$( '#vpa-panel' ).animate({ left: '1388px' }, 600);
+		panelState = 'open';
+	}
+	function panelClose() {
+		$( '#vpa-panel' ).animate({ left: '1920px' }, 600);
+		panelState = 'closed';
+	}
+
+
+
+	/* CARDS */
+
+	function card1focus() {
+		$( '#card1' ).addClass( 'cardFocus' );
+		$( '#card1 .metadata li:last-child' ).show();
+		whereAmI = 'card1';
+	}
+	function card1defocus() {
+		$( '#card1' ).removeClass( 'cardFocus' );
+		$( '#card1 .metadata li:last-child' ).hide();
+	}
+	function card2focus() {
+		$( '#card2' ).addClass( 'cardFocus' );
+		$( '#card2 .metadata li:last-child' ).show();
+		whereAmI = 'card2';
+	}
+	function card2defocus() {
+		$( '#card2' ).removeClass( 'cardFocus' );
+		$( '#card2 .metadata li:last-child' ).hide();
+	}
+	function card3focus() {
+		$( '#card3' ).addClass( 'cardFocus' );
+		$( '#card3 .metadata li:last-child' ).show();
+		whereAmI = 'card3';
+	}
+	function card3defocus() {
+		$( '#card3' ).removeClass( 'cardFocus' );
+		$( '#card3 .metadata li:last-child' ).hide();
+	}
+	function card4focus() {
+		$( '#card4' ).addClass( 'cardFocus' );
+		$( '#card4 .metadata li:last-child' ).show();
+		whereAmI = 'card4';
+	}
+	function card4defocus() {
+		$( '#card4' ).removeClass( 'cardFocus' );
+		$( '#card4 .metadata li:last-child' ).hide();
+	}
+
+
+
+
+
+
+
+
+
+
+
+	/* KEYBOARD INTERACTION */
+
+	$(document).keydown(function(event) {
+		if ( event.keyCode == 37 ) {		// left arrow key
+			console.log('%cleft', 'color: white; background: salmon; padding: 5px;');
+			if (panelState == 'closed') {
+				panelOpen();
+			}
+		} else if ( event.keyCode == 39 ) {	// right arrow key
+			console.log('%cright', 'color: white; background: salmon; padding: 5px;');
+			if (panelState == 'open') {
+				panelClose();
+			}
+		} else if ( event.keyCode == 40 ) {	// down arrow key
+			console.log('%cdown', 'color: white; background: salmon; padding: 5px;');
+			if (whereAmI == 'card1') {
+				card1defocus();
+				card2focus();
+			} else if (whereAmI == 'card2') {
+				card2defocus();
+				card3focus();
+			} else if (whereAmI == 'card3') {
+				card3defocus();
+				card4focus();
+				$( '#clock' ).addClass( 'clockLock' );
+				$( '#now-watching,#alerts' ).animate({ top: '-295px' }, 300);
+			}
+		} else if ( event.keyCode == 38 ) {	// up arrow key
+			console.log('%cup', 'color: white; background: salmon; padding: 5px;');
+			if (whereAmI == 'card2') {
+				card1focus();
+				card2defocus();
+				setTimeout(function() {
+					$( '#clock' ).removeClass( 'clockLock' );
+				}, 150);
+				$( '#now-watching,#alerts' ).animate({ top: '0' }, 300);
+			} else if (whereAmI == 'card3') {
+				card2focus();
+				card3defocus();
+			} else if (whereAmI == 'card4') {
+				card3focus();
+				card4defocus();
+			}
+		} else if ( event.keyCode == 13 ) {	// enter key
+			console.log('%center', 'color: white; background: salmon; padding: 5px;');
+			if (whereAmI == 'card1') {
+				panelClose();
+			} else {
+				// do nothing
+			}
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
+	/* ON LOAD */
+
+	$(document).ready(function() {
+
+		/* SMART QUOTES */
+		smartquotes();
+
+		/* POSITION PANEL OFFSCREEN */
+		$( '#vpa-panel' ).css({
+			'left': '1920px'
+		});
+		panelState = 'closed';
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

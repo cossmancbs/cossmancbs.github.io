@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News OTT VPA Toast (vertical)</title>
+
+	<link rel="stylesheet" href="css/toast-vertical.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/smartquotes.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+	<!-- <div id="guides"></div> -->
+
+
+
+
+
+	<div id="vpa-panel">
+
+
+
+
+
+			<div class="card" id="card1">
+				<div class="cardBody">
+					<div class="videoWrapper">
+						<div class="videoOverlay">
+							<div class="metadataWrapper">
+								<ul class="metadata">
+									<li class="live">breaking</li>
+								</ul>
+							</div>
+						</div>
+					    <video loop muted autoplay poster="../video/helicopter-rescue.jpg">
+					        <source src="../video/helicopter-rescue.mp4" type="video/mp4">
+					    </video>
+					</div>
+					<div class="headlineWrapper">
+						<h1>Over one dozen aftershocks hit southern California</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="card" id="card2">
+				<div class="cardBody">
+					<div class="videoWrapper">
+						<div class="videoOverlay">
+							<div class="metadataWrapper">
+								<ul class="metadata">
+									<li class="live">happening soon</li>
+								</ul>
+							</div>
+						</div>
+					    <video loop muted autoplay poster="../video/cbsn-dorian-480p.jpg">
+					        <source src="../video/cbsn-dorian-480p.mp4" type="video/mp4">
+					    </video>
+					</div>
+					<div class="headlineWrapper">
+						<h1>NOAA spokesperson to address Trump's inaccurate Dorian assertions</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="card" id="card3">
+				<div class="cardBody">
+					<button>close alerts</button>
+				</div>
+			</div>
+
+
+
+
+
+			<div id="coachmark">
+				swipe <img src="../img/coach-tvos-up@2x.png" alt="up"> for alerts
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<!-- BACKGROUND VIDEO -->
+
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="../video/cbsn-texas-shooting-720p.jpg"> <!-- autoplay -->
+        <source src="../video/cbsn-texas-shooting-720p.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+	/* VARIABLES */
+
+	var whereAmI;
+	var panelState;
+
+
+
+
+
+	/* PANEL */
+
+	function panelOpen() {
+		// ANIMATE CARDS IN
+		$( '#card1' ).addClass( 'cardIn' );
+		setTimeout( function() {
+			$( '#card2' ).addClass( 'cardIn' );
+			card1focus();
+		}, 80);
+		setTimeout( function() {
+			$( '#card3' ).addClass( 'cardIn' );
+		}, 160);
+		// COACHMARK
+		$( '#coachmark' ).css({ opacity: 0 });
+		//
+		panelState = 'open';
+	}
+	function panelClose() {
+		// RESET EVERYTHING
+		card1defocus();
+		card2defocus();
+		card3defocus();
+		// ANIMATE CARDS OUT
+		$( '#card3' ).removeClass( 'cardIn' );
+		setTimeout( function() {
+			$( '#card2' ).removeClass( 'cardIn' );
+		}, 80);
+		setTimeout( function() {
+			$( '#card1' ).removeClass( 'cardIn' );
+		}, 160);
+		// COACHMARK
+		setTimeout( function() {
+			$( '#coachmark' ).css({ opacity: 1 });
+		}, 400);
+		setTimeout( function() {
+			$( '#coachmark' ).css({ opacity: 0 });
+		}, 3000);
+		//
+		panelState = 'closed';
+	}
+
+
+
+
+
+	/* CARDS */
+
+	function card1focus() {
+		$( '#card1' ).addClass( 'cardFocus' );
+		whereAmI = 'card1';
+	}
+	function card1defocus() {
+		$( '#card1' ).removeClass( 'cardFocus' );
+	}
+	function card2focus() {
+		$( '#card2' ).addClass( 'cardFocus' );
+		whereAmI = 'card2';
+	}
+	function card2defocus() {
+		$( '#card2' ).removeClass( 'cardFocus' );
+	}
+	function card3focus() {
+		$( '#card3' ).addClass( 'cardFocus' );
+		whereAmI = 'card3';
+	}
+	function card3defocus() {
+		$( '#card3' ).removeClass( 'cardFocus' );
+	}
+
+
+
+
+
+	$(document).keydown(function(event) {
+		if ( event.keyCode == 40 ) {	// down arrow key
+			if (panelState == 'closed') {
+				// do nothing
+			} else if (panelState == 'open') {
+				if (whereAmI == 'card1') {
+					// go to card2
+					card1defocus();
+					card2focus();
+				} else if (whereAmI == 'card2') {
+					// go to card3
+					card2defocus();
+					card3focus();
+				} else if (whereAmI == 'card3') {
+					// do nothing
+				}
+			}
+		} else if ( event.keyCode == 38 ) {	// up arrow key
+			if (panelState == 'closed') {
+				panelOpen();
+			} else if (panelState == 'open') {
+				if (whereAmI == 'card1') {
+					// do nothing
+				} else if (whereAmI == 'card2') {
+					// go to card1
+					card1focus();
+					card2defocus();
+				} else if (whereAmI == 'card3') {
+					// go to card2
+					card2focus();
+					card3defocus();
+				}
+			}
+		} else if ( event.keyCode == 13 ) {	// enter key
+			if (whereAmI == 'card3') {
+				panelClose();
+			}
+		}
+	});
+
+
+
+
+
+	/* ON LOAD */
+
+	$(document).ready(function() {
+
+		/* SMART QUOTES */
+		smartquotes();
+
+		/* PANEL */
+		panelState = 'closed';
+
+	});
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

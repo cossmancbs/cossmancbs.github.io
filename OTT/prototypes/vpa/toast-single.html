@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News OTT VPA (single)</title>
+
+	<link rel="stylesheet" href="css/toast-single.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/smartquotes.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+	<!-- <div id="guides"></div> -->
+
+
+
+
+
+	<div id="vpa-panel">
+
+
+
+
+
+
+
+
+
+
+
+			<div class="card" id="card1">
+				<div class="cardBody">
+					<div class="videoWrapper">
+						<div class="videoOverlay">
+							<div class="metadataWrapper">
+								<ul class="metadata">
+									<li class="live">breaking</li>
+								</ul>
+							</div>
+						</div>
+					    <video loop muted autoplay poster="../video/helicopter-rescue.jpg">
+					        <source src="../video/helicopter-rescue.mp4" type="video/mp4">
+					    </video>
+					</div>
+					<div class="headlineWrapper">
+						<h1>Over one dozen aftershocks hit southern California</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+			<div class="card" id="card2">
+				<div class="cardBody">
+					<button>close alerts</button>
+				</div>
+			</div>
+
+
+
+
+
+			<div id="coachmark">
+				swipe <img src="../img/coach-tvos-left@2x.png" alt=""> for alerts
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<!-- BACKGROUND VIDEO -->
+
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="../video/dan-coats.jpg"> <!-- autoplay -->
+        <source src="../video/dan-coats.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+	var whereAmI;
+	var panelState;
+
+
+
+
+
+
+	/* PANEL */
+
+	function panelOpen() {
+		// ANIMATE CARDS IN
+		$( '#card1' ).addClass( 'cardIn' );
+		setTimeout( function() {
+			$( '#card2' ).addClass( 'cardIn' );
+			card1focus();
+		}, 80);
+		// COACHMARK
+		//$( '#coach' ).removeClass( 'coachFocus' );
+		//$( '#coachmark' ).fadeOut();
+		$( '#coachmark' ).css({ opacity: 0 });
+		//
+		panelState = 'open';
+	}
+	function panelClose() {
+		// RESET EVERYTHING
+		card1defocus();
+		card2defocus();
+		// ANIMATE CARDS OUT
+		setTimeout( function() {
+			$( '#card2' ).removeClass( 'cardIn' );
+		}, 80);
+		setTimeout( function() {
+			$( '#card1' ).removeClass( 'cardIn' );
+		}, 160);
+		// COACHMARK
+		// BELOW DOESN'T WORK ARRRRGH
+		//$( '#coach' ).addClass( 'coachFocus' );
+		setTimeout( function() {
+			$( '#coachmark' ).css({ opacity: 1 });
+			//$( '#coachmark' ).fadeIn();
+		}, 400);
+		setTimeout( function() {
+			$( '#coachmark' ).css({ opacity: 0 });
+		}, 2000);
+		//
+		panelState = 'closed';
+	}
+
+
+
+	/* CARDS */
+
+	function card1focus() {
+		$( '#card1' ).addClass( 'cardFocus' );
+		whereAmI = 'card1';
+	}
+	function card1defocus() {
+		$( '#card1' ).removeClass( 'cardFocus' );
+	}
+	function card2focus() {
+		$( '#card2' ).addClass( 'buttonFocus' );
+		whereAmI = 'card2';
+	}
+	function card2defocus() {
+		$( '#card2' ).removeClass( 'buttonFocus' );
+	}
+
+
+
+
+
+
+
+
+
+
+
+	/* KEYBOARD INTERACTION */
+
+	$(document).keydown(function(event) {
+		if ( event.keyCode == 37 ) {		// left arrow key
+			if (panelState == 'closed') {
+				panelOpen();
+			}
+		} else if ( event.keyCode == 39 ) {	// right arrow key
+			if (panelState == 'open') {
+				panelClose();
+			}
+		} else if ( event.keyCode == 40 ) {	// down arrow key
+			if (whereAmI == 'card1') {
+				card1defocus();
+				card2focus();
+			} else if (whereAmI == 'card2') {
+				// do nothing
+			}
+		} else if ( event.keyCode == 38 ) {	// up arrow key
+			if (whereAmI == 'card2') {
+				card1focus();
+				card2defocus();
+			}
+		} else if ( event.keyCode == 13 ) {	// enter key
+			if (whereAmI == 'card2') {
+				panelClose();
+			} else {
+				// do nothing
+			}
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
+	/* ON LOAD */
+
+	$(document).ready(function() {
+
+		/* SMART QUOTES */
+		smartquotes();
+
+		panelState = 'closed';
+
+		// $( '#coachmark' ).addClass( 'coachFocus' );
+		//$( '#coachmark' ).hide();
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

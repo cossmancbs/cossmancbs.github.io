@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News OTT CBSN2</title>
+
+	<link rel="stylesheet" href="css/cbsn2.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/smartquotes.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+<!-- SVG: METADATA ICON -->
+
+<svg style="display:none;">
+	<symbol id="icon-meta" viewBox="0 0 100 100">
+		<polygon fill-rule="evenodd" points="10 0 10 100 90 50"/>
+	</symbol>
+</svg>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+	<div id="vpa-panel">
+
+
+
+
+
+		<ul id="clock">
+			<li id="date">date</li>
+			<li id="time">time</li>
+		</ul>
+
+
+
+
+
+
+
+		<div id="now-watching">
+
+			<div class="card" id="card1">
+				<ul class="metadata">
+					<li class="live"><div></div>live</li>
+					<li class="channel">CBSN</li>
+					<li><img src="../now-playing/img/now-playing-2s.gif" width="20" height="20"></li>
+				</ul>
+				<h2>Texas loosens gun control laws one day after Odessa mass shooting</h2>
+				<button>continue watching</button>
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="alerts">
+
+			<h1>Alerts</h1>
+
+			<div class="card" id="card2">
+				<div class="videoWrapper">
+					<div class="videoOverlay">
+						<div class="metadataWrapper">
+							<ul class="metadata">
+								<li class="live"><div></div>live</li>
+								<li class="channel">CBSN2</li>
+								<li><img src="../now-playing/img/now-playing-2s.gif" width="20" height="20"></li>
+							</ul>
+						</div>
+					</div>
+				    <video loop muted autoplay poster="">
+				        <source src="" type="video/mp4">
+				    </video>
+				</div>
+				<h2>Dorian projected to worsen to Category 4 hurricane by landfall</h2>
+			</div>
+
+
+
+
+
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+</main>
+
+
+
+
+
+
+
+<!-- BACKGROUND VIDEO -->
+<!-- autoplay -->
+
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="">
+        <source src="" type="video/mp4">
+    </video>
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+	var whereAmI;
+	var panelState;
+
+	var posterFile = [
+		'../video/cbsn-texas-shooting-720p.jpg',
+		'../video/cbsn-dorian-480p.jpg'
+	];
+
+	var videoFile = [
+		'../video/cbsn-texas-shooting-720p.mp4',
+		'../video/cbsn-dorian-480p.mp4'
+	];
+
+
+
+
+
+	/* DATE */
+
+	n = new Date();
+	m = n.getMonth() + 1;
+	w = n.getDay() + 1;
+	d = n.getDate();
+	if (m == 1) {
+		month = 'jan';
+	} else if (m == 2) {
+		month = 'feb';
+	} else if (m == 3) {
+		month = 'mar';
+	} else if (m == 4) {
+		month = 'apr';
+	} else if (m == 5) {
+		month = 'may';
+	} else if (m == 6) {
+		month = 'jun';
+	} else if (m == 7) {
+		month = 'jul';
+	} else if (m == 8) {
+		month = 'aug';
+	} else if (m == 9) {
+		month = 'sep';
+	} else if (m == 10) {
+		month = 'oct';
+	} else if (m == 11) {
+		month = 'nov';
+	} else if (m == 12) {
+		month = 'dec';
+	}
+	if (w == 1) {
+		day = 'sun';
+	} else if (w == 2) {
+		day = 'mon';
+	} else if (w == 3) {
+		day = 'tue';
+	} else if (w == 4) {
+		day = 'wed';
+	} else if (w == 5) {
+		day = 'thu';
+	} else if (w == 6) {
+		day = 'fri';
+	} else if (w == 7) {
+		day = 'sat';
+	}
+	document.getElementById('date').innerHTML = day + ', ' + month + ' ' + d;
+
+
+
+
+
+
+
+
+
+	/* TIME */
+
+	function formatAMPM(date) {
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var ampm = hours >= 12 ? 'pm' : 'am';
+		hours = hours % 12;
+		hours = hours ? hours : 12; // the hour '0' should be '12'
+		minutes = minutes < 10 ? '0'+minutes : minutes;
+		var strTime = hours + ':' + minutes + ' ' + ampm;
+		return strTime;
+	}
+	function displayTime() {
+		currentTime = formatAMPM(new Date);
+		document.getElementById('time').innerHTML = currentTime;
+	}
+	setInterval(displayTime, 1000);
+
+
+
+
+
+
+
+
+
+
+
+	/* PANEL */
+
+	function panelOpen() {
+		// RESET EVERYTHING
+		card1defocus();
+		card2focus();
+		$( '#card1 .metadata li:last-child' ).show();
+		// OPEN PANEL
+		$( '#vpa-panel' ).animate({ left: '1388px' }, 600);
+		panelState = 'open';
+	}
+	function panelClose() {
+		$( '#vpa-panel' ).animate({ left: '1920px' }, 600);
+		panelState = 'closed';
+	}
+
+
+
+	/* CARDS */
+
+	function card1focus() {
+		$( '#card1' ).addClass( 'cardFocus' );
+		$( '#card1 .metadata li:last-child' ).css({ opacity: '1.0' });
+		whereAmI = 'card1';
+	}
+	function card1defocus() {
+		$( '#card1' ).removeClass( 'cardFocus' );
+		$( '#card1 .metadata li:last-child' ).css({ opacity: '0.7' });
+	}
+	function card2focus() {
+		$( '#card2' ).addClass( 'cardFocus' );
+		whereAmI = 'card2';
+	}
+	function card2defocus() {
+		$( '#card2' ).removeClass( 'cardFocus' );
+	}
+
+
+
+
+
+
+
+
+
+
+
+	/* KEYBOARD INTERACTION */
+
+	$(document).keydown(function(event) {
+		if ( event.keyCode == 37 ) {		// left arrow key
+			if (panelState == 'closed') {
+				panelOpen();
+			}
+		} else if ( event.keyCode == 39 ) {	// right arrow key
+			if (panelState == 'open') {
+				panelClose();
+			}
+		} else if ( event.keyCode == 40 ) {	// down arrow key
+			if (whereAmI == 'card1') {
+				card1defocus();
+				card2focus();
+			}
+		} else if ( event.keyCode == 38 ) {	// up arrow key
+			if (whereAmI == 'card2') {
+				card1focus();
+				card2defocus();
+			}
+		} else if ( event.keyCode == 13 ) {	// enter key
+			if (whereAmI == 'card1') {
+				/*
+				$('.fullscreen-bg video').attr('poster', posterFile[0]);
+				$('.fullscreen-bg video source').attr('src', videoFile[0]);
+				$('.fullscreen-bg video')[0].load();
+				*/
+				panelClose();
+			} else if (whereAmI == 'card2') {
+				/*
+				$('.fullscreen-bg video').attr('poster', posterFile[1]);
+				$('.fullscreen-bg video source').attr('src', videoFile[1]);
+				$('.fullscreen-bg video')[0].load();
+				panelClose();
+				*/
+			}
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
+	/* ON LOAD */
+
+	$(document).ready(function() {
+
+		$('.fullscreen-bg video').attr('poster', posterFile[0]);
+		$('.fullscreen-bg video source').attr('src', videoFile[0]);
+		$('.fullscreen-bg video')[0].load();
+
+		$('#card2 video').attr('poster', posterFile[1]);
+		$('#card2 video source').attr('src', videoFile[1]);
+		$('#card2 video')[0].load();
+
+		/* SMART QUOTES */
+		smartquotes();
+
+		/* POSITION PANEL OFFSCREEN */
+		$( '#vpa-panel' ).css({
+			'left': '1920px'
+		});
+		panelState = 'closed';
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
