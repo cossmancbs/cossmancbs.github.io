@@ -15,16 +15,21 @@
 
 
 
-<h1>CBS News Grid Exploration: responsive (<a href="https://cossmancbs.github.io/OTT/prototypes/now-playing/web/grid/exploration.html">Github</a>, <a href="https://codepen.io/cossmancbs/pen/NWEzLdM">CodePen</a>) | static (<a href="https://www.figma.com/file/jHZuTwkJZgyk5L9eGTFK7W/Web-Door-%26-Article?type=design&node-id=910%3A6175&mode=design&t=TBqhtaqWSbbqnG7a-1">Figma</a>)</h1>
+	<h1>CBS News Grid Exploration</h1>
+	<p><a href="https://cossmancbs.github.io/web/grid/exploration.html">Github</a>, <a href="https://codepen.io/cossmancbs/pen/NWEzLdM">CodePen</a>, <a href="https://www.figma.com/file/jHZuTwkJZgyk5L9eGTFK7W/Web-Door-%26-Article?type=design&node-id=910%3A6175&mode=design&t=TBqhtaqWSbbqnG7a-1">Figma</a></p>
+
+
+
+	<hr>
 
 
 
 	<section class="grid-i">
 
-		<h2>Flexible Grid + Fixed-Width Sticky Rail</h2>
+		<h2>Flexible Grid + Fixed-Width Rail</h2>
 
 		<ul class="outer">
-			<li class="rail">video</li>
+			<li class="rail"><div class="video">video (below 768: stacked; above 768: sticky in fixed-width right rail)</div></li>
 			<li>
 				<ul class="inner">
 					<li>1</li>
@@ -45,11 +50,50 @@
 
 	</section>
 
+
+
+	<hr>
+
+
+
+	<section class="grid-iii">
+
+		<h2>Fixed-Width Rail + Flexible Grid + Fixed-Width Rail</h2>
+
+		<ul class="outer">
+			<li class="rail-right"><div class="video">video (below 768: stacked; above 768: sticky in fixed-width right rail)</div></li>
+			<li>
+				<ul class="inner">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+					<li>10</li>
+					<li>11</li>
+					<li>12</li>
+				</ul>
+			</li>
+			<li class="rail-left">left rail (below 1024: stacked; above 1024: fixed-width left rail)</li>
+		</ul>
+
+	</section>
+
+
+
+	<hr>
+
+
+
 	<section class="grid-ii">
 
 		<h2>Flexible Grid, no rail(s)</h2>
 
-		<ul class="outer">
+		<ul>
 			<li>1</li>
 			<li>2</li>
 			<li>3</li>
@@ -65,6 +109,7 @@
 		</ul>
 
 	</section>
+
 
 
 
