@@ -1,0 +1,214 @@
+/*
+/
+/	RESET
+/
+*/
+
+body, section, ul, li, h1, h2 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+body {
+	background-color: white;
+	color: black;
+}
+h1, h2 {
+	font-family: sans-serif;
+	line-height: 1.05;
+}
+h1 {
+	margin: 24px;
+	font-size: 18px;
+}
+h2 {
+	margin: 0 0 24px 0;
+	font-size: 24px;
+}
+@media only screen and (min-width: 1024px) {
+	h1 {
+		margin: 32px;
+	}
+	h2 {
+		margin: 0 0 32px 0;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	GRID I
+/
+*/
+
+.grid-i {
+	margin: 24px;
+}
+.grid-i .outer {
+	display: grid;
+	grid-gap: 24px;
+}
+.grid-i .inner {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 24px;
+	align-items: stretch;
+}
+.grid-i .inner li {
+	background-color: rgba(118,188,237,.25);
+	height: 500px;
+}
+.grid-i .inner li:nth-child(n + 7) {
+	display: none;
+}
+.grid-i .rail {
+	background-color: rgba(118,188,237,1);
+	width: 100%;
+	aspect-ratio: 16 / 9;
+}
+
+@media only screen and (min-width: 768px) {
+	.grid-i .outer {
+		grid-template-columns: auto 300px;
+	}
+	.grid-i .rail {
+		order: 2;
+		width: 300px;
+		position: sticky;
+		top: 0;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.grid-i {
+		margin: 32px;
+	}
+	.grid-i .outer {
+		grid-gap: 32px;
+	}
+	.grid-i .inner {
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 32px;
+	}
+	.grid-i .inner li:nth-child(n + 7) {
+		display: list-item;
+	}
+}
+@media only screen and (min-width: 1540px) {
+	.grid-i {
+		margin: 32px auto;
+		width: 1476px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	GRID II
+/
+*/
+
+.grid-ii {
+	margin: 24px;
+}
+
+.grid-ii ul {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 24px;
+	align-items: stretch;
+}
+.grid-ii ul li {
+	background-color: rgba(118,188,237,.25);
+	height: 1500px;
+}
+.grid-ii ul li:nth-child(n + 7) {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) {
+	.grid-ii {
+		margin: 32px;
+		grid-gap: 32px;
+	}
+	.grid-ii ul {
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 32px;
+	}
+	.grid-ii ul li:nth-child(n + 7) {
+		display: list-item;
+	}
+}
+@media only screen and (min-width: 1540px) {
+	.grid-ii {
+		margin: 32px auto;
+		width: 1476px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
