@@ -1,0 +1,34 @@
+
+
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+body {
+	background-color: white;
+}
+
+
+
+
+
+
+
+nav {
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
+}
+
+
+
+
+
+
+
+
