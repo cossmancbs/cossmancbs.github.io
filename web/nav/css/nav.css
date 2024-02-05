@@ -69,6 +69,7 @@ nav {
 }
 #mainnav a,
 #subnav a {
+	display: block; /* ensure vertical spacing */
 	font-family: "ProximaNova-Bold", sans-serif;
 	font-size: 14px;
 	line-height: 1;
@@ -81,6 +82,8 @@ nav {
 #mainnav a:hover,
 #subnav a:hover {
 	text-decoration: underline;
+}
+.main-left li {
 }
 .livedot {
 	display: inline-block;
@@ -118,7 +121,6 @@ nav {
 		height: 24px;
 	}
 }
-
 
 @media only screen and (min-width: 1360px) {
 	#mainnav ul.main-outer {
