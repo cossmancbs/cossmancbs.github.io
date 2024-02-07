@@ -1,8 +1,6 @@
 
 
 
-
-
 /*
 /
 /	BASIC STYLES
@@ -17,7 +15,11 @@ body {
 
 
 
-
+/*
+/
+/	NAV
+/
+*/
 
 #include-nav {
 	position: -webkit-sticky;
@@ -29,6 +31,25 @@ body {
 
 
 
+
+/*
+/
+/	GRID VIEW
+/
+*/
+
+#include-grid-hero-list-video {
+	margin: 20px 0 0 0;
+}
+#include-grid-hero-list-video .hgroup {
+	display: none;
+}
+
+@media only screen and (min-width: 1020px) {
+	#include-grid-hero-list-video {
+		margin: 40px 0 0 0;
+	}
+}
 
 
 

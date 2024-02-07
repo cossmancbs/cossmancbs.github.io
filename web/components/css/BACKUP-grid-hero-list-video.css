@@ -40,8 +40,6 @@ body {
 
 
 
-
-
 /*
 /
 /	GRID
@@ -49,7 +47,7 @@ body {
 */
 
 section {
-	padding: 20px 0;
+	padding: 0 0 20px 0;
 	border-bottom: 1px solid rgb(var(--color-graylight));
 }
 .grid {
@@ -64,7 +62,7 @@ section {
 .item4,
 .item5,
 .item6 {
-	/* box-shadow: inset 0 0 0 1px salmon; */
+	box-shadow: inset 0 0 0 1px salmon;
 }
 /* video */
 .item2 {
@@ -75,7 +73,7 @@ section {
 	grid-gap: 20px;
 }
 .item5 ul li {
-	/* box-shadow: inset 0 0 0 1px lime; */
+	box-shadow: inset 0 0 0 1px lime;
 }
 /* ad */
 .item6 {
@@ -85,6 +83,7 @@ section {
 @media only screen and (min-width: 768px) {
 	.grid {
 		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5, auto);
 	}
 	.item1 {
 		grid-column: 1;
@@ -115,7 +114,7 @@ section {
 }
 @media only screen and (min-width: 1020px) {
 	section {
-		padding: 40px 0;
+		padding: 0 0 40px 0;
 	}
 	.grid {
 		margin: 0 auto;

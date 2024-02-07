@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Nav v1</title>
+	<title>Nav Sticky v1</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="../css/reset.css">
@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="../css/colors.css">
 	<link rel="stylesheet" href="../css/specs.css">
 	<link rel="stylesheet" href="css/sticky-v1.css">
+	<!-- relative links in included HTML don't work???????  -->
+	<link rel="stylesheet" href="../components/css/grid-hero-list-video.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -25,19 +27,11 @@
 
 	<main>
 
-
-
 		<div id="include-nav"></div>
 
-
-
-		<div id="include-grid-video-list"></div>
-
-
+		<div id="include-grid-hero-list-video"></div>
 
 		<div style="height:1000px"></div>
-
-
 
 	</main>
 
@@ -48,7 +42,7 @@
 	<script>
 		$(function(){
 			$("#include-nav").load("nav.html");
-			$("#include-grid-video-list").load("../components/grid-video-list.html");
+			$("#include-grid-hero-list-video").load("../components/grid-hero-list-video.html");
 		});
 	</script>
 

@@ -52,10 +52,12 @@ table {
 img, video, svg {
 	display: block;
 }
+
 /* fix webfont issues */
 html {
 	-webkit-font-smoothing: antialiased;
 }
+
 /* allow styling of individual svg symbol instances */
 svg path {
 	fill: inherit;
