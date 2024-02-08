@@ -38,7 +38,6 @@ nav {
 }
 #mainnav .main-outer {
 	width: 100%;
-	height: 48px;
 	/* easier to use grid in this case, as opposed to flexbox, because the middle item must be centered */
 	display: grid;
 	align-items: center;
@@ -74,19 +73,18 @@ nav {
 	text-decoration: none;
 }
 #mainnav a {
+	height: 48px;
 	font-size: 14px;
-	background: salmon;
 }
 #subnav a {
 	/* display: block; ensure vertical spacing? */
 	padding: 0 12px 0 12px;
 	height: 40px;
 	font-size: 12px;
-	background: salmon;
 }
 #mainnav .leftmost a,
 #subnav .leftmost a {
-	/* FIRST PROBLEM: first-child or nth-child selectors don't work??? so I had to set a class */
+	/* FIRST PROBLEM: first-child or nth-child selectors don't work??? so I had to set a class to the outer list item??? */
 	/* SECOND PROBLEM:doesn't work unless I specify the outer container??? */
 	padding: 0 12px 0 0;
 }
@@ -124,7 +122,7 @@ nav {
 		/* display others */
 	    display: initial;
 	}
-	.main-left a {
+	#mainnav a {
 		height: 64px;
 		padding: 0 12px 0 12px;
 		font-size: 14px;
