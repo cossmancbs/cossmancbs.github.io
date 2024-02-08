@@ -60,10 +60,9 @@ nav {
     display: none;
 }
 #subnav ul {
-	height: 40px;
 	display: flex;
 	align-items: center;
-	gap: 24px;
+	/* gap: 24px; */
 }
 #mainnav a,
 #subnav a {
@@ -76,10 +75,20 @@ nav {
 }
 #mainnav a {
 	font-size: 14px;
+	background: salmon;
 }
 #subnav a {
-	display: block; /* ensure vertical spacing? */
+	/* display: block; ensure vertical spacing? */
+	padding: 0 12px 0 12px;
+	height: 40px;
 	font-size: 12px;
+	background: salmon;
+}
+#mainnav .leftmost a,
+#subnav .leftmost a {
+	/* FIRST PROBLEM: first-child or nth-child selectors don't work??? so I had to set a class */
+	/* SECOND PROBLEM:doesn't work unless I specify the outer container??? */
+	padding: 0 12px 0 0;
 }
 #mainnav a:hover,
 #subnav a:hover {
@@ -119,10 +128,6 @@ nav {
 		height: 64px;
 		padding: 0 12px 0 12px;
 		font-size: 14px;
-	}
-	.main-left .leftmost a {
-		/* :first-child or nth-child selectors don't work??? so I had to set a class */
-		padding: 0 12px 0 0;
 	}
 	#subnav ul {
 		width: 980px;
