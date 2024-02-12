@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Mobile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/colors.css">
+	<link rel="stylesheet" href="../css/specs.css">
+	<!-- this page: -->
+	<link rel="stylesheet" href="css/mobile.css">
+	<!-- nav: -->
+	<link rel="stylesheet" href="../nav/css/nav.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<main>
+
+		<div id="include-nav"></div>
+
+
+
+
+
+
+
+
+
+<div class="mobile-downloads-header">
+
+	<div>
+
+		<h3 style="margin: 0 0 20px 0; text-align: center;" class="component__title">Download the free CBS News app</h3>
+		<p style="font-family: 'Proxima Nova',sans-serif; font-size: 1.13rem; line-height: 1.23; font-weight: 400; text-align: center;">CBS News is free, live and available 24/7. Download the free CBS News app and start watching now!</p>
+
+	</div>
+
+	<div>
+		<img src="https://assets1.cbsnewsstatic.com/hub/i/2022/03/01/74f8c08a-6d90-41fb-a3aa-94a0d266d5e1/bundle-news.png" style="max-width: 100%; max-height: 300px;" alt="Download the free CBS News app for iPhone, Android, Playstation, smart TVs, and other devices">
+	</div>
+
+</div>
+
+<style>
+	.mobile-downloads-header {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+	@media only screen and (min-width: 768px) {
+    	.mobile-downloads-header {
+			flex-direction: row;
+    	}
+    }
+	@media only screen and (min-width: 1020px) {
+    	.mobile-downloads-header {
+			gap: 40px;
+    	}
+    }
+</style>
+
+
+
+
+
+
+		<div style="height:1000px"></div>
+
+	</main>
+
+
+
+
+
+	<script>
+		$(function(){
+			$("#include-nav").load("../nav/nav.html");
+		});
+	</script>
+
+
+
+
+
+</body>
+
+</html>
