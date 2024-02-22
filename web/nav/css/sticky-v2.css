@@ -26,6 +26,7 @@ body {
 	position: sticky;*/
 	top: 0;
 	z-index: 1;
+	transition: all 1s;
 }
 #include-nav nav {
 	background-color: rgba(255, 255, 255, .85);
