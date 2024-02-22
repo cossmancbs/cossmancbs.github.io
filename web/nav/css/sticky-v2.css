@@ -22,15 +22,27 @@ body {
 */
 
 #include-nav {
-	position: -webkit-sticky;
-	position: sticky;
+	/*position: -webkit-sticky;
+	position: sticky;*/
 	top: 0;
 	z-index: 1;
 }
 #include-nav nav {
-	background-color: rgba(255, 255, 255, .9);
+	background-color: rgba(255, 255, 255, .85);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
+}
+
+.nav-scrolldown {
+	position: block;
+	top: 0;
+	box-shadow: none;
+}
+.nav-scrollup {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
 }
 
 

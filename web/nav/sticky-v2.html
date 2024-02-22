@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Nav Sticky v1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/colors.css">
+	<link rel="stylesheet" href="../css/specs.css">
+	<link rel="stylesheet" href="css/sticky-v2.css">
+	<!-- relative links in included HTML don't work???????  -->
+	<link rel="stylesheet" href="../components/css/grid-hero-list-video.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<main>
+
+		<div id="include-nav"></div>
+
+		<div id="include-grid-hero-list-video"></div>
+
+		<div style="height:1000px"></div>
+
+	</main>
+
+
+
+
+
+	<script>
+
+		//
+		// HTML INCLUDES
+		//
+		$(function(){
+			$("#include-nav").load("nav.html");
+			$("#include-grid-hero-list-video").load("../components/grid-hero-list-video.html");
+		});
+
+		//
+		// SCROLL DIRECTION
+		//
+		// TO DO: how to add condition for when scroll position is at top?
+		//
+		var lastScrollTop = 0;
+		$(window).scroll(function(event){
+			var st = $(this).scrollTop();
+			if (st > lastScrollTop){
+				// when scrolling down
+				//TEST $('#include-nav nav').css({'background-color': 'blue'});
+				//$('#include-nav').css({'position': 'block', 'top': '0'});
+				$('#include-nav').addClass('nav-scrolldown');
+				$('#include-nav').removeClass('nav-scrollup');
+			} else {
+				// when scrolling up
+				//TEST $('#include-nav nav').css({'background-color': 'red'});
+				//$('#include-nav').css({'position': 'sticky', 'top': '0'});
+				$('#include-nav').addClass('nav-scrollup');
+				$('#include-nav').removeClass('nav-scrolldown');
+			}
+			lastScrollTop = st;
+		});
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
