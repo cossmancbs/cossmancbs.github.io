@@ -1,11 +1,8 @@
+@import "../../css/colors.less";
+@import "../../css/typography.less";
+@import "../../css/utility.less";
 
 
-
-/*
-/
-/	NAV
-/
-*/
 
 nav {
 	background-color: white;
@@ -18,23 +15,23 @@ nav {
 }
 #mainnav,
 #subnav {
-	border-bottom: 1px solid rgb(var(--color-graylight));
+	border-bottom: 1px solid rgb(@color-graylight);
 }
 .logo {
 	width: 142.86px;
 	height: 20px;
-	fill: rgb(var(--color-offblack));
+	fill: rgb(@color-offblack);
 }
 .more-grid,
 .more-dots {
 	width: 16px;
 	height: 16px;
-	fill: rgb(var(--color-offblack));
+	fill: rgb(@color-offblack);
 }
 .search {
 	width: 16px;
 	height: 16px;
-	fill: rgb(var(--color-offblack));
+	fill: rgb(@color-offblack);
 }
 #mainnav .main-outer {
 	width: 100%;
@@ -69,7 +66,7 @@ nav {
 	align-items: center;
 	font-family: "ProximaNova-Bold", sans-serif;
 	line-height: 1;
-	color: rgb(var(--color-offblack));
+	color: rgb(@color-offblack);
 	text-decoration: none;
 }
 #mainnav a {
@@ -98,7 +95,7 @@ nav {
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background-color: rgb(var(--color-live));
+	background-color: rgb(@color-live);
 }
 
 @media only screen and (min-width: @break-sm) {
