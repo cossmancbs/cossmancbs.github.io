@@ -23,11 +23,6 @@ body {
 /
 */
 
-#fuckingwork {
-	background: red;
-	height: 50px;
-	width: 100%;
-}
 #include-nav {
 }
 #include-nav nav {
@@ -39,38 +34,41 @@ body {
 
 
 .header--fixed {
-  position: absolute;
-  top: 0; 
-  width: 100%; 
-  
-  &.top {
-	transition: none; 
-	transform: translateY(0);
-  }
-  
-  &.not-top {
-	position: fixed;
-	transform: translateY(-100%);
-  }
-  
-  &.slideDown.not-top {
-	transition: transform 0.3s linear;
-	transform: translateY(0);
-  }
-  
-  &.slideDown.top {
-	position: fixed; 
-  }
-  
-  &.slideUp.not-top {
-	transition: transform 0.3s linear;
-	transform: translateY(-100%);
-  }
-  
-  &.slideUp.top {
-	transform: translateY(-100%);
 	position: absolute;
-  }
+	top: 0;
+	width: 100%;
+	z-index: 10;
+
+	&.top {
+		transition: none;
+		transform: translateY(0);
+	}
+
+	&.not-top {
+		position: fixed;
+		transform: translateY(-100%);
+	}
+
+	&.slideDown.not-top {
+		transition: transform 0.3s linear;
+		transform: translateY(0);
+		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+	}
+
+	&.slideDown.top {
+		position: fixed;
+	}
+
+	&.slideUp.not-top {
+		transition: transform 0.3s linear;
+		transform: translateY(-100%);
+		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+	}
+
+	&.slideUp.top {
+		transform: translateY(-100%);
+		position: absolute;
+	}
 
 }
 
