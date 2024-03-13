@@ -25,7 +25,6 @@ body {
 
 #fuckingwork {
 	background: red;
-	z-index: 10;
 	height: 50px;
 	width: 100%;
 }
@@ -37,17 +36,42 @@ body {
 	backdrop-filter: blur(10px);
 }
 
-.headroom {
-	// INITIAL STATE
-	background-color: blue;
-}
-.headroom--unpinned {
-	// SCROLLING DOWN
-	background-color: green;
-}
-.headroom--pinned {
-	// SCROLLING UP
-	background-color: red;
+
+
+.header--fixed {
+  position: absolute;
+  top: 0; 
+  width: 100%; 
+  
+  &.top {
+	transition: none; 
+	transform: translateY(0);
+  }
+  
+  &.not-top {
+	position: fixed;
+	transform: translateY(-100%);
+  }
+  
+  &.slideDown.not-top {
+	transition: transform 0.3s linear;
+	transform: translateY(0);
+  }
+  
+  &.slideDown.top {
+	position: fixed; 
+  }
+  
+  &.slideUp.not-top {
+	transition: transform 0.3s linear;
+	transform: translateY(-100%);
+  }
+  
+  &.slideUp.top {
+	transform: translateY(-100%);
+	position: absolute;
+  }
+
 }
 
 
