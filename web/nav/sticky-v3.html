@@ -11,6 +11,7 @@
 	<link rel="stylesheet/less" type="text/css" href="css/sticky-v3.less">
 	<!-- must link stylesheet here, because include is in another directory  -->
 	<link rel="stylesheet/less" type="text/css" href="../components/css/grid-hero-list-video.less">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="../js/headroom.min.js"></script>
@@ -40,6 +41,8 @@
 
 	<script>
 
+
+
 		//
 		// HTML INCLUDES
 		//
@@ -47,6 +50,8 @@
 			$("#include-nav").load("nav.html");
 			$("#include-grid-hero-list-video").load("../components/grid-hero-list-video.html");
 		});
+
+
 
 		//
 		// HEADROOM.JS
@@ -57,6 +62,27 @@
 		var headroom  = new Headroom(myElement);
 		// initialise
 		headroom.init();
+		var options = {
+			// vertical offset in px before element is first unpinned
+			offset : 0,
+		}
+
+
+
+		//var myElement = document.querySelector("#include-nav");
+		//var headroom = new Headroom(myElement, {
+		//  "offset": 200,
+		//  "tolerance": 5,
+		//  "classes": {
+		//	"initial": "animated",
+		//	"pinned": "slideDown",
+		//	"unpinned": "slideUp"
+		// }
+		//});
+		//headroom.init();
+
+
+
 
 
 	</script>

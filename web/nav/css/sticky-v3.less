@@ -33,19 +33,31 @@ body {
 
 .headroom {
 	// INITIAL STATE
-	background: blue;
+	background-color: blue;
+	//will-change: transform;
+	//transition: transform 200ms linear;
 	will-change: transform;
+	-webkit-transition: -webkit-transform 200ms linear;
+	transition: -webkit-transform 200ms linear;
+	-o-transition: transform 200ms linear;
 	transition: transform 200ms linear;
+	transition: transform 200ms linear, -webkit-transform 200ms linear;
 }
 .headroom--unpinned {
 	// SCROLLING DOWN
-	background: green;
-	transform: translateY(0%);
+	background-color: green;
+	//transform: translateY(0%);
+	-webkit-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+			transform: translateY(-100%);
 }
 .headroom--pinned {
 	// SCROLLING UP
-	background: red;
-	transform: translateY(-100%);
+	background-color: red;
+	//transform: translateY(-100%);
+	-webkit-transform: translateY(0%);
+		-ms-transform: translateY(0%);
+			transform: translateY(0%);
 }
 
 
