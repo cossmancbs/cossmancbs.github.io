@@ -23,12 +23,6 @@ body {
 /
 */
 
-#fuckingwork {
-	background: red;
-	z-index: 10;
-	height: 50px;
-	width: 100%;
-}
 #include-nav {
 }
 #include-nav nav {
@@ -37,17 +31,45 @@ body {
 	backdrop-filter: blur(10px);
 }
 
-.headroom {
-	// INITIAL STATE
-	background-color: blue;
-}
-.headroom--unpinned {
-	// SCROLLING DOWN
-	background-color: green;
-}
-.headroom--pinned {
-	// SCROLLING UP
-	background-color: red;
+
+
+.header--fixed {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+
+	&.top {
+		transition: none;
+		transform: translateY(0);
+	}
+
+	&.not-top {
+		position: fixed;
+		transform: translateY(-100%);
+	}
+
+	&.slideDown.not-top {
+		transition: transform 0.3s linear;
+		transform: translateY(0);
+		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+	}
+
+	&.slideDown.top {
+		position: fixed;
+	}
+
+	&.slideUp.not-top {
+		transition: transform 0.3s linear;
+		transform: translateY(-100%);
+		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+	}
+
+	&.slideUp.top {
+		transform: translateY(-100%);
+		position: absolute;
+	}
+
 }
 
 
@@ -60,8 +82,10 @@ body {
 /
 */
 
+
+
 #include-grid-hero-list-video {
-	margin: 20px 0 0 0;
+	margin: 124px 0 0 0;
 }
 #include-grid-hero-list-video .hgroup {
 	display: none;
@@ -69,7 +93,7 @@ body {
 
 @media only screen and (min-width: @break-md) {
 	#include-grid-hero-list-video {
-		margin: 40px 0 0 0;
+		margin: 144px 0 0 0;
 	}
 }
 

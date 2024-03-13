@@ -8,10 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet/less" type="text/css" href="css/sticky-v3.less">
+	<link rel="stylesheet/less" type="text/css" href="css/sticky-v3b.less">
 	<!-- must link stylesheet here, because include is in another directory  -->
 	<link rel="stylesheet/less" type="text/css" href="../components/css/grid-hero-list-video.less">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="../js/headroom.js"></script>
@@ -26,8 +25,6 @@
 
 
 	<main>
-
-		<div id="fuckingwork">testing</div>
 
 		<div id="include-nav"></div>
 
@@ -58,46 +55,29 @@
 		//
 		// HEADROOM.JS
 		//
-		// grab an element
-		var myElement = document.querySelector("#fuckingwork");
-		// construct an instance of Headroom, passing the element
-		var headroom  = new Headroom(myElement);
-		// initialise
+		var myElement = document.querySelector("#include-nav");
+		var headroom  = new Headroom(myElement, {
+			"offset": 0,
+			// declaring an offset causes it to reappear
+			"tolerance": {
+				up: 0,
+				down: 0
+			},
+			"classes": {
+				"initial": "header--fixed",
+				"pinned": "slideDown",
+				"unpinned": "slideUp",
+				"top": "top",
+				"notTop" : "not-top",
+		  }
+		});
 		headroom.init();
+		window.addEventListener('scroll', function() {
+			if (window.pageYOffset === 0) {
+				myElement.classList.remove('slideDown')
+			}
+		})
 
-
-
-		//(function() {
-		//	var header = new Headroom(document.querySelector("#fuckingwork"), {
-		//		tolerance: 5,
-		//		offset : 205,
-		//		classes: {
-		//		  initial: "animated",
-		//		  pinned: "slideDown",
-		//		  unpinned: "slideUp"
-		//		}
-		//	});
-		//	header.init();
-		//}());
-		
-		
-		
-		
-
-
-
-
-		//var myElement = document.querySelector("#include-nav");
-		//var headroom = new Headroom(myElement, {
-		//  "offset": 200,
-		//  "tolerance": 5,
-		//  "classes": {
-		//	"initial": "animated",
-		//	"pinned": "slideDown",
-		//	"unpinned": "slideUp"
-		// }
-		//});
-		//headroom.init();
 
 
 
