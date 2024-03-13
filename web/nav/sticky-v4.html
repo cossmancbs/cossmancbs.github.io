@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Nav Sticky v2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="css/sticky-v4.less">
+	<!-- must link stylesheet here, because include is in another directory  -->
+	<link rel="stylesheet/less" type="text/css" href="../components/css/grid-hero-list-video.less">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="../js/less.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<main>
+
+		<div id="test-wrap">
+			<div id="test" class="clear">
+				testing<br>
+				testing<br>
+				testing<br>
+				testing<br>
+				testing<br>
+				testing<br>
+				testing<br>
+				testing<br>
+				testing
+			</div>
+		</div>
+
+		<div id="include-nav"></div>
+
+		<div id="include-grid-hero-list-video"></div>
+
+		<div style="height:1000px"></div>
+
+	</main>
+
+
+
+
+
+	<script>
+
+
+
+		//
+		// HTML INCLUDES
+		//
+		$(function(){
+			$("#include-nav").load("nav.html");
+			$("#include-grid-hero-list-video").load("../components/grid-hero-list-video.html");
+		});
+
+
+		var previousScroll = 0,
+			headerOrgOffset = $('#test').height();
+		
+		$('#test-wrap').height($('#test').height());
+		
+		$(window).scroll(function () {
+			var currentScroll = $(this).scrollTop();
+			if (currentScroll > headerOrgOffset) {
+				if (currentScroll > previousScroll) {
+					$('#test-wrap').slideUp();
+				} else {
+					$('#test-wrap').slideDown();
+				}
+			} 
+			previousScroll = currentScroll;
+		});
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
