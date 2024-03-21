@@ -38,39 +38,41 @@ body {
 	top: 0;
 	width: 100%;
 	z-index: 10;
-	transition: all 0.3s linear;
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+	box-shadow: none;
 
 	&.top {
+		transition: none;
 		transform: translateY(0);
-		box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+		box-shadow: none;
 	}
 
 	&.not-top {
 		position: fixed;
 		transform: translateY(-100%);
-		box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+		box-shadow: none;
 	}
 
 	&.slideDown.not-top {
+		transition: transform 0.3s linear;
 		transform: translateY(0);
 		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
 	}
 
 	&.slideDown.top {
 		position: fixed;
-		box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+		box-shadow: none;
 	}
 
 	&.slideUp.not-top {
+		transition: transform 0.3s linear;
 		transform: translateY(-100%);
 		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
 	}
 
 	&.slideUp.top {
-		position: absolute;
 		transform: translateY(-100%);
-		box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+		position: absolute;
+		box-shadow: none;
 	}
 
 }
