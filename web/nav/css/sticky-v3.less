@@ -34,7 +34,7 @@ body {
 
 
 .header--fixed {
-	position: fixed;
+	position: sticky;
 	top: 0;
 	width: 100%;
 	z-index: 10;
@@ -47,7 +47,7 @@ body {
 	}
 
 	&.not-top {
-		position: fixed;
+		position: sticky;
 		transform: translateY(-100%);
 		box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
 	}
@@ -58,7 +58,7 @@ body {
 	}
 
 	&.slideDown.top {
-		position: fixed;
+		position: sticky;
 		box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
 	}
 
@@ -88,7 +88,7 @@ body {
 
 
 #include-grid-hero-list-video {
-	margin: 110px 0 0 0;
+	margin: 20px 0 0 0;
 }
 #include-grid-hero-list-video .hgroup {
 	display: none;
@@ -96,7 +96,7 @@ body {
 
 @media only screen and (min-width: @break-md) {
 	#include-grid-hero-list-video {
-		margin: 144px 0 0 0;
+		margin: 40px 0 0 0;
 	}
 }
 
