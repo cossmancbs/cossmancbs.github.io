@@ -9,12 +9,9 @@ body {
 }
 main {
 	position: relative;
-	top: 48px;
+	top: -48px;
 }
 @media only screen and (min-width: 768px) {
-	main {
-		top: -48px;
-	}
 }
 @media only screen and (min-width: 1020px) {
 	main {
@@ -181,7 +178,7 @@ nav div {
 
 #lockup {
 	margin: 0;
-	padding: 20px;
+	padding: 68px 20px 20px 20px;
 }
 #lockup .show-logo {
 	display: none;
