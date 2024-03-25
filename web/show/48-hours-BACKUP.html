@@ -7,25 +7,22 @@
 	<title>Forty Eight Hours</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="/web/css/fonts.css">
-	<link rel="stylesheet" type="text/css" href="/web/css/colors.css">
-	<link rel="stylesheet" type="text/css" href="/web/css/specs.css">
-	<link rel="stylesheet/less" type="text/css" href="css/48-hours-test.less">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/colors.css">
+	<link rel="stylesheet" href="../css/specs.css">
+	<link rel="stylesheet" href="css/48-hours.css">
+	<!-- must link stylesheet here, because include is in another directory  -->
+	<link rel="stylesheet/less" type="text/css" href="../components/css/grid-hero-list-video.less">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/smartquotes.js"></script>
 	<script type="text/javascript" src="../js/headroom.js"></script>
 	<script type="text/javascript" src="../js/less.js"></script>
 
 </head>
 
 <body>
-
-
-
-
-
-	<div id="include-nav"></div>
 
 
 
@@ -113,14 +110,59 @@
 
 
 	<script>
-
+		
 		//
 		// INCLUDES
 		//
 		$(function(){
-			$("#include-nav").load("../nav/nav.html");
 			$("#include-grid-hero-list-video").load("../components/grid-hero-list-video.html");
 		});
+
+
+
+		/* on page load */
+		document.addEventListener('DOMContentLoaded', function(event) {
+			smartquotes();
+		});
+
+
+
+		// VIEWPORT WIDTH STUFF
+
+		// Define our viewportWidth variable
+		var viewportWidth;
+		var myBreakpoint;
+
+		// Set/update the viewportWidth value
+		var setViewportWidth = function () {
+			viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+		}
+
+		// do stuff depending on width
+		var logWidth = function () {
+			if (viewportWidth < 768) {
+				myBreakpoint = 'mobile';
+				console.log(myBreakpoint);
+			} else {
+				myBreakpoint = 'wide';
+				console.log(myBreakpoint);
+			}
+		}
+
+		// Set our initial width and log it
+		setViewportWidth();
+		logWidth();
+
+		// On resize events, recalculate and log
+		window.addEventListener('resize', function () {
+			setViewportWidth();
+			logWidth();
+		}, false);
+
+
+
+
+
 		
 		//
 		// HEADROOM.JS
@@ -158,7 +200,15 @@
 			}
 		})
 
+
+
+
 	</script>
+
+
+
+
+
 
 
 
