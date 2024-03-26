@@ -81,10 +81,11 @@ body {
 /
 */
 
-/* bottom border somehow being overwritten? */
-
 #include-grid-hero-list-video {
 	margin: 20px 0 0 0;
+	padding-bottom: 20px;
+	/* bottom border somehow being overwritten? so I re-added it here */
+	.hr-light();
 }
 #include-grid-hero-list-video .hgroup {
 	display: none;
@@ -93,6 +94,7 @@ body {
 @media only screen and (min-width: @break-md) {
 	#include-grid-hero-list-video {
 		margin: 40px 0 0 0;
+		padding-bottom: 40px;
 	}
 }
 
