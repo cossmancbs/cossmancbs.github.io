@@ -1,0 +1,131 @@
+@import "../../css/colors.less";
+@import "../../css/typography.less";
+@import "../../css/utility.less";
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+body {
+	margin: 40px;
+	background-color: rgb(@color-offwhite);
+}
+.webkit-line-clamp3 {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.webkit-line-clamp4 {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+.hilite {
+	background-color: rgba(@color-placeholder, .1);
+	box-shadow: inset 0 0 0 1px rgba(@color-placeholder, .5);
+}
+code {
+	font-family: monospace;
+}
+
+
+
+
+
+/*
+/
+/	GRID
+/
+*/
+
+section {
+}
+
+@media only screen and (min-width: @break-sm) {
+}
+@media only screen and (min-width: @break-md) {
+}
+@media only screen and (min-width: @break-lg) {
+}
+
+.grid {
+	display: flex;
+	gap: 40px;
+}
+.grid div {
+	width: 300px;
+	background-color: white;
+	padding: 20px;
+}
+.grid h1 {
+	.dek();
+	color: rgb(@color-placeholder);
+}
+.grid h2 {
+	.delta();
+	color: rgb(@color-offblack);
+	.hilite();
+}
+.grid p {
+	.dek();
+	margin: 10px 0 10px 0;
+	color: rgb(@color-offblack);
+	.hilite();
+}
+.grid small {
+	.metadata-default();
+	.hilite();
+	/* fix vertical spacing */
+	display: block;
+	width: 100%;
+}
+
+
+
+
+
+
+/*
+/
+/	SECTION HEADINGS
+/
+*/
+
+.hgroup {
+	margin: 0 0 40px 0;
+}
+.hgroup h1 {
+	.gamma();
+	color: rgb(@color-offblack);
+}
+
+
+
+
+
+
+
+
+.verdict {
+	margin: 40px 0 0 0 !important;
+	font-family: sans-serif !important;
+	font-size: 16px !important;
+	color: rgb(@color-graydark) !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
+.prox {
+	font-family: "ProximaNova-Bold", sans-serif !important;
+}
+
+
+
+
+
+
