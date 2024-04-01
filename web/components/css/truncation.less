@@ -45,6 +45,8 @@ code {
 */
 
 section {
+	padding: 40px 0;
+	.hr-light();
 }
 
 @media only screen and (min-width: @break-sm) {
@@ -61,10 +63,14 @@ section {
 .grid div {
 	width: 300px;
 	background-color: white;
-	padding: 20px;
+	padding: 0 20px 20px 20px;
 }
 .grid h1 {
-	.dek();
+	margin: 20px 0 5px 0;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
 	color: rgb(@color-placeholder);
 }
 .grid h2 {
@@ -127,5 +133,96 @@ section {
 
 
 
+
+
+
+
+
+
+/*
+/
+/	TWEAKS
+/
+*/
+
+
+.specimens .grid {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+.specimens .grid div {
+	width: 600px;
+}
+.specimens h2,
+.specimens h3,
+.specimens p {
+	.webkit-line-clamp3() !important;
+	.hilite() !important;
+}
+.specimens h3 {
+	/*line-height: 1.1 !important;*/
+}
+
+.specimen-alpha {
+	h2 {
+		.alpha();
+	}
+	h3 {
+		.alpha();
+		margin: 0 0 -4px -10px;
+		padding: 0 0 4px 10px;
+	}
+}
+.specimen-beta {
+	h2 {
+		.beta();
+	}
+	h3 {
+		.beta();
+		margin: 0 0 -3px -8px;
+		padding: 0 0 3px 8px;
+	}
+}
+.specimen-gamma {
+	h2 {
+		.gamma();
+	}
+	h3 {
+		.gamma();
+		margin: 0 0 -2px -6px;
+		padding: 0 0 2px 6px;
+	}
+}
+.specimen-delta {
+	h2 {
+		.delta();
+	}
+	h3 {
+		.delta();
+		margin: 0 0 -2px -5px;
+		padding: 0 0 2px 5px;
+	}
+}
+.specimen-epsilon {
+	h2 {
+		.epsilon();
+	}
+	h3 {
+		.epsilon();
+		margin: 0 0 -2px -3px;
+		padding: 0 0 2px 3px;
+	}
+}
+.specimen-zeta {
+	h2 {
+		.zeta();
+	}
+	h3 {
+		.zeta();
+		margin: 0 0 -1px -2px;
+		padding: 0 0 1px 2px;
+	}
+}
 
 

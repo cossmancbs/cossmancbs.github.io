@@ -20,6 +20,78 @@
 
 
 
+	<section class="specimens">
+
+
+		<div class="hgroup">
+			<h1>Heading Adjustments</h1>
+		</div>
+
+
+		<div class="grid">
+
+			<div class="specimen-alpha">
+				<h1>Alpha (original):</h1>
+				<h2>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
+				<h1>Alpha (tweaked):</h1>
+				<h3>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h3>
+				<p>The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
+				<small>metadata</small>
+			</div>
+
+			<div class="specimen-beta">
+				<h1>Beta (original):</h1>
+				<h2>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
+				<h1>Beta (tweaked):</h1>
+				<h3>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h3>
+				<p>The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
+				<small>metadata</small>
+			</div>
+			
+			<div class="specimen-gamma">
+				<h1>Gamma (original):</h1>
+				<h2>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
+				<h1>Gamma (tweaked):</h1>
+				<h3>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h3>
+				<p>The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
+				<small>metadata</small>
+			</div>
+			
+			<div class="specimen-delta">
+				<h1>Delta (original):</h1>
+				<h2>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
+				<h1>Delta (tweaked):</h1>
+				<h3>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h3>
+				<p>The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
+				<small>metadata</small>
+			</div>
+			
+			<div class="specimen-epsilon">
+				<h1>Epsilon (original):</h1>
+				<h2>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
+				<h1>Epsilon (tweaked):</h1>
+				<h3>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h3>
+				<p>The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
+				<small>metadata</small>
+			</div>
+			
+			<div class="specimen-zeta">
+				<h1>Zeta (original):</h1>
+				<h2>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
+				<h1>Zeta (tweaked):</h1>
+				<h3>Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h3>
+				<p>The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
+				<small>metadata</small>
+			</div>
+
+
+	</section>
+
+
+
+
+
+
 
 
 
@@ -28,7 +100,7 @@
 
 
 		<div class="hgroup">
-			<h1>Truncation Test</h1>
+			<h1>Testing Truncation Options</h1>
 		</div>
 
 
@@ -48,7 +120,7 @@
 				<h2 class="webkit-line-clamp3">Jorem jpsum jolor jit jmet jonjegtptuj jdipiycijg jypg jed joyipg</h2>
 				<p class="webkit-line-clamp4">The Navy says it is mobilizing barges outfitted with heavy lift cranes to help clear the channel of debris. Three cranes with varying lift capacities are expected, along with support vessels to remove submerged portions of the bridge, but it's unclear when they will arrive.</p>
 				<small>metadata</small>
-				<p class="verdict">Verdict: 🔴 Requires <code>overflow: hidden</code>, which causes issues with hooks and descenders, and is especially noticeable with this particular font. Adjusting <code>padding</code> and <code>spacing</code> is not an option, as it would disrupt alignment.</p>
+				<p class="verdict">Verdict: 🔴 Requires <code>overflow: hidden</code>, which causes issues with hooks and descenders, and is especially noticeable with this particular font.</p>
 			</div>
 
 			<div>
@@ -76,9 +148,10 @@
 
 
 	<script>
+		/* clamp.js apparently only works by element ID, not classes? */
 		var module3 = document.getElementById("clamp-js-3");
 		var module4 = document.getElementById("clamp-js-4");
-		/* unclear what happens if set to false? */
+		/* unclear what happens if set to false? nothing? */
 		$clamp(module3, {clamp: 3, useNativeClamp: true});
 		$clamp(module4, {clamp: 4, useNativeClamp: true});
 	</script>
