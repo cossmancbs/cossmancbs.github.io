@@ -57,11 +57,6 @@ main {
 #include-nav .logo {
 	fill: rgb(@color-offwhite);
 }
-@media only screen and (min-width: @break-sm) {
-	#include-nav #mainnav {
-		/*border-bottom: none;*/
-	}
-}
 #include-nav nav {
 	background-color: rgba(@color-offblack, .9);
 	-webkit-backdrop-filter: blur(10px);
@@ -231,6 +226,12 @@ main {
 	.body-small();
 	color: rgb(@color-offblack);
 }
+.bureau {
+	.body-emphasis();
+}
+.rail {
+	display: none;
+}
 @media only screen and (min-width: @break-sm) {
 	.article-body {
 		margin: 40px;
@@ -249,6 +250,9 @@ main {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-gap: 40px;
+	}
+	.rail {
+		display: initial;
 	}
 	.article-main {
 		grid-column: 1/9;
