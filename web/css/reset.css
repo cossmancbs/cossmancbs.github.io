@@ -62,3 +62,11 @@ html {
 svg path {
 	fill: inherit;
 }
+
+/* nice to have */
+html {
+	hanging-punctuation: first last;
+}
+input, textarea {
+	hanging-punctuation: none;
+}
