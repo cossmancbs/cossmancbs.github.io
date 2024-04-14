@@ -1,0 +1,466 @@
+@import "../../css/colors.less";
+@import "../../css/typography.less";
+@import "../../css/utility.less";
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+body {
+	background-color: white;
+}
+
+/* trick adblocker */
+.empyou {
+	margin: 0 auto;
+	width: 300px;
+	height: 250px;
+}
+
+/* video */
+.player {
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%;	/* 16:9 Aspect Ratio */
+    position: relative;		/* If you want text inside of it */
+}
+.player span {
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	right: 45%;
+	bottom: 50%;
+	margin: auto;
+	padding: 0;
+}
+
+
+
+
+
+
+
+
+/*
+/
+/	COMPONENT
+/
+*/
+
+section.view {
+	padding: 20px 0;
+	.hr-light();
+}
+@media only screen and (min-width: @break-md) {
+	section.view {
+		padding: 40px 0;
+	}
+}
+
+
+
+
+
+
+
+
+/*
+/
+/	COMPONENT HEADINGS
+/
+*/
+
+.view .hgroup {
+	margin: 0 20px 15px 20px;
+	display: flex;
+	align-items: center;
+	align-items: flex-end;
+}
+.view .hgroup h1 {
+	.epsilon();
+	color: rgb(@color-offblack);
+}
+@media only screen and (min-width: @break-sm) {
+	.view .hgroup h1 {
+		.delta();
+	}
+}
+@media only screen and (min-width: @break-md) {
+	.view .hgroup {
+		margin: 0 auto 20px auto;
+		width: @break-md-container;
+	}
+	.view .hgroup h1 {
+		.gamma();
+	}
+}
+@media only screen and (min-width: @break-lg) {
+	.view .hgroup {
+		margin: 0 auto 30px auto;
+		width: @break-lg-container;
+	}
+	.view .hgroup h1 {
+		.beta();
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	CARDS: HERO and NORMAL
+/
+*/
+
+.card h1 {
+	margin: 0 0 -.06em -.2em;
+	padding: 0 0 .06em .2em;
+	.zeta();
+	box-shadow: inset 0 0 0 1px rgba(@color-placeholder, .5);
+}
+.item1 h1,
+.item2 h1,
+.item3 h1,
+.item-list h1 {
+	/* truncate */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.item1 p {
+	display: none;
+}
+
+@media only screen and (min-width: @break-md) {
+	.item1 h1,
+	.item2 h1,
+	.item3 h1 {
+		.epsilon();
+		/*-webkit-line-clamp: none;
+		overflow: visible;*/
+	}
+	.item1 p {
+		display: block;
+		margin: 10px 0 0 0;
+		.dek();
+		color: rgb(@color-offblack);
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	CARDS - IMAGES
+/
+*/
+
+.thumbWrap {
+	background-size: cover;
+	background-position: center;
+	background-color: rgb(@color-placeholder);
+	/* background-image: url("../../img/16-9-biden.jpg"); */
+	background-size: cover;
+	overflow: hidden;
+}
+.item1 .thumbWrap {
+	margin: 0 0 10px 0;
+	width: 100%;
+	height: auto;
+	padding-top: 56.25%;	/* 16:9 Aspect Ratio */
+	position: relative;		/* If you want text inside of it */
+}
+.item2 .cardHoverWrap,
+.item3 .cardHoverWrap,
+.item-list .cardHoverWrap {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 20px;
+}
+.item2 .headWrap,
+.item3 .headWrap,
+.item-list .headWrap {
+	flex: 1;
+}
+.item2 .thumbWrap,
+.item3 .thumbWrap,
+.item-list .thumbWrap {
+	width: 100px;
+	height: 100px;
+}
+
+@media only screen and (min-width: @break-md) {
+	.item1 .thumbWrap {
+		padding: 0;
+		width: 640px;
+		height: 360px;
+	}
+	.item2 .cardHoverWrap,
+	.item3 .cardHoverWrap {
+		display: initial;
+	}
+	.item2 .thumbWrap,
+	.item3 .thumbWrap {
+		margin: 0 0 10px 0;
+		padding: 0;
+		width: 300px;
+		height: calc(300px*0.5625);
+		float: none;
+	}
+	.item-list .thumbWrap {
+		display: none;
+	}
+}
+@media only screen and (min-width: @break-lg) {
+	.item1 .thumbWrap {
+		margin: 0 0 0 40px;
+		float: right;
+	}
+	.item1 .headWrap {
+		width: 300px;
+	}
+}
+
+
+
+
+
+/*
+/
+/	CARDS - BUTTONS
+/
+*/
+
+.button-thumb {
+	background-color: rgba(16,16,16,.5);
+	border: none;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+.button-thumb svg {
+	fill: rgb(@color-offwhite);
+}
+/* stupid hack to make video buttons look better */
+.button-thumb-video svg {
+	margin: 0 0 0 4px;
+}
+
+.item1 .button-thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 0;
+	width: 50px;
+	height: 50px;
+}
+.item1 .button-thumb svg {
+	width: calc(50px/2.5);
+	height: calc(50px/2.5);
+}
+
+.item2 .thumbWrap,
+.item3 .thumbWrap,
+.item-list .thumbWrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.item2 .button-thumb,
+.item3 .button-thumb,
+.item-list .button-thumb {
+	width: 40px;
+	height: 40px;
+}
+.item2 .button-thumb svg,
+.item3 .button-thumb svg,
+.item-list .button-thumb svg {
+	width: calc(40px/2.5);
+	height: calc(40px/2.5);
+}
+
+@media only screen and (min-width: @break-md) {
+	.item1 .button-thumb {
+		width: 70px;
+		height: 70px;
+	}
+	.item1 .button-thumb svg {
+		width: calc(70px/2.5);
+		height: calc(70px/2.5);
+	}
+	.item2 .button-thumb,
+	.item3 .button-thumb {
+		width: 50px;
+		height: 50px;
+	}
+	.item2 .button-thumb svg,
+	.item3 .button-thumb svg {
+		width: calc(50px/2.5);
+		height: calc(50px/2.5);
+	}
+	.item-list .thumbWrap {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+/*
+/
+/	METADATA
+/
+*/
+
+.metadata {
+	display: inline-flex;
+	margin: 8px 0 0 0;
+	.metadata-default();
+	color: rgb(@color-offblack);
+}
+.metadata svg {
+	margin: 0 5px 0 15px;
+	fill: rgb(@color-offblack);
+}
+.metadata svg.video {
+	margin-top: 1px;
+	width: 8px;
+	height: 8px;
+}
+.metadata svg.gallery {
+	width: 10px;
+	height: 10px;
+}
+
+
+
+
+
+
+
+/*
+/
+/	RELATED LINKS
+/
+*/
+
+.relatedLinks {
+	margin: 20px 0 0 0;
+	display: none;
+}
+.relatedLinks h2 {
+	.metadata-large-bold();
+	color: rgb(@color-offblack);
+}
+.relatedLinks li {
+	.related-bold();
+}
+.relatedLinks a {
+	display: block;
+	padding: 10px 0 0 0;
+}
+
+@media only screen and (min-width: @break-md) {
+	.relatedLinks {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: @break-lg) {
+	.relatedLinks {
+		width: 300px;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	HOVERS
+/
+*/
+
+.view a:link,
+.view a:visited {
+	color: rgb(@color-offblack);
+	text-decoration: none;
+}
+.view a:hover,
+.view a:active {
+}
+
+.cardHoverWrap * {
+	transition: all .1s ease-in-out;
+}
+
+.cardHoverWrap:hover h1,
+.relatedLinks a:hover {
+	text-decoration: underline;
+}
+
+.cardHoverWrap:hover .button-thumb {
+	background-color: rgb(@color-offblack);
+}
+
+
+
+
+
+
+
+
+/*
+/
+/	ASSET LABELS
+/
+*/
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 5px 5px 0;
+	padding: 3px 5px 3px 6px;
+	border-radius: 3px;
+	background-color: rgba(@color-graydark,.1);
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-size: 11px;
+	line-height: 1;
+	letter-spacing: 1.7px;
+	text-transform: uppercase;
+	color: rgb(@color-offblack);
+}
+@media only screen and (min-width: @break-md) {
+	.badge {
+		padding: 5px 6px 3px 8px;
+		font-size: 12px;
+	}
+}
+
+
+

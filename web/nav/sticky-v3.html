@@ -9,11 +9,11 @@
 
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/sticky-v3.less">
-	<link rel="stylesheet/less" type="text/css" href="/web/components/css/grid-hero-list-video.less">
+	<!--<link rel="stylesheet/less" type="text/css" href="/web/components/css/grid-hero-list-video.less">-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/headroom.js"></script>
-	<script type="text/javascript" src="../js/less.js"></script>
+	<script type="text/javascript" src="/web/js/headroom.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
 
 </head>
 
@@ -26,6 +26,7 @@
 	<main>
 		<div id="include-nav"></div>
 		<div id="include-grid-hero-list-video"></div>
+		<div id="include-grid-hero-list"></div>
 		<div style="height:2000px"></div>
 	</main>
 
@@ -40,7 +41,8 @@
 		//
 		$(function(){
 			$("#include-nav").load("nav.html");
-			$("#include-grid-hero-list-video").load("../components/grid-hero-list-video.html");
+			$("#include-grid-hero-list-video").load("/web/components/grid-hero-list-video.html");
+			$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
 		});
 
 		//
