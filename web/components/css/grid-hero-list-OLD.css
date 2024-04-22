@@ -629,11 +629,11 @@ a:active {
 
 /*
 /
-/	BADGE
+/	FLAG
 /
 */
 
-.badge {
+.flag {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -649,7 +649,7 @@ a:active {
 	color: rgb(var(--color-offwhite));
 }
 @media only screen and (min-width: 1020px) {
-	.badge {
+	.flag {
 		margin: 0 0 5px 0;
 		padding: 5px 6px 3px 8px;
 		font-size: 12px;
