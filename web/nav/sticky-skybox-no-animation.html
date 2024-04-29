@@ -8,9 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
-	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/sticky-skybox.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/sticky-skybox-no-animation.less">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/headroom.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
 
 </head>
@@ -25,7 +26,7 @@
 
 
 
-		<div id="skbx-sticky">
+		<div id="stickers">
 			<div id="skbx">
 				<ul>
 					<li>SKYBOX: small state<br>
@@ -88,8 +89,6 @@
 						// small, expanded
 						console.log("document is at top");
 						$('#skbx').css('aspect-ratio', '16/9');
-						$('#skbx-sticky').addClass('shadow-off');
-						$('#skbx-sticky').removeClass('shadow-on');
 						//$('#skbx').addClass('skbx-sm-expanded');
 						//$('#skbx').removeClass('skbx-md-expanded');
 						//$('#skbx').removeClass('skbx-lg-expanded');
@@ -100,8 +99,6 @@
 						//small, collapsed
 						console.log("document is scrolled");
 						$('#skbx').css('aspect-ratio', '69/13');
-						$('#skbx-sticky').removeClass('shadow-off');
-						$('#skbx-sticky').addClass('shadow-on');
 						//$('#skbx').removeClass('skbx-sm-expanded');
 						//$('#skbx').removeClass('skbx-md-expanded');
 						//$('#skbx').removeClass('skbx-lg-expanded');
@@ -116,8 +113,6 @@
 						// medium, expanded
 						console.log("document is at top");
 						$('#skbx').css('aspect-ratio', '44/13');
-						$('#skbx-sticky').addClass('shadow-off');
-						$('#skbx-sticky').removeClass('shadow-on');
 						//$('#skbx').removeClass('skbx-sm-expanded');
 						//$('#skbx').addClass('skbx-md-expanded');
 						//$('#skbx').removeClass('skbx-lg-expanded');
@@ -128,8 +123,6 @@
 						// medium, collapsed
 						console.log("document is scrolled");
 						$('#skbx').css('aspect-ratio', '132/13');
-						$('#skbx-sticky').removeClass('shadow-off');
-						$('#skbx-sticky').addClass('shadow-on');
 						//$('#skbx').removeClass('skbx-sm-expanded');
 						//$('#skbx').removeClass('skbx-md-expanded');
 						//$('#skbx').removeClass('skbx-lg-expanded');
@@ -144,8 +137,6 @@
 						// large, expanded
 						console.log("document is at top");
 						$('#skbx').css('aspect-ratio', '5/1');
-						$('#skbx-sticky').addClass('shadow-off');
-						$('#skbx-sticky').removeClass('shadow-on');
 						//$('#skbx').removeClass('skbx-sm-expanded');
 						//$('#skbx').removeClass('skbx-md-expanded');
 						//$('#skbx').addClass('skbx-lg-expanded');
@@ -156,8 +147,6 @@
 						// large, collapsed
 						console.log("document is scrolled");
 						$('#skbx').css('aspect-ratio', '61/4');
-						$('#skbx-sticky').removeClass('shadow-off');
-						$('#skbx-sticky').addClass('shadow-on');
 						//$('#skbx').removeClass('skbx-sm-expanded');
 						//$('#skbx').removeClass('skbx-md-expanded');
 						//$('#skbx').removeClass('skbx-lg-expanded');
@@ -180,6 +169,42 @@
 
 
 
+		
+		//
+		// HEADROOM.JS
+		//
+		var myElement = document.querySelector("#include-nav");
+		var headroom  = new Headroom(myElement, {
+			// vertical offset, before element is unpinned:
+			"offset": 300,
+			// scroll tolerance (speed & distance), before state changes:
+			"tolerance": 1,
+			// css classes to apply:
+			"classes": {
+				// when element is initialised:
+				"initial": "header--fixed",
+				// when scrolling up:
+				"pinned": "slideDown",
+				// when scrolling down:
+				"unpinned": "slideUp",
+				// when above offset:
+				"top": "top",
+				// when below offset:
+				"notTop" : "not-top",
+				// when at bottom of scroll area:
+				"bottom" : "bottom",
+				// when not at bottom of scroll area:
+				"notBottom" : "not-bottom",
+				// when frozen method has been called:
+				"frozen" : "frozen",
+		  }
+		});
+		headroom.init();
+		window.addEventListener('scroll', function() {
+			if (window.pageYOffset === 0) {
+				myElement.classList.remove('slideDown')
+			}
+		})
 
 
 
