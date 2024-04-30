@@ -4,14 +4,15 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>CBS Evening News</title>
+	<title>Nav Sticky</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="/web/css/fonts.css">
-	<link rel="stylesheet/less" type="text/css" href="/web/show/css/evening-news.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/sticky-v4.less">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/gsap.min.js"></script>
+	<script type="text/javascript" src="/web/js/ScrollTrigger.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
 
 </head>
@@ -22,74 +23,38 @@
 
 
 
-	<div id="include-nav-main"></div>
-
-
-
-
-
 	<main>
 
 
 
-
-
-		<div id="brand-header">
-
-			<div id="lockup">
-				<div class="wrapper">
-					<div class="show-logo">
-					<svg><use xlink:href="img/sprite.svg#logo-en"></use></svg>
-					</div>
-					<h1>CBS Evening News With Norah O'Donnell</h1>
-					<h2>Weeknights 6:30PM ET on CBS<br>
-						Midnight ET on the CBS News app</h2>
-				</div>
+		<div id="stickers">
+			<div id="skbx">
+				<ul>
+					<li>SKYBOX: small state<br>
+					breakpoint: &lt;[unknown] (mobile devices only)<br>
+					expanded aspect ratio: approx. 16:9<br>
+					collapsed aspect ratio: approx. 69:13<br>
+					(the above aspect ratios are not represented in this prototype)</li>
+					<li>SKYBOX: medium state<br>
+					breakpoint: &ge;[unknown]<br>
+					expanded aspect ratio: approx. 44:13<br>
+					collapsed aspect ratio: approx. 132:13<br>
+					(the above aspect ratios are not represented in this prototype)</li>
+					<li>SKYBOX: large state<br>
+					breakpoint: &ge;792<br>
+					expanded aspect ratio: approx. 5:1<br>
+					collapsed aspect ratio: approx. 61:4<br>
+					(the above aspect ratios are not represented in this prototype)</li>
+				</ul>
 			</div>
-
-			<div id="subnav-brand">
-				<div class="wrapper">
-					<ul>
-						<li><a href="">Eye On America</a></li>
-						<li><a href="">Full Episodes</a></li>
-						<li><a href="">On the Road</a></li>
-						<li><a href="">Interviews</a></li>
-						<li><a href="">The Team</a></li>
-					</ul>
-				</div>
-			</div>
-
+			<div id="include-nav-main"></div>
 		</div>
 
+		<div id="include-nav-sub"></div>
 
-
-
-
-		<div id="video-shelf-hero">
-			<div class="component">
-				<div class="video">
-					<div class="wireframe">video</div>
-				</div>
-				<div class="lockup">
-					<h1>Totam at eius excepturi deleniti sed error repellat itaque omnise</h1>
-					<p>Lorem ipsum dolor sit amet consecteture adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquas ut enim ad minima veniamed.</p>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
+		<div id="include-grid-hero-list-video"></div>
 		<div id="include-grid-hero-list"></div>
-
-
-
-
-
-		<section style="height: 2000px"></section>
-
-
+		<div style="height:2000px"></div>
 
 
 
@@ -107,8 +72,29 @@
 		// INCLUDES
 		//
 		$(function(){
-			$("#include-nav-main").load("/web/nav/nav-main.html");
+			$("#include-nav-main").load("nav-main.html");
+			$("#include-nav-sub").load("nav-sub.html");
+			$("#include-grid-hero-list-video").load("/web/components/grid-hero-list-video.html");
 			$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
+		});
+
+
+
+		//
+		// SKYBOX (GSAP ScrollTrigger)
+		//
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.set('#skbx', {
+			height: 200
+		});
+		gsap.to('#skbx', {
+			height: 100,
+			scrollTrigger: {
+				id: 'height',
+				start: 'top top',
+				end: '+=200',
+				scrub: true
+			}
 		});
 
 
@@ -117,9 +103,9 @@
 		// NAV
 		//
 		$(document).ready(function() {
-		
+
 			function checkNav() {
-		
+
 				if ($(document).scrollTop() < 50) {
 					$('#include-nav-main').removeClass('shadow-on');
 					$('#include-nav-main').addClass('shadow-off');
@@ -127,7 +113,7 @@
 					$('#include-nav-main').addClass('shadow-on');
 					$('#include-nav-main').removeClass('shadow-off');
 				}
-		
+
 				var windowSize = $(window).width();
 				if (windowSize <= 1019) {
 					$('#include-nav-main').addClass('nav-sm');
@@ -154,12 +140,14 @@
 			$(window).on("load resize scroll",function(e){
 				checkNav();
 			});
-		
+
 		});
 
 
 
 	</script>
+
+
 
 
 

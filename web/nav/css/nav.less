@@ -4,7 +4,6 @@
 
 
 nav {
-	/* background-color: white; */
 }
 #mainnav {
 	padding: 0 16px;
@@ -15,7 +14,8 @@ nav {
 }
 #mainnav,
 #subnav {
-	border-bottom: 1px solid rgb(@color-graylight);
+	/* border-bottom: 1px solid rgb(@color-graylight);*/
+	.hr-light
 }
 .logo {
 	width: 142.86px;
@@ -48,7 +48,6 @@ nav {
 #mainnav .main-left {
 	display: flex;
 	justify-content: start;
-	/* gap: 24px; */
 }
 #mainnav .main-left li {
 }
@@ -59,7 +58,6 @@ nav {
 #subnav ul {
 	display: flex;
 	align-items: center;
-	/* gap: 24px; */
 }
 #mainnav a,
 #subnav a {
@@ -109,7 +107,7 @@ nav {
 	}
 	#mainnav .main-outer {
 		width: @break-md-container;
-		height: 64px;
+		/* height: 64px; */
 		margin: 0 auto;
 	}
 	#mainnav .main-left li:first-child {
@@ -137,9 +135,7 @@ nav {
 }
 
 @media only screen and (min-width: @break-lg) {
-	#mainnav ul.main-outer {
-		width: @break-lg-container;
-	}
+	#mainnav ul.main-outer,
 	#subnav ul {
 		width: @break-lg-container;
 	}
