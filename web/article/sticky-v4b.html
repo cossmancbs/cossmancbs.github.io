@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Article</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/article/css/sticky-v4b.less">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<!-- SVGS -->
+	<svg style="display:none;">
+		<symbol id="caret-right" viewBox="0 0 100 100">
+			<path fill-rule="evenodd" d="M25.654 14.566A8.824 8.824 0 1 1 39.053 3.08l35.294 41.177a8.824 8.824 0 0 1 0 11.484L39.053 96.92a8.824 8.824 0 0 1-13.399-11.485L56.026 50z"/>
+		</symbol>
+	</svg>
+
+
+
+	<div id="include-nav-main"></div>
+	<div id="include-nav-sub"></div>
+
+
+
+	<main>
+
+
+
+		<div class="article-header">
+			<div class="container">
+				<div class="hgroup">
+					<span class="topic"><a href="">topic link</a><svg><use xlink:href="#caret-right"></use></svg></span>
+					<h1>Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeius</h1>
+					<div class="byline">
+						<p>By <a href="">Norah O'Donnell</a>, <a href="">Margaret Brennan</a></p>
+						<p>Edited by <a href="">Debra Young</a>, Michael Henry, <a href="">Carmen Pancoast</a></p>
+						<p>Updated on: April 2, 2024 / 3:38 PM EDT / CBS News</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		
+		<div class="article-body">
+			<div class="container">
+				<div class="article-main">
+					<p><span class="bureau">Tel Aviv</span> &mdash; Israeli Prime Minister Benjamin Netanyahu said Israel's armed forces had "unintentionally" struck a convoy from the humanitarian group World Central Kitchen in Gaza late Monday, killing seven aid workers.</p>
+					<p>"Unfortunately, in the last day there was a tragic case of our forces unintentionally hitting innocent people in the Gaza Strip," Netanyahu said Tuesday as he left a hospital in Jerusalem after a hernia operation. "It happens in war. We will investigate it right to the end. ... We are in contact with the governments, and we will do everything so that this thing does not happen again."</p>
+					<p>Earlier, the Israel Defense Forces expressed "sincere sorrow" over the deaths while stopping short of accepting responsibility.</p>
+					<p>In response to the killings, World Central Kitchen suspended its operations delivering vital food aid in Gaza, where Israel's offensive has pushed hundreds of thousands of Palestinians to the brink of starvation. Cyprus, which has played a key role in trying to establish a maritime corridor, said ships were returning with some 240 tons of undelivered aid.</p>
+					<p>The strike killed the six World Central Kitchen aid workers and their Palestinian driver, the group said Tuesday, hours after it brought a new shipload of food into northern Gaza, which has been isolated and pushed near famine by Israel's offensive.</p>
+					<p>The IDF said it was doing "an in-depth investigation of the incident by the most senior ranks, in order to understand all the circumstances of the incident. The IDF makes great efforts to enable the safe passage of humanitarian aid, and works in full cooperation and coordination with the WCK organization in order to support their efforts to provide food and humanitarian aid to the residents of the Gaza Strip."</p>
+					<p>Graphic photographs showed the mangled, bloodied corpses of the aid workers, some still wearing World Central Kitchen t-shirts, with their passports, at Al-Aqsa Martyrs Hospital in the central Gaza town of Deir al-Balah.</p>
+				</div>
+				<div class="rail"><a href=""><img src="../img/300x250-star-trek.jpg" alt="Watch the Star Trek Discovery Trailer"></a></div>
+			</div>
+		</div>
+
+
+
+		<div style="height:2000px"></div>
+
+
+
+	</main>
+
+
+
+
+
+	<script>
+
+		//
+		// INCLUDES
+		//
+		$(function(){
+			$("#include-nav-main").load("/web/nav/nav-main.html");
+			$("#include-nav-sub").load("/web/nav/nav-sub.html");
+		});
+
+
+
+		//
+		// NAV
+		//
+		$(document).ready(function() {
+
+			function checkNav() {
+
+				if ($(document).scrollTop() < 50) {
+					$('#include-nav-main').removeClass('shadow-on');
+					$('#include-nav-main').addClass('shadow-off');
+				} else {
+					$('#include-nav-main').addClass('shadow-on');
+					$('#include-nav-main').removeClass('shadow-off');
+				}
+
+			}
+
+			// Execute on load
+			checkNav();
+			// Bind event listener ("load" doesn't seem to work)
+			$(window).on("load resize scroll",function(e){
+				checkNav();
+			});
+
+		});
+
+
+
+	</script>
+
+
+
+
+
+</body>
+
+</html>
