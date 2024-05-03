@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Nav Sticky</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/sticky-v4c.less">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<div id="skbx-bgd">rough skybox approximation (expanded)</div>
+
+	<main>
+
+		<div style="height:130px"></div>
+		<div class="stickers">
+			<div id="skbx"><span>rough skybox approximation (collapsed)</span></div>
+			<div id="include-nav-main"></div>
+		</div>
+
+		<div class="page-content">
+			<div id="include-nav-sub"></div>
+			<div id="include-grid-hero-list-video"></div>
+			<div id="include-grid-hero-list"></div>
+			<div style="height:2000px"></div>
+		</div>
+
+	</main>
+
+
+
+
+
+	<script>
+
+
+
+		//
+		// INCLUDES
+		//
+		$(function(){
+			$("#include-nav-main").load("nav-main.html");
+			$("#include-nav-sub").load("nav-sub.html");
+			$("#include-grid-hero-list-video").load("/web/components/grid-hero-list-video.html");
+			$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
+		});
+
+
+
+		//
+		// NAV
+		//
+		$(document).ready(function() {
+
+			function checkNav() {
+
+			//	if ($(document).scrollTop() <= 70) {
+			//		$('#skbx').addClass('skbx-on');
+			//		$('#skbx').removeClass('skbx-off');
+			//	} else if ($(document).scrollTop() < 130) {
+			//		$('#skbx').removeClass('skbx-on');
+			//		$('#skbx').addClass('skbx-off');
+			//		$('#include-nav-main').removeClass('shadow-on');
+			//		$('#include-nav-main').addClass('shadow-off');
+			//	} else {
+			//		$('#skbx').removeClass('skbx-on');
+			//		$('#skbx').addClass('skbx-off');
+			//		$('#include-nav-main').addClass('shadow-on');
+			//		$('#include-nav-main').removeClass('shadow-off');
+			//	}
+
+				if ($(document).scrollTop() < 130) {
+					// skybox expanded
+					$('#skbx').removeClass('skbx-on');
+					$('#skbx').addClass('skbx-off');
+					$('#include-nav-main').addClass('nav-main-moving');
+					$('#include-nav-main').removeClass('nav-main-stopped');
+				} else {
+					//skybox collapsed
+					$('#skbx').addClass('skbx-on');
+					$('#skbx').removeClass('skbx-off');
+					$('#include-nav-main').removeClass('nav-main-moving');
+					$('#include-nav-main').addClass('nav-main-stopped');
+				}
+
+			}
+
+
+
+
+
+
+
+			// Execute on load
+			checkNav();
+			// Bind event listener ("load" doesn't seem to work)
+			$(window).on("load resize scroll",function(e){
+				checkNav();
+			});
+
+		});
+
+
+
+	</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
