@@ -21,13 +21,13 @@
 
 
 
-	<div id="skbx-bgd">rough skybox approximation (expanded)</div>
+	<div id="skbx-bgd">skybox expanded</div>
 
 	<main>
 
 		<div style="height:130px"></div>
 		<div class="stickers">
-			<div id="skbx"><span>rough skybox approximation (collapsed)</span></div>
+			<div id="skbx">skybox collapsed</div>
 			<div id="include-nav-main"></div>
 		</div>
 
@@ -67,42 +67,21 @@
 
 			function checkNav() {
 
-			//	if ($(document).scrollTop() <= 70) {
-			//		$('#skbx').addClass('skbx-on');
-			//		$('#skbx').removeClass('skbx-off');
-			//	} else if ($(document).scrollTop() < 130) {
-			//		$('#skbx').removeClass('skbx-on');
-			//		$('#skbx').addClass('skbx-off');
-			//		$('#include-nav-main').removeClass('shadow-on');
-			//		$('#include-nav-main').addClass('shadow-off');
-			//	} else {
-			//		$('#skbx').removeClass('skbx-on');
-			//		$('#skbx').addClass('skbx-off');
-			//		$('#include-nav-main').addClass('shadow-on');
-			//		$('#include-nav-main').removeClass('shadow-off');
-			//	}
-
 				if ($(document).scrollTop() < 130) {
-					// skybox expanded
-					$('#skbx').removeClass('skbx-on');
-					$('#skbx').addClass('skbx-off');
+					// at or near top of page; skybox expanded
+					$('#skbx').removeClass('skbx-collapsed');
+					$('#skbx').addClass('skbx-expanded');
 					$('#include-nav-main').addClass('nav-main-moving');
 					$('#include-nav-main').removeClass('nav-main-stopped');
 				} else {
-					//skybox collapsed
-					$('#skbx').addClass('skbx-on');
-					$('#skbx').removeClass('skbx-off');
+					// scrolled down; skybox collapsed
+					$('#skbx').addClass('skbx-collapsed');
+					$('#skbx').removeClass('skbx-expanded');
 					$('#include-nav-main').removeClass('nav-main-moving');
 					$('#include-nav-main').addClass('nav-main-stopped');
 				}
 
 			}
-
-
-
-
-
-
 
 			// Execute on load
 			checkNav();

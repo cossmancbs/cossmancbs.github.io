@@ -76,20 +76,15 @@ body,
 	font-size: 18px;
 	font-family: sans-serif;
 	font-weight: bold;
-	color: white;
 	text-transform: uppercase;
 }
-.skbx-on {
-	background-color: rgb(@color-placeholder);
-	span {
-		display: initial;
-	}
-}
-.skbx-off {
+.skbx-expanded {
 	background-color: none;
-	span {
-		display: none;
-	}
+	color: rgba(255,255,255,0);
+}
+.skbx-collapsed {
+	background-color: rgb(@color-placeholder);
+	color: rgba(255,255,255,1);
 }
 @media only screen and (min-width: 500px) {
 	/* skybox medium - unknown breakpoint */

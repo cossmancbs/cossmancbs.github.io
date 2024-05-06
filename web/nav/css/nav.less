@@ -10,11 +10,15 @@ nav {
 }
 #subnav {
 	padding: 0 0 0 20px;
-	overflow: scroll;
+	overflow-y: scroll;
+	-ms-overflow-style: none;  /* hide scrollbar: IE and Edge */
+	scrollbar-width: none;  /* hide scrollbar: Firefox */
+}
+#subnav::-webkit-scrollbar {
+	display: none; /* hide scrollbar: Safari */
 }
 #mainnav,
 #subnav {
-	/* border-bottom: 1px solid rgb(@color-graylight);*/
 	.hr-light
 }
 .logo {
