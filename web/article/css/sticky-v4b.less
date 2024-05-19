@@ -37,26 +37,92 @@ main {
 
 /*
 /
+/	Z-INDEX
+/
+*/
+
+#stickers {
+	z-index: 99;
+}
+#include-nav-sub {
+	z-index: 9;
+}
+
+
+
+
+
+
+
+/*
+/
+/	ADS
+/
+*/
+
+#topunit {
+	width: 100%;
+	background-color: rgb(@color-offblack);
+	text-align: center;
+	.hr-dark;
+}
+#topunit .apppromo {
+	padding: 0 9px 0 15px;
+	height: 45px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#topunit .unit {
+	display: none;
+}
+@media only screen and (min-width: @break-sm) {	
+	#topunit {
+		.hr-none;
+	}
+	#topunit .apppromo {
+		display: none;
+	}
+	#topunit .unit {
+		display: initial;
+		margin:  0 auto;
+		.wireframe();
+		width: 728px;
+		height: 90px;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
 /	NAV
 /
 */
 
-#include-nav-main {
+#stickers {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	z-index: 99;
+}
+#include-nav-main {
+	width: 100%;
 }
 #include-nav-sub {
 	position: relative;
 	width: 100%;
-	z-index: 5;
 }
-#include-nav-main nav,
-#include-nav-sub nav {
-	background-color: rgba(@color-offblack, .9);
+#include-nav-main nav {
+	background-image: linear-gradient(rgba(@color-offblack,1), rgba(@color-offblack,.9));
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
+	.hr-dark;
+}
+#include-nav-sub nav {
 	.hr-dark;
 }
 #include-nav-main nav a,
