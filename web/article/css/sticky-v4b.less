@@ -60,35 +60,53 @@ main {
 /
 */
 
-#topunit {
-	width: 100%;
-	background-color: rgb(@color-offblack);
-	text-align: center;
-	.hr-dark;
-}
-#topunit .apppromo {
+#apppromo {
 	padding: 0 9px 0 15px;
 	height: 45px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: rgb(@color-offblack);
+	.hr-dark;
 }
-#topunit .unit {
+#topunit {
 	display: none;
 }
-@media only screen and (min-width: @break-sm) {	
-	#topunit {
+#bottomunit {
+	position: sticky;
+	bottom: 0;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(@color-offblack,.65);
+	text-align: center;
+}
+#bottomunit div {
+	width: 100%;
+	height: 90px;
+	.wireframe-opaque();
+}
+@media only screen and (min-width: @break-sm) {
+	#apppromo {
 		.hr-none;
 	}
-	#topunit .apppromo {
+	#topunit {
+		display: initial;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(@color-offblack);
+		text-align: center;
+	}
+}
+@media only screen and (min-width: @break-md) {
+	#apppromo {
 		display: none;
 	}
-	#topunit .unit {
-		display: initial;
-		margin:  0 auto;
-		.wireframe();
-		width: 728px;
-		height: 90px;
+	#bottomunit div {
+		width: 768px;
+		.wireframe-opaque();
 	}
 }
 
