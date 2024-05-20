@@ -76,7 +76,7 @@
 				<div class="video">
 					<div class="wireframe">video</div>
 				</div>
-				<div class="lockup">
+				<div class="card">
 					<h1>Totam at eius excepturi deleniti sed error repellat itaque omnise</h1>
 					<p>Lorem ipsum dolor sit amet consecteture adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquas ut enim ad minima veniamed.</p>
 				</div>
@@ -107,8 +107,6 @@
 
 	<script>
 
-
-
 		//
 		// INCLUDES
 		//
@@ -117,15 +115,11 @@
 			$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
 		});
 
-
-
 		//
 		// NAV
 		//
 		$(document).ready(function() {
-
 			function checkNav() {
-
 				var windowSize = $(window).width();
 				if (windowSize <= 767) {
 					if ($(document).scrollTop() < 25) {
@@ -178,19 +172,16 @@
 						$('#include-nav-main').removeClass('nav-lg-expand');
 					}
 				}
-
 			}
 
 			// Execute on load
 			checkNav();
-			// Bind event listener ("load" doesn't seem to work)
+			// Bind event listener ("load" doesn't seem to work, so added the above)
 			$(window).on("load resize scroll",function(e){
 				checkNav();
 			});
 		
 		});
-
-
 
 	</script>
 

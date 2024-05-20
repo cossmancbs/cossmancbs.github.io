@@ -21,7 +21,7 @@ main {
 }
 @media only screen and (min-width: @break-md) {
 	main {
-		top: -64px;
+		top: -65px;
 	}
 }
 .shadow-on {
@@ -35,6 +35,93 @@ main {
 
 
 
+
+
+
+
+/*
+/
+/	NAV MAIN
+/
+*/
+
+#include-nav-main {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+#include-nav-main nav a {
+	color: rgb(@color-offwhite);
+}
+#include-nav-main svg {
+	fill: rgb(@color-offwhite);
+}
+#include-nav-main nav,
+#mainnav a,
+.logo {
+	transition: all 0.2s linear;
+}
+.nav-sm-collapse {
+	#mainnav {
+		background-color: rgba(@color-evening-news, .9);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		.hr-inset-dark; /* requires fixed height */
+		.shadow-on;
+	}
+}
+.nav-sm-expand {
+	#mainnav {
+		background-color: rgba(@color-evening-news, 0);
+		-webkit-backdrop-filter: blur(0);
+		backdrop-filter: blur(0);
+		.hr-inset-dark; /* requires fixed height */
+		.shadow-off;
+	}
+}
+.nav-md-collapse {
+	#mainnav {
+		background-color: rgba(@color-evening-news, .9);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		.hr-inset-dark; /* requires fixed height */
+		.shadow-on;
+	}
+}
+.nav-md-expand {
+	#mainnav {
+		background-color: rgba(@color-evening-news, 0);
+		-webkit-backdrop-filter: blur(0);
+		backdrop-filter: blur(0);
+		.hr-inset-none; /* requires fixed height */
+		.shadow-off;
+	}
+}
+.nav-lg-collapse {
+	#mainnav {
+		background-color: rgba(@color-evening-news, .9);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		.hr-inset-dark; /* requires fixed height */
+		.shadow-on;
+	}
+}
+.nav-lg-expand {
+	#mainnav {
+		background-color: rgba(@color-evening-news, 0);
+		-webkit-backdrop-filter: blur(0);
+		backdrop-filter: blur(0);
+		.hr-inset-none; /* requires fixed height */
+		.shadow-off;
+	}
+}
+
+
+
+
+
+
 /*
 /
 /	BRAND HEADER
@@ -43,6 +130,7 @@ main {
 
 #brand-header {
 	position: relative;
+	top: 0;
 	background-color: rgb(@color-evening-news);
 }
 @media only screen and (min-width: @break-sm) {
@@ -63,6 +151,8 @@ main {
 		height: 28.125vw;
 	}
 }
+@media only screen and (min-width: @break-md) {
+}
 @media only screen and (min-width: @break-lg) {
 	#brand-header {
 		background-image:
@@ -81,7 +171,7 @@ main {
 			bottom,
 			bottom,
 			bottom;
-		height: 371.25px;
+		/*height: 371.25px;*/
 		height: 371px; /* rounded down */
 	}
 }
@@ -94,12 +184,11 @@ main {
 
 /*
 /
-/	LOCKUP (LOGO & TIME/DATE)
+/	BRAND HEADER LOCKUP (LOGO & TIME/DATE)
 /
 */
 
 #lockup {
-	margin: 0;
 	padding: 68px 20px 20px 20px;
 }
 #lockup .show-logo {
@@ -110,7 +199,7 @@ main {
 	font-style: normal;
 	font-size: 16px;
 	line-height: 1;
-	color: rgba(@color-offwhite,1);
+	color: rgb(@color-offwhite);
 }
 #lockup h2 {
 	margin: 5px 0 0 0;
@@ -118,7 +207,7 @@ main {
 	font-style: normal;
 	font-size: 12px;
 	line-height: 1;
-	color: rgba(@color-offwhite,1);
+	color: rgb(@color-offwhite);
 }
 @media only screen and (min-width: @break-sm) {
 	#lockup {
@@ -132,7 +221,7 @@ main {
 		display: block;
 	}
 	#lockup svg {
-		fill: rgba(@color-offwhite,1);
+		fill: rgb(@color-offwhite);
 		width: 200px;
 		height: 26px;
 	}
@@ -146,13 +235,11 @@ main {
 }
 @media only screen and (min-width: @break-md) {
 	#lockup {
-		margin: 0;
-		left: 50%;
+		position: relative;
+		margin: 0 auto;
 		width: @break-md-container;
 	}
 	#lockup .wrapper {
-		position: relative;
-		left: -50%;
 	}
 	#lockup svg {
 		width: 300px;
@@ -199,12 +286,21 @@ main {
 	height: 40px;
 	background-color: rgb(@color-evening-news);
 	border-top: 1px solid rgba(@color-offwhite,.15);
-	.hr-dark();
+	.hr-inset-dark(); /* requires fixed height */
 }
 #subnav-brand .wrapper {
 	overflow-x: scroll;
 	overflow-y: hidden;
+	-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
+	scrollbar-width: none;  /* hide scrollbar: Firefox */
 	white-space: nowrap;
+}
+#subnav-brand .wrapper::-webkit-scrollbar {
+	/* hide scrollbar: Safari, Chrome, Opera */
+	display: none;
+	width: 0px;
+	height: 0px;
+	background: transparent;
 }
 @media only screen and (min-width: @break-sm) {
 	#subnav-brand {
@@ -259,7 +355,7 @@ main {
 	height: 40px;
 	margin: 0;
 	padding:  0 24px 0 0;
-	color: rgba(@color-offwhite,1);
+	color: rgb(@color-offwhite);
 	font-family: "ProximaNova-Bold", sans-serif;
 	font-style: normal;
 	font-size: 12px;
@@ -282,89 +378,6 @@ main {
 
 
 
-
-
-
-/*
-/
-/	NAV
-/
-*/
-
-#include-nav-main {
-	position: sticky;
-	top: 0;
-	width: 100%;
-	z-index: 10;
-}
-#include-nav-main nav a {
-	color: rgb(@color-offwhite);
-}
-#include-nav-main .more-grid,
-#include-nav-main .more-dots,
-#include-nav-main .search,
-#include-nav-main .logo {
-	fill: rgb(@color-offwhite);
-}
-#include-nav-main nav,
-#mainnav a,
-.logo {
-	transition: all 0.2s linear;
-}
-.nav-sm-collapse {
-	#mainnav {
-		background-color: rgba(@color-evening-news, .9);
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
-		.hr-dark;
-		.shadow-on;
-	}
-}
-.nav-sm-expand {
-	#mainnav {
-		background-color: rgba(@color-evening-news, 0);
-		-webkit-backdrop-filter: blur(0);
-		backdrop-filter: blur(0);
-		.hr-dark;
-		.shadow-off;
-	}
-}
-.nav-md-collapse {
-	#mainnav {
-		background-color: rgba(@color-evening-news, .9);
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
-		.hr-dark;
-		.shadow-on;
-	}
-}
-.nav-md-expand {
-	#mainnav {
-		background-color: rgba(@color-evening-news, 0);
-		-webkit-backdrop-filter: blur(0);
-		backdrop-filter: blur(0);
-		.hr-none;
-		.shadow-off;
-	}
-}
-.nav-lg-collapse {
-	#mainnav {
-		background-color: rgba(@color-evening-news, .9);
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
-		.hr-dark;
-		.shadow-on;
-	}
-}
-.nav-lg-expand {
-	#mainnav {
-		background-color: rgba(@color-evening-news, 0);
-		-webkit-backdrop-filter: blur(0);
-		backdrop-filter: blur(0);
-		.hr-none;
-		.shadow-off;
-	}
-}
 
 
 
@@ -406,7 +419,7 @@ main {
 		grid-template-columns: repeat(12, 1fr);
 		grid-gap: 20px;
 	}
-	#video-shelf-hero .lockup {
+	#video-shelf-hero .card {
 		grid-column: 1/4;
 		grid-row: 1;
 	}
@@ -464,5 +477,11 @@ main {
 		top: 0;
 	}
 }
+
+
+
+
+
+
 
 
