@@ -127,7 +127,6 @@ main {
 
 
 
-
 /*
 /
 /	BRAND HEADER
@@ -190,7 +189,7 @@ main {
 
 /*
 /
-/	BRAND HEADER LOCKUP (LOGO & TIME/DATE)
+/	BRAND HEADER (LOGO & TIME/DATE)
 /
 */
 
@@ -391,7 +390,7 @@ main {
 
 /*
 /
-/	VIDEO SHELF
+/	VIDEO SHELF REDUX
 /
 */
 
@@ -402,21 +401,35 @@ main {
 	padding: 20px;
 }
 #video-shelf-hero h1 {
-	padding: 10px 0 10px 0;
+	margin: .5em 0 -.06em -.2em;
+	padding: 0 0 .06em .2em;
 	.zeta();
 	color: rgb(@color-offwhite);
 }
 #video-shelf-hero p {
+	margin: .5em 0 0 0;
 	.related();
 	color: rgb(@color-offwhite);
 }
-.video div {
+#video-shelf-hero .metadata {
+	color: rgb(@color-offwhite);
+}
+#video-shelf-hero .metadata svg {
+	fill: rgb(@color-offwhite);
+}
+#video-shelf-hero .video-container {
+}
+#video-shelf-hero .video-container div {
 	aspect-ratio: 16 / 9;
 	width: 100%;
 }
 @media only screen and (min-width: @break-sm) {
 	#video-shelf-hero {
 		top: -20px;
+	}
+	#video-shelf-hero h1 {
+		margin: 0 0 -.06em -.2em;
+		padding: 0 0 .06em .2em;
 	}
 	#video-shelf-hero .component {
 		display: grid;
@@ -427,7 +440,7 @@ main {
 		grid-column: 1/4;
 		grid-row: 1;
 	}
-	#video-shelf-hero .video {
+	#video-shelf-hero .video-container {
 		grid-column: 4/13;
 		grid-row: 1;
 	}
