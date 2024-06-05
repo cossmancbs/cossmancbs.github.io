@@ -74,14 +74,14 @@
 					<p>White House Communications Director Ben LaBolt said in a statement Tuesday morning that "Speaker Johnson and House Republicans must act" on the foreign aid, noting that "time is of the essence."</p>
 					<!-- <p>Embed option 1: use Javascript to load HTML file directly (downside: requires Jquery; does not limit CSS to embed)</p>
 					<div id="jq-embed"></div> -->
-					<!--<p><strong>EMBED OPTION 1: use vanilla JavaScript to set height (downside: only works on load, not on resize???)</strong></p>-->
+					<p><strong>EMBED OPTION 1: use vanilla JavaScript to set height (downside: only works on load, not on resize???)</strong></p>
 					<!-- onload='javascript:resizeiframe(this);'  -->
 					<!-- onLoad="autoResize('iframeembed')"  -->
-					<!--<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="iframeembed" title="Embed Example One" onload='javascript:resizeiframe(this);'></iframe>-->
-					<p><strong>EMBED OPTION 1 (javascript):</strong></p>
-					<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="iframeembed1b" title="Embed Example 1b" onload='javascript:resizeiframe(this);'></iframe>
+					<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="iframeembed" title="Embed Example One" onload='javascript:resizeiframe(this);'></iframe>
+					<p><strong>EMBED OPTION 1:</strong></p>
+					<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="iframeembed1b" title="Embed Example 1b"></iframe>
 					<p>"House Republicans are on Day 5 of an early, undeserved vacation while their inaction does escalating damage to our national security," LaBolt said. "We must stop Putin from continuing to murder innocent women and children while threatening our own national security."</p>
-					<p><strong>EMBED OPTION 2 (jquery):</strong></p>
+					<p><strong>EMBED OPTION 2</strong></p>
 					<iframe src="embed.html" id="iframeembedtwo" title="Embed Example Two"></iframe>
 					<p>The comments came after House Republican leaders dashed the hopes of bringing up a $95 billion Senate-passed foreign aid bill in the lower chamber last week.</p>
 					<p>"The way they're walking away from the threat of Russia, the way they're walking away from NATO, the way they're walking away from meeting our obligations, it's just shocking," the president said. "I've been here a while. I've never seen anything like this."</p>
@@ -119,9 +119,9 @@
 		// IFRAME
 		//
 		// TEST 1A:
-		//function resizeiframe(obj) {
-		//	obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-		//}
+		function resizeiframe(obj) {
+			obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		}
 		//resizeiframe(iframeembed2);
 		//function autoResize(id) {
 		//	var newwidth;
@@ -142,31 +142,27 @@
 
 
 		// TEST 1B
-		function resizeiframe(id){
+		function resizeiframetwo(id){
 			var newheight;
 			if(document.getElementById){
 				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
 			}
 			document.getElementById(id).height= (newheight) + "px";
 		}
-		// NONE OF THESE LOAD FUNCTIONS WORK!!!!!!!!!!
-		//window.addEventListener('load', onLoadFunction);
-		//function onLoadFunction(e){
-		//	resizeiframe('iframeembed1b');
-		//}
-		//window.onload = (event) => {
-		//	resizeiframe('iframeembed1b');
-		};
-		//resizeiframe('iframeembed1b');
+		window.addEventListener('load', onLoadFunction);
+		function onLoadFunction(e){
+			resizeiframetwo('iframeembed1b');
+		}
+		resizeiframetwo('iframeembed1b');
 		window.addEventListener('resize', onResizeFunction);
 		function onResizeFunction(e){
-			resizeiframe('iframeembed1b');
+			resizeiframetwo('iframeembed1b');
 		}
 
 
 
 		//
-		// INCLUDES (JQUERY)
+		// INCLUDES
 		//
 		$(function() {
 			$('#include-nav-main').load('/web/nav/nav-main.html');
@@ -179,7 +175,7 @@
 
 
 		//
-		// NAV & EMBEDS (JQUERY)
+		// NAV & EMBEDS
 		//
 		$(document).ready(function() {
 

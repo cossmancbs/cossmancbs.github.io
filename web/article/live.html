@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Article</title>
+	<title>Updating Story</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#101010">
@@ -15,7 +15,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/web/css/fonts.css">
-	<link rel="stylesheet/less" type="text/css" href="/web/article/css/sticky-v4b.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/article/css/live.less">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
@@ -47,42 +47,40 @@
 
 
 
-		<div class="article-header">
-			<div class="container">
-				<div class="hgroup">
-					<span class="topic"><a href="">Politics</a></span> <span class="flag">Exclusive</span>
-					<h1>White House criticizes House Republicans for inaction on Ukraine aid</h1>
-					<div class="byline">
-						<p>By <a href="">Norah O'Donnell</a>, <a href="">Margaret Brennan</a></p>
-						<p>Edited by <a href="">Debra Young</a>, Michael Henry, <a href="">Carmen Pancoast</a></p>
-						<p>Updated on: April 2, 2024 / 3:38 PM EDT / CBS News</p>
-					</div>
+
+
+	<div class="live-updates">
+		<div class="container">
+	
+			<div class="article-header">
+				<span class="flag flag-live">Flag 1 of 2</span> <span class="flag">Flag 2 of 2</span>
+				<h1>White House criticizes House Republicans for inaction on Ukraine aid</h1>
+				<div class="byline">
+					<p>By <a href="">Norah O'Donnell</a>, <a href="">Margaret Brennan</a></p>
+					<p>Edited by <a href="">Debra Young</a>, Michael Henry, <a href="">Carmen Pancoast</a></p>
+					<p>Updated on: June 2, 2024 / 3:38 PM EDT / CBS News</p>
 				</div>
+				<div class="app-social">app and social buttons</div>
 			</div>
+	
+			<video autoplay muted loop playsinline class="lead-video-mobile"> <!-- to display controls on load: "controls" -->
+				<source src="../video/ukraine.mp4" type="video/mp4">
+			</video>
+	
 		</div>
+	</div>
+
+
 
 
 
 		<div class="article-body">
 			<div class="main">
-				<video autoplay muted loop playsinline class="lead-video-mobile">
-					<!-- to display controls on load: "controls" -->
-					<source src="../video/ukraine.mp4" type="video/mp4">
-				</video>
+
 				<div class="block">
 					<p><span class="bureau">Washington D.C.</span> &mdash; The White House has ramped up criticism of House Republicans and Speaker Mike Johnson in recent days over their failure to bring up a Senate-passed bill that would provide aid to Ukraine, where conditions have grown more dire, as well as Israel and Taiwan.</p>
 					<p>White House Communications Director Ben LaBolt said in a statement Tuesday morning that "Speaker Johnson and House Republicans must act" on the foreign aid, noting that "time is of the essence."</p>
-					<!-- <p>Embed option 1: use Javascript to load HTML file directly (downside: requires Jquery; does not limit CSS to embed)</p>
-					<div id="jq-embed"></div> -->
-					<!--<p><strong>EMBED OPTION 1: use vanilla JavaScript to set height (downside: only works on load, not on resize???)</strong></p>-->
-					<!-- onload='javascript:resizeiframe(this);'  -->
-					<!-- onLoad="autoResize('iframeembed')"  -->
-					<!--<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="iframeembed" title="Embed Example One" onload='javascript:resizeiframe(this);'></iframe>-->
-					<p><strong>EMBED OPTION 1 (javascript):</strong></p>
-					<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="iframeembed1b" title="Embed Example 1b" onload='javascript:resizeiframe(this);'></iframe>
 					<p>"House Republicans are on Day 5 of an early, undeserved vacation while their inaction does escalating damage to our national security," LaBolt said. "We must stop Putin from continuing to murder innocent women and children while threatening our own national security."</p>
-					<p><strong>EMBED OPTION 2 (jquery):</strong></p>
-					<iframe src="embed.html" id="iframeembedtwo" title="Embed Example Two"></iframe>
 					<p>The comments came after House Republican leaders dashed the hopes of bringing up a $95 billion Senate-passed foreign aid bill in the lower chamber last week.</p>
 					<p>"The way they're walking away from the threat of Russia, the way they're walking away from NATO, the way they're walking away from meeting our obligations, it's just shocking," the president said. "I've been here a while. I've never seen anything like this."</p>
 					<p>Johnson's team countered later in the day, saying that "we welcome the President's reversal and openness to meeting with Speaker Johnson about the best path forward for securing the nation," while noting that "it's long overdue."</p>
@@ -114,78 +112,21 @@
 
 
 	<script>
-		
-		//
-		// IFRAME
-		//
-		// TEST 1A:
-		//function resizeiframe(obj) {
-		//	obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-		//}
-		//resizeiframe(iframeembed2);
-		//function autoResize(id) {
-		//	var newwidth;
-		//	if(document.getElementById){
-		//		newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
-		//	}
-		//	document.getElementById(id).width= (newwidth) + "px";
-		//}
-		//autoResize('iframeembed');
-		//function resizeiframe2() {
-		//	var xyz = 'iframeembedtwo';
-		//	xyz.style.height = xyz.contentWindow.document.body.scrollHeight + 'px';
-		//}
-		//resizeiframe2();
-
-
-
-
-
-		// TEST 1B
-		function resizeiframe(id){
-			var newheight;
-			if(document.getElementById){
-				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
-			}
-			document.getElementById(id).height= (newheight) + "px";
-		}
-		// NONE OF THESE LOAD FUNCTIONS WORK!!!!!!!!!!
-		//window.addEventListener('load', onLoadFunction);
-		//function onLoadFunction(e){
-		//	resizeiframe('iframeembed1b');
-		//}
-		//window.onload = (event) => {
-		//	resizeiframe('iframeembed1b');
-		};
-		//resizeiframe('iframeembed1b');
-		window.addEventListener('resize', onResizeFunction);
-		function onResizeFunction(e){
-			resizeiframe('iframeembed1b');
-		}
-
-
 
 		//
-		// INCLUDES (JQUERY)
+		// INCLUDES
 		//
-		$(function() {
-			$('#include-nav-main').load('/web/nav/nav-main.html');
-			$('#include-nav-sub').load('/web/nav/nav-sub.html');
-			//$('#jq-embed').load('/web/article/embed.html');
+		$(function(){
+			$("#include-nav-main").load("/web/nav/nav-main.html");
+			$("#include-nav-sub").load("/web/nav/nav-sub.html");
 		});
 
 
 
-
-
 		//
-		// NAV & EMBEDS (JQUERY)
+		// NAV
 		//
 		$(document).ready(function() {
-
-			function checkiframe() {
-				$('#iframeembedtwo').height( $('#iframeembedtwo').contents().find('html').height() );
-			}
 
 			function checkNav() {
 
@@ -204,7 +145,6 @@
 			// Bind event listener ("load" doesn't seem to work)
 			$(window).on("load resize scroll",function(e){
 				checkNav();
-				checkiframe();
 			});
 
 		});
