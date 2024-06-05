@@ -28,13 +28,23 @@
 
 
 
-	<div id="apppromo"><img src="/web/img/app-promo-left.png" width="225" height="29" alt=""><img src="/web/img/app-promo-right.png" width="65" height="27" alt="Open"></div>
-
-
-
 	<div id="stickers">
-		<div id="topunit"><img src="/web/img/728x90-paramount.jpg" width="728" height="90" alt="Exclusively on Paramount+"></div>
 		<div id="include-nav-main"></div>
+		<div class="live-updates-collapsed">
+			<div class="container">
+				<div class="article-header">
+					<span class="flag flag-live">Flag 1 of 2</span> <span class="flag">Flag 2 of 2</span>
+					<h1>White House criticizes House Republicans for inaction on Ukraine aid</h1>
+					<div class="byline">
+						<p>Updated on: June 2, 2024 / 3:38 PM EDT / CBS News</p>
+					</div>
+					<div class="app-social">app and social buttons</div>
+				</div>
+				<video autoplay muted loop playsinline class="lead-video-mobile">
+					<source src="../video/ukraine.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
 	</div>
 
 
@@ -62,11 +72,11 @@
 				</div>
 				<div class="app-social">app and social buttons</div>
 			</div>
-	
+
 			<video autoplay muted loop playsinline class="lead-video-mobile"> <!-- to display controls on load: "controls" -->
 				<source src="../video/ukraine.mp4" type="video/mp4">
 			</video>
-	
+
 		</div>
 	</div>
 
@@ -130,12 +140,14 @@
 
 			function checkNav() {
 
-				if ($(document).scrollTop() < 50) {
-					$('#include-nav-main').removeClass('shadow-on');
-					$('#include-nav-main').addClass('shadow-off');
+				if ($(document).scrollTop() < 300) {
+					$('#stickers').removeClass('shadow-on');
+					$('#stickers').addClass('shadow-off');
+					$('.live-updates-collapsed').hide();
 				} else {
-					$('#include-nav-main').addClass('shadow-on');
-					$('#include-nav-main').removeClass('shadow-off');
+					$('#stickers').addClass('shadow-on');
+					$('#stickers').removeClass('shadow-off');
+					$('.live-updates-collapsed').show();
 				}
 
 			}
