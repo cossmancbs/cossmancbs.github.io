@@ -33,6 +33,7 @@
 
 		<!-- collapsed article header -->
 		<div class="live-updates-collapsed">
+			<!-- annoying hack to mimic empty column -->
 			<div class="grid">
 				<div class="container">
 					<div class="article-header">
@@ -43,7 +44,7 @@
 						</div>
 						<div class="app-social">app and social buttons</div>
 					</div>
-					<video autoplay muted loop playsinline class="lead-video-mobile">
+					<video autoplay muted loop playsinline>
 						<source src="../video/ukraine.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -62,7 +63,6 @@
 
 
 
-
 	<!-- expanded article header -->
 	<div class="live-updates">
 		<div class="container">
@@ -78,14 +78,12 @@
 				<div class="app-social">app and social buttons</div>
 			</div>
 
-			<video autoplay muted loop playsinline class="lead-video-mobile"> <!-- to display controls on load: "controls" -->
+			<video autoplay muted loop playsinline>
 				<source src="../video/ukraine.mp4" type="video/mp4">
 			</video>
 
 		</div>
 	</div>
-
-
 
 
 
@@ -159,7 +157,7 @@
 
 			// Execute on load
 			checkNav();
-			// Bind event listener ("load" doesn't seem to work)
+			// Bind event listener ("load" doesn't seem to work?)
 			$(window).on("load resize scroll",function(e){
 				checkNav();
 			});
