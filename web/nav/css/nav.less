@@ -23,7 +23,7 @@ nav {
 }
 #mainnav,
 #subnav {
-	.hr-light
+	.hr-light;
 }
 .logo {
 	width: 142.86px;
@@ -91,6 +91,10 @@ nav {
 	/* FIRST PROBLEM: first-child or nth-child selectors don't work??? so I had to set a class to the outer list item??? */
 	/* SECOND PROBLEM: doesn't work unless I specify the outer container??? */
 	padding: 0 12px 0 0;
+}
+#subnav .branded {
+	text-transform: uppercase;
+	border-right: 1px solid red;
 }
 #mainnav a:hover,
 #subnav a:hover {
