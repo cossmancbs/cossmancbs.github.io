@@ -39,8 +39,8 @@
 			<div class="hgroup">
 				<h1>Presidential Results</h1>
 				<ul>
-					<li class="timestamp">Updated: <strong>1h ago</strong></li>
-					<li>13% In</li>
+					<li class="timestamp">Updated: <strong>5m ago</strong></li>
+					<!-- <li>13% In</li> -->
 					<li><a href="">Exit Poll</a></li>
 				</ul>
 			</div>
@@ -53,16 +53,22 @@
 			<div id="bop">
 				<ul class="legend">
 					<li class="d">
-						<span id="bop-d" class="electoral">0</span>
-						<span class="candidate">Biden</span>
+						<span id="bop-d" class="electoral">218</span>
+						<span class="candidate">
+							Joseph R. Biden Jr.
+							<svg><use xlink:href="sprite.svg#checkmark"></use></svg>
+						</span>
 					</li>
 					<li>
 						<span class="electoral"></span>
 						<span class="to-win"><strong>270</strong> to win</span>
 					</li>
 					<li class="r">
-						<span id="bop-r" class="electoral">0</span>
-						<span class="candidate">Trump</span>
+						<span id="bop-r" class="electoral">240</span>
+						<span class="candidate">
+							Donald J. Trump
+							<svg><use xlink:href="sprite.svg#checkmark"></use></svg>
+						</span>
 					</li>
 				</ul>
 				<div class="bar-container">
@@ -206,12 +212,12 @@
 				stateCA = "on";
 				// BoP: increase delegate count:
 				const obj = document.getElementById("bop-d");
-				animateValue(obj, 0, 54, 1000);
+				animateValue(obj, 218, 272, 1000);
 			} else {
 				stateCA = "off";
 				// BoP: decrease delegate count:
 				const obj = document.getElementById("bop-d");
-				animateValue(obj, 54, 0, 1000);
+				animateValue(obj, 272, 218, 1000);
 			}
 			// map: toggle chip:
 			let elementChip = document.getElementById("ca");
@@ -228,12 +234,12 @@
 				stateAL = "on";
 				// BoP: increase delegate count:
 				const obj = document.getElementById("bop-r");
-				animateValue(obj, 0, 9, 500);
+				animateValue(obj, 240, 249, 1000);
 			} else {
 				stateAL = "off";
 				// BoP: decrease delegate count:
 				const obj = document.getElementById("bop-r");
-				animateValue(obj, 9, 0, 500);
+				animateValue(obj, 249, 240, 1000);
 			}
 			// map: toggle chip:
 			let elementChip = document.getElementById("al");
