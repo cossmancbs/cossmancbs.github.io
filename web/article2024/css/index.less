@@ -143,22 +143,27 @@ iframe + p {
 #include-nav-sub nav {
 	.hr-light;
 }
-#include-nav-main nav a,
-#include-nav-sub nav a {
-	/* color: rgb(@color-offwhite); */
-}
-#include-nav-main .more-grid,
-#include-nav-main .more-dots,
-#include-nav-main .search,
-#include-nav-main .logo {
-	/* fill: rgb(@color-offwhite); */
-}
 #include-nav-main nav,
 #mainnav a,
 .logo {
 	transition: all 0.2s linear;
 }
-
+@media only screen and (min-width: @break-sm) {
+}
+@media only screen and (min-width: @break-md) {
+	#mainnav .main-outer,
+	#subnav ul {
+		margin: 0;
+		padding: 0 40px;
+		width: auto !important;
+	}
+}
+@media only screen and (min-width: @break-lg) {
+	#mainnav .main-outer,
+	#subnav ul {
+		width: auto !important;
+	}
+}
 
 
 
@@ -173,21 +178,45 @@ iframe + p {
 */
 
 main {
+	padding: 20px;
 	position: relative;
+	.wireframe-outline;
 }
 .article {
+	.wireframe-outline;
 }
 .rail {
 	display: none;
+	.wireframe-outline;
 }
-@media only screen and (min-width: @break-sm) {
+@media only screen and (min-width: 600px) {
+	main {
+		display: grid;
+		/* grid-template-columns: repeat(12, 1fr); */
+		grid-template-columns: 1fr 288px;
+		gap: 20px;
+	}
+	.article {
+		/* grid-column: 1/9; */
+	}
 	.rail {
 		display: initial;
+		/* grid-column: 9/13; */
 	}
 }
+@media only screen and (min-width: @break-sm) {
+}
 @media only screen and (min-width: @break-md) {
+	main {
+		padding: 40px;
+		grid-template-columns: 1fr 320px;
+		gap: 40px;
+	}
 }
 @media only screen and (min-width: @break-lg) {
+	main {
+		grid-template-columns: 1fr 400px;
+	}
 }
 
 
@@ -206,8 +235,8 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	padding: 20px;
 	color: rgb(@color-offblack);
+	.wireframe-outline;
 }
 .article-header .hgroup {
 	display: flex;
@@ -244,14 +273,14 @@ main {
 	gap: 8px;
 }
 @media only screen and (min-width: @break-sm) {
+}
+@media only screen and (min-width: @break-md) {
 	.article-header h1 {
 		.headline-large-2024;
 	}
 	.article-header p {
 		.byline-large-2024;
 	}
-}
-@media only screen and (min-width: @break-md) {
 }
 @media only screen and (min-width: @break-lg) {
 }
@@ -322,7 +351,6 @@ video {
 */
 
 .article-body {
-	padding: 20px;
 }
 .article-body p {
 	margin: 0 0 .8em 0;
@@ -336,11 +364,11 @@ video {
 	.body-emphasis;
 }
 @media only screen and (min-width: @break-sm) {
+}
+@media only screen and (min-width: @break-md) {
 	.article-body p {
 		.body-large-2024;
 	}
-}
-@media only screen and (min-width: @break-md) {
 }
 @media only screen and (min-width: @break-lg) {
 }
