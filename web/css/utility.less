@@ -1,3 +1,17 @@
+/* SPACING */
+
+@gap-xxs:    4px;
+@gap-xs:     8px;
+@gap-s:     16px;
+@gap-m:     20px;
+@gap-l:     24px;
+@gap-xl:    32px;
+@gap-xxl:   40px;
+
+
+
+
+
 /* BREAKPOINTS */
 
 @break-sm: 768px;
@@ -8,35 +22,37 @@
 
 
 
+
+
 /* HORIZONTAL RULES */
 
 .hr-light {
-	border-bottom: 1px solid rgb(@color-graylight);
+	border-bottom: 1px solid rgb(@color-neutral-5);
 }
 .hr-dark {
-	border-bottom: 1px solid rgba(@color-offwhite,.15);
+	border-bottom: 1px solid rgba(@color-neutral-0,.15);
 }
 .hr-none {
-	border-bottom: 1px solid rgba(@color-offwhite,0);
+	border-bottom: 1px solid rgba(@color-neutral-0,0);
 }
-
-
 
 /* INSET HORIZONTAL RULES */
 /* only works on objects with fixed height */
 
 .hr-inset-light {
 	box-sizing: border-box;
-    border-bottom: 1px solid rgb(@color-graylight);
+    border-bottom: 1px solid rgb(@color-neutral-5);
 }
 .hr-inset-dark {
 	box-sizing: border-box;
-    border-bottom: 1px solid rgba(@color-offwhite,.15);
+    border-bottom: 1px solid rgba(@color-neutral-0,.15);
 }
 .hr-inset-none {
 	box-sizing: border-box;
     border-bottom: none;
 }
+
+
 
 
 

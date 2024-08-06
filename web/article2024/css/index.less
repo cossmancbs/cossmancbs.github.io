@@ -184,17 +184,17 @@ section {
 	.wireframe-outline;
 }
 main {
-	padding: 20px;
+	padding: @gap-s;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: @gap-s;
 }
 .article-header {
 }
 .article-body {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: @gap-s;
 }
 .article-video {
 }
@@ -202,7 +202,6 @@ main {
 	main {
 		display: grid;
 		grid-template-columns: 1fr 288px;
-		gap: 20px;
 	}
 	.article-header {
 		grid-column: 1;
@@ -221,7 +220,7 @@ main {
 	main {
 		padding: 40px;
 		grid-template-columns: 1fr 320px;
-		gap: 40px;
+		gap: @gap-xxl;
 	}
 }
 @media only screen and (min-width: @break-lg) {
@@ -245,13 +244,13 @@ main {
 .article-header {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: @gap-s;
 	.wireframe-outline;
 }
 .article-header .hgroup {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: @gap-xs;
 }
 .article-header h1 {
 	.headline-small-2024;
@@ -271,7 +270,7 @@ main {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 16px;
+	gap: @gap-s;
 	color: rgb(@color-neutral-50);
 }
 .article-header .byline img {
@@ -282,7 +281,7 @@ main {
 .article-header .byline div {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: @gap-xs;
 }
 @media only screen and (min-width: @break-sm) {
 }
@@ -432,8 +431,8 @@ figcaption .credit {
 .tags {
 	display: flex;
 	flex-direction: row;
-	column-gap: 16px;
-	row-gap: 8px;
+	column-gap: @gap-s;
+	row-gap: @gap-xs;
 	.wireframe-outline;
 }
 .tags h1 {
@@ -444,8 +443,8 @@ figcaption .credit {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	column-gap: 16px;
-	row-gap: 8px;
+	column-gap: @gap-s;
+	row-gap: @gap-xs;
 }
 .tags a {
 	.article2024-txt-strong;
@@ -485,7 +484,7 @@ figcaption .credit {
 .author {
 	display: flex;
 	flex-direction: row;
-	gap: 12px;
+	gap: @gap-xs;
 	.wireframe-outline;
 }
 .author svg {
@@ -497,7 +496,7 @@ figcaption .credit {
 .author div {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: @gap-xxs;
 }
 .author h1 {
 	.article2024-txt-normal;
@@ -522,7 +521,7 @@ figcaption .credit {
 .author ul {
 	display: flex;
 	flex-direction: row;
-	gap: 16px;
+	gap: @gap-s;
 	.wireframe-outline;
 }
 .author ul a {
@@ -537,7 +536,7 @@ figcaption .credit {
 }
 @media only screen and (min-width: @break-sm) {
 	.author {
-		gap: 24px;
+		gap: @gap-l;
 	}
 	.author h1,
 	.author p,
