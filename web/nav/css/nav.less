@@ -65,11 +65,16 @@ nav {
 }
 #subnav ul {
 	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
+}
+#subnav li {
+	flex-shrink: 0;
 }
 #mainnav a,
 #subnav a {
 	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
 	font-family: "ProximaNova-Bold", sans-serif;
 	line-height: 1;
