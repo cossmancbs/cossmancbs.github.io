@@ -1,0 +1,56 @@
+@import "../../css/colors.less";
+@import "../../css/utility.less";
+
+
+
+#smart-app-banner {
+	padding: 0 9px 0 15px;
+	height: 45px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white);
+	.hr-light;
+}
+#smart-app-banner div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+#smart-app-banner li + li {
+	margin-top: 2px;
+}
+#smart-app-banner ul li:first-child {
+	font-family: system-ui;
+	font-size: 12px;
+	font-weight: 600;
+	color: #090B0A;
+}
+#smart-app-banner ul li:last-child {
+	font-family: system-ui;
+	font-size: 11px;
+	font-weight: 400;
+	color: #8B8B8F;
+}
+@media only screen and (min-width: @break-sm) {
+	#smart-app-banner {
+		display: none;
+	}
+}
+@media only screen and (min-width: @break-md) {
+	#smart-app-banner {
+	}
+}
+@media (prefers-color-scheme: dark) {
+	#smart-app-banner {
+		background-color: rgb(@color-neutral-100);
+		.hr-dark;
+	}
+	#smart-app-banner ul li:first-child {
+		color: white;
+	}
+	#smart-app-banner ul li:last-child {
+		color: #939399;
+	}
+}
