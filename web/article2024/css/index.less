@@ -89,13 +89,18 @@ iframe + p {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: rgb(@color-neutral-100);
+		background-color: white;
 		text-align: center;
 	}
 }
 @media only screen and (min-width: @break-md) {
 	#bottomunit div {
 		width: 768px;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	#topunit {
+		background-color: rgb(@color-neutral-100);
 	}
 }
 
