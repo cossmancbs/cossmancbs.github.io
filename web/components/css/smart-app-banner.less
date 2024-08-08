@@ -9,14 +9,20 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: white);
+	background-color: white;
 	.hr-light;
 }
-#smart-app-banner div {
+#smart-app-banner .hgroup {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 8px;
+}
+#smart-app-banner .app-icon {
+	width: 29px;
+	height: 29px;
+	background-image: url("/web/img/smart-app-banner-icon-light.png"); 
+	background-size: contain;
 }
 #smart-app-banner li + li {
 	margin-top: 2px;
@@ -38,14 +44,13 @@
 		display: none;
 	}
 }
-@media only screen and (min-width: @break-md) {
-	#smart-app-banner {
-	}
-}
 @media (prefers-color-scheme: dark) {
 	#smart-app-banner {
 		background-color: rgb(@color-neutral-100);
 		.hr-dark;
+	}
+	#smart-app-banner .app-icon {
+		background-image: url("/web/img/smart-app-banner-icon-dark.png"); 
 	}
 	#smart-app-banner ul li:first-child {
 		color: white;
