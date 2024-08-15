@@ -202,7 +202,7 @@ iframe + p {
 }
 @media (prefers-color-scheme: dark) {
 	#include-nav-main nav {
-		background-image: linear-gradient(rgba(@color-neutral-100,1), rgba(@color-neutral-100,.5));
+		background-image: linear-gradient(rgba(@color-neutral-100,1), rgba(@color-neutral-100,.75));
 		-webkit-backdrop-filter: saturate(200%) blur(20px);
 		backdrop-filter: saturate(200%) blur(20px);
 		.hr-dark;
@@ -238,7 +238,8 @@ iframe + p {
 .article-header,
 .article-body,
 section {
-	.wireframe-outline;
+	/* turn on for editing */
+	/* .wireframe-outline; */
 }
 main {
 	margin: @gap-s 0;
@@ -324,7 +325,7 @@ main {
 }
 @media only screen and (min-width: 1440px) {
 	main {
-		margin: 0 auto;
+		margin: @gap-l auto;
 		width: 1440px;
 		grid-template-columns: 1fr 640px;
 	}
@@ -346,7 +347,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: @gap-s;
-	.wireframe-outline;
 }
 .article-header .hgroup {
 	display: flex;
@@ -536,13 +536,9 @@ video {
 /
 */
 
-figure {
-}
 figure img {
 	width: 100%;
 	height: auto;
-}
-figcaption {
 }
 figcaption span {
 	display: block;
@@ -557,6 +553,11 @@ figcaption .credit {
 @media only screen and (min-width: @break-md) {
 	figcaption span {
 		.article2024-txt-m;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	figcaption span {
+		color: rgb(@color-neutral-0);
 	}
 }
 
@@ -578,22 +579,35 @@ figcaption .credit {
 }
 .block-media .card {
 	align-self: flex-end;
-	.wireframe;
 	margin: @gap-xs;
-	color: rgb(@color-neutral-0);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: @gap-xxs;
+}
+.block-media .button {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background-color: rgba(@color-neutral-100,.5);
+	border: 2px solid rgb(@color-neutral-0);
+	flex-shrink: 0;
+}
+.block-media .hgroup {
 	display: flex;
 	flex-direction: column;
 	gap: @gap-xxs;
+	color: rgb(@color-neutral-0);
 }
-.block-media .card h1 {
+.block-media .hgroup h1 {
 	.article2024-txt-strong;
 	.article2024-txt-m;
 }
-.block-media .card p {
+.block-media .hgroup p {
 	.article2024-txt-normal;
 	.article2024-txt-s;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1120px) {
 	.block-media .media {
 		border-radius: 8px;
 	}
@@ -601,10 +615,14 @@ figcaption .credit {
 		margin: @gap-xl;
 		gap: @gap-xs;
 	}
-	.block-media .card h1 {
+	.block-media .button {
+		width: 96px;
+		height: 96px;
+	}
+	.block-media .hgroup h1 {
 		.article2024-txt-xl;
 	}
-	.block-media .card p {
+	.block-media .hgroup p {
 		.article2024-txt-l;
 	}
 }
@@ -717,6 +735,25 @@ figcaption .credit {
 		border-radius: 8px;
 	}
 }
+@media (prefers-color-scheme: dark) {
+	.block-recirculation h1 a,
+	.block-recirculation li h1 {
+		color: rgb(@color-neutral-0);
+	}
+	.block-recirculation h1 a:hover,
+	.block-recirculation li a:hover h1  {
+		color: rgb(@color-neutral-30);
+	}
+	.block-recirculation li div p {
+		color: rgb(@color-neutral-30);
+	}
+	.block-recirculation h1 svg {
+		fill: rgb(@color-neutral-0);
+	}
+	.block-recirculation h1 a:hover svg {
+		fill: rgb(@color-neutral-30);
+	}
+}
 
 
 
@@ -737,11 +774,11 @@ figcaption .credit {
 	flex-direction: row;
 	column-gap: @gap-s;
 	row-gap: @gap-xs;
-	.wireframe-outline;
 }
 .block-tags h1 {
 	.article2024-txt-normal;
 	.article2024-txt-s;
+	color: rgb(@color-neutral-100);
 }
 .block-tags ul {
 	display: flex;
@@ -768,6 +805,15 @@ figcaption .credit {
 		.article2024-txt-m;
 	}
 }
+@media (prefers-color-scheme: dark) {
+	.block-tags h1,
+	.block-tags a {
+		color: rgb(@color-neutral-0);
+	}
+	.block-tags a:hover {
+		color: rgb(@color-neutral-30);
+	}
+}
 
 
 
@@ -789,7 +835,6 @@ figcaption .credit {
 	display: flex;
 	flex-direction: column;
 	gap: @gap-s;
-	.wireframe-outline;
 }
 .block-author .primary {
 	display: flex;
@@ -863,6 +908,28 @@ figcaption .credit {
 	.block-author svg {
 		height: 96px;
 		width: 96px;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.block-author h1,
+	.block-author h1 a {
+		color: rgb(@color-neutral-0);
+	}
+	.block-author h1 a:hover {
+		color: rgb(@color-neutral-30);
+	}
+	.block-author ul a {
+		color: rgb(@color-neutral-0);
+	}
+	.block-author ul a:hover {
+		color: rgb(@color-neutral-30);
+	}
+	.block-author p,
+	.block-author p a {
+		color: rgb(@color-neutral-30);
+	}
+	.block-author p a:hover {
+		color: rgb(@color-neutral-0);
 	}
 }
 
