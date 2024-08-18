@@ -235,11 +235,12 @@ iframe + p {
 /
 */
 
+main,
 .article-header,
 .article-body,
 section {
 	/* turn on for editing */
-	/* .wireframe-outline; */
+	.wireframe-outline;
 }
 main {
 	margin: @gap-s 0;
@@ -326,7 +327,7 @@ main {
 @media only screen and (min-width: 1440px) {
 	main {
 		margin: @gap-l auto;
-		width: 1440px;
+		width: 1392px;
 		grid-template-columns: 1fr 640px;
 	}
 }
@@ -540,19 +541,30 @@ video {
 /
 */
 
+section.block-picture {
+	margin: 0;
+}
+figcaption {
+	/* impossible to style figcaption??? */
+}
 figure img {
 	width: 100%;
 	height: auto;
 }
 figcaption span {
 	display: block;
-	margin: .4em 0 0 0;
+	margin: .4em @gap-s 0 @gap-s;
 	.article2024-txt-normal;
 	.article2024-txt-s;
 	color: rgb(@color-neutral-100);
 }
 figcaption .credit {
 	color: rgb(@color-neutral-50);
+}
+@media only screen and (min-width: 640px) {
+	figcaption span {
+		margin: .4em 0 0 0;
+	}
 }
 @media only screen and (min-width: @break-md) {
 	figcaption span {
@@ -596,6 +608,14 @@ figcaption .credit {
 	background-color: rgba(@color-neutral-100,.5);
 	border: 2px solid rgb(@color-neutral-0);
 	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.block-media .button svg {
+	width: 24px;
+	height: 24px;
+	fill: rgb(@color-neutral-0);
 }
 .block-media .hgroup {
 	display: flex;
@@ -622,6 +642,11 @@ figcaption .credit {
 	.block-media .button {
 		width: 96px;
 		height: 96px;
+	}
+	.block-media .button svg {
+		width: 48px;
+		height: 48px;
+		fill: rgb(@color-neutral-0);
 	}
 	.block-media .hgroup h1 {
 		.article2024-txt-xl;
