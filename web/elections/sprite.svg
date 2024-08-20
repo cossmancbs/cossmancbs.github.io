@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 
-	<symbol id="caret-right" viewBox="0 0 100 100">
+	<symbol id="caret" viewBox="0 0 100 100">
 		<path fill-rule="evenodd" d="M25.654 14.566A8.824 8.824 0 1 1 39.052 3.08l35.294 41.177a8.824 8.824 0 0 1 0 11.484L39.052 96.92a8.824 8.824 0 0 1-13.398-11.485L56.026 50z"/>
 	</symbol>
 
