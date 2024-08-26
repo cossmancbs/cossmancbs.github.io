@@ -537,14 +537,16 @@ main {
 }
 @media only screen and (min-width: 640px) {
 	.article-rail {
-		background-color: none;
-		-webkit-backdrop-filter: none;
-		backdrop-filter: none;
-		border: none;
+		background-color: transparent !important;
+		-webkit-backdrop-filter: none !important;
+		backdrop-filter: none !important;
+		border: none !important;
 	}
 	.article-video {
 		margin: 0;
 		flex-direction: column;
+		align-items: normal;
+		justify-content: normal;
 		gap: 0;
 		border-radius: 4px;
 		overflow: hidden;
