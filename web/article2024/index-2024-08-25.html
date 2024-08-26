@@ -15,7 +15,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
-	<link rel="stylesheet/less" type="text/css" href="/web/article2024/css/index.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/article2024/css/index-2024-08-25.less">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
@@ -45,8 +45,9 @@
 		
 		
 		
-		<div class="article-rail">
-			<section class="article-video">
+		<div class="article-video">
+			<span>T.B.D.: sticky video at mobile breakpoint</span>
+			<section>
 				<video autoplay muted loop playsinline>
 					<source src="../video/60-minutes-overtime.mp4" type="video/mp4">
 				</video>
@@ -294,11 +295,11 @@
 			function checkNav() {
 				
 				if ($(document).scrollTop() < 50) {
-					//$('#include-nav-main').removeClass('shadow-on');
-					//$('#include-nav-main').addClass('shadow-off');
+					$('#include-nav-main').removeClass('shadow-on');
+					$('#include-nav-main').addClass('shadow-off');
 				} else {
-					//$('#include-nav-main').addClass('shadow-on');
-					//$('#include-nav-main').removeClass('shadow-off');
+					$('#include-nav-main').addClass('shadow-on');
+					$('#include-nav-main').removeClass('shadow-off');
 				}
 				
 			}
