@@ -258,7 +258,7 @@ main,
 .article-body,
 section {
 	/* turn on for editing */
-	.wireframe-outline;
+	/* .wireframe-outline; */
 }
 main {
 	/* margin: @gap-s 0; */
@@ -302,7 +302,7 @@ main {
 	}
 	.article-rail section {
 		position: sticky;
-		top: 68px;
+		top: 64px;
 	}
 	.article-body {
 		grid-column: 1;
@@ -350,7 +350,6 @@ main {
 	main {
 		margin: @gap-xl auto;
 		width: 1320px;
-		/* grid-template-columns: 1fr 560px; */
 	}
 }
 
@@ -440,22 +439,36 @@ main {
 /
 */
 
+.article-header .chips {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: @gap-xs;
+}
 .article-header .flag {
-	padding: .6em .6em .5em .6em;
+	padding: .3em;
 	align-self: flex-start;
+	align-items: center;
 	.flag-small-2024;
 	background-color: rgb(@color-neutral-100);
 	color: rgb(@color-neutral-0);
 	border-radius: 2px;
+	display: flex;
+	flex-direction: row;
+	gap: @gap-xxs;
+}
+.article-header .flag svg {
+	width: 12px;
+	height: 12px;
+	fill: rgb(@color-neutral-0);
 }
 .article-header .topic a {
 	.topic-small-2024;
 	color: rgb(@color-neutral-100);
-	text-decoration: none;
+	text-decoration: underline;
 }
 .article-header .topic a:hover {
 	color: rgb(@color-graydark);
-	text-decoration: underline;
 }
 @media only screen and (min-width: @break-sm) {
 	.article-header .flag {
@@ -503,14 +516,15 @@ main {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;
-	gap: @gap-xs;
+	/* justify-content: space-between; */
+	gap: @gap-xxs;
 	color: rgb(@color-neutral-100);
 }
 .article-video video {
 	width: 176px;
+	width: 96px;
 	border-radius: 4px;
-	order: 2;
+	/* order: 2; */
 }
 .article-video h1 {
 	.article2024-txt-strong;
@@ -529,8 +543,12 @@ main {
 	line-height: 1;
 	color: rgb(@color-neutral-50);
 }
-.article-video .now {
-	order: 1;
+.article-video .now,
+.article-video .next {
+	padding: @gap-xs;
+	display: flex;
+	flex-direction: column;
+	gap: @gap-xxs;
 }
 .article-video .next {
 	display: none;
@@ -554,23 +572,17 @@ main {
 		background-color: rgb(@color-neutral-100);
 	}
 	.article-video video {
-		order: 1;
+		/* order: 1; */
 		width: 100%;
 		border-radius: 0;
 	}
-	.article-video .now,
-	.article-video .next {
-		padding: @gap-xs;
-		display: flex;
-		flex-direction: column;
-		gap: @gap-xxs;
-	}
 	.article-video .now {
-		order: 2;
+		/* order: 2; */
 		border-bottom: 1px solid rgb(@color-neutral-80);
 	}
 	.article-video .next {
-		order: 3;
+		display: initial;
+		/* order: 3; */
 	}
 	.article-video p {
 		color: rgb(@color-neutral-20);
