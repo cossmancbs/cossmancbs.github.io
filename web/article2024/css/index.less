@@ -145,10 +145,6 @@ iframe + p {
 #include-nav-sub {
 	position: relative;
 	width: 100%;
-	/*
-	position: sticky;
-	top: 0;
-	*/
 }
 #include-nav-main nav {
 	background-image: linear-gradient(rgba(@color-white,1), rgba(@color-white,.85));
@@ -260,7 +256,6 @@ section {
 	/* .wireframe-outline; */
 }
 main {
-	/* margin: @gap-s 0; */
 	margin: 0;
 	display: flex;
 	flex-direction: column;
@@ -592,7 +587,9 @@ main {
 		/* order: 2; */
 	}
 	.article-video .next {
-		display: initial;
+		display: flex;
+		flex-direction: column;
+		gap: @gap-xs;
 		border-top: 1px solid rgb(@color-neutral-10); 
 		/* order: 3; */
 	}
@@ -768,12 +765,11 @@ section.block-summary li {
 section.block-picture {
 	margin: 0;
 }
-figcaption {
-	/* impossible to style figcaption??? */
-}
 figure img {
 	width: 100%;
-	height: auto;
+}
+figcaption {
+	/* impossible to style figcaption? */
 }
 figcaption span {
 	display: block;
@@ -786,6 +782,10 @@ figcaption .credit {
 	color: rgb(@color-neutral-50);
 }
 @media only screen and (min-width: 640px) {
+	figure img {
+		border-radius: 4px;
+		overflow: hidden;
+	}
 	figcaption span {
 		margin: .4em 0 0 0;
 	}
@@ -811,15 +811,17 @@ figcaption .credit {
 /
 */
 
+section.block-media {
+	margin: 0;
+}
 .block-media .media {
 	display: flex;
 	aspect-ratio: 16 / 9;
 	background-size: cover, cover;
-	border-radius: 4px;
 }
 .block-media .card {
+	margin: @gap-s;
 	align-self: flex-end;
-	margin: @gap-xs;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -850,10 +852,12 @@ figcaption .credit {
 .block-media .hgroup h1 {
 	.article2024-txt-strong;
 	.article2024-txt-m;
+	text-decoration: none;
 }
 .block-media .hgroup p {
 	.article2024-txt-normal;
 	.article2024-txt-s;
+	text-decoration: none;
 }
 .block-media a:hover .button {
 	background-color: rgb(@color-neutral-0);
@@ -861,12 +865,10 @@ figcaption .credit {
 .block-media a:hover svg {
 	fill: rgb(@color-neutral-100);
 }
-
-
-
 @media only screen and (min-width: 1120px) {
 	.block-media .media {
-		border-radius: 8px;
+		border-radius: 4px;
+		overflow: hidden;
 	}
 	.block-media .card {
 		margin: @gap-xl;
@@ -998,7 +1000,6 @@ figcaption .credit {
 	.block-recirculation img {
 		width: 100%;
 		height: auto;
-		border-radius: 8px;
 	}
 }
 @media (prefers-color-scheme: dark) {
