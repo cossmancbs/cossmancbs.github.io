@@ -253,7 +253,7 @@ main,
 .article-body,
 section {
 	/* turn on for editing */
-	.wireframe-outline;
+	/* .wireframe-outline; */
 }
 main {
 	margin: 0;
@@ -520,15 +520,12 @@ main {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	/* justify-content: space-between; */
 	gap: @gap-xxs;
 	color: rgb(@color-neutral-100);
 }
 .article-video video {
-	/* width: 176px; */
 	width: 96px;
 	border-radius: 4px;
-	/* order: 2; */
 }
 .article-video h1 {
 	.article2024-txt-strong;
@@ -576,19 +573,16 @@ main {
 		background-color: rgb(@color-neutral-0);
 	}
 	.article-video video {
-		/* order: 1; */
 		width: 100%;
 		border-radius: 0;
 	}
 	.article-video .now {
-		/* order: 2; */
 	}
 	.article-video .next {
 		display: flex;
 		flex-direction: column;
 		gap: @gap-xs;
-		border-top: 1px solid rgb(@color-neutral-10); 
-		/* order: 3; */
+		border-top: 1px solid rgb(@color-neutral-10);
 	}
 	.article-video p {
 		color: rgb(@color-neutral-50);
@@ -603,10 +597,10 @@ main {
 	}
 	.article-video .next a:hover h2 {
 		text-decoration: underline;
-		color: rgb(@color-neutral-20);
+		color: rgb(@color-neutral-80);
 	}
 	.article-video .next a:hover img {
-		outline: 1px solid rgb(@color-neutral-20);
+		outline: 1px solid rgb(@color-neutral-100);
 		outline-offset: -1px;
 	}
 	.article-video .next img {
@@ -622,7 +616,6 @@ main {
 }
 @media only screen and (min-width: 1144px) {
 	.article-video {
-		border-radius: 8px;
 	}
 	.article-video .now,
 	.article-video .next {
