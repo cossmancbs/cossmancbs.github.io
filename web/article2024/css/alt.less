@@ -466,20 +466,20 @@ main {
 	gap: @gap-xs;
 }
 .article-header .flag {
-	padding: .3em;
+	padding: .4em .6em;
 	align-self: flex-start;
 	align-items: center;
 	.flag-small-2024;
 	background-color: rgb(@color-neutral-100);
 	color: rgb(@color-neutral-0);
-	border-radius: 2px;
+	border-radius: 4px;
 	display: flex;
 	flex-direction: row;
 	gap: @gap-xxs;
 }
 .article-header .flag svg {
-	width: 12px;
-	height: 12px;
+	width: 10px;
+	height: 10px;
 	fill: rgb(@color-neutral-0);
 }
 .article-header .topic a {
@@ -628,8 +628,8 @@ main {
 		outline-offset: -1px;
 	}
 	.article-video .next img {
-		width: 128px;
-		height: 72px;
+		width: 96px;
+		height: 54px;
 		border-radius: 4px;
 	}
 	.article-video .next div {
@@ -653,6 +653,10 @@ main {
 	}
 	.article-video p {
 		.article2024-txt-s;
+	}
+	.article-video .next img {
+		width: 128px;
+		height: 72px;
 	}
 }
 @media (prefers-color-scheme: dark) {
