@@ -591,14 +591,12 @@ main {
 @media (prefers-color-scheme: dark) {
 	.article-rail {
 		/* background-color: rgba(@color-neutral-100,.85); */
-		background-image: linear-gradient(rgba(@color-white,1) 10%, rgba(@color-white,.8));
-		-webkit-backdrop-filter: saturate(200%) blur(20px);
-		backdrop-filter: saturate(200%) blur(20px);
+		background-image: linear-gradient(rgba(@color-neutral-100,1) 10%, rgba(@color-neutral-100,.8));
 		.hr-dark;
 	}
 	.article-video {
 		color: rgb(@color-neutral-0);
-		background-color: rgb(@color-neutral-100);
+		/* background-color: rgb(@color-neutral-100); */
 	}
 	.article-video .now {
 	}
@@ -609,6 +607,15 @@ main {
 		color: rgb(@color-neutral-0);
 	}
 }
+@media (prefers-color-scheme: dark) and (min-width: 768px) {
+	.article-rail {
+		background-image: none;
+	}
+	.article-video {
+		background-color: rgb(@color-neutral-100);
+	}
+}
+
 
 
 
@@ -653,6 +660,9 @@ main {
 }
 @media (prefers-color-scheme: dark) {
 	.block-text p {
+		color: rgb(@color-neutral-0);
+	}
+	.block-text a {
 		color: rgb(@color-neutral-0);
 	}
 }
