@@ -32,8 +32,11 @@ nav {
 	fill: rgb(@color-neutral-100);
 }
 .more-grid,
-.more-dots,
-.account,
+.more-dots {
+	width: 16px;
+	height: 16px;
+	fill: rgb(@color-neutral-100);
+}
 .search {
 	width: 16px;
 	height: 16px;
@@ -46,6 +49,10 @@ nav {
 	align-items: center;
 	grid: auto-flow / 1fr auto 1fr;
 }
+#mainnav .main-right {
+	/* align right */
+	margin-left: auto;
+}
 #mainnav .main-left {
 	display: flex;
 	justify-content: start;
@@ -55,13 +62,6 @@ nav {
 #mainnav .main-left li:not(:first-child) {
 	/* display first only */
     display: none;
-}
-#mainnav .main-right {
-	display: flex;
-	flex-direction: row;
-	/* align right */
-	margin-left: auto;
-	gap: @gap-s;
 }
 #subnav ul {
 	display: flex;
@@ -138,9 +138,6 @@ nav {
 		/* display others */
 	    display: initial;
 	}
-	#mainnav .main-right {
-		gap: @gap-l;
-	}
 	#mainnav a {
 		height: 64px;
 		padding: 0 12px 0 12px;
@@ -149,11 +146,6 @@ nav {
 	#subnav ul {
 		width: @break-md-container;
 		margin: 0 auto;
-	}
-	.account,
-	.search {
-		width: 20px;
-		height: 20px;
 	}
 	.logo {
 		width: 171.43px;
