@@ -23,13 +23,13 @@
 </head>
 
 <body>
-
-
-
+	
+	
+	
 	<!-- <div id="include-smart-app-banner"></div> -->
-
-
-
+	
+	
+	
 	<div id="stickers">
 		<div id="topunit">
 			<div class="wireframe">ad unit</div>
@@ -39,13 +39,13 @@
 		</div>
 		<div id="include-nav-main"></div>
 	</div>
-
-
-
+	
+	
+	
 	<div id="include-nav-sub"></div>
-
-
-
+	
+	
+	
 	<main>
 		
 		
@@ -184,17 +184,29 @@
 			
 			<section class="block-text">
 				<p>"And I think this is very much how it is for the last seven months. And I don't think enough people are getting how serious this is," Cohen-Raviv added.</p>
+				<ul>
+					<li>unordered list possimus deserunt nisi perferendis consequuntur odio et asperiamp</li>
+					<li>unordered list vel nam odio dolorem voluptas sequi minuque teompore animi estqus</li>
+					<li>unordered list excepteur sint occaecat cupidatat non proident sunt in culpa quip</li>
+				</ul>
 				<p>During their visit to the war room complex, the team was asked to move into another room; a suicide drone had been spotted and the Israeli military had deployed planes to shoot it down.</p>
+				<ol>
+					<li>ordered list possimus deserunt nisi perferendis consequuntur odio et asperiamp</li>
+					<li>ordered list vel nam odio dolorem voluptas sequi minuque teompore animi estqus</li>
+					<li>ordered list excepteur sint occaecat cupidatat non proident sunt in culpa quip</li>
+				</ol>
 				<p>Eventually, the team learned that an Israeli helicopter was on its way to rescue soldiers and there would be a pause in the fighting.</p>
+				<blockquote>
+					Blockquote totam at eius excepturi deleniti sed, error repellat itaque omnis maiores tempora ratione dolor velit minus porro aspernatur repudiandae labore quas adipisci esse, nulla tempore voluptatibus cupiditate. Ab provident, atque.
+				</blockquote>
+				<p>As the team drove away, the fighting picked back up again, and explosions could be heard in the distance.</p>
 			</section>
 			
-			<!-- responsive iframe embed -->
 			<section class="block-iframe">
-				<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="embed2" title="Responsive iFrame Embed"></iframe>
+				<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="embed-iframe" title="Responsive iFrame Embed"></iframe>
 			</section>
 			
 			<section class="block-text">
-				<p>As the team drove away, the fighting picked back up again, and explosions could be heard in the distance.</p>
 				<p>As the 60 Minutes team prepared to evacuate, they were told to leave in separate vehicles and drive as fast as they could. They were also told to drive far apart from one another because Hezbollah often targets vehicle convoys.</p>
 				<p><em>The video above was produced by Will Croxton. It was edited by Sarah Shafer Prediger.</em></p>
 			</section>
@@ -327,9 +339,9 @@
 		
 		
 		//
-		// IFRAME (Javascript):
+		// IFRAME (JavaScript):
 		//
-		function checkiframe2(id) {
+		function checkiframe(id) {
 			var newheight;
 			if(document.getElementById) {
 				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
@@ -338,11 +350,11 @@
 		}
 		window.addEventListener('load', onLoadFunction);
 		function onLoadFunction(e){
-			checkiframe2('embed2');
+			checkiframe('embed-iframe');
 		}
 		window.addEventListener('resize', onResizeFunction);
 		function onResizeFunction(e){
-			checkiframe2('embed2');
+			checkiframe('embed-iframe');
 		}
 		
 		
@@ -353,13 +365,35 @@
 		$(document).ready(function() {
 			
 			function checkNav() {
-				
 				if ($(document).scrollTop() < 50) {
-					$('#include-nav-main').removeClass('shadow-on');
-					$('#include-nav-main').addClass('shadow-off');
+					// scrolled less than 50
 				} else {
-					$('#include-nav-main').addClass('shadow-on');
-					$('#include-nav-main').removeClass('shadow-off');
+					// scrolled more than 50
+				}
+				
+				// WINDOW WIDTH
+				var windowSize = $(window).width();
+				if (windowSize < 768) {
+					if ($(document).scrollTop() < 50) {
+						// window is narrower than 768, and scrolled less than 50
+						$('#include-nav-main').removeClass('nav-border-on nav-shadow-on');
+						$('#include-nav-main').addClass('nav-border-off nav-shadow-off');
+					} else {
+						// window is narrower than 768, and scrolled more than 50
+						$('#include-nav-main').addClass('nav-border-on nav-shadow-on');
+						$('#include-nav-main').removeClass('nav-border-off nav-shadow-off');
+					}
+				} else {
+					if ($(document).scrollTop() < 50) {
+						// window is wider than 768, and scrolled less than 50
+						$('#include-nav-main').addClass('nav-border-on nav-shadow-off');
+						$('#include-nav-main').removeClass('nav-border-off nav-shadow-on');
+					} else {
+						// window is wider than 768, and scrolled more than 50
+						// alert("scrolled");
+						$('#include-nav-main').addClass('nav-border-on nav-shadow-on');
+						$('#include-nav-main').removeClass('nav-border-off nav-shadow-off');
+					}
 				}
 				
 			}

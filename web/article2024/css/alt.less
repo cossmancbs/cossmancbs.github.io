@@ -13,27 +13,9 @@
 */
 
 body {
-	background-color: white;
+	background-color: rgb(@color-neutral-white);
 }
 main {
-}
-iframe {
-	margin: 0;
-	padding: 0;
-	border: none;
-	width: 100%;
-}
-iframe + p {
-	/* first paragraph after each iframe */
-	padding-top: 20px
-}
-.shadow-on {
-	/* box-shadow: 0 1px 5px 0 rgba(@color-black,.25); */
-	.hr-none;
-}
-.shadow-off {
-	/* box-shadow: 0 1px 5px 0 rgba(@color-black,0); */
-	.hr-light;
 }
 @media (prefers-color-scheme: dark) {
 	body {
@@ -61,6 +43,7 @@ iframe + p {
 
 
 
+
 /*
 /
 /	NAV OVERRIDES
@@ -81,12 +64,12 @@ iframe + p {
 }
 #include-nav-main nav {
 	/*
-	background-image: linear-gradient(rgba(@color-white,1), rgba(@color-white,.85));
+	background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.85));
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
 	.hr-light;
 	*/
-	background-color: rgba(@color-white,1);
+	background-color: rgba(@color-neutral-white,1);
 	.hr-none;
 }
 #include-nav-sub nav {
@@ -97,13 +80,25 @@ iframe + p {
 .logo {
 	transition: all 0.2s linear;
 }
+.nav-border-on {
+	.hr-none;
+}
+.nav-border-off {
+	.hr-light;
+}
+.nav-shadow-on {
+	box-shadow: 0 1px 5px 0 rgba(@color-neutral-black,.25);
+}
+.nav-shadow-off {
+	box-shadow: 0 1px 5px 0 rgba(@color-neutral-black,0);
+}
 
 @media only screen and (min-width: 768px) {
 	#include-nav-main nav {
-		background-image: linear-gradient(rgba(@color-white,1), rgba(@color-white,.85));
+		background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.85));
 		-webkit-backdrop-filter: saturate(200%) blur(20px);
 		backdrop-filter: saturate(200%) blur(20px);
-		background-color: rgba(@color-white,0);
+		background-color: rgba(@color-neutral-white,0);
 		.hr-light;
 	}
 }
@@ -472,8 +467,8 @@ main {
 */
 
 .article-rail {
-	/* background-color: rgba(@color-white,.85); */
-	background-image: linear-gradient(rgba(@color-white,1) 10%, rgba(@color-white,.8));
+	/* background-color: rgba(@color-neutral-white,.85); */
+	background-image: linear-gradient(rgba(@color-neutral-white,1) 10%, rgba(@color-neutral-white,.8));
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
 	.hr-light;
@@ -647,16 +642,46 @@ main {
 .block-text p {
 	.article2024-body-sm;
 	color: rgb(@color-neutral-100);
-	/* vertical spacing between paragraphs: */
+	/* vertical spacing between paragraphs */
 	&:not(:last-child) {
 		margin: 0 0 .8em 0;
 	}
+}
+.block-text ul li,
+.block-text ol li, {
 }
 .block-text strong {
 	.article2024-txt-strong;
 }
 .block-text em {
 	.article2024-txt-normal-italic;
+}
+.block-text ul {
+	padding: 0 2.5em;
+	list-style-type: disc;
+	list-style-position: outside;
+	margin: 0 0 .8em 0;
+}
+.block-text ol {
+	padding: 0 2.5em;
+	list-style-type: decimal;
+	list-style-position: outside;
+	margin: 0 0 .8em 0;
+}
+.block-text ul li,
+.block-text ol li, {
+	.article2024-body-sm;
+	color: rgb(@color-neutral-100);
+	/* vertical spacing between list items */
+	&:not(:last-child) {
+		margin: 0 0 .2em 0;
+	}
+}
+.block-text blockquote {
+	margin: 0 0 .8em 1em;
+	padding: 0 2.5em 0 .8em;
+	.article2024-body-sm;
+	border-left: 8px solid rgb(@color-neutral-30);
 }
 .block-text a,
 .block-text a:active {
@@ -667,12 +692,16 @@ main {
 	color: rgb(@color-neutral-50);
 }
 @media only screen and (min-width: 1144px) {
-	.block-text p {
+	.block-text p,
+	.block-text ul li,
+	.block-text ol li {
 		.article2024-body-lg;
 	}
 }
 @media (prefers-color-scheme: dark) {
-	.block-text p {
+	.block-text p,
+	.block-text ul li,
+	.block-text ol li {
 		color: rgb(@color-neutral-0);
 	}
 	.block-text a,
@@ -878,6 +907,30 @@ section.block-media {
 	}
 }
 
+
+
+
+
+
+
+/*
+/
+/	EMBED: IFRAME
+/
+*/
+
+.block-iframe {
+}
+iframe {
+	margin: 0;
+	padding: 0;
+	border: none;
+	width: 100%;
+}
+iframe + p {
+	/* first paragraph after each iframe */
+	padding-top: 20px
+}
 
 
 
@@ -1349,7 +1402,7 @@ section.block-unit {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: white;
+		background-color: rgb(@color-neutral-white);
 		text-align: center;
 	}
 	#topunit div {
@@ -1376,9 +1429,6 @@ section.block-unit {
 	#bottomunit div {
 		width: 768px;
 	}
-}
-@media only screen and (min-width: 1120px) {
-	/* support 728px */
 }
 @media (prefers-color-scheme: dark) {
 	#topunit,
