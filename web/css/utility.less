@@ -1,12 +1,22 @@
 /* SPACING */
 
-@gap-xxs:    4px;		/* XXS */
-@gap-xs:     8px;		/* XS */
-@gap-s:     16px;		/* S */
-@gap-m:     20px;		/* M */
-@gap-l:     24px;		/* L */
-@gap-xl:    32px;		/* XL */
-@gap-xxl:   40px;		/* XXL */
+@spacing-4:      4px;      /* XXS */
+@spacing-8:      8px;      /* XS */
+@spacing-12:    12px;
+@spacing-16:    16px;      /* S */
+@spacing-20:    20px;      /* M */
+@spacing-24:    24px;      /* L */
+@spacing-32:    32px;      /* XL */
+@spacing-40:	40px;      /* XXL */
+
+/* --------- deprecated ----------- */
+@gap-xxs:        4px;      /* XXS */
+@gap-xs:         8px;      /* XS */
+@gap-s:         16px;      /* S */
+@gap-m:         20px;      /* M */
+@gap-l:         24px;      /* L */
+@gap-xl:        32px;      /* XL */
+@gap-xxl:       40px;      /* XXL */
 
 
 
@@ -25,9 +35,10 @@
 
 
 /* HORIZONTAL RULES */
+/* (adds 1px height) */
 
 .hr-light {
-	border-bottom: 1px solid rgb(@color-neutral-5);
+	border-bottom: 1px solid rgb(@color-neutral-10);
 }
 .hr-dark {
 	border-bottom: 1px solid rgba(@color-neutral-0,.15);
@@ -36,12 +47,12 @@
 	border-bottom: 1px solid rgba(@color-neutral-0,0);
 }
 
-/* INSET HORIZONTAL RULES */
-/* only works on objects with fixed height */
+/* Inset Horizontal Rules */
+/* (only works on objects with fixed height) */
 
 .hr-inset-light {
 	box-sizing: border-box;
-    border-bottom: 1px solid rgb(@color-neutral-5);
+    border-bottom: 1px solid rgb(@color-neutral-10);
 }
 .hr-inset-dark {
 	box-sizing: border-box;

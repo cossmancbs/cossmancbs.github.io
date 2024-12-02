@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Nav: Authentication</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010">
+
+	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg?">
+	<link rel="icon" type="image/png" href="/web/img/favicon.png?">
+
+	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/auth.less">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+
+</head>
+
+<body>
+	
+	
+	
+	<div id="stickers">
+		<div id="topunit">
+			<div class="wireframe">ad unit</div>
+		</div>
+		<div id="include-nav-main"></div>
+	</div>
+	
+	
+	
+	<div id="include-nav-sub"></div>
+	
+	
+	
+	<main>
+		
+		
+		
+		<ul>
+			<li>column</li>
+			<li>column</li>
+			<li>column</li>
+			<li>column</li>
+		</ul>
+		
+		
+		
+	</main>
+	
+	
+	
+	
+	
+	<div id="bottomunit"><div>ad unit</div></div>
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		
+		
+		
+		//
+		// INCLUDES (JQUERY)
+		//
+		$(function() {
+			$('#include-nav-main').load('/web/nav/nav-v1.2-main.html');
+			$('#include-nav-sub').load('/web/nav/nav-v1.2-sub-60o.html');
+		});
+		
+		
+		
+		//
+		// NAV (JQUERY)
+		//
+		$(document).ready(function() {
+			
+			function checkNav() {
+				if ($(document).scrollTop() < 50) {
+					// scrolled less than 50
+					$('#include-nav-main').addClass('nav-shadow-off');
+					$('#include-nav-main').removeClass('nav-shadow-on');
+				} else {
+					// scrolled more than 50
+					$('#include-nav-main').addClass('nav-shadow-on');
+					$('#include-nav-main').removeClass('nav-shadow-off');
+				}
+				
+			}
+			
+			// Execute on load
+			checkNav();
+			// Bind event listener ("load" doesn't seem to work)
+			$(window).on("load resize scroll",function(e){
+				checkNav();
+			});
+			
+		});
+		
+		
+		
+	</script>
+
+
+
+
+
+</body>
+
+</html>

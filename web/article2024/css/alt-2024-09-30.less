@@ -17,25 +17,9 @@ body {
 }
 main {
 }
-::-moz-selection {
-	color: rgb(@color-neutral-0);
-	background: rgb(@color-neutral-100);
-}
-::selection {
-	color: rgb(@color-neutral-0);
-	background: rgb(@color-neutral-100);
-}
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: rgb(@color-neutral-90);
-	}
-	::-moz-selection {
-		color: rgb(@color-neutral-100);
-		background: rgb(@color-neutral-0);
-	}
-	::selection {
-		color: rgb(@color-neutral-100);
-		background: rgb(@color-neutral-0);
 	}
 }
 
@@ -52,6 +36,164 @@ main {
 #stickers {
 	z-index: 99;
 }
+#include-nav-sub {
+	/* z-index: 999; */
+}
+
+
+
+
+
+/*
+/
+/	NAV OVERRIDES
+/
+*/
+
+#stickers {
+	position: sticky;
+	top: 0;
+	width: 100%;
+}
+#include-nav-main {
+	width: 100%;
+}
+#include-nav-sub {
+	position: relative;
+	width: 100%;
+}
+#include-nav-main nav {
+	/*
+	background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.85));
+	-webkit-backdrop-filter: saturate(200%) blur(20px);
+	backdrop-filter: saturate(200%) blur(20px);
+	.hr-light;
+	*/
+	background-color: rgba(@color-neutral-white,1);
+	.hr-none;
+}
+#include-nav-sub nav {
+	.hr-light;
+}
+#include-nav-main nav,
+#mainnav a,
+.logo {
+	transition: all 0.2s linear;
+}
+.nav-border-on {
+	.hr-none;
+}
+.nav-border-off {
+	.hr-light;
+}
+.nav-shadow-on {
+	box-shadow: 0 1px 5px 0 rgba(@color-neutral-black,.25);
+}
+.nav-shadow-off {
+	box-shadow: 0 1px 5px 0 rgba(@color-neutral-black,0);
+}
+
+@media only screen and (min-width: 768px) {
+	#include-nav-main nav {
+		background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.85));
+		-webkit-backdrop-filter: saturate(200%) blur(20px);
+		backdrop-filter: saturate(200%) blur(20px);
+		background-color: rgba(@color-neutral-white,0);
+		.hr-none;
+	}
+}
+@media (prefers-color-scheme: dark) and (min-width: 768px) {
+	#include-nav-main nav {
+		background-image: linear-gradient(rgba(@color-neutral-100,1), rgba(@color-neutral-100,.85));
+		-webkit-backdrop-filter: saturate(200%) blur(20px);
+		backdrop-filter: saturate(200%) blur(20px);
+		background-color: rgba(@color-neutral-100,0);
+		//.hr-dark;
+	}
+}
+
+@media only screen and (min-width: 850px) {
+	#mainnav,
+	#subnav {
+		padding: 0;
+	}
+	#mainnav .main-outer {
+	}
+	#mainnav .main-left li:first-child {
+		/* hide grid icon */
+		display: none;
+	}
+	#mainnav .main-left li:not(:first-child) {
+		/* display others */
+		display: initial !important;
+	}
+	#mainnav .main-left li.leftmost a {
+		padding-left: 0 !important;
+	}
+	#mainnav a {
+		height: 64px !important;
+		padding: 0 12px 0 12px !important;;
+		font-size: 14px !important;;
+	}
+	#subnav ul {
+	}
+	.logo {
+		width: 171.43px !important;;
+		height: 24px !important;;
+	}
+}
+
+@media only screen and (min-width: 1020px) {
+	/* @break-md */
+	#mainnav .main-outer,
+	#subnav ul {
+		margin: 0 !important;
+		padding: 0 @gap-s !important;
+		width: auto !important;
+	}
+}
+@media only screen and (min-width: 1144px) {
+	#mainnav .main-outer,
+	#subnav ul {
+		padding: 0 @gap-xl !important;
+	}
+}
+@media only screen and (min-width: 1384px) {
+	#mainnav .main-outer,
+	#subnav ul {
+		margin: 0 auto !important;
+		padding: 0 !important;
+		width: 1320px !important;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	#include-nav-main nav {
+		/*
+		background-image: linear-gradient(rgba(@color-neutral-100,1), rgba(@color-neutral-100,.75));
+		-webkit-backdrop-filter: saturate(200%) blur(20px);
+		backdrop-filter: saturate(200%) blur(20px);
+		.hr-dark;
+		*/
+		background-color: rgba(@color-neutral-100,1);
+		//.hr-none;
+	}
+	#include-nav-sub nav {
+		background-color: rgb(@color-neutral-100);
+		color: rgb(@color-neutral-0);
+	}
+	#include-nav-main nav a,
+	#include-nav-sub nav a {
+		color: rgb(@color-neutral-0);
+	}
+	#include-nav-main nav svg {
+		fill: rgb(@color-neutral-0);
+	}
+	#include-nav-sub nav {
+		.hr-dark;
+	}
+}
+
+
 
 
 
@@ -68,13 +210,7 @@ main,
 .article-body,
 section {
 	/* turn on for editing */
-	/* .wireframe-outline; */
-}
-#stickers {
-	/* top ad and sticky nav */
-	position: sticky;
-	top: 0;
-	width: 100%;
+	.wireframe-outline;
 }
 main {
 	margin: 0;
@@ -136,7 +272,7 @@ main {
 		top: 160px;
 	}
 }
-@media only screen and (min-width: 910px) {
+@media only screen and (min-width: 850px) {
 	.article-rail section {
 		top: 172px;
 	}
