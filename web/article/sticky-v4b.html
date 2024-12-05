@@ -55,11 +55,27 @@
 				<div class="hgroup">
 					<span class="topic"><a href="">Politics</a></span> <span class="flag">Exclusive</span>
 					<h1>White House criticizes House Republicans for inaction on Ukraine aid</h1>
-					<div class="byline">
-						<p>By <a href="">Norah O'Donnell</a>, <a href="">Margaret Brennan</a></p>
-						<p>Edited by <a href="">Debra Young</a>, Michael Henry, <a href="">Carmen Pancoast</a></p>
-						<p>Updated on: April 2, 2024 / 3:38 PM EDT / CBS News</p>
+					
+					<div class="byline-container">
+						
+						<a href=""><img src="/web/img/chip-60o.png" alt="60 Minutes Overtime" class="chip"></a>
+						
+						<div class="byline">
+							<ul class="credits">
+								<li>By <a href="">Norah O'Donnell</a>, <a href="">Margaret Brennan</a></li>
+								<li>Edited by <a href="">Debra Young</a>, Michael Henry, <a href="">Carmen Pancoast</a></li>
+								<li>Updated on: April 2, 2024 / 3:38 PM EDT / CBS News</li>
+							</ul>
+							<ul class="social">
+								<li><a href="" class="primary"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
+								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
+								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
+								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
+							</ul>
+						</div>
+						
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -160,8 +176,10 @@
 		// INCLUDES (JQUERY)
 		//
 		$(function() {
-			$('#include-nav-main').load('/web/nav/nav-main.html');
-			$('#include-nav-sub').load('/web/nav/nav-sub.html');
+			// $('#include-nav-main').load('/web/nav/nav-main.html');
+			// $('#include-nav-sub').load('/web/nav/nav-sub.html');
+			$('#include-nav-main').load('/web/nav/nav-v1.2-main.html');
+			$('#include-nav-sub').load('/web/nav/nav-v1.2-sub-60o.html');
 		});
 
 
@@ -182,11 +200,6 @@
 			
 			
 			function checkNav() {
-				//if ($(document).scrollTop() < 50) {
-				//	scrolled less than 50
-				//} else {
-				//	scrolled more than 50
-				//}
 				
 				// WINDOW WIDTH
 				var windowSize = $(window).width();

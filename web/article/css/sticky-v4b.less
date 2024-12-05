@@ -132,37 +132,39 @@ iframe.mputest {
 	top: 0;
 	width: 100%;
 }
-#include-nav-main {
-	width: 100%;
-}
 #include-nav-sub {
+	/* don't remember why I need this */
 	position: relative;
-	width: 100%;
 }
+
+/* DARK OVERRIDES */
 #include-nav-main nav {
-	background-image: linear-gradient(rgba(@color-offblack,1), rgba(@color-offblack,.85));
+	background-image: linear-gradient(rgba(@color-neutral-100,1), rgba(@color-neutral-100,.85));
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
+	background-color: rgba(@color-neutral-100,0);
 	.hr-dark;
 }
 #include-nav-sub nav {
+	background-color: rgb(@color-neutral-100);
 	.hr-dark;
 }
 #include-nav-main nav a,
 #include-nav-sub nav a {
-	color: rgb(@color-offwhite);
+	color: rgb(@color-neutral-0);
 }
-#include-nav-main .more-grid,
-#include-nav-main .more-dots,
-#include-nav-main .search,
-#include-nav-main .logo {
-	fill: rgb(@color-offwhite);
+#include-nav-main svg {
+	fill: rgb(@color-neutral-0);
 }
-#include-nav-main nav,
-#mainnav a,
-.logo {
-	transition: all 0.2s linear;
+#include-nav-main nav a.hover-effect:hover > div,
+#include-nav-sub nav a.hover-effect:hover > div  {
+	background-color: rgba(@color-neutral-0,.2);
 }
+#include-nav-sub nav .separator {
+	color: rgb(@color-neutral-0);
+}
+
+
 
 
 
@@ -183,7 +185,8 @@ iframe.mputest {
 	.epsilon;
 	color: rgb(@color-offwhite);
 }
-.article-header p {
+.article-header p,
+.article-header li {
 	.byline-small;
 	color: rgb(@color-offwhite);
 }
@@ -195,15 +198,31 @@ iframe.mputest {
 .article-header a:hover {
 	text-decoration: underline;
 }
+.article-header .byline-container {
+	margin: 20px 0 0 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: @spacing-20;
+}
+.article-header .chip {
+	width: 60px;
+	height: 60px;
+}
 .article-header .byline {
+	height: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4px;
+	border-top: 1px solid rgba(@color-offwhite,.15);
+}
+.article-header .credits {
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
-}
-.article-header .byline {
-	margin: 20px 0 0 0;
-	padding: 20px 0 0 0;
-	border-top: 1px solid rgba(@color-offwhite,.15);
 }
 @media only screen and (min-width: @break-sm) {
 	.article-header {
@@ -213,7 +232,8 @@ iframe.mputest {
 	.article-header h1 {
 		.delta;
 	}
-	.article-header p {
+	.article-header p,
+	.article-header li {
 		.byline-large;
 	}
 }
@@ -235,6 +255,13 @@ iframe.mputest {
 	.article-header h1 {
 		.gamma;
 	}
+	.article-header .byline {
+		height: 80px;
+	}
+	.article-header .chip {
+		width: 80px;
+		height: 80px;
+	}
 }
 @media only screen and (min-width: @break-lg) {
 	.article-header .container {
@@ -244,6 +271,85 @@ iframe.mputest {
 		grid-column: 1/10;
 	}
 }
+
+
+
+
+
+/*
+/
+/	ARTICLE HEADER: SOCIAL
+/
+*/
+
+.article-header .social {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+}
+.article-header .social svg {
+	width: 16px;
+	height: 16px;
+	transition: all 0.15s linear;
+}
+.article-header .social a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 16px;
+	text-decoration: none;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	transition: all 0.15s linear;
+}
+
+/* PRIMARY BUTTON */
+.article-header .social a.primary {
+	gap: 4px;
+	padding: 0 12px;
+	height: 32px;
+	border: 1px solid rgb(@color-neutral-0);
+	background-color: rgb(@color-neutral-0);
+	color: rgb(@color-neutral-100);
+}
+.article-header .social a.primary span {
+	display: none;
+}
+.article-header .social a.primary svg {
+	fill: rgb(@color-neutral-100);
+}
+.article-header .social a.primary:hover {
+	background-color: rgb(@color-neutral-100);
+	color: rgb(@color-neutral-0);
+}
+.article-header .social a.primary:hover svg {
+	fill: rgb(@color-neutral-0);
+}
+
+/* SECONDARY BUTTON */
+.article-header .social a.secondary {
+	width: 32px;
+	height: 32px;
+	border: 1px solid rgb(@color-neutral-80);
+}
+.article-header .social a.secondary svg {
+	fill: rgb(@color-neutral-0);
+}
+.article-header .social a.secondary:hover {
+	border: 1px solid rgb(@color-neutral-0);
+}
+.article-header .social li:not(:first-child) {
+	display: none;
+}
+
+@media only screen and (min-width: @break-md) {
+	.article-header .social a.primary span,
+	.article-header .social li:not(:first-child) {
+		display: initial;
+	}
+}
+
 
 
 
