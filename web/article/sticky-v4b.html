@@ -27,7 +27,10 @@
 
 
 	<div id="stickers">
-		<div id="topunit"><img src="/web/img/728x90-paramount.jpg" width="728" height="90" alt="Exclusively on Paramount+"></div>
+		<div id="topunit">
+			<div>ad unit</div>
+			<!--<img src="/web/img/728x90-paramount.jpg" width="728" height="90" alt="Exclusively on Paramount+">-->
+		</div>
 		<div id="include-nav-main"></div>
 	</div>
 
@@ -38,18 +41,27 @@
 
 
 	<main>
-
-
-
+		
+		
+		
 		<div id="video-float">
 			<video autoplay muted loop playsinline class="">
 				<!-- to display controls on load: "controls" -->
 				<source src="../video/ukraine.mp4" type="video/mp4">
 			</video>
 		</div>
-
-
-
+		
+		
+		
+		<div class="sidePanel">
+			<div>
+				OpenWeb
+				<button class="owCloseButton" value="Close">Close</button>
+			</div>
+		</div>
+		
+		
+		
 		<div class="article-header">
 			<div class="container">
 				<div class="hgroup">
@@ -67,7 +79,8 @@
 								<li>Updated on: April 2, 2024 / 3:38 PM EDT / CBS News</li>
 							</ul>
 							<ul class="social">
-								<li><a href="" class="primary"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
+								<!-- remember: need "javascript:;" -->
+								<li><a href="javascript:;" class="primary owOpenButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
 								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
 								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
 								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
@@ -126,14 +139,18 @@
 		
 		
 		
-
 		
 		
 		
-		<div id="bottomunit"><div>responsive Kargo ad unit</div></div>
-	
-	
-	
+		
+		<div id="bottomunit"><div>ad unit</div></div>
+		
+		
+		
+		
+		
+		
+		
 	</main>
 
 
@@ -143,6 +160,36 @@
 
 
 	<script>
+	
+	
+	
+		// OPENWEB SIDE PANEL:
+		
+		var boxOne = document.getElementsByClassName('sidePanel')[0],
+			sidePanelStatus = 'closed';
+		
+		function checkSidePanel() {
+			if(sidePanelStatus === 'closed') {
+				boxOne.classList.add('horizIn');
+				boxOne.classList.remove('horizOut');
+				sidePanelStatus = 'open';
+			} else {
+				boxOne.classList.add('horizOut');
+				boxOne.classList.remove('horizIn');
+				sidePanelStatus = 'closed';
+			}
+		}
+		
+		document.getElementsByClassName('owOpenButton')[0].onclick = function() {
+			checkSidePanel();
+		}
+		
+		document.getElementsByClassName('owCloseButton')[0].onclick = function() {
+			checkSidePanel();
+		}
+	
+	
+	
 		
 
 		// IFRAME TEST 1A:
@@ -160,12 +207,12 @@
 		}
 
 		window.addEventListener('load', onLoadFunction);
-		function onLoadFunction(e){
+		function onLoadFunction(e) {
 			//checkiframe1('embed1');
 			checkiframe2('embed2');
 		}
 		window.addEventListener('resize', onResizeFunction);
-		function onResizeFunction(e){
+		function onResizeFunction(e) {
 			//checkiframe1('embed1');
 			checkiframe2('embed2');
 		}
@@ -176,8 +223,6 @@
 		// INCLUDES (JQUERY)
 		//
 		$(function() {
-			// $('#include-nav-main').load('/web/nav/nav-main.html');
-			// $('#include-nav-sub').load('/web/nav/nav-sub.html');
 			$('#include-nav-main').load('/web/nav/nav-v1.2-main.html');
 			$('#include-nav-sub').load('/web/nav/nav-v1.2-sub-60o.html');
 		});
