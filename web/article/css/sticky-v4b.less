@@ -15,16 +15,14 @@
 body {
 	background-color: white;
 }
+main {
+	position: relative;
+	top: -88px;
+}
 @media only screen and (min-width: @break-md) {
 	main {
 		top: -104px;
 	}
-}
-.shadow-on {
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,.25);
-}
-.shadow-off {
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
 }
 
 
@@ -43,13 +41,9 @@ iframe {
 	border: none;
 	width: 100%;
 }
-iframe + p { padding-top: 20px } /* hack, don't know why needed */
-main {
-	position: relative;
-	top: -88px;
-}
-iframe.mputest {
-	height: 550px;
+iframe + p {
+	/* hack for vertical spacing */
+	padding-top: 20px
 }
 
 
@@ -62,10 +56,10 @@ iframe.mputest {
 /
 */
 
-#stickers {
+.sidePanel {
 	z-index: 999;
 }
-.sidePanel {
+#stickers {
 	z-index: 99;
 }
 #include-nav-sub {
@@ -94,7 +88,7 @@ iframe.mputest {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(@color-offblack,.65);
+	background-color: rgba(@color-neutral-100,.65);
 	text-align: center;
 }
 #bottomunit div {
@@ -107,7 +101,7 @@ iframe.mputest {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: rgb(@color-offblack);
+		background-color: rgb(@color-neutral-100);
 		text-align: center;
 	}
 	#topunit div {
@@ -136,7 +130,7 @@ iframe.mputest {
 
 .sidePanel {
 	position: fixed;
-	top: 100px;
+	top: 49px;
 	right: -100vw;
 	height: 100%;
 	width: 100vw;
@@ -151,7 +145,7 @@ iframe.mputest {
 .sidePanel button {
 	padding: 1em;
 	color: white;
-	background-color: royalblue !important;
+	background-color: rgb(@color-placeholder);
 	border: none;
 	text-align: center;
 	text-decoration: none;
@@ -167,14 +161,21 @@ iframe.mputest {
 @media only screen and (min-width: @break-sm) {
 	.sidePanel {
 		right: -360px;
-		top: 200px;
+		top: 139px;
 		width: 360px;
 	}
 	.sidePanel.horizIn {
 		right: 0px !important;
+		box-shadow: -4px 4px 12px 0 rgba(0,0,0,.25);
 	}
 	.sidePanel.horizOut {
 		right: -360px !important;
+		box-shadow: -4px 4px 12px 0 rgba(0,0,0,0);
+	}
+}
+@media only screen and (min-width: @break-md) {
+	.sidePanel {
+		top: 155px;
 	}
 }
 
@@ -196,8 +197,17 @@ iframe.mputest {
 	width: 100%;
 }
 #include-nav-sub {
-	/* don't remember why I need this */
+	/* required */
 	position: relative;
+}
+.shadow-on {
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.25);
+	/* for testing:
+	border-bottom: 10px solid salmon;
+	*/
+}
+.shadow-off {
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
 }
 
 /* DARK OVERRIDES */
@@ -242,20 +252,20 @@ iframe.mputest {
 .article-header {
 	/* nav height + vertical spacing */
 	padding: calc(88px + 20px) 20px 20px 20px;
-	background-color: rgb(@color-offblack);
+	background-color: rgb(@color-neutral-100);
 }
 .article-header h1 {
 	.epsilon;
-	color: rgb(@color-offwhite);
+	color: rgb(@color-neutral-0);
 }
 .article-header p,
 .article-header li {
 	.byline-small;
-	color: rgb(@color-offwhite);
+	color: rgb(@color-neutral-0);
 }
 .article-header a {
 	font-family: "ProximaNova-Bold", sans-serif;
-	color: rgb(@color-offwhite);
+	color: rgb(@color-neutral-0);
 	text-decoration: none;
 }
 .article-header a:hover {
@@ -280,7 +290,7 @@ iframe.mputest {
 	align-items: center;
 	justify-content: space-between;
 	gap: 4px;
-	border-top: 1px solid rgba(@color-offwhite,.15);
+	border-top: 1px solid rgba(@color-neutral-0,.15);
 }
 .article-header .credits {
 	display: flex;
@@ -438,19 +448,19 @@ iframe.mputest {
 	text-decoration: none;
 }
 .article-header .topic a {
-	background-color: rgba(@color-offwhite,0);
+	background-color: rgba(@color-neutral-0,0);
 	border: 1px solid rgb(@color-graydark);
-	color: rgb(@color-offwhite);
+	color: rgb(@color-neutral-0);
 }
 .article-header .topic a:hover {
-	background-color: rgba(@color-offwhite,1);
-	border: 1px solid rgb(@color-offwhite);
-	color: rgb(@color-offblack);
+	background-color: rgba(@color-neutral-0,1);
+	border: 1px solid rgb(@color-neutral-0);
+	color: rgb(@color-neutral-100);
 }
 .article-header .flag {
-	background-color: rgba(@color-offwhite,.15);
-	border: 1px solid rgba(@color-offwhite,0);
-	color: rgb(@color-offwhite);
+	background-color: rgba(@color-neutral-0,.15);
+	border: 1px solid rgba(@color-neutral-0,0);
+	color: rgb(@color-neutral-0);
 }
 @media only screen and (min-width: @break-md) {
 	.article-header .topic a,
@@ -474,34 +484,55 @@ iframe.mputest {
 /
 */
 
-/* INLINE: */
+/* INLINE VIDEO */
 .video-inline {
 	width: 100%;
 }
 
-/* FLOATING: */
-#video-float {
-	position: fixed;
-	width: 448px;
-	height: 252px;
+/* PERSISTENT VIDEO */
+#video-persist {
+	width: 100%;
+	-webkit-backdrop-filter: saturate(200%) blur(20px);
+	backdrop-filter: saturate(200%) blur(20px);
+	background-color: rgba(@color-neutral-100,.85);
 	box-shadow: 0 0 25px 0 rgba(0, 0, 0, .3);
 }
-#video-float video {
-	width: 448px;
-	height: 252px;
+#video-persist video {
+	width: 176px;
+	height: 99px;
 }
-.video-float-sm {
+.video-persist-hide {
 	display: none;
 }
-.video-float-md {
+.video-persist-show {
 	display: block;
-	top: 160px;
-	right: 20px;
 }
-.video-float-lg {
-	display: block;
-	top: 180px;
-	left: 20px;
+@media only screen and (min-width: @break-sm) {
+	#video-persist {
+		position: fixed;
+		width: 448px;
+		height: 252px;
+		top: 160px;
+		right: 20px;
+	}
+	#video-persist video {
+		width: 448px;
+		height: 252px;
+	}
+}
+@media only screen and (min-width: @break-md) {
+	#video-persist {
+		top: 180px;
+		left: 20px;
+	}
+	#video-persist video {
+	}
+}
+@media only screen and (min-width: @break-lg) {
+	#video-persist {
+	}
+	#video-persist video {
+	}
 }
 
 
@@ -526,7 +557,7 @@ iframe.mputest {
 .article-body p {
 	margin: 0 0 .8em 0;
 	.body-small;
-	color: rgb(@color-offblack);
+	color: rgb(@color-neutral-100);
 }
 .article-body strong {
 	.body-strong;

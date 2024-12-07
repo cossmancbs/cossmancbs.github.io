@@ -32,6 +32,14 @@
 			<!--<img src="/web/img/728x90-paramount.jpg" width="728" height="90" alt="Exclusively on Paramount+">-->
 		</div>
 		<div id="include-nav-main"></div>
+		
+		<div id="video-persist">
+			<video autoplay muted loop playsinline class="">
+				<!-- to display controls on load: "controls" -->
+				<source src="../video/ukraine.mp4" type="video/mp4">
+			</video>
+		</div>
+		
 	</div>
 
 
@@ -41,15 +49,6 @@
 
 
 	<main>
-		
-		
-		
-		<div id="video-float">
-			<video autoplay muted loop playsinline class="">
-				<!-- to display controls on load: "controls" -->
-				<source src="../video/ukraine.mp4" type="video/mp4">
-			</video>
-		</div>
 		
 		
 		
@@ -192,29 +191,30 @@
 	
 		
 
-		// IFRAME TEST 1A:
-
-		function checkiframe1(obj) {
-			obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-		}
-
-		function checkiframe2(id) {
+		// IFRAME RESIZE (VANILLA JAVASCRIPT):
+		
+		// can't get this one to work:
+		//function checkIframe1(obj) {
+		//	obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		//}
+		
+		function checkIframe2(id) {
 			var newheight;
 			if(document.getElementById) {
 				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
 			}
 			document.getElementById(id).height= (newheight) + "px";
 		}
-
+		
 		window.addEventListener('load', onLoadFunction);
 		function onLoadFunction(e) {
-			//checkiframe1('embed1');
-			checkiframe2('embed2');
+			//checkIframe1('embed1');
+			checkIframe2('embed2');
 		}
 		window.addEventListener('resize', onResizeFunction);
 		function onResizeFunction(e) {
-			//checkiframe1('embed1');
-			checkiframe2('embed2');
+			//checkIframe1('embed1');
+			checkIframe2('embed2');
 		}
 
 
@@ -222,6 +222,7 @@
 		//
 		// INCLUDES (JQUERY)
 		//
+		
 		$(function() {
 			$('#include-nav-main').load('/web/nav/nav-v1.2-main.html');
 			$('#include-nav-sub').load('/web/nav/nav-v1.2-sub-60o.html');
@@ -232,76 +233,60 @@
 
 
 		//
-		// NAV & EMBEDS (JQUERY)
+		// STICKY STUFF (NAV & VIDEO) and EMBED RESIZE (JQUERY)
 		//
+		
 		$(document).ready(function() {
 			
 			
 			
-			function checkiframe3() {
+			// IFRAME RESIZE
+			function checkIframe3() {
 				$('#embed3').height( $('#embed3').contents().find('html').height() );
 			}
 			
 			
 			
-			function checkNav() {
+			function checkStickyStuff() {
 				
-				// WINDOW WIDTH
+				// sticky nav shadow
+				if ($(document).scrollTop() < 50) {
+					// top
+					$('#stickers').addClass('shadow-off');
+					$('#stickers').removeClass('shadow-on');
+				} else {
+					// scrolled
+					$('#stickers').addClass('shadow-on');
+					$('#stickers').removeClass('shadow-off');
+				}
+				
+				// video
 				var windowSize = $(window).width();
 				if (windowSize < 768) {
-					// small mobile (phone)
-					$('#video-float').addClass('video-float-sm');
-					$('#video-float').removeClass('video-float-md video-float-lg');
-					if ($(document).scrollTop() < 50) {
-						// top
-						$('#include-nav-main').addClass('shadow-off');
-						$('#include-nav-main').removeClass('shadow-on');
-					} else {
-						// scrolled
-						$('#include-nav-main').addClass('shadow-on');
-						$('#include-nav-main').removeClass('shadow-off');
-					}
+					// small mobile
+					$('#video-persist').addClass('video-persist-hide');
+					$('#video-persist').removeClass('video-persist-show');
 				} else if (windowSize >= 768 && windowSize < 1020) {
-					// large mobile (tablet)
-					if ($(document).scrollTop() < 50) {
-						// top
-						$('#include-nav-main').addClass('shadow-off');
-						$('#include-nav-main').removeClass('shadow-on');
-					} else {
-						// scrolled
-						$('#include-nav-main').addClass('shadow-on');
-						$('#include-nav-main').removeClass('shadow-off');
-					}
+					// large mobile
 					if ($(document).scrollTop() < 800) {
 						// top
-						$('#video-float').addClass('video-float-sm');
-						$('#video-float').removeClass('video-float-md video-float-lg');
+						$('#video-persist').addClass('video-persist-hide');
+						$('#video-persist').removeClass('video-persist-show');
 					} else {
 						// scrolled
-						$('#video-float').addClass('video-float-md');
-						$('#video-float').removeClass('video-float-sm video-float-lg');
+						$('#video-persist').addClass('video-persist-show');
+						$('#video-persist').removeClass('video-persist-hide');
 					}
 				} else if (windowSize >= 1020) {
 					// desktop
-					$('#video-float').addClass('video-float-lg');
-					$('#video-float').removeClass('video-float-sm video-float-md');
-					if ($(document).scrollTop() < 50) {
-						// top
-						$('#include-nav-main').addClass('shadow-off');
-						$('#include-nav-main').removeClass('shadow-on');
-					} else {
-						// scrolled
-						$('#include-nav-main').addClass('shadow-on');
-						$('#include-nav-main').removeClass('shadow-off');
-					}
 					if ($(document).scrollTop() < 800) {
 						// top
-						$('#video-float').addClass('video-float-sm');
-						$('#video-float').removeClass('video-float-md video-float-lg');
+						$('#video-persist').addClass('video-persist-hide');
+						$('#video-persist').removeClass('video-persist-show');
 					} else {
 						// scrolled
-						$('#video-float').addClass('video-float-lg');
-						$('#video-float').removeClass('video-float-sm video-float-md');
+						$('#video-persist').addClass('video-persist-show');
+						$('#video-persist').removeClass('video-persist-hide');
 					}
 				}
 				
@@ -310,13 +295,13 @@
 			
 			
 			// Execute on load
-			checkNav();
-			// Bind event listener ("load" doesn't seem to work)
-			$(window).on("load resize scroll",function(e){
-				checkNav();
-				checkiframe3();
+			checkStickyStuff();
+			// Event listener ("load" doesn't seem to work, so I added the above)
+			$(window).on('load resize scroll',function(e){
+				checkStickyStuff();
+				checkIframe3();
 			});
-
+			
 		});
 
 
