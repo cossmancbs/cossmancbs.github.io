@@ -8,14 +8,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#101010">
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010"> <!-- article header is always dark -->
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010"> <!-- same for now, but maybe later support system themes? -->
 
 	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg?">
 	<link rel="icon" type="image/png" href="/web/img/favicon.png?">
 
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
-	<link rel="stylesheet/less" type="text/css" href="/web/article/css/sticky-v4b.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/article/css/sticky-v4b-2024-12-07.less">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
@@ -38,10 +38,6 @@
 				<!-- to display controls on load: "controls" -->
 				<source src="../video/ukraine.mp4" type="video/mp4">
 			</video>
-			<div>
-				<span>Russia's relentless offensive in southern Ukraine</span>
-				<a href=""><svg><use xlink:href="/web/article/img/sprite.svg#iconClose"></use></svg></a>
-			</div>
 		</div>
 		
 	</div>
@@ -81,7 +77,7 @@
 								<li>Edited by <a href="">Debra Young</a>, Michael Henry, <a href="">Carmen Pancoast</a></li>
 								<li>Updated on: April 2, 2024 / 3:38 PM EDT / CBS News</li>
 							</ul>
-							<ul class="article-social">
+							<ul class="social">
 								<!-- remember: need "javascript:;" -->
 								<li><a href="javascript:;" class="primary owOpenButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
 								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
@@ -131,15 +127,6 @@
 					<p>It heightened the sense of urgency surrounding a White House effort to convince Johnson to hold a public vote on Ukraine aid that has dragged on behind the scenes since the day he became speaker. Johnson had resisted for months in the face of growing threats to his speakership if he sided with Biden and allowed the vote.</p>
 					<p>But significant damage has been done to the Biden administration’s effort to help Ukraine repel Russia's invasion during the funding impasse that dates back to August, when the Democratic president made his first emergency spending request for Ukraine. Even with a burst of new weapons and ammunition, it's unlikely Ukraine will immediately recover after months of setbacks.</p>
 					<p>Biden immediately approved sending Ukraine $1 billion in military assistance, the first installment from about $61 billion allocated for Ukraine. The package includes air defense capabilities, artillery rounds, armored vehicles and other weapons to shore up Ukrainian forces who have seen morale sink as Russian President Vladimir Putin has racked up win after win.</p>
-					
-					<ul class="article-social article-social-inline">
-						<!-- remember: need "javascript:;" -->
-						<li><a href="javascript:;" class="primary owOpenButtonInline"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
-						<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
-						<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
-						<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
-					</ul>
-					
 				</div>
 			</div>
 			<div class="rail"><a href=""><img src="../img/300x250-star-trek.jpg" alt="Watch the Star Trek Discovery Trailer"></a></div>
@@ -175,19 +162,6 @@
 	
 	
 	
-		//
-		// INCLUDES (JQUERY)
-		//
-		
-		$(function() {
-			$('#include-nav-main').load('/web/nav/nav-v1.2-main.html');
-			$('#include-nav-sub').load('/web/nav/nav-v1.2-sub-60o.html');
-		});
-		
-		
-		
-		
-		
 		// OPENWEB SIDE PANEL:
 		
 		var boxOne = document.getElementsByClassName('sidePanel')[0],
@@ -205,29 +179,24 @@
 			}
 		}
 		
-		// NOTE: "[0]" targets the first instance of that class
 		document.getElementsByClassName('owOpenButton')[0].onclick = function() {
 			checkSidePanel();
 		}
-		// NOTE: had to use second class for second button, because the below script doesn't work at all
-		document.getElementsByClassName('owOpenButtonInline')[0].onclick = function() {
-			checkSidePanel();
-		}
-		
-		// NOTE: this should target all instances of 'owOpenButton', but it doesn't work at all
-		//document.getElementsByClassName('owOpenButton').onclick = function() {
-		//	checkSidePanel();
-		//}
 		
 		document.getElementsByClassName('owCloseButton')[0].onclick = function() {
 			checkSidePanel();
 		}
+	
+	
+	
 		
-		
-		
-		
-		
+
 		// IFRAME RESIZE (VANILLA JAVASCRIPT):
+		
+		// can't get this one to work:
+		//function checkIframe1(obj) {
+		//	obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		//}
 		
 		function checkIframe2(id) {
 			var newheight;
@@ -239,17 +208,30 @@
 		
 		window.addEventListener('load', onLoadFunction);
 		function onLoadFunction(e) {
+			//checkIframe1('embed1');
 			checkIframe2('embed2');
 		}
 		window.addEventListener('resize', onResizeFunction);
 		function onResizeFunction(e) {
+			//checkIframe1('embed1');
 			checkIframe2('embed2');
 		}
+
+
+
+		//
+		// INCLUDES (JQUERY)
+		//
 		
-		
-		
-		
-		
+		$(function() {
+			$('#include-nav-main').load('/web/nav/nav-v1.2-main.html');
+			$('#include-nav-sub').load('/web/nav/nav-v1.2-sub-60o.html');
+		});
+
+
+
+
+
 		//
 		// STICKY STUFF (NAV & VIDEO) and EMBED RESIZE (JQUERY)
 		//
@@ -260,16 +242,14 @@
 			
 			// IFRAME RESIZE
 			function checkIframe3() {
-				$('#embed3').height(
-					$('#embed3').contents().find('html').height()
-				);
+				$('#embed3').height( $('#embed3').contents().find('html').height() );
 			}
 			
 			
 			
 			function checkStickyStuff() {
 				
-				// nav
+				// sticky nav shadow
 				if ($(document).scrollTop() < 50) {
 					// top
 					$('#stickers').addClass('shadow-off');
@@ -284,49 +264,33 @@
 				var windowSize = $(window).width();
 				if (windowSize < 768) {
 					// small mobile
-					if ($(document).scrollTop() < 600) {
-						// top
-						$('#video-persist').addClass('video-persist-hide');
-						$('#video-persist').removeClass('video-persist-show');
-						console.log('mobile top');
-					} else {
-						// scrolled
-						$('#video-persist').addClass('video-persist-show');
-						$('#video-persist').removeClass('video-persist-hide');
-						console.log('mobile scrolled');
-					}
+					$('#video-persist').addClass('video-persist-hide');
+					$('#video-persist').removeClass('video-persist-show');
 				} else if (windowSize >= 768 && windowSize < 1020) {
 					// large mobile
 					if ($(document).scrollTop() < 800) {
 						// top
 						$('#video-persist').addClass('video-persist-hide');
 						$('#video-persist').removeClass('video-persist-show');
-						console.log('large mobile top');
 					} else {
 						// scrolled
 						$('#video-persist').addClass('video-persist-show');
 						$('#video-persist').removeClass('video-persist-hide');
-						console.log('large mobile scrolled');
 					}
 				} else if (windowSize >= 1020) {
 					// desktop
-					// (same as large mobile, but keeping code in case I need it later)
 					if ($(document).scrollTop() < 800) {
 						// top
 						$('#video-persist').addClass('video-persist-hide');
 						$('#video-persist').removeClass('video-persist-show');
-						console.log('desktop top');
 					} else {
 						// scrolled
 						$('#video-persist').addClass('video-persist-show');
 						$('#video-persist').removeClass('video-persist-hide');
-						console.log('desktop scrolled');
 					}
 				}
 				
 			}
-			
-			
 			
 			
 			
@@ -339,8 +303,6 @@
 			});
 			
 		});
-
-
 
 
 
