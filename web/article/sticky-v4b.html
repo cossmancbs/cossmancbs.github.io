@@ -27,23 +27,26 @@
 
 
 	<div id="stickers">
+		
 		<div id="topunit">
 			<div>ad unit</div>
-			<!--<img src="/web/img/728x90-paramount.jpg" width="728" height="90" alt="Exclusively on Paramount+">-->
 		</div>
+		
 		<div id="include-nav-main"></div>
 		
-		<div id="video-persist">
-			<video autoplay muted loop playsinline class="">
-				<!-- to display controls on load: "controls" -->
-				<source src="../video/ukraine.mp4" type="video/mp4">
-			</video>
-			<div>
-				<span>Russia's relentless offensive in southern Ukraine</span>
-				<a href=""><svg><use xlink:href="/web/article/img/sprite.svg#iconClose"></use></svg></a>
-			</div>
+	</div>
+	
+	
+	
+	<div id="video-persist">
+		<video autoplay muted loop playsinline class="">
+			<!-- to display controls on load: "controls" -->
+			<source src="../video/ukraine.mp4" type="video/mp4">
+		</video>
+		<div>
+			<span>Russia's relentless offensive in southern Ukraine</span>
+			<a href="javascript:;" class="vidCloseButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconClose"></use></svg></a>
 		</div>
-		
 	</div>
 
 
@@ -84,9 +87,9 @@
 							<ul class="article-social">
 								<!-- remember: need "javascript:;" -->
 								<li><a href="javascript:;" class="primary owOpenButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
-								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
-								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
-								<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
+								<li><a href="javascript:;" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
+								<li><a href="javascript:;" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
+								<li><a href="javascript:;" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
 							</ul>
 						</div>
 						
@@ -132,12 +135,12 @@
 					<p>But significant damage has been done to the Biden administration’s effort to help Ukraine repel Russia's invasion during the funding impasse that dates back to August, when the Democratic president made his first emergency spending request for Ukraine. Even with a burst of new weapons and ammunition, it's unlikely Ukraine will immediately recover after months of setbacks.</p>
 					<p>Biden immediately approved sending Ukraine $1 billion in military assistance, the first installment from about $61 billion allocated for Ukraine. The package includes air defense capabilities, artillery rounds, armored vehicles and other weapons to shore up Ukrainian forces who have seen morale sink as Russian President Vladimir Putin has racked up win after win.</p>
 					
-					<ul class="article-social article-social-inline">
+					<ul class="article-social">
 						<!-- remember: need "javascript:;" -->
 						<li><a href="javascript:;" class="primary owOpenButtonInline"><svg><use xlink:href="/web/article/img/sprite.svg#iconOpenweb"></use></svg>1.2k<span> Comments</span></a></li>
-						<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
-						<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
-						<li><a href="" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
+						<li><a href="javascript:;" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFacebook"></use></svg></a></li>
+						<li><a href="javascript:;" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconX"></use></svg></a></li>
+						<li><a href="javascript:;" class="secondary"><svg><use xlink:href="/web/article/img/sprite.svg#iconFlipbook"></use></svg></a></li>
 					</ul>
 					
 				</div>
@@ -251,12 +254,18 @@
 		
 		
 		//
-		// STICKY STUFF (NAV & VIDEO) and EMBED RESIZE (JQUERY)
+		// NAV & VIDEO & EMBED RESIZE (JQUERY)
 		//
 		
+		// VIDEO CLOSE BUTTON (vanilla JavaScript)
+		var boxVid = document.getElementById('video-persist');
+		document.getElementsByClassName('vidCloseButton')[0].onclick = function() {
+			boxVid.classList.add('video-persist-slideOut');
+			boxVid.classList.remove('video-persist-slideIn');
+			console.log('video close button clicked');
+		}
+		
 		$(document).ready(function() {
-			
-			
 			
 			// IFRAME RESIZE
 			function checkIframe3() {
@@ -265,11 +274,9 @@
 				);
 			}
 			
-			
-			
 			function checkStickyStuff() {
 				
-				// nav
+				// NAV
 				if ($(document).scrollTop() < 50) {
 					// top
 					$('#stickers').addClass('shadow-off');
@@ -280,19 +287,27 @@
 					$('#stickers').removeClass('shadow-off');
 				}
 				
-				// video
+				// VIDEO
 				var windowSize = $(window).width();
 				if (windowSize < 768) {
 					// small mobile
-					if ($(document).scrollTop() < 600) {
+					if ($(document).scrollTop() < 500) {
 						// top
-						$('#video-persist').addClass('video-persist-hide');
-						$('#video-persist').removeClass('video-persist-show');
+						$('#video-persist').addClass(
+							'video-persist-show video-persist-slideOut'
+						);
+						$('#video-persist').removeClass(
+							'video-persist-hide video-persist-slideIn'
+						);
 						console.log('mobile top');
 					} else {
 						// scrolled
-						$('#video-persist').addClass('video-persist-show');
-						$('#video-persist').removeClass('video-persist-hide');
+						$('#video-persist').addClass(
+							'video-persist-show video-persist-slideIn'
+						);
+						$('#video-persist').removeClass(
+							'video-persist-hide video-persist-slideOut'
+						);
 						console.log('mobile scrolled');
 					}
 				} else if (windowSize >= 768 && windowSize < 1020) {
@@ -300,12 +315,12 @@
 					if ($(document).scrollTop() < 800) {
 						// top
 						$('#video-persist').addClass('video-persist-hide');
-						$('#video-persist').removeClass('video-persist-show');
+						$('#video-persist').removeClass('video-persist-show video-persist-slideIn video-persist-slideOut');
 						console.log('large mobile top');
 					} else {
 						// scrolled
 						$('#video-persist').addClass('video-persist-show');
-						$('#video-persist').removeClass('video-persist-hide');
+						$('#video-persist').removeClass('video-persist-hide video-persist-slideIn video-persist-slideOut');
 						console.log('large mobile scrolled');
 					}
 				} else if (windowSize >= 1020) {
@@ -314,12 +329,12 @@
 					if ($(document).scrollTop() < 800) {
 						// top
 						$('#video-persist').addClass('video-persist-hide');
-						$('#video-persist').removeClass('video-persist-show');
+						$('#video-persist').removeClass('video-persist-show video-persist-slideIn video-persist-slideOut');
 						console.log('desktop top');
 					} else {
 						// scrolled
 						$('#video-persist').addClass('video-persist-show');
-						$('#video-persist').removeClass('video-persist-hide');
+						$('#video-persist').removeClass('video-persist-hide video-persist-slideIn video-persist-slideOut');
 						console.log('desktop scrolled');
 					}
 				}
