@@ -258,11 +258,13 @@
 		//
 		
 		// VIDEO CLOSE BUTTON (vanilla JavaScript)
-		var boxVid = document.getElementById('video-persist');
+		var boxVid = document.getElementById('video-persist'),
+			vidStatus = 'closed';
 		document.getElementsByClassName('vidCloseButton')[0].onclick = function() {
 			boxVid.classList.add('video-persist-slideOut');
 			boxVid.classList.remove('video-persist-slideIn');
 			console.log('video close button clicked');
+			vidStatus = 'closed';
 		}
 		
 		$(document).ready(function() {
@@ -299,15 +301,21 @@
 						$('#video-persist').removeClass(
 							'video-persist-hide video-persist-slideIn'
 						);
+						vidStatus = 'reset';
 						console.log('mobile top');
 					} else {
 						// scrolled
-						$('#video-persist').addClass(
-							'video-persist-show video-persist-slideIn'
-						);
-						$('#video-persist').removeClass(
-							'video-persist-hide video-persist-slideOut'
-						);
+						if(vidStatus === 'closed') {
+							// user has closed video, so do nothing
+						} else {
+							// everything is normal, so display video
+							$('#video-persist').addClass(
+								'video-persist-show video-persist-slideIn'
+							);
+							$('#video-persist').removeClass(
+								'video-persist-hide video-persist-slideOut'
+							);
+						}
 						console.log('mobile scrolled');
 					}
 				} else if (windowSize >= 768 && windowSize < 1020) {
