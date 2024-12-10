@@ -35,19 +35,6 @@
 		<div id="include-nav-main"></div>
 		
 	</div>
-	
-	
-	
-	<div id="video-persist">
-		<video autoplay muted loop playsinline class="">
-			<!-- to display controls on load: "controls" -->
-			<source src="../video/ukraine.mp4" type="video/mp4">
-		</video>
-		<div>
-			<span>Russia's relentless offensive in southern Ukraine</span>
-			<a href="javascript:;" class="vidCloseButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconClose"></use></svg></a>
-		</div>
-	</div>
 
 
 
@@ -103,10 +90,24 @@
 		
 		<div class="article-body">
 			<div class="main">
+				
+				<!-- video: inline -->
+				<!-- to display controls on load: "controls" -->
 				<video autoplay muted loop playsinline class="video-inline">
-					<!-- to display controls on load: "controls" -->
 					<source src="../video/ukraine.mp4" type="video/mp4">
 				</video>
+				
+				<!-- video: persistent -->
+				<div id="video-persist">
+					<video autoplay muted loop playsinline class="">
+						<source src="../video/ukraine.mp4" type="video/mp4">
+					</video>
+					<div>
+						<span>Russia's relentless offensive in southern Ukraine</span>
+						<a href="javascript:;" class="vidCloseButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconClose"></use></svg></a>
+					</div>
+				</div>
+				
 				<div class="block">
 					<p><span class="bureau">Washington D.C.</span> &mdash; The White House has ramped up criticism of House Republicans and Speaker Mike Johnson in recent days over their failure to bring up a Senate-passed bill that would provide aid to Ukraine, where conditions have grown more dire, as well as Israel and Taiwan.</p>
 					<p>White House Communications Director Ben LaBolt said in a statement Tuesday morning that "Speaker Johnson and House Republicans must act" on the foreign aid, noting that "time is of the essence."</p>
