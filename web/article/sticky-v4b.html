@@ -213,12 +213,12 @@
 		document.getElementsByClassName('owOpenButton')[0].onclick = function() {
 			checkSidePanel();
 		}
-		// NOTE: had to use second class for second button, because the below script doesn't work at all
+		// NOTE: had to use a different class for the second button, because the below script doesn't work at all
 		document.getElementsByClassName('owOpenButtonInline')[0].onclick = function() {
 			checkSidePanel();
 		}
 		
-		// NOTE: this should target all instances of 'owOpenButton', but it doesn't work at all
+		// NOTE: this is supposed to target all instances of 'owOpenButton', but it doesn't work at all!!!
 		//document.getElementsByClassName('owOpenButton').onclick = function() {
 		//	checkSidePanel();
 		//}
@@ -258,7 +258,7 @@
 		// NAV & VIDEO & EMBED RESIZE (JQUERY)
 		//
 		
-		// VIDEO CLOSE BUTTON (vanilla JavaScript)
+		// VIDEO: MOBILE CLOSE BUTTON (vanilla JavaScript)
 		var boxVid = document.getElementById('video-persist'),
 			vidStatus = 'closed';
 		document.getElementsByClassName('vidCloseButton')[0].onclick = function() {
@@ -302,6 +302,7 @@
 						$('#video-persist').removeClass(
 							'video-persist-hide video-persist-slideIn'
 						);
+						// reset the video status, if user has closed video
 						vidStatus = 'reset';
 						console.log('mobile top');
 					} else {

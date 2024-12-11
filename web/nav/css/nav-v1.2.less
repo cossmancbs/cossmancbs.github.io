@@ -46,22 +46,43 @@ nav {
 	backdrop-filter: saturate(200%) blur(20px);
 	background-color: rgba(@color-neutral-white,0);
 	.hr-light;
+	.main-outer {
+		width: 100%;
+		/* easier to use grid in this case, as opposed to flexbox, because the middle item must be centered */
+		display: grid;
+		align-items: center;
+		grid: auto-flow / 1fr auto 1fr;
+	}
+	.main-left {
+		display: flex;
+		justify-content: start;
+	}
+	.main-left li:not(:first-child) {
+		/* display first only */
+		display: none;
+	}
+	.main-right {
+		/* align right */
+		margin-left: auto;
+	}
+	.main-right ul {
+		display: flex;
+		flex-direction: row;
+		/*
+		justify-content: flex-end;
+		*/
+	}
+	.main-right ul li {
+		/*
+		flex-basis: max-content;
+		*/
+	}
+	a {
+		height: 48px;
+		font-size: 14px;
+	}
 }
-#subnav {
-	margin: 0;
-	padding: 0 0 0 @spacing-12;
-	overflow-x: scroll;
-	-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
-	scrollbar-width: none;  /* hide scrollbar: Firefox */
-	.hr-light;
-}
-#subnav::-webkit-scrollbar {
-	/* hide scrollbar: Safari, Chrome, Opera */
-	display: none;
-	width: 0;
-	height: 0;
-	background: transparent;
-}
+
 .logo {
 	padding: 0 16px;
 	width: 142.86px;
@@ -77,41 +98,61 @@ nav {
 	height: 16px;
 	fill: rgb(@color-neutral-100);
 }
-#mainnav .main-outer {
-	width: 100%;
-	/* easier to use grid in this case, as opposed to flexbox, because the middle item must be centered */
-	display: grid;
-	align-items: center;
-	grid: auto-flow / 1fr auto 1fr;
+.livedot {
+	display: inline-block;
+	/* margin: 0 4px 2px 0; */
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: rgb(@color-live);
 }
-#mainnav .main-left {
-	display: flex;
-	justify-content: start;
+.username {
+	display: none;
 }
-#mainnav .main-left li {
+
+
+
+
+
+#subnav {
+	margin: 0;
+	padding: 0 0 0 @spacing-12;
+	overflow-x: scroll;
+	-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
+	scrollbar-width: none;  /* hide scrollbar: Firefox */
+	.hr-light;
+	ul {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+	li {
+		flex-shrink: 0;
+	}
+	a {
+		padding: 0 12px;
+		height: 40px;
+		font-size: 12px;
+	}
+	.branded {
+		text-transform: uppercase;
+	}
+	.separator {
+		padding: 0 6px;
+		font-size: 14px;
+		color: rgb(@color-neutral-100);
+	}
 }
-#mainnav .main-left li:not(:first-child) {
-	/* display first only */
-    display: none;
+#subnav::-webkit-scrollbar {
+	/* hide scrollbar: Safari, Chrome, Opera */
+	display: none;
+	width: 0;
+	height: 0;
+	background: transparent;
 }
-#mainnav .main-right {
-	/* align right
-	margin: 0 0 0 auto;
-	*/
-	margin-left: auto;
-}
-#mainnav .main-right ul {
-	display: flex;
-	flex-direction: row;
-	/*
-	justify-content: flex-end;
-	*/
-}
-#mainnav .main-right ul li {
-	/*
-	flex-basis: max-content;
-	*/
-}
+
+
+
 #mainnav a.hover-effect,
 #subnav a.hover-effect {
 	padding: 0 @spacing-4;
@@ -126,20 +167,11 @@ nav {
 	gap: @spacing-4;
 	border-radius: @spacing-4;
 	background-color: rgba(@color-neutral-10,0);
-	/* background-color: salmon; */
 	transition: all 0.15s linear;
 }
 #mainnav a.hover-effect:hover > div,
 #subnav a.hover-effect:hover > div  {
 	background-color: rgba(@color-neutral-10,1);
-}
-#subnav ul {
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-}
-#subnav li {
-	flex-shrink: 0;
 }
 #mainnav a,
 #subnav a {
@@ -151,38 +183,9 @@ nav {
 	color: rgb(@color-neutral-100);
 	text-decoration: none;
 }
-#mainnav a {
-	height: 48px;
-	font-size: 14px;
-}
-#subnav a {
-	/* display: block; ensure vertical spacing? */
-	padding: 0 12px;
-	height: 40px;
-	font-size: 12px;
-}
-#subnav .separator {
-	padding: 0 6px;
-	font-size: 14px;
-	color: rgb(@color-neutral-100);
-}
-#subnav .branded {
-	text-transform: uppercase;
-}
 #mainnav a:hover,
 #subnav a:hover {
-	text-decoration: none !important; /* something conflicting? */
-}
-.livedot {
-	display: inline-block;
-	/* margin: 0 4px 2px 0; */
-	width: 4px;
-	height: 4px;
-	border-radius: 50%;
-	background-color: rgb(@color-live);
-}
-.username {
-	display: none;
+	text-decoration: none !important; /* conflict? */
 }
 
 
@@ -262,7 +265,6 @@ nav {
 		width: max-content;
 		border: 1px solid salmon;
 		*/
-		
 		display: flex;
 		flex-basis: fit-content;
 	}
@@ -285,6 +287,75 @@ nav {
 	#subnav ul {
 		width: calc(@break-lg-container + @spacing-24);
 	}
+}
+
+
+
+
+
+
+/*
+/
+/	FLYOUTS
+/
+*/
+
+.flyout-account-container {
+	position: relative;
+}
+.flyout-account {
+	/*
+	*/
+	display: none;
+	position: absolute;
+	top: 44px;
+	right: -12px;
+	.notch {
+		/*
+		*/
+		position: relative;
+		width: 100%;
+		height: 8px;
+	}
+	img {
+		/*
+		*/
+		position: absolute;
+		right: 26px;
+		width: 18px;
+		height: 9px;
+	}
+	ul {
+		/*
+		position: relative;
+		*/
+		padding: 16px;
+		display: flex;
+		flex-direction: row;
+		gap: 16px;
+		background-color: rgb(@color-neutral-white);
+		border: 1px solid rgb(@color-neutral-5);
+		border-radius: 8px;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+	}
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(@color-neutral-white);
+		color: rgb(@color-neutral-100);
+		border: 1px solid rgb(@color-neutral-20);
+		border-radius: 4px;
+		height: auto !important;
+		width: 104px !important;
+		padding: 12px 0 !important;
+	}
+	a:hover {
+		border: 1px solid rgb(@color-neutral-100);
+	}
+}
+.flyout-account-container:hover .flyout-account {
+	display: block;
 }
 
 
