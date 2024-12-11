@@ -354,8 +354,11 @@ nav {
 		border: 1px solid rgb(@color-neutral-100);
 	}
 }
-.flyout-account-container:hover .flyout-account {
-	display: block;
+/* flyouts above 768 */
+@media only screen and (min-width: @break-sm) {
+	.flyout-account-container:hover .flyout-account {
+		display: block;
+	}
 }
 
 
