@@ -153,14 +153,31 @@ iframe + p {
 		text-decoration: none;
 	}
 }
-.sidePanel.horizIn {
+.sidePanel.horizTrans {
 	transition: right .4s ease-in-out;
+}
+.sidePanel.horizIn {
+	/*
+	transition: right .4s ease-in-out;
+	*/
 	right: 0px !important;
 }
 .sidePanel.horizOut {
+	/*
 	transition: right .4s ease-in-out;
+	*/
 	right: -100vw !important;
 }
+
+/*
+.sidePanel.hideSidePanel {
+	display: none;
+}
+.sidePanel.showSidePanel {
+	display: block;
+}
+*/
+
 @media only screen and (min-width: @break-sm) {
 	.sidePanel {
 		right: -360px;

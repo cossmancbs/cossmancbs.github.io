@@ -197,12 +197,37 @@
 		var boxOne = document.getElementsByClassName('sidePanel')[0],
 			sidePanelStatus = 'closed';
 		
-		function checkSidePanel() {
+		//function checkSidePanel() {
+		//	if(sidePanelStatus === 'closed') {
+				// hide panel
+		//		boxOne.classList.add('hideSidePanel');
+		//		boxOne.classList.remove('showSidePanel');
+		//	} else {
+				// show panel
+		//		boxOne.classList.add('showSidePanel');
+		//		boxOne.classList.remove('hideSidePanel');
+		//	}
+		//}
+		//window.onresize = checkSidePanel();
+		
+		function toggleSidePanel() {
+			// activate CSS transition, then deactivate
+			boxOne.classList.add('horizTrans');
+			function sleep(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+			sleep(400).then(() => {
+				console.log('it has been point four seconds');
+				boxOne.classList.remove('horizTrans');
+			});
+			// open or close panel
 			if(sidePanelStatus === 'closed') {
+				// if closed, then open it
 				boxOne.classList.add('horizIn');
 				boxOne.classList.remove('horizOut');
 				sidePanelStatus = 'open';
 			} else {
+				// if open, then close it
 				boxOne.classList.add('horizOut');
 				boxOne.classList.remove('horizIn');
 				sidePanelStatus = 'closed';
@@ -211,20 +236,20 @@
 		
 		// NOTE: "[0]" targets the first instance of that class
 		document.getElementsByClassName('owOpenButton')[0].onclick = function() {
-			checkSidePanel();
+			toggleSidePanel();
 		}
 		// NOTE: had to use a different class for the second button, because the below script doesn't work at all
 		document.getElementsByClassName('owOpenButtonInline')[0].onclick = function() {
-			checkSidePanel();
+			toggleSidePanel();
 		}
 		
 		// NOTE: this is supposed to target all instances of 'owOpenButton', but it doesn't work at all!!!
 		//document.getElementsByClassName('owOpenButton').onclick = function() {
-		//	checkSidePanel();
+		//	toggleSidePanel();
 		//}
 		
 		document.getElementsByClassName('owCloseButton')[0].onclick = function() {
-			checkSidePanel();
+			toggleSidePanel();
 		}
 		
 		
