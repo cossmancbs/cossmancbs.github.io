@@ -636,15 +636,19 @@ iframe + p {
 		position: fixed;
 		gap: 0;
 		padding: 0;
+		/*
 		width: 448px;
 		height: 252px;
-		top: 160px;
+		*/
+		width: 320px;
+		height: 180px;
+		top: 110px;
 		right: 20px;
 		border: none;
 		box-shadow: 0 0 25px 0 rgba(0,0,0,.3);
 		video {
-			width: 448px;
-			height: 252px;
+			width: 100%;
+			height: auto;
 			border-radius: 0;
 		}
 		div {
@@ -654,8 +658,12 @@ iframe + p {
 }
 @media only screen and (min-width: @break-md) {
 	#video-persist {
-		top: 180px;
+		/*
 		left: 20px;
+		*/
+		top: 130px;
+		width: 352px;
+		height: 198px;
 	}
 }
 @media only screen and (min-width: @break-lg) {

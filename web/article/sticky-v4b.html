@@ -354,13 +354,13 @@
 						console.log('large mobile top');
 					} else {
 						// scrolled
-						$('#video-persist').addClass('video-persist-show');
-						$('#video-persist').removeClass('video-persist-hide video-persist-slideIn video-persist-slideOut');
+						$('#video-persist').addClass('video-persist-show video-persist-slideIn');
+						$('#video-persist').removeClass('video-persist-hide video-persist-slideOut');
 						console.log('large mobile scrolled');
 					}
 				} else if (windowSize >= 1020) {
 					// desktop
-					// (same as large mobile, but keeping code in case I need it later)
+					// (same as above, but keeping code in case I need it later)
 					if ($(document).scrollTop() < 800) {
 						// top
 						$('#video-persist').addClass('video-persist-hide');
@@ -368,8 +368,8 @@
 						console.log('desktop top');
 					} else {
 						// scrolled
-						$('#video-persist').addClass('video-persist-show');
-						$('#video-persist').removeClass('video-persist-hide video-persist-slideIn video-persist-slideOut');
+						$('#video-persist').addClass('video-persist-show video-persist-slideIn');
+						$('#video-persist').removeClass('video-persist-hide video-persist-slideOut');
 						console.log('desktop scrolled');
 					}
 				}
