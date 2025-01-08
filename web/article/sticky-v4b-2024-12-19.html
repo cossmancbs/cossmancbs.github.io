@@ -108,7 +108,7 @@
 						</video>
 					</div>
 					<div class="video-card">
-						<h1>Russia's relentless offensive in southern Ukraine</h1>
+						<span>Russia's relentless offensive in southern Ukraine</span>
 						<a href="javascript:;" class="vidCloseButton"><svg><use xlink:href="/web/article/img/sprite.svg#iconClose"></use></svg></a>
 					</div>
 				</div>
@@ -120,21 +120,25 @@
 					
 					
 					
-					<!-- <p><strong>RESPONSIVE EMBED OPTION (JAVASCRIPT):</strong></p> -->
-					<iframe src="/web/elections/embed-prez.html" marginheight="0" scrolling="no" align="texttop" id="embedPrez" title="Embed Example"></iframe>
-					<!--
-					<p><strong>RESPONSIVE EMBED OPTION (JQUERY):</strong></p>
-					<iframe src="embed.html" id="embed3" title="Embed Example Three"></iframe>
-					-->
+					<p><strong>RESPONSIVE EMBED OPTION (JAVASCRIPT):</strong></p>
+					<iframe src="embed.html" marginheight="0" scrolling="no" align="texttop" id="embed2" title="Embed Example Two"></iframe>
 					
 					
 					
 					<p>The comments came after House Republican leaders dashed the hopes of bringing up a $95 billion Senate-passed foreign aid bill in the lower chamber last week.</p>
+					
+					
+					
+					<p><strong>RESPONSIVE EMBED OPTION (JQUERY):</strong></p>
+					<iframe src="embed.html" id="embed3" title="Embed Example Three"></iframe>
+					
+					
+					
 					<p>"The way they're walking away from the threat of Russia, the way they're walking away from NATO, the way they're walking away from meeting our obligations, it's just shocking," the president said. "I've been here a while. I've never seen anything like this."</p>
 					<p>Johnson's team countered later in the day, saying that "we welcome the President's reversal and openness to meeting with Speaker Johnson about the best path forward for securing the nation," while noting that "it's long overdue."</p>
 					<p>The intelligence, shown to lawmakers last week and described by two members who have seen it, built on weeks of reports that have alarmed members of Congress and Biden administration officials. On Thursday, CIA Director William Burns warned that, barring more U.S. aid, Ukraine "could lose on the battlefield by the end of 2024."</p>
 					<p>It heightened the sense of urgency surrounding a White House effort to convince Johnson to hold a public vote on Ukraine aid that has dragged on behind the scenes since the day he became speaker. Johnson had resisted for months in the face of growing threats to his speakership if he sided with Biden and allowed the vote.</p>
-					<p>But significant damage has been done to the Biden administration's effort to help Ukraine repel Russia's invasion during the funding impasse that dates back to August, when the Democratic president made his first emergency spending request for Ukraine. Even with a burst of new weapons and ammunition, it's unlikely Ukraine will immediately recover after months of setbacks.</p>
+					<p>But significant damage has been done to the Biden administration’s effort to help Ukraine repel Russia's invasion during the funding impasse that dates back to August, when the Democratic president made his first emergency spending request for Ukraine. Even with a burst of new weapons and ammunition, it's unlikely Ukraine will immediately recover after months of setbacks.</p>
 					<p>Biden immediately approved sending Ukraine $1 billion in military assistance, the first installment from about $61 billion allocated for Ukraine. The package includes air defense capabilities, artillery rounds, armored vehicles and other weapons to shore up Ukrainian forces who have seen morale sink as Russian President Vladimir Putin has racked up win after win.</p>
 					
 					<ul class="article-social">
@@ -198,6 +202,19 @@
 		var boxOne = document.getElementsByClassName('sidePanel')[0],
 			sidePanelStatus = 'closed';
 		
+		//function checkSidePanel() {
+		//	if(sidePanelStatus === 'closed') {
+				// hide panel
+		//		boxOne.classList.add('hideSidePanel');
+		//		boxOne.classList.remove('showSidePanel');
+		//	} else {
+				// show panel
+		//		boxOne.classList.add('showSidePanel');
+		//		boxOne.classList.remove('hideSidePanel');
+		//	}
+		//}
+		//window.onresize = checkSidePanel();
+		
 		function toggleSidePanel() {
 			// activate CSS transition, then deactivate
 			boxOne.classList.add('horizTrans');
@@ -222,19 +239,20 @@
 			}
 		}
 		
-		// NOTE: this is supposed to target all instances of the specified class, but it doesn't work!!!
-		//document.getElementsByClassName('owOpenButton').onclick = function() {
-		//	toggleSidePanel();
-		//}
-		
 		// NOTE: "[0]" targets the first instance of that class
 		document.getElementsByClassName('owOpenButton')[0].onclick = function() {
 			toggleSidePanel();
 		}
-		// NOTE: different class for the second button (see note above)
+		// NOTE: had to use a different class for the second button, because the below script doesn't work at all
 		document.getElementsByClassName('owOpenButtonInline')[0].onclick = function() {
 			toggleSidePanel();
 		}
+		
+		// NOTE: this is supposed to target all instances of 'owOpenButton', but it doesn't work at all!!!
+		//document.getElementsByClassName('owOpenButton').onclick = function() {
+		//	toggleSidePanel();
+		//}
+		
 		document.getElementsByClassName('owCloseButton')[0].onclick = function() {
 			toggleSidePanel();
 		}
@@ -255,20 +273,12 @@
 		
 		window.addEventListener('load', onLoadFunction);
 		function onLoadFunction(e) {
-			checkIframe2('embedPrez');
+			checkIframe2('embed2');
 		}
 		window.addEventListener('resize', onResizeFunction);
 		function onResizeFunction(e) {
-			checkIframe2('embedPrez');
+			checkIframe2('embed2');
 		}
-		// none of this works, even though iframe is on the same domain?
-		//$('#embedPrez').contents().find('#h2h').hide();
-		//$('#embedPrez').ready(function() {
-			//$('#h2h').hide();
-			//$('#embedPrez').contents().find('#h2h').hide();
-			//var axe = $('#embedPrez').contents().find('body'); 
-			//axe.append('blah blah blah'); 
-		//});
 		
 		
 		
@@ -278,25 +288,24 @@
 		// NAV & VIDEO & EMBED RESIZE (JQUERY)
 		//
 		
-		// VIDEO
+		// VIDEO: MOBILE CLOSE BUTTON (vanilla JavaScript)
 		var boxVid = document.getElementById('video-persist'),
 			vidStatus = 'closed';
-		// video close button:
 		document.getElementsByClassName('vidCloseButton')[0].onclick = function() {
-			boxVid.classList.add('video-persist-out');
-			boxVid.classList.remove('video-persist-in');
+			boxVid.classList.add('video-persist-slideOut');
+			boxVid.classList.remove('video-persist-slideIn');
 			console.log('video close button clicked');
 			vidStatus = 'closed';
 		}
 		
 		$(document).ready(function() {
 			
-			// IFRAME RESIZE (easy in jquery, but not preferred)
-			//function checkIframe3() {
-			//	$('#embed3').height(
-			//		$('#embed3').contents().find('html').height()
-			//	);
-			//}
+			// IFRAME RESIZE
+			function checkIframe3() {
+				$('#embed3').height(
+					$('#embed3').contents().find('html').height()
+				);
+			}
 			
 			function checkStickyStuff() {
 				
@@ -318,10 +327,10 @@
 					if ($(document).scrollTop() < 500) {
 						// top
 						$('#video-persist').addClass(
-							'video-persist-out'
+							'video-persist-show video-persist-slideOut'
 						);
 						$('#video-persist').removeClass(
-							'video-persist-in'
+							'video-persist-hide video-persist-slideIn'
 						);
 						// reset the video status, if user has closed video
 						vidStatus = 'reset';
@@ -333,10 +342,10 @@
 						} else {
 							// everything is normal, so display video
 							$('#video-persist').addClass(
-								'video-persist-in'
+								'video-persist-show video-persist-slideIn'
 							);
 							$('#video-persist').removeClass(
-								'video-persist-out'
+								'video-persist-hide video-persist-slideOut'
 							);
 						}
 						console.log('mobile scrolled');
@@ -345,20 +354,13 @@
 					// large mobile
 					if ($(document).scrollTop() < 800) {
 						// top
-						$('#video-persist').addClass('video-persist-out');
-						$('#video-persist').removeClass('video-persist-in');
-						// reset the video status, if user has closed video
-						vidStatus = 'reset';
+						$('#video-persist').addClass('video-persist-hide');
+						$('#video-persist').removeClass('video-persist-show video-persist-slideIn video-persist-slideOut');
 						console.log('large mobile top');
 					} else {
 						// scrolled
-						if(vidStatus === 'closed') {
-							// user has closed video, so do nothing
-						} else {
-							// everything is normal, so display video
-							$('#video-persist').addClass('video-persist-in');
-							$('#video-persist').removeClass(' video-persist-out');
-						}
+						$('#video-persist').addClass('video-persist-show video-persist-slideIn');
+						$('#video-persist').removeClass('video-persist-hide video-persist-slideOut');
 						console.log('large mobile scrolled');
 					}
 				} else if (windowSize >= 1020) {
@@ -366,20 +368,13 @@
 					// (same as above, but keeping code in case I need it later)
 					if ($(document).scrollTop() < 800) {
 						// top
-						$('#video-persist').addClass('video-persist-out');
-						$('#video-persist').removeClass('video-persist-in');
-						// reset the video status, if user has closed video
-						vidStatus = 'reset';
+						$('#video-persist').addClass('video-persist-hide');
+						$('#video-persist').removeClass('video-persist-show video-persist-slideIn video-persist-slideOut');
 						console.log('desktop top');
 					} else {
 						// scrolled
-						if(vidStatus === 'closed') {
-							// user has closed video, so do nothing
-						} else {
-							// everything is normal, so display video
-							$('#video-persist').addClass('video-persist-in');
-							$('#video-persist').removeClass(' video-persist-out');
-						}
+						$('#video-persist').addClass('video-persist-show video-persist-slideIn');
+						$('#video-persist').removeClass('video-persist-hide video-persist-slideOut');
 						console.log('desktop scrolled');
 					}
 				}
@@ -395,7 +390,7 @@
 			// Event listener ("load" doesn't seem to work, so I added the above)
 			$(window).on('load resize scroll',function(e){
 				checkStickyStuff();
-				// checkIframe3();
+				checkIframe3();
 			});
 			
 		});

@@ -36,23 +36,14 @@ main {
 */
 
 iframe {
-	display: block;
-	/* don't know why I need "!important" here??? */
-	margin: 0 auto !important;
+	margin: 0;
+	padding: 0;
 	border: none;
 	width: 100%;
-	max-width: 640px;
 }
 iframe + p {
 	/* hack for vertical spacing */
 	padding-top: 20px
-}
-#embedPrez {
-	/* impossible to affect CSS in an iframe, even if from the same domain?
-	#h2h {
-		display: none;
-	}
-	*/
 }
 
 
@@ -662,21 +653,34 @@ iframe + p {
 		fill: rgba(@color-neutral-0,.75);
 	}
 }
-.video-persist-in {
+.video-persist-hide {
+	display: none;
+}
+.video-persist-show {
 	display: flex;
+}
+.video-persist-in {
+	/*
+	top: 0; 
+	*/
 	/* nav height + border */
 	margin-top: calc(48px + 1px);
-	/* transition only for these classes */
+	/* transition only for these classes, to avoid weirdness */
 	transition:  margin .5s ease-in-out;
 }
 .video-persist-out {
-	display: flex;
+	/*
+	top: -168px;
+	*/
 	margin-top: -168px;
-	/* transition only for these classes */
+	/* transition only for these classes, to avoid weirdness */
 	transition: margin .5s ease-in-out;
 }
 @media only screen and (min-width: @break-sm) {
 	#video-persist {
+		/*
+		height: 180px;
+		*/
 		flex-direction: column-reverse;
 		position: fixed;
 		gap: 0;
@@ -686,9 +690,6 @@ iframe + p {
 		right: 20px;
 		border: none;
 		box-shadow: 0 0 25px 0 rgba(0,0,0,.3);
-		border-radius: 8px 8px 4px 4px;
-		border-radius: 8px;
-		overflow: hidden;
 		.video-container {
 		}
 		.scrubber {
@@ -700,6 +701,9 @@ iframe + p {
 			border-radius: 0;
 		}
 		.video-card {
+			/*
+			display: none;
+			*/
 			width: auto; /* required */
 			padding: 8px;
 			h1 {
@@ -711,16 +715,17 @@ iframe + p {
 		}
 	}
 	.video-persist-in {
-		display: flex;
 		margin-top: 0;
 	}
 	.video-persist-out {
-		display: none;
 		margin-top: 0;
 	}
 }
 @media only screen and (min-width: @break-md) {
 	#video-persist {
+		/*
+		height: 198px;
+		*/
 		top: 180px;
 		width: 352px;
 	}
