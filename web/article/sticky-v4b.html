@@ -93,7 +93,7 @@
 				
 				<!-- video: inline -->
 				<!-- to display controls on load: "controls" -->
-				<video autoplay muted loop playsinline class="video-inline">
+				<video autoplay muted loop playsinline id="video-inline" class="video-inline">
 					<source src="../video/ukraine.mp4" type="video/mp4">
 				</video>
 				
@@ -103,7 +103,7 @@
 						<div class="learn-more">learn more</div>
 						<div class="controls">controls</div>
 						<div class="scrubber"></div>
-						<video autoplay muted loop playsinline class="">
+						<video autoplay muted loop playsinline id="video-persistent" class="">
 							<source src="../video/ukraine.mp4" type="video/mp4">
 						</video>
 					</div>
@@ -287,6 +287,12 @@
 			boxVid.classList.remove('video-persist-in');
 			console.log('video close button clicked');
 			vidStatus = 'closed';
+			// pause inline video
+			let vid1 = document.getElementById("video-inline");
+			vid1.pause();
+			// pause persistent video
+			let vid2 = document.getElementById("video-persistent");
+			vid2.pause();
 		}
 		
 		$(document).ready(function() {
