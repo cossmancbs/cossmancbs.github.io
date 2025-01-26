@@ -121,7 +121,7 @@
 					
 					
 					<!-- <p><strong>RESPONSIVE EMBED OPTION (JAVASCRIPT):</strong></p> -->
-					<iframe src="/web/elections/embed-prez.html" marginheight="0" scrolling="no" align="texttop" id="embedPrez" title="Embed Example"></iframe>
+					<iframe src="/web/article/embed.html" marginheight="0" scrolling="no" align="texttop" id="embed-iframe" title="Embed Example"></iframe>
 					<!--
 					<p><strong>RESPONSIVE EMBED OPTION (JQUERY):</strong></p>
 					<iframe src="embed.html" id="embed3" title="Embed Example Three"></iframe>
@@ -255,18 +255,18 @@
 		
 		window.addEventListener('load', onLoadFunction);
 		function onLoadFunction(e) {
-			checkIframe2('embedPrez');
+			checkIframe2('embed-iframe');
 		}
 		window.addEventListener('resize', onResizeFunction);
 		function onResizeFunction(e) {
-			checkIframe2('embedPrez');
+			checkIframe2('embed-iframe');
 		}
 		// none of this works, even though iframe is on the same domain?
-		//$('#embedPrez').contents().find('#h2h').hide();
-		//$('#embedPrez').ready(function() {
+		//$('#embed-iframe').contents().find('#h2h').hide();
+		//$('#embed-iframe').ready(function() {
 			//$('#h2h').hide();
-			//$('#embedPrez').contents().find('#h2h').hide();
-			//var axe = $('#embedPrez').contents().find('body'); 
+			//$('#embed-iframe').contents().find('#h2h').hide();
+			//var axe = $('#embed-iframe').contents().find('body'); 
 			//axe.append('blah blah blah'); 
 		//});
 		
