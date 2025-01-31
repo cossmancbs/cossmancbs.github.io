@@ -421,17 +421,25 @@ video {
 	}
 	.what-were-covering {
 		h1 {
-			.epsilon;
+			/* .epsilon; */
 			margin: 0 0 16px 0;
+			font-family: "ProximaNova-Bold", sans-serif;
+			font-style: normal;
+			font-size: 20px;
+			line-height: 1;
 		}
 		ul {
-			margin: 0 20px;
+			margin: 0 20px 0 20px;
 			list-style: disc;
 		}
 		li {
-			/*
-			background-color: salmon;
-			*/
+			font-family: "ProximaNova-Regular", sans-serif;
+			font-style: normal;
+			font-size: 18px;
+			line-height: 1.2;
+		}
+		li:not(:last-child) {
+			margin: 0 0 .4em 0;
 		}
 		a {
 			color: rgb(@color-neutral-100);
@@ -454,15 +462,12 @@ video {
 			.metadata-large-bold;
 		}
 	}
-	p, li {
+	p {
 		.body-small;
 		color: rgb(@color-neutral-100);
 	}
 	p:not(:last-child) {
 		margin: 0 0 .8em 0;
-	}
-	li:not(:last-child) {
-		margin: 0 0 .4em 0;
 	}
 }
 .rail {
@@ -475,22 +480,24 @@ video {
 		}
 		.what-were-covering {
 			ul {
-				margin: 0 40px;
+				margin: 0 40px 0 20px;
 				list-style: disc;
+			}
+			h1 {
+				font-size: 22px;
+			}
+			li {
+				font-size: 20px;
 			}
 		}
 		.post {
 			padding: 40px;
 			border: 1px solid rgb(@color-neutral-10);
-			/* NOTE:
-			if above 768, and manually scrolled down:
-			page scrolls to a different point
-			*/
 			h1 {
 				.delta;
 			}
 		}
-		p, li {
+		p {
 			.body-large;
 		}
 	}
@@ -535,23 +542,19 @@ video {
 .post-scrolled-no {
 	scroll-margin-top: 80px;
 	scroll-snap-margin-top: 80px; /* iOS 11 and older */
-	background-color: white;
 }
 .post-scrolled-yes {
-	scroll-margin-top: 200px;
-	scroll-snap-margin-top: 200px; /* iOS 11 and older */
-	background-color: salmon;
+	scroll-margin-top: 220px;
+	scroll-snap-margin-top: 220px; /* iOS 11 and older */
 }
 @media only screen and (min-width: @break-sm) {
 	.post-scrolled-no {
-		scroll-margin-top: 100px;
-		scroll-snap-margin-top: 100px; /* iOS 11 and older */
-		background-color: white;
+		scroll-margin-top: 80px;
+		scroll-snap-margin-top: 80px; /* iOS 11 and older */
 	}
 	.post-scrolled-yes {
-		scroll-margin-top: 260px;
-		scroll-snap-margin-top: 260px; /* iOS 11 and older */
-		background-color: salmon;
+		scroll-margin-top: 280px;
+		scroll-snap-margin-top: 280px; /* iOS 11 and older */
 	}
 }
 
