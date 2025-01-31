@@ -189,12 +189,24 @@
 			
 			function checkNav() {
 				if ($(document).scrollTop() < 300) {
-					$('#stickers').removeClass('shadow-on');
+					// page is not scrolled
+					// remove shadow
 					$('#stickers').addClass('shadow-off');
+					$('#stickers').removeClass('shadow-on');
+					// adjust scroll-margin-top
+					$('.post').addClass('post-scrolled-no');
+					$('.post').removeClass('post-scrolled-yes');
+					// hide liveblog header
 					$('.live-updates-collapsed').hide();
 				} else {
+					// page is scrolled
+					// add shadow
 					$('#stickers').addClass('shadow-on');
 					$('#stickers').removeClass('shadow-off');
+					// adjust scroll-margin-top
+					$('.post').addClass('post-scrolled-yes');
+					$('.post').removeClass('post-scrolled-no');
+					// show liveblog header
 					$('.live-updates-collapsed').show();
 				}
 			}

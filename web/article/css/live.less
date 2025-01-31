@@ -415,7 +415,6 @@ video {
 /	ARTICLE BODY & RAIL
 /
 */
-
 .article-body {
 	.block {
 		margin: 20px;
@@ -446,7 +445,6 @@ video {
 	.post {
 		padding-bottom: 20px;
 		border-bottom: 1px solid rgb(@color-neutral-10);
-		scroll-margin-top: 280px;
 		h1 {
 			margin: 0 0 20px 0;
 			.epsilon;
@@ -484,8 +482,10 @@ video {
 		.post {
 			padding: 40px;
 			border: 1px solid rgb(@color-neutral-10);
-			/* I do not understand why this is unpredictable above 768???????????????????????????? */
-			scroll-margin-top: 140px;
+			/* NOTE:
+			if above 768, and manually scrolled down:
+			page scrolls to a different point
+			*/
 			h1 {
 				.delta;
 			}
@@ -529,6 +529,31 @@ video {
 
 
 
+
+
+
+.post-scrolled-no {
+	scroll-margin-top: 80px;
+	scroll-snap-margin-top: 80px; /* iOS 11 and older */
+	background-color: white;
+}
+.post-scrolled-yes {
+	scroll-margin-top: 200px;
+	scroll-snap-margin-top: 200px; /* iOS 11 and older */
+	background-color: salmon;
+}
+@media only screen and (min-width: @break-sm) {
+	.post-scrolled-no {
+		scroll-margin-top: 100px;
+		scroll-snap-margin-top: 100px; /* iOS 11 and older */
+		background-color: white;
+	}
+	.post-scrolled-yes {
+		scroll-margin-top: 260px;
+		scroll-snap-margin-top: 260px; /* iOS 11 and older */
+		background-color: salmon;
+	}
+}
 
 
 
