@@ -16,10 +16,11 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background-color: white;
+	background-color: rgb(@color-neutral-100);
 }
 main {
 	position: relative;
+	background-color: white;
 	/* workaround to simulate sticky nav */
 	top: 48px;
 }
@@ -544,40 +545,6 @@ video {
 	}
 	.rail {
 		grid-column: 10/13;
-	}
-}
-
-
-
-
-
-/*
-WORKAROUND FOR ISSUE RELATED TO THE TECHNIQUE USED TO MIMIC STICKY VIDEO 
-*/
-.post-scrolled-no {
-	scroll-margin-top: 80px;
-	scroll-snap-margin-top: 80px; /* iOS 11 and older */
-	scroll-margin-top: 200px;
-	scroll-snap-margin-top: 200px; /* iOS 11 and older */
-}
-.post-scrolled-yes {
-	scroll-margin-top: 220px;
-	scroll-snap-margin-top: 220px; /* iOS 11 and older */
-	scroll-margin-top: 200px;
-	scroll-snap-margin-top: 200px; /* iOS 11 and older */
-}
-@media only screen and (min-width: @break-sm) {
-	.post-scrolled-no {
-		scroll-margin-top: 80px;
-		scroll-snap-margin-top: 80px; /* iOS 11 and older */
-		scroll-margin-top: 300px;
-		scroll-snap-margin-top: 300px; /* iOS 11 and older */
-	}
-	.post-scrolled-yes {
-		scroll-margin-top: 280px;
-		scroll-snap-margin-top: 280px; /* iOS 11 and older */
-		scroll-margin-top: 300px;
-		scroll-snap-margin-top: 300px; /* iOS 11 and older */
 	}
 }
 
