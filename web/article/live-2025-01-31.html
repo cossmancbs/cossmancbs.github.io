@@ -30,7 +30,7 @@
 
 	<div id="stickers">
 		<div id="include-nav-main"></div>
-		
+
 		<!-- collapsed article header -->
 		<div class="live-updates-collapsed">
 			<!-- annoying hack to mimic empty column -->
@@ -49,17 +49,17 @@
 					</video>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
 
 
+	<div id="include-nav-sub"></div>
 
 
 
 	<main>
-		<div id="include-nav-sub"></div>
 
 
 
@@ -147,7 +147,7 @@
 				</div>
 				
 			</div>
-			<div class="rail"><a href=""><img src="/web/img/300x250-star-trek.jpg" alt="Watch the Star Trek Discovery Trailer"></a></div>
+			<div class="rail"><a href=""><img src="../img/300x250-star-trek.jpg" alt="Watch the Star Trek Discovery Trailer"></a></div>
 		</div>
 		
 		
@@ -189,13 +189,13 @@
 			
 			function checkNav() {
 				if ($(document).scrollTop() < 300) {
-					// page is near top
+					// page is not scrolled
 					// remove shadow
 					$('#stickers').addClass('shadow-off');
 					$('#stickers').removeClass('shadow-on');
 					// adjust scroll-margin-top
-					//$('.post').addClass('post-scrolled-no');
-					//$('.post').removeClass('post-scrolled-yes');
+					$('.post').addClass('post-scrolled-no');
+					$('.post').removeClass('post-scrolled-yes');
 					// hide liveblog header
 					$('.live-updates-collapsed').hide();
 				} else {
@@ -204,8 +204,8 @@
 					$('#stickers').addClass('shadow-on');
 					$('#stickers').removeClass('shadow-off');
 					// adjust scroll-margin-top
-					//$('.post').addClass('post-scrolled-yes');
-					//$('.post').removeClass('post-scrolled-no');
+					$('.post').addClass('post-scrolled-yes');
+					$('.post').removeClass('post-scrolled-no');
 					// show liveblog header
 					$('.live-updates-collapsed').show();
 				}
@@ -219,23 +219,6 @@
 			});
 			
 		});
-
-
-
-//function myFunction() {
-//	var x = document.getElementById("myDIV");
-//	if (x.style.display === "none") {
-//		x.style.display = "block";
-//	} else {
-//		x.style.display = "none";
-//	}
-//}
-
-
-// var liveblogheader = document.getElementsByClassName('live-updates-collapsed');
-// liveblogheader.style.display = 'none';
-
-
 
 
 

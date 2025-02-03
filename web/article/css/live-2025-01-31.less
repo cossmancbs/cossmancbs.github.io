@@ -20,13 +20,11 @@ body {
 }
 main {
 	position: relative;
-	/* workaround to simulate sticky nav */
-	top: 48px;
+	top: -88px;
 }
 @media only screen and (min-width: @break-md) {
 	main {
-		/* workaround to simulate sticky nav */
-		top: 64px;
+		top: -104px;
 	}
 }
 .shadow-on {
@@ -99,7 +97,7 @@ main {
 */
 
 #stickers {
-	position: fixed;
+	position: sticky;
 	top: 0;
 	width: 100%;
 }
@@ -166,10 +164,8 @@ main {
 */
 
 .live-updates {
-	/* nav height + vertical spacing
+	/* nav height + vertical spacing */
 	padding: calc(88px) 0 0 0;
-	*/
-	padding: 0;
 	background-color: rgb(@color-neutral-100);
 }
 .live-updates .article-header {
@@ -203,14 +199,12 @@ main {
 	display: none;
 }
 @media only screen and (min-width: @break-sm) {
-	.live-updates {
-		/* nav height + vertical spacing
+	.live-updates .live-updates {
+		/* nav height + vertical spacing */
 		padding: calc(88px + 20px) 40px 20px 40px;
-		*/
-		padding: 20px 40px;
 	}
 	.live-updates .container {
-		padding: 0;
+		padding: 20px;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-gap: 20px;
@@ -234,10 +228,7 @@ main {
 }
 @media only screen and (min-width: @break-md) {
 	.live-updates {
-		/* nav height + vertical spacing
 		padding: calc(104px + 20px) 0 20px 0;
-		*/
-		padding: 20px 0;
 	}
 	.live-updates .container {
 		margin: 0 auto;
@@ -293,7 +284,7 @@ main {
 		.byline-small;
 	}
 	.byline {
-		margin: 10px 0 0 0;
+		margin: 20px 0 0 0;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
@@ -462,8 +453,6 @@ video {
 	.post {
 		padding-bottom: 20px;
 		border-bottom: 1px solid rgb(@color-neutral-10);
-		scroll-margin-top: 200px;
-		scroll-snap-margin-top: 200px; /* iOS 11 and older */
 		h1 {
 			margin: 0 0 20px 0;
 			.epsilon;
@@ -504,8 +493,6 @@ video {
 		.post {
 			padding: 40px;
 			border: 1px solid rgb(@color-neutral-10);
-			scroll-margin-top: 300px;
-			scroll-snap-margin-top: 300px; /* iOS 11 and older */
 			h1 {
 				.delta;
 			}
@@ -557,27 +544,19 @@ WORKAROUND FOR ISSUE RELATED TO THE TECHNIQUE USED TO MIMIC STICKY VIDEO
 .post-scrolled-no {
 	scroll-margin-top: 80px;
 	scroll-snap-margin-top: 80px; /* iOS 11 and older */
-	scroll-margin-top: 200px;
-	scroll-snap-margin-top: 200px; /* iOS 11 and older */
 }
 .post-scrolled-yes {
 	scroll-margin-top: 220px;
 	scroll-snap-margin-top: 220px; /* iOS 11 and older */
-	scroll-margin-top: 200px;
-	scroll-snap-margin-top: 200px; /* iOS 11 and older */
 }
 @media only screen and (min-width: @break-sm) {
 	.post-scrolled-no {
 		scroll-margin-top: 80px;
 		scroll-snap-margin-top: 80px; /* iOS 11 and older */
-		scroll-margin-top: 300px;
-		scroll-snap-margin-top: 300px; /* iOS 11 and older */
 	}
 	.post-scrolled-yes {
 		scroll-margin-top: 280px;
 		scroll-snap-margin-top: 280px; /* iOS 11 and older */
-		scroll-margin-top: 300px;
-		scroll-snap-margin-top: 300px; /* iOS 11 and older */
 	}
 }
 
