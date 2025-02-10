@@ -1,0 +1,203 @@
+@import "../../css/colors.less";
+@import "../../css/typography.less";
+@import "../../css/utility.less";
+
+
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+body {
+	background-color: rgb(@color-neutral-white);
+}
+@media (prefers-color-scheme: dark) {
+}
+
+
+
+
+
+/*
+/
+/	FOOTER
+/
+*/
+
+#footer {
+	padding: @spacing-20;
+	background-color: rgb(@color-neutral-100);
+	color: rgb(@color-neutral-0);
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-24;
+	svg {
+		margin: 0 auto;
+		fill: rgb(@color-neutral-0);
+		width: 150px;
+		height: 20px;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-24;
+	}
+	section {
+		padding: 0 0 @spacing-24 0;
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-16;
+		.hr-dark
+	}
+	h1 {
+		font-family: "ProximaNova-Bold", sans-serif;
+		font-style: normal;
+		font-size: 16px;
+		line-height: 1.2;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-12;
+	}
+	li {
+		font-family: "ProximaNova-Regular", sans-serif;
+		font-style: normal;
+		font-size: 16px;
+		line-height: 1.2;
+		a {
+			color: rgb(@color-neutral-0);
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+	p {
+		font-family: "ProximaNova-Regular", sans-serif;
+		font-style: normal;
+		font-size: 14px;
+		line-height: 1.2;
+		color: rgb(@color-neutral-50);
+	}
+}
+
+
+
+/* CBS Sports breakpoints */
+@media only screen and (min-width: 432px) {
+	/* lists in two columns */
+	#footer {
+		ul {
+			/*
+			can't use flex for spacing here, because of column-count
+			*/
+			display: block;
+			column-count: 2;
+		}
+		li {
+			padding: 6px 0 6px 0;
+		}
+		.trending {
+			ul {
+				display: flex;
+				column-count: unset;
+			}
+			li {
+				padding: unset;
+			}
+		}
+	}
+}
+@media only screen and (min-width: 560px) {
+	#footer {
+		.container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: @spacing-20;
+		}
+		section {
+			padding: unset;
+			.hr-none;
+		}
+		ul {
+			/* set all lists back to original state */
+			display: flex;
+			column-count: unset;
+			/* reduce gap like Sports */
+			gap: @spacing-8;
+		}
+		li {
+			padding: unset;
+		}
+	}
+}
+@media only screen and (min-width: 636px) {
+	#footer {
+		.container {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+@media only screen and (min-width: 840px) {
+	#footer {
+		.container {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+@media only screen and (min-width: 1044px) {
+	#footer {
+		.container {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+}
+@media only screen and (min-width: 1248px) {
+	#footer {
+		.container {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+}
+
+
+
+
+
+/* CBS News breakpoints */
+@media only screen and (min-width: @break-sm) {
+	/* 768 */
+	#footer {
+	}
+}
+@media only screen and (min-width: @break-md) {
+	/* 1020 */
+	#footer {
+		.container,
+		.fineprint {
+			margin: 0 auto;
+			width: @break-md-container;
+		}
+	}
+}
+@media only screen and (min-width: @break-lg) {
+	/* 1360 */
+	#footer {
+		.container,
+		.fineprint {
+			width: @break-lg-container;
+		}
+	}
+}
+
+
+
+
+
+
+
