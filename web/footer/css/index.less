@@ -82,7 +82,7 @@ body {
 		font-style: normal;
 		font-size: 14px;
 		line-height: 1.2;
-		color: rgb(@color-neutral-50);
+		color: rgb(@color-neutral-30);
 	}
 }
 
@@ -90,12 +90,10 @@ body {
 
 /* CBS Sports breakpoints */
 @media only screen and (min-width: 432px) {
-	/* lists in two columns */
+	/* lists in two columns, at this breakpoint only */
 	#footer {
 		ul {
-			/*
-			can't use flex for spacing here, because of column-count
-			*/
+			/* can't use flex for spacing here, because of column-count */
 			display: block;
 			column-count: 2;
 		}
@@ -104,6 +102,7 @@ body {
 		}
 		.trending {
 			ul {
+				/* the trending list stays the same */
 				display: flex;
 				column-count: unset;
 			}
@@ -129,7 +128,7 @@ body {
 			.hr-none;
 		}
 		ul {
-			/* set all lists back to original state */
+			/* revert all lists back to original state */
 			display: flex;
 			column-count: unset;
 			/* reduce gap like Sports */
@@ -176,8 +175,6 @@ body {
 /* CBS News breakpoints */
 @media only screen and (min-width: @break-sm) {
 	/* 768 */
-	#footer {
-	}
 }
 @media only screen and (min-width: @break-md) {
 	/* 1020 */
