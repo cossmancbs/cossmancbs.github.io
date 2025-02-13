@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+	
 	<meta charset="utf-8">
 	<title>Elections</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,13 +12,14 @@
 	
 	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg?">
 	<link rel="icon" type="image/png" href="/web/img/favicon.png?">
-
+	
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
-	<link rel="stylesheet/less" type="text/css" href="/web/elections/css/styles.less">
-
+	<link rel="stylesheet/less" type="text/css" href="/web/elections/css/index.less">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
-
+	
 </head>
 
 <body>
@@ -66,10 +67,13 @@
 		</div>
 	
 	</section>
-
-
-
+	
+	
+	
 	<div style="height:300px;"></div>
+	
+	
+	
 	<h1>2024 Primaries: delegate tracker CSS styles:</h1>
 	<div class="del-tracker-r"></div>
 	<div class="del-tracker-d"></div>
@@ -81,6 +85,7 @@
 		// IFRAME RESIZE (VANILLA JAVASCRIPT):
 		
 		function checkIframe(id) {
+			console.log('iframe resize function fired');
 			var newheight;
 			if(document.getElementById) {
 				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
@@ -97,16 +102,60 @@
 		//	checkIframe('embedPrez');
 		//}
 		
-		window.addEventListener('load', (event) => {
-		  // Code to execute when the page is fully loaded
-		  console.log('Page loaded');
-		  checkIframe('embedPrez');
+		//window.addEventListener('load', (event) => {
+		//	console.log('Page loaded');
+		//	checkIframe('embedPrez');
+		//});
+		
+		//document.addEventListener('DOMContentLoaded', (event) => {
+		//	console.log('DOM fully loaded and parsed');
+		//	checkIframe('embedPrez');
+		//});
+		
+		//if (document.readyState === "loading") {
+			// Loading hasn't finished yet
+		//	document.addEventListener('DOMContentLoaded', (event) => {
+		//		checkIframe('embedPrez');
+		//	});
+		//} else {
+			// 'DOMContentLoaded' has already fired
+		//	checkIframe('embedPrez');
+		//}
+		
+		//const iHateChrome = document.getElementById('embedPrez');
+		//iHateChrome.onload = function() {
+			// Code to execute when the iframe has loaded
+		//	console.log('iframe has loaded');
+		//	checkIframe('embedPrez');
+		//};
+		//checkIframe('embedPrez');
+		
+		//document.addEventListener('DOMContentLoaded', function() {
+		//	console.log('DOM fully loaded and parsed');
+		//	checkIframe('embedPrez');
+	 	//});
+		
+		//$(document).ready(function() {
+		//	console.log('document loaded');
+		//	$('#embedPrez').height(
+		//		$('#embedPrez').contents().find('html').height()
+		//	);
+		//});
+		
+		$(window).on('load', function() {
+		  adjustIframeHeight();
 		});
 		
+		function adjustIframeHeight() {
+		  $('iframe').each(function() {
+			var iframe = $(this).contents();
+			$(this).height(iframe.find('body').height());
+		  });
+		}
+		
 		window.addEventListener('resize', (event) => {
-		  // Code to execute when the window is resized
-		  console.log('Window resized');
-		  checkIframe('embedPrez');
+			console.log('Window resized');
+			checkIframe('embedPrez');
 		});
 		
 	</script>
