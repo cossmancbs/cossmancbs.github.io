@@ -25,6 +25,9 @@
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
 	z-index: 99;
+	color: white;
+	font-family: sans-serif;
+	font-size: small;
 	button {
 		padding: 8px;
 		font-family: sans-serif;
@@ -54,8 +57,6 @@
 /
 */
 
-/* ISSUE: THIS STRUCTURE WON'T WORK FOR EMBEDS */
-
 body {
 	background-color: white;
 }
@@ -63,6 +64,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
 }
 @media only screen and (min-width: @break-sm) {
 }

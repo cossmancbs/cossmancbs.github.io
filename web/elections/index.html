@@ -85,16 +85,29 @@
 			if(document.getElementById) {
 				newheight=document.getElementById(id).contentWindow.document .body.scrollHeight;
 			}
-			document.getElementById(id).height= (newheight) + "px";
+			document.getElementById(id).height= (newheight) + 'px';
 		}
-		window.addEventListener('load', onLoadFunction);
-		function onLoadFunction(e) {
-			checkIframe('embedPrez');
-		}
-		window.addEventListener('resize', onResizeFunction);
-		function onResizeFunction(e) {
-			checkIframe('embedPrez');
-		}
+		
+		//window.addEventListener('load', onLoadFunction);
+		//function onLoadFunction(e) {
+		//	checkIframe('embedPrez');
+		//}
+		//window.addEventListener('resize', onResizeFunction);
+		//function onResizeFunction(e) {
+		//	checkIframe('embedPrez');
+		//}
+		
+		window.addEventListener('load', (event) => {
+		  // Code to execute when the page is fully loaded
+		  console.log('Page loaded');
+		  checkIframe('embedPrez');
+		});
+		
+		window.addEventListener('resize', (event) => {
+		  // Code to execute when the window is resized
+		  console.log('Window resized');
+		  checkIframe('embedPrez');
+		});
 		
 	</script>
 

@@ -26,6 +26,7 @@
 
 
 	<div id="prototype">
+		<div id="test-variable"></div>
 		<button onclick="toggleAL()">Toggle AL</button>
 		<button onclick="toggleCA()">Toggle CA</button>
 	</div>
@@ -34,121 +35,133 @@
 	
 	<div class="widget-pres">
 		
-		<ul id="h2h">
-			<li class="wireframe">Head to Head: Democratic</li>
-			<li class="wireframe">Head to Head: Republican</li>
-		</ul>
-		
-		<div id="bop">
-			<ul class="legend-top">
-				<li class="d">
-					<span id="bop-d" class="electoral">218</span>
-					<span class="candidate">
-						Kamala Harris
-						<svg id="checkD"><use xlink:href="sprite.svg#checkmark"></use></svg>
-					</span>
-				</li>
-				<li class="to-win">
-					<span><strong>270</strong> to win</span>
-					<svg><use xlink:href="sprite.svg#caret"></use></svg>
-				</li>
-				<li class="r">
-					<span id="bop-r" class="electoral">117</span>
-					<span class="candidate">
-						Donald J. Trump
-						<svg id="checkR"><use xlink:href="sprite.svg#checkmark"></use></svg>
-					</span>
-				</li>
+		<section id="widget-one">
+			
+			<ul id="h2h">
+				<li class="wireframe">Head to Head: Democratic</li>
+				<li class="wireframe">Head to Head: Republican</li>
 			</ul>
-			<div class="bar">
-				<div id="bar-d-won">218</div>
-				<div id="bar-d-likely">64</div>
-				<div id="bar-d-lean"><!--5--></div>
-				<div id="bar-toss">16</div>
-				<div id="bar-r-lean">46</div>
-				<div id="bar-r-likely">72</div>
-				<div id="bar-r-won">117</div>
+			
+		</section>
+		
+		<section id="widget-two">
+			
+			<div id="bop">
+				<ul class="legend-top">
+					<li class="d">
+						<span id="bop-d" class="electoral">218</span>
+						<span class="candidate">
+							Kamala Harris
+							<svg id="checkD"><use xlink:href="sprite.svg#checkmark"></use></svg>
+						</span>
+					</li>
+					<li class="to-win">
+						<span><strong>270</strong> to win</span>
+						<svg><use xlink:href="sprite.svg#caret"></use></svg>
+					</li>
+					<li class="r">
+						<span id="bop-r" class="electoral">117</span>
+						<span class="candidate">
+							Donald J. Trump
+							<svg id="checkR"><use xlink:href="sprite.svg#checkmark"></use></svg>
+						</span>
+					</li>
+				</ul>
+				<div class="bar">
+					<div id="bar-d-won">218</div>
+					<div id="bar-d-likely">64</div>
+					<div id="bar-d-lean"><!--5--></div>
+					<div id="bar-toss">16</div>
+					<div id="bar-r-lean">46</div>
+					<div id="bar-r-likely">72</div>
+					<div id="bar-r-won">117</div>
+				</div>
+				<div class="legend-bottom"><svg><use xlink:href="sprite.svg#caret"></use></svg></div>
 			</div>
-			<div class="legend-bottom"><svg><use xlink:href="sprite.svg#caret"></use></svg></div>
-		</div>
+			
+			<ul id="key">
+				<li><div class="swatch d-won"></div>Won</li>
+				<li><div class="swatch d-likely"></div>Likely</li>
+				<li><div class="swatch d-lean"></div>Lean</li>
+				<li><div class="swatch toss"></div>Toss-Up</li>
+				<li><div class="swatch r-lean"></div>Lean</li>
+				<li><div class="swatch r-likely"></div>Likely</li>
+				<li><div class="swatch r-won"></div>Won</li>
+			</ul>
+			
+			<a href="javascript:;" class="el-btn">Full Presidential Results <svg><use xlink:href="sprite.svg#caret"></use></svg></a>
+			
+		</section>
 		
-		<ul id="key">
-			<li><div class="swatch d-won"></div>Won</li>
-			<li><div class="swatch d-likely"></div>Likely</li>
-			<li><div class="swatch d-lean"></div>Lean</li>
-			<li><div class="swatch toss"></div>Toss-Up</li>
-			<li><div class="swatch r-lean"></div>Lean</li>
-			<li><div class="swatch r-likely"></div>Likely</li>
-			<li><div class="swatch r-won"></div>Won</li>
-		</ul>
-		
-		<a href="javascript:;" class="el-btn">Full Presidential Results <svg><use xlink:href="sprite.svg#caret"></use></svg></a>
-		
-		<ul id="map">
-			<li class="ak"><h1>AK</h1><h2>3</h2></li>
-			<li id="al"><h1>AL</h1><h2>9</h2></li>
-			<li class="ar"><h1>AR</h1><h2>6</h2></li>
-			<li class="az"><h1>AZ</h1><h2>11</h2></li>
-			<li id="ca"><h1>CA</h1><h2>54</h2></li>
-			<li class="co"><h1>CO</h1><h2>10</h2></li>
-			<li class="ct"><h1>CT</h1><h2>7</h2></li>
-			<li class="dc"><h1>DC</h1><h2>3</h2></li>
-			<li class="de"><h1>DE</h1><h2>3</h2></li>
-			<li class="fl"><h1>FL</h1><h2>30</h2></li>
-			<li class="ga"><h1>GA</h1><h2>16</h2></li>
-			<li class="hi"><h1>HI</h1><h2>4</h2></li>
-			<li class="ia"><h1>IA</h1><h2>5</h2></li>
-			<li class="id"><h1>ID</h1><h2>4</h2></li>
-			<li class="il"><h1>IL</h1><h2>19</h2></li>
-			<li class="in"><h1>IN</h1><h2>11</h2></li>
-			<li class="ks"><h1>KS</h1><h2>6</h2></li>
-			<li class="ky"><h1>KY</h1><h2>8</h2></li>
-			<li class="la"><h1>LA</h1><h2>8</h2></li>
-			<li class="ma"><h1>MA</h1><h2>11</h2></li>
-			<li class="md"><h1>MD</h1><h2>10</h2></li>
-			<li class="me"><h1>ME</h1><h2>4</h2></li>
-			<li class="mi"><h1>MI</h1><h2>15</h2></li>
-			<li class="mn"><h1>MN</h1><h2>10</h2></li>
-			<li class="mo"><h1>MO</h1><h2>10</h2></li>
-			<li class="ms"><h1>MS</h1><h2>6</h2></li>
-			<li class="mt"><h1>MT</h1><h2>4</h2></li>
-			<li class="nc"><h1>NC</h1><h2>16</h2></li>
-			<li class="nd"><h1>ND</h1><h2>3</h2></li>
-			<li class="ne"><h1>NE</h1><h2>5</h2></li>
-			<li class="nh"><h1>NH</h1><h2>4</h2></li>
-			<li class="nj"><h1>NJ</h1><h2>14</h2></li>
-			<li class="nm"><h1>NM</h1><h2>5</h2></li>
-			<li class="nv"><h1>NV</h1><h2>6</h2></li>
-			<li class="ny"><h1>NY</h1><h2>28</h2></li>
-			<li class="oh"><h1>OH</h1><h2>17</h2></li>
-			<li class="ok"><h1>OK</h1><h2>7</h2></li>
-			<li class="or"><h1>OR</h1><h2>8</h2></li>
-			<li class="pa"><h1>PA</h1><h2>19</h2></li>
-			<li class="ri"><h1>RI</h1><h2>4</h2></li>
-			<li class="sc"><h1>SC</h1><h2>9</h2></li>
-			<li class="sd"><h1>SD</h1><h2>3</h2></li>
-			<li class="tn"><h1>TN</h1><h2>11</h2></li>
-			<li class="tx"><h1>TX</h1><h2>40</h2></li>
-			<li class="ut"><h1>UT</h1><h2>6</h2></li>
-			<li class="va"><h1>VA</h1><h2>13</h2></li>
-			<li class="vt"><h1>VT</h1><h2>3</h2></li>
-			<li class="wa"><h1>WA</h1><h2>12</h2></li>
-			<li class="wi"><h1>WI</h1><h2>10</h2></li>
-			<li class="wv"><h1>WV</h1><h2>4</h2></li>
-			<li class="wy"><h1>WY</h1><h2>3</h2></li>
-		</ul>
-		
-		<p class="explainer">Maine and Nebraska award electoral votes by congressional district.</li>
-		
-		<ul id="key">
-			<li><div class="swatch d-won"></div>Won</li>
-			<li><div class="swatch d-likely"></div>Likely</li>
-			<li><div class="swatch d-lean"></div>Lean</li>
-			<li><div class="swatch toss"></div>Toss-Up</li>
-			<li><div class="swatch r-lean"></div>Lean</li>
-			<li><div class="swatch r-likely"></div>Likely</li>
-			<li><div class="swatch r-won"></div>Won</li>
-		</ul>
+		<section id="widget-three">
+			
+			<ul id="map">
+				<li class="ak"><h1>AK</h1><h2>3</h2></li>
+				<li id="al"><h1>AL</h1><h2>9</h2></li>
+				<li class="ar"><h1>AR</h1><h2>6</h2></li>
+				<li class="az"><h1>AZ</h1><h2>11</h2></li>
+				<li id="ca"><h1>CA</h1><h2>54</h2></li>
+				<li class="co"><h1>CO</h1><h2>10</h2></li>
+				<li class="ct"><h1>CT</h1><h2>7</h2></li>
+				<li class="dc"><h1>DC</h1><h2>3</h2></li>
+				<li class="de"><h1>DE</h1><h2>3</h2></li>
+				<li class="fl"><h1>FL</h1><h2>30</h2></li>
+				<li class="ga"><h1>GA</h1><h2>16</h2></li>
+				<li class="hi"><h1>HI</h1><h2>4</h2></li>
+				<li class="ia"><h1>IA</h1><h2>5</h2></li>
+				<li class="id"><h1>ID</h1><h2>4</h2></li>
+				<li class="il"><h1>IL</h1><h2>19</h2></li>
+				<li class="in"><h1>IN</h1><h2>11</h2></li>
+				<li class="ks"><h1>KS</h1><h2>6</h2></li>
+				<li class="ky"><h1>KY</h1><h2>8</h2></li>
+				<li class="la"><h1>LA</h1><h2>8</h2></li>
+				<li class="ma"><h1>MA</h1><h2>11</h2></li>
+				<li class="md"><h1>MD</h1><h2>10</h2></li>
+				<li class="me"><h1>ME</h1><h2>4</h2></li>
+				<li class="mi"><h1>MI</h1><h2>15</h2></li>
+				<li class="mn"><h1>MN</h1><h2>10</h2></li>
+				<li class="mo"><h1>MO</h1><h2>10</h2></li>
+				<li class="ms"><h1>MS</h1><h2>6</h2></li>
+				<li class="mt"><h1>MT</h1><h2>4</h2></li>
+				<li class="nc"><h1>NC</h1><h2>16</h2></li>
+				<li class="nd"><h1>ND</h1><h2>3</h2></li>
+				<li class="ne"><h1>NE</h1><h2>5</h2></li>
+				<li class="nh"><h1>NH</h1><h2>4</h2></li>
+				<li class="nj"><h1>NJ</h1><h2>14</h2></li>
+				<li class="nm"><h1>NM</h1><h2>5</h2></li>
+				<li class="nv"><h1>NV</h1><h2>6</h2></li>
+				<li class="ny"><h1>NY</h1><h2>28</h2></li>
+				<li class="oh"><h1>OH</h1><h2>17</h2></li>
+				<li class="ok"><h1>OK</h1><h2>7</h2></li>
+				<li class="or"><h1>OR</h1><h2>8</h2></li>
+				<li class="pa"><h1>PA</h1><h2>19</h2></li>
+				<li class="ri"><h1>RI</h1><h2>4</h2></li>
+				<li class="sc"><h1>SC</h1><h2>9</h2></li>
+				<li class="sd"><h1>SD</h1><h2>3</h2></li>
+				<li class="tn"><h1>TN</h1><h2>11</h2></li>
+				<li class="tx"><h1>TX</h1><h2>40</h2></li>
+				<li class="ut"><h1>UT</h1><h2>6</h2></li>
+				<li class="va"><h1>VA</h1><h2>13</h2></li>
+				<li class="vt"><h1>VT</h1><h2>3</h2></li>
+				<li class="wa"><h1>WA</h1><h2>12</h2></li>
+				<li class="wi"><h1>WI</h1><h2>10</h2></li>
+				<li class="wv"><h1>WV</h1><h2>4</h2></li>
+				<li class="wy"><h1>WY</h1><h2>3</h2></li>
+			</ul>
+			
+			<p class="explainer">Maine and Nebraska award electoral votes by congressional district.</p>
+			
+			<ul id="key">
+				<li><div class="swatch d-won"></div>Won</li>
+				<li><div class="swatch d-likely"></div>Likely</li>
+				<li><div class="swatch d-lean"></div>Lean</li>
+				<li><div class="swatch toss"></div>Toss-Up</li>
+				<li><div class="swatch r-lean"></div>Lean</li>
+				<li><div class="swatch r-likely"></div>Likely</li>
+				<li><div class="swatch r-won"></div>Won</li>
+			</ul>
+			
+		</section>
 		
 	</div>
 	
@@ -246,7 +259,41 @@
 			console.log('AL is ' + stateAL);
 		}
 		
+		
+		
+		function pickOne() {
+			// CODEPEN: https://codepen.io/ambro93/pen/gLepqp
+			var url = window.location.href;
+			var captured = /widget=([^&]+)/.exec(url)[1];
+			var whichWidget = captured ? captured : 'myDefaultValue';
+			document.getElementById("test-variable").innerHTML = whichWidget;
+			// URL EXAMPLE ?var=value&var=value
+			var divOne = document.getElementById('widget-one');
+			var divTwo = document.getElementById('widget-two');
+			var divThree = document.getElementById('widget-three');
+			// TESTING: var widget = "prez-h2h";
+			if (whichWidget == 'prez-h2h') {
+				divTwo.style.display = 'none';
+				divThree.style.display = 'none';
+			} else if (whichWidget == 'prez-bop') {
+				divOne.style.display = 'none';
+				divThree.style.display = 'none';
+			} else if (whichWidget == 'prez-map') {
+				divOne.style.display = 'none';
+				divTwo.style.display = 'none';
+			} else {
+				divOne.style.display = 'block';
+				divTwo.style.display = 'block';
+				divThree.style.display = 'block';
+			}
+		}
+		pickOne();
+		
+		
+		
 	</script>
+
+
 
 
 
