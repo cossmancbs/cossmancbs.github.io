@@ -143,16 +143,16 @@
 		//});
 		
 		$(window).on('load', function() {
-		  adjustIframeHeight();
+			adjustIframeHeight();
 		});
-		
 		function adjustIframeHeight() {
-		  $('iframe').each(function() {
-			var iframe = $(this).contents();
-			$(this).height(iframe.find('body').height());
-		  });
+			$('iframe').each(function() {
+				var iframe = $(this).contents();
+				$(this).height(iframe.find('body').height());
+			});
 		}
 		
+		// this seems to work fine in all browsers:
 		window.addEventListener('resize', (event) => {
 			console.log('Window resized');
 			checkIframe('embedPrez');

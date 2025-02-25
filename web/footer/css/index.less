@@ -13,7 +13,7 @@
 */
 
 body {
-	background-color: rgb(@color-neutral-white);
+	background-color: rgb(@fly-light-surface-primary);
 }
 @media (prefers-color-scheme: dark) {
 }
@@ -30,14 +30,14 @@ body {
 
 #footer {
 	padding: @spacing-20;
-	background-color: rgb(@color-neutral-100);
-	color: rgb(@color-neutral-0);
+	background-color: rgb(@fly-dark-surface-secondary);
+	color: rgb(@fly-dark-text-primary);
 	display: flex;
 	flex-direction: column;
 	gap: @spacing-24;
 	svg {
 		margin: 0 auto;
-		fill: rgb(@color-neutral-0);
+		fill: rgb(@fly-dark-brand-primary);
 		width: 150px;
 		height: 20px;
 	}
@@ -51,7 +51,7 @@ body {
 		display: flex;
 		flex-direction: column;
 		gap: @spacing-16;
-		.hr-dark
+		.fly-dark-utility-border;
 	}
 	h1 {
 		font-family: "ProximaNova-Bold", sans-serif;
@@ -70,7 +70,7 @@ body {
 		font-size: 16px;
 		line-height: 1.2;
 		a {
-			color: rgb(@color-neutral-0);
+			color: rgb(@fly-dark-text-link-primary);
 			text-decoration: none;
 		}
 		a:hover {
@@ -82,7 +82,7 @@ body {
 		font-style: normal;
 		font-size: 14px;
 		line-height: 1.2;
-		color: rgb(@color-neutral-30);
+		color: rgb(@fly-dark-text-tertiary);
 	}
 }
 
@@ -125,7 +125,7 @@ body {
 		}
 		section {
 			padding: unset;
-			.hr-none;
+			border: none;
 		}
 		ul {
 			/* revert all lists back to original state */
