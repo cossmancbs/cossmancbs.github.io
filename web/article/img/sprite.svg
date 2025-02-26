@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 	
+	<symbol id="authorBoxNotch" viewBox="0 0 16 8">
+		<path fill-rule="evenodd" d="m0 8 8-8 8 8H0Z"/>
+	</symbol>
+	
 	<symbol id="iconClose" viewBox="0 0 24 24">
 		<path fill-rule="evenodd" d="M3.235.555 12 9.32 20.765.555a1.895 1.895 0 1 1 2.68 2.68L14.68 12l8.765 8.765a1.895 1.895 0 1 1-2.68 2.68L12 14.68l-8.765 8.765a1.895 1.895 0 1 1-2.68-2.68L9.32 12 .555 3.235a1.895 1.895 0 0 1 2.68-2.68Z"/>
 	</symbol>
