@@ -577,7 +577,7 @@ iframe + p {
 	margin: 0 20px;
 	/* somehow a background color is being applied here???, so the below is required */
 	background-color: transparent;
-	/********** CHROME ONLY **********/
+	/********** CHROME/EDGE ONLY **********/
 	position-anchor: --authorBox-anchor;
 	top: anchor(--authorBox-anchor bottom);
 }
@@ -647,7 +647,10 @@ iframe + p {
 		border-radius: 50%;
 	}
 	h1 {
-		.zeta;
+		font-family: "PublicoHeadline-Bold", serif;
+		font-style: normal;
+		font-size: 18px;
+		line-height: 120%;
 		color: rgb(@fly-light-text-primary);
 	}
 	h2 {
@@ -676,13 +679,22 @@ iframe + p {
 	#authorBox {
 		margin: 0;
 		width: 400px;
-		/*
-		CHROME ONLY!
-		*/
+		/********** CHROME/EDGE ONLY! **********/
 		left: anchor(--authorBox-anchor left);
 	}
 	#authorBox .notch {
 		display: block;
+	}
+	#authorBox .container {
+		h1 {
+			font-size: 20px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+		p {
+			font-size: 16px;
+		}
 	}
 }
 
