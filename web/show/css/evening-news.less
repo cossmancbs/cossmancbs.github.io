@@ -13,7 +13,7 @@
 */
 
 body {
-	background-color: white;
+	background-color: rgb(@fly-light-surface-primary);
 }
 main {
 	position: relative;
@@ -398,7 +398,29 @@ main {
 
 
 
+/*
+/
+/	VIDEO SHELF OVERRIDES
+/
+*/
 
+@media only screen and (min-width: @break-sm) {
+}
+
+@media only screen and (min-width: @break-md) {
+	#include-video-single {
+		.shelfVideo {
+			padding-top: 0;
+			background-color: rgb(@color-cbs-evening-news);
+		}
+		.heading {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (min-width: @break-lg) {
+}
 
 
 
@@ -428,9 +450,9 @@ main {
 	}
 	.metadata {
 		color: rgb(@fly-dark-text-primary);
-	}
-	.metadata svg {
-		fill: rgb(@fly-dark-brand-primary);
+		svg {
+			fill: rgb(@fly-dark-brand-primary);
+		}
 	}
 	.video-container div {
 		aspect-ratio: 16 / 9;

@@ -1,0 +1,205 @@
+@import "../../css/colors.less";
+@import "../../css/typography.less";
+@import "../../css/utility.less";
+
+
+
+
+
+
+
+/*
+/
+/	  BASIC STYLES
+/
+*/
+
+body {
+	background-color: rgb(@fly-light-surface-primary);
+}
+
+
+
+
+
+
+
+/*
+/
+/	  COMPONENT
+/
+*/
+
+.shelfVideo {
+	background-color: rgb(@fly-dark-surface-secondary);
+	color: rgb(@fly-dark-text-primary);
+	.fly-dark-utility-border;
+	.heading {
+		display: none;
+	}
+	.player {
+		height: 320px;
+		background-color: transparent;
+		background-image: linear-gradient(to top, rgba(@fly-dark-surface-secondary,1), rgba(@fly-dark-surface-secondary,0)), url("/web/img/16-9-ukraine.jpg");
+		background-repeat: no-repeat, no-repeat;
+		background-size: auto, cover;
+		background-position: center, center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.button {
+			width: 60px;
+			height: 60px;
+			background: rgba(@color-neutral-100,.35);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			svg {
+				width: 24px;
+				height: auto;
+				fill: rgb(@fly-light-utility-icon-primary);
+			}
+		}
+	}
+	.card {
+		margin: 0 20px 20px 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		h1 {
+			.delta;
+			color: inherit;
+		}
+		p.dek {
+			display: none;
+		}
+		p.metadata {
+			.metadata-default;
+			color: inherit;
+		}
+}
+}
+
+@media only screen and (min-width: @break-sm) {
+	.shelfVideo {
+		.player {
+			.button {
+				width: 80px;
+				height: 80px;
+				svg {
+					width: 35px;
+				}
+			}
+		}
+		.card {
+			h1 {
+				.gamma;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: @break-md) {
+	.shelfVideo {
+		padding: 20px 0 40px 0;
+		background-color: rgb(@color-show);
+		.heading {
+			margin: 0 auto 20px auto;
+			width: @break-md-container;
+			display: block;
+			h1 {
+				.gamma;
+				color: inherit;
+			}
+		}
+		.grid {
+			margin: 0 auto;
+			width: @break-md-container;
+			display: flex;
+			flex-direction: row;
+			gap: 40px;
+			flex-direction: row-reverse;
+		}
+		.player {
+			aspect-ratio: 16 / 9;
+			width: 720px;
+			height: auto;
+		}
+		.card {
+			width: 300px;
+			margin: 0;
+			h1 {
+				.epsilon;
+			}
+			p.dek {
+				.dek;
+				display: block;
+				color: inerit;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: @break-lg) {
+	.shelfVideo {
+		.heading {
+			width: @break-lg-container;
+			h1 {
+				.beta;
+			}
+		}
+		.grid {
+			margin: 0 auto;
+			width: @break-lg-container;
+		}
+		.player {
+			width: 980px;
+		}
+		.card {
+			h1 {
+				.delta;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	  Z-INDICES
+/
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
