@@ -2,18 +2,24 @@
 <html lang="en">
 
 <head>
-
+	
 	<meta charset="utf-8">
-	<title>CBS Evening News</title>
+	<title>Branded Door</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#020F34">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020F34"> <!-- same for now, but maybe later support system themes? -->
+	
+	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg?">
+	<link rel="icon" type="image/png" href="/web/img/favicon.png?">
+	
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/web/css/fonts.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/show/css/evening-news.less">
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
-
+	
 </head>
 
 <body>
@@ -29,137 +35,161 @@
 
 
 	<main>
-
-
-
-
-
+		
+		
+		
+		
+		
 		<div id="brand-header">
-
-			<div id="lockup">
-				<div class="wrapper">
-					<div class="show-logo">
-					<svg><use xlink:href="img/sprite.svg#logo-en"></use></svg>
-					</div>
-					<h1>CBS Evening News With Norah O'Donnell</h1>
-					<h2>Weeknights 6:30PM ET on CBS<br>
-						Midnight ET on the CBS News app</h2>
-				</div>
+			
+			<div class="hgroup">
+				<div class="show-logo"><svg><use xlink:href="img/sprite.svg#logo-en"></use></svg></div>
+				<h1>CBS Evening News</h1>
+				<h2>Weeknights 6:30PM ET on CBS<br>
+					10PM ET on the CBS News app</h2>
 			</div>
-
+			
 			<div id="subnav-brand">
 				<div class="wrapper">
 					<ul>
-						<li><a href="">Eye On America</a></li>
-						<li><a href="">Full Episodes</a></li>
-						<li><a href="">On the Road</a></li>
-						<li><a href="">Interviews</a></li>
-						<li><a href="">The Team</a></li>
+						<li><a href=""><span>Full Episodes</span></a></li>
+						<li><a href=""><span>Eye On America</span></a></li>
+						<li><a href=""><span>On the Road</span></a></li>
 					</ul>
 				</div>
 			</div>
-
+			
 		</div>
-
-
-
-
-
+		
+		
+		
+		
+		
 		<div id="video-shelf-hero">
 			<div class="component">
-				<div class="video">
+				<div class="video-container">
 					<div class="wireframe">video</div>
 				</div>
-				<div class="lockup">
-					<h1>Totam at eius excepturi deleniti sed error repellat itaque omnise</h1>
+				<div class="card">
+					<h1>Jpgy totam at eius excepturi deleniti sed error repellat jpgy</h1>
 					<p>Lorem ipsum dolor sit amet consecteture adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquas ut enim ad minima veniamed.</p>
+					<div class="metadata">timestamp <svg class="video"><use xlink:href="#icon-video-small"></use></svg> duration</div>
 				</div>
 			</div>
 		</div>
-
-
-
-
-
+		
+		
+		
+		
+		
 		<div id="include-grid-hero-list"></div>
-
-
-
-
-
-		<section style="height: 2000px"></section>
-
-
-
-
-
+		
+		
+		
+		
+		
+		<div id="include-footer"></div>
+		
+		
+		
+		
+		
 	</main>
-
-
-
-
-
-	<script>
-
-
-
-		//
-		// INCLUDES
-		//
-		$(function(){
-			$("#include-nav-main").load("/web/nav/nav-main.html");
-			$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
-		});
-
-
-
-		//
-		// NAV
-		//
-		$(document).ready(function() {
-		
-			function checkNav() {
-		
-				if ($(document).scrollTop() < 50) {
-					$('#include-nav-main').removeClass('shadow-on');
-					$('#include-nav-main').addClass('shadow-off');
+	
+	
+	
+	
+	
+	<div id="bottomunit"><div>responsive Kargo ad unit</div></div>
+	
+	
+	
+	
+	
+<script>
+	
+	//
+	// INCLUDES
+	//
+	$(function() {
+		$("#include-nav-main").load("/web/nav/nav-v1.2-main.html");
+		$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
+		$("#include-footer").load("/web/footer/index.html");
+	});
+	
+	//
+	// NAV
+	//
+	$(document).ready(function() {
+		function checkNav() {
+			var windowSize = $(window).width();
+			if (windowSize <= 767) {
+				if ($(document).scrollTop() < 25) {
+					// small, at top
+					$('#include-nav-main').removeClass('nav-sm-scrolled');
+					$('#include-nav-main').addClass('nav-sm-top');
+					$('#include-nav-main').removeClass('nav-md-scrolled');
+					$('#include-nav-main').removeClass('nav-md-top');
+					$('#include-nav-main').removeClass('nav-lg-scrolled');
+					$('#include-nav-main').removeClass('nav-lg-top');
 				} else {
-					$('#include-nav-main').addClass('shadow-on');
-					$('#include-nav-main').removeClass('shadow-off');
+					// small, scrolled
+					$('#include-nav-main').addClass('nav-sm-scrolled');
+					$('#include-nav-main').removeClass('nav-sm-top');
+					$('#include-nav-main').removeClass('nav-md-scrolled');
+					$('#include-nav-main').removeClass('nav-md-top');
+					$('#include-nav-main').removeClass('nav-lg-scrolled');
+					$('#include-nav-main').removeClass('nav-lg-top');
 				}
-		
-				var windowSize = $(window).width();
-				if (windowSize <= 1019) {
-					$('#include-nav-main').addClass('nav-sm');
-					$('#include-nav-main').removeClass('nav-lg-collapse');
-					$('#include-nav-main').removeClass('nav-lg-expand');
-				}
-				else if (windowSize >= 1020) {
-					if ($(document).scrollTop() < 50) {
-						$('#include-nav-main').removeClass('nav-sm');
-						$('#include-nav-main').removeClass('nav-lg-collapse');
-						$('#include-nav-main').addClass('nav-lg-expand');
-					} else {
-						$('#include-nav-main').removeClass('nav-sm');
-						$('#include-nav-main').addClass('nav-lg-collapse');
-						$('#include-nav-main').removeClass('nav-lg-expand');
-					}
-				}
-
 			}
-
-			// Execute on load
-			checkNav();
-			// Bind event listener ("load" doesn't seem to work)
-			$(window).on("load resize scroll",function(e){
-				checkNav();
-			});
+			else if (windowSize <= 1019) {
+				if ($(document).scrollTop() < 50) {
+					// medium, top
+					$('#include-nav-main').removeClass('nav-sm-scrolled');
+					$('#include-nav-main').removeClass('nav-sm-top');
+					$('#include-nav-main').removeClass('nav-md-scrolled');
+					$('#include-nav-main').addClass('nav-md-top');
+					$('#include-nav-main').removeClass('nav-lg-scrolled');
+					$('#include-nav-main').removeClass('nav-lg-top');
+				} else {
+					// medium, scrolled
+					$('#include-nav-main').removeClass('nav-sm-scrolled');
+					$('#include-nav-main').removeClass('nav-sm-top');
+					$('#include-nav-main').addClass('nav-md-scrolled');
+					$('#include-nav-main').removeClass('nav-md-top');
+					$('#include-nav-main').removeClass('nav-lg-scrolled');
+					$('#include-nav-main').removeClass('nav-lg-top');
+				}
+			}
+			else if (windowSize >= 1020) {
+				if ($(document).scrollTop() < 50) {
+					$('#include-nav-main').removeClass('nav-sm-scrolled');
+					$('#include-nav-main').removeClass('nav-sm-top');
+					$('#include-nav-main').removeClass('nav-md-scrolled');
+					$('#include-nav-main').removeClass('nav-md-top');
+					$('#include-nav-main').removeClass('nav-lg-scrolled');
+					$('#include-nav-main').addClass('nav-lg-top');
+				} else {
+					$('#include-nav-main').removeClass('nav-sm-scrolled');
+					$('#include-nav-main').removeClass('nav-sm-top');
+					$('#include-nav-main').removeClass('nav-md-scrolled');
+					$('#include-nav-main').removeClass('nav-md-top');
+					$('#include-nav-main').addClass('nav-lg-scrolled');
+					$('#include-nav-main').removeClass('nav-lg-top');
+				}
+			}
+		}
 		
+		// Execute on load
+		checkNav();
+		// Bind event listener ("load" doesn't seem to work, so added the above)
+		$(window).on("load resize scroll",function(e){
+			checkNav();
 		});
-
-
-
-	</script>
+	
+	});
+	
+</script>
 
 
 
