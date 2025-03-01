@@ -42,7 +42,7 @@ body {
 		text-decoration: none;
 	}
 	.player {
-		height: 320px;
+		height: 400px;
 		background-color: transparent;
 		background-image: linear-gradient(to top, rgba(@fly-dark-surface-secondary,1), rgba(@fly-dark-surface-secondary,0)), url("/web/img/16-9-ukraine.jpg");
 		background-repeat: no-repeat, no-repeat;
@@ -54,7 +54,7 @@ body {
 		.button {
 			width: 60px;
 			height: 60px;
-			background-color: rgba(@color-neutral-100,.35);
+			background-color: rgba(@fly-dark-utility-ui-background,.35);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -62,7 +62,7 @@ body {
 			svg {
 				width: 24px;
 				height: auto;
-				fill: rgb(@fly-light-utility-icon-primary);
+				fill: rgb(@fly-dark-utility-icon-primary);
 			}
 		}
 	}
@@ -77,10 +77,12 @@ body {
 		}
 		p.dek {
 			display: none;
+			cursor: default;
 		}
 		p.metadata {
 			.metadata-default;
 			color: inherit;
+			cursor: default;
 		}
 	}
 	/* HOVERS */
@@ -88,22 +90,13 @@ body {
 		text-decoration: underline;
 	}
 	.grid:hover .player .button {
-		background-color: rgba(@color-neutral-100,1);
+		background-color: rgba(@fly-dark-utility-ui-background,1);
 	}
 }
-
-
-
 
 @media only screen and (min-width: @break-sm) {
 	.shelfVideo {
 		.player {
-			/*
-			aspect-ratio: 16/9;
-			width: 100%;
-			height: auto;
-			*/
-			height: 400px;
 			.button {
 				width: 80px;
 				height: 80px;
@@ -184,39 +177,6 @@ body {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-/
-/	  Z-INDICES
-/
-*/
-
-
-
-
-
-
-
-
-
 
 
 

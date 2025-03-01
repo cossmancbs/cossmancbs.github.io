@@ -14,7 +14,7 @@
 	<link rel="icon" type="image/png" href="/web/img/favicon.png?">
 	
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="/web/css/fonts.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
 	<link rel="stylesheet/less" type="text/css" href="/web/show/css/evening-news.less">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -90,19 +90,13 @@
 		
 		
 		
-		<div style="height: 2000px;"></div>
+		<div id="include-grid-hero-list"></div>
 		
 		
 		
 		
 		
-		<!-- <div id="include-grid-hero-list"></div> -->
-		
-		
-		
-		
-		
-		<!-- <div id="include-footer"></div> -->
+		<div id="include-footer"></div>
 		
 		
 		
@@ -113,7 +107,8 @@
 	
 	
 	
-	<!-- <div id="bottomunit"><div>responsive Kargo ad unit</div></div> -->
+	
+	<div id="bottomunit"><div>Adhesion/Kargo ad unit</div></div>
 	
 	
 	
@@ -127,8 +122,8 @@
 	$(function() {
 		$("#include-nav-main").load("/web/nav/nav-v1.2-main.html");
 		$("#include-video-single").load("/web/components/video-single.html");
-		//$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
-		//$("#include-footer").load("/web/footer/index.html");
+		$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
+		$("#include-footer").load("/web/footer/index.html");
 	});
 	
 	//
