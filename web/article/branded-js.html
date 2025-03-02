@@ -15,11 +15,15 @@
 	
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
-	<link rel="stylesheet/less" type="text/css" href="/web/article/css/branded.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/article/css/branded-js.less">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/web/js/less.js"></script>
 	
+	<!-- popover floating ui -->
+	<!-- <link rel="stylesheet" type="text/css" href="/web/css/popover-floating-ui.css"> -->
+	<script type="module" src="/web/js/popover-floating-ui.js"></script>
+		
 </head>
 
 <body>
@@ -272,15 +276,6 @@
 			document.getElementById(id).height= (newheight) + "px";
 		}
 		
-		window.addEventListener('load', onLoadFunction);
-		function onLoadFunction(e) {
-			checkIframe2('embed-iframe');
-		}
-		window.addEventListener('resize', onResizeFunction);
-		function onResizeFunction(e) {
-			checkIframe2('embed-iframe');
-		}
-		
 		
 		
 		
@@ -407,7 +402,21 @@
 			
 			
 			
-			// Execute on load
+			//
+			//
+			// LISTENERS //
+			//
+			//
+			
+			window.addEventListener('load', onLoadFunction);
+			function onLoadFunction(e) {
+				checkIframe2('embed-iframe');
+			}
+			window.addEventListener('resize', onResizeFunction);
+			function onResizeFunction(e) {
+				checkIframe2('embed-iframe');
+			}
+			
 			checkStickyStuff();
 			// Event listener ("load" doesn't seem to work, so I added the above)
 			$(window).on('load resize scroll',function(e){
