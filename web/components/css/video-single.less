@@ -15,7 +15,7 @@
 */
 
 body {
-	background-color: rgb(@fly-light-surface-primary);
+	background-color: @fly-light-surface-primary;
 }
 
 
@@ -31,8 +31,8 @@ body {
 */
 
 .shelfVideo {
-	background-color: rgb(@fly-dark-surface-secondary);
-	color: rgb(@fly-dark-text-primary);
+	background-color: @third-party-generic-primary;
+	color: @fly-dynamic-text-primary;
 	.fly-dark-utility-border;
 	.heading {
 		display: none;
@@ -44,7 +44,7 @@ body {
 	.player {
 		height: 400px;
 		background-color: transparent;
-		background-image: linear-gradient(to top, rgba(@fly-dark-surface-secondary,1), rgba(@fly-dark-surface-secondary,0)), url("/web/img/16-9-ukraine.jpg");
+		background-image: linear-gradient(to top, rgba(@color-neutral-100,1), rgba(@color-neutral-100,0)), url("/web/img/16-9-ukraine.jpg");
 		background-repeat: no-repeat, no-repeat;
 		background-size: auto, cover;
 		background-position: center, center top;
@@ -54,7 +54,7 @@ body {
 		.button {
 			width: 60px;
 			height: 60px;
-			background-color: rgba(@fly-dark-utility-ui-background,.35);
+			background-color: rgba(@color-neutral-100,.35);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -62,7 +62,7 @@ body {
 			svg {
 				width: 24px;
 				height: auto;
-				fill: rgb(@fly-dark-utility-icon-primary);
+				fill: @fly-dark-utility-icon-primary;
 			}
 		}
 	}
@@ -90,7 +90,7 @@ body {
 		text-decoration: underline;
 	}
 	.grid:hover .player .button {
-		background-color: rgba(@fly-dark-utility-ui-background,1);
+		background-color: rgba(@color-neutral-100,1);
 	}
 }
 
@@ -116,7 +116,7 @@ body {
 @media only screen and (min-width: @break-md) {
 	.shelfVideo {
 		padding: 20px 0 40px 0;
-		background-color: rgb(@color-show);
+		background-color: @third-party-show-generic-primary;
 		.heading {
 			margin: 0 auto 20px auto;
 			width: @break-md-container;
@@ -149,7 +149,7 @@ body {
 			p.dek {
 				.dek;
 				display: block;
-				color: inerit;
+				color: inherit;
 			}
 		}
 	}

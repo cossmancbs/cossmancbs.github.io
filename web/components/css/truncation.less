@@ -12,7 +12,7 @@
 
 body {
 	margin: 0 40px;
-	background-color: rgb(@fly-light-surface-secondary);
+	background-color: @fly-light-surface-secondary;
 }
 .truncate3 {
 	display: -webkit-box;
@@ -49,20 +49,13 @@ section {
 	.fly-light-utility-border;
 }
 
-@media only screen and (min-width: @break-sm) {
-}
-@media only screen and (min-width: @break-md) {
-}
-@media only screen and (min-width: @break-lg) {
-}
-
 .grid {
 	display: flex;
 	gap: 40px;
 }
 .grid div {
 	width: 300px;
-	background-color: white;
+	background-color: @fly-light-surface-primary;
 	padding: 0 20px 20px 20px;
 }
 .grid h1 {
@@ -75,13 +68,13 @@ section {
 }
 .grid h2 {
 	.delta();
-	color: rgb(@color-offblack);
+	color: @fly-light-text-primary;
 	.hilite();
 }
 .grid p {
 	.dek();
 	margin: 10px 0 10px 0;
-	color: rgb(@color-offblack);
+	color: @fly-light-text-primary;
 	.hilite();
 }
 .grid small {
@@ -107,7 +100,7 @@ section {
 	margin: 0 0 40px 0;
 	h1 {
 		.gamma();
-		color: rgb(@fly-light-text-primary);
+		color: @fly-light-text-primary;
 	}
 }
 

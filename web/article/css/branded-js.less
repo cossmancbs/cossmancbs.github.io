@@ -13,7 +13,7 @@
 */
 
 body {
-	background-color: white;
+	background-color: @fly-light-surface-primary;
 }
 main {
 	position: relative;
@@ -284,24 +284,24 @@ iframe + p {
 .article-header {
 	/* nav height + vertical spacing */
 	padding: calc(88px + 20px) 20px 20px 20px;
-	background-color: rgb(@fly-dark-surface-secondary);
+	background-color: @third-party-generic-primary;
 	h1 {
 		.epsilon;
-		color: rgb(@fly-dark-text-primary);
+		color: @fly-dynamic-text-primary;
 	}
 	li {
 		font-family: "ProximaNova-Regular", sans-serif;
 		font-style: normal;
 		font-size: 16px;
 		line-height: 1.2;
-		color: rgb(@fly-dark-text-primary);
+		color: @fly-dynamic-text-primary;
 	}
 	a {
 		font: inherit;
-		color: rgb(@fly-dark-text-link-primary);
+		color: @fly-dynamic-text-link-primary;
 		text-decoration: underline;
 		&:hover {
-			color: rgb(@fly-dark-text-link-secondary-hover);
+			color: @fly-dynamic-text-link-primary-hover;
 		}
 	}
 	button {
@@ -314,7 +314,7 @@ iframe + p {
 		outline: inherit;
 		text-decoration: underline;
 		&:hover {
-			color: rgb(@fly-dark-text-link-secondary-hover);
+			color: @fly-dynamic-text-link-primary-hover;
 		}
 		/*********** CHROME ONLY ***********/
 		anchor-name: --authorBox-anchor;
@@ -586,7 +586,7 @@ iframe + p {
 	display: none;
 	padding: 0 0 0 16px;
 	svg {
-		fill: rgb(@fly-light-surface-primary);
+		fill: @fly-light-surface-primary;
 		width: 18px;
 		height: 8px;
 	}
@@ -596,10 +596,10 @@ iframe + p {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	background-color: rgb(@fly-light-surface-primary);
+	background-color: @fly-light-surface-primary;
 	border-radius: 4px;
 	overflow: hidden;
-	.fly-light-elevation-5;
+	.fly-light-elevation-40;
 	.heading {
 		display: flex;
 		flex-direction: row;
@@ -610,10 +610,11 @@ iframe + p {
 			flex-direction: row;
 			gap: 8px;
 			text-decoration: none;
+			color: @fly-light-text-link-primary;
 		}
 		a:hover h1 {
 			text-decoration: underline;
-			color: rgb(@fly-light-text-link-secondary-hover);
+			color: @fly-light-text-link-primary-hover;
 		}
 	}
 	.hgroup {
@@ -632,13 +633,13 @@ iframe + p {
 		cursor: pointer;
 		outline: inherit;
 		svg {
-			fill: rgb(@fly-light-text-link-primary);
+			fill: @fly-light-text-link-primary;
 			height: 16px;
 			width: 16px;
 		}
 		&:hover {
 			svg {
-				fill: rgb(@fly-light-text-link-secondary-hover);
+				fill: @fly-light-text-link-primary-hover;
 			}
 		}
 	}
@@ -652,27 +653,26 @@ iframe + p {
 		font-style: normal;
 		font-size: 18px;
 		line-height: 120%;
-		color: rgb(@fly-light-text-primary);
 	}
 	h2 {
 		font-family: "ProximaNova-Regular", sans-serif;
 		font-style: normal;
 		font-size: 16px;
 		line-height: 1.2;
-		color: rgb(@fly-light-text-primary);
+		color: @fly-light-text-primary;
 	}
 	p {
 		font-family: "ProximaNova-Regular", sans-serif;
 		font-style: normal;
 		font-size: 14px;
 		line-height: 1.2;
-		color: rgb(@fly-light-text-primary);
+		color: @fly-light-text-primary;
 	}
 	a {
 		font-family: "ProximaNova-Bold", sans-serif;
-		color: rgb(@fly-light-text-link-primary);
+		color: @fly-light-text-link-primary;
 		&:hover {
-			color: rgb(@fly-light-text-link-secondary-hover);
+			color: @fly-light-text-link-primary-hover;
 		}
 	}
 }

@@ -13,7 +13,7 @@
 */
 
 body {
-	background-color: rgb(@fly-light-surface-primary);
+	background-color: @fly-light-surface-primary;
 }
 main {
 	position: relative;
@@ -49,10 +49,10 @@ main {
 	}
 }
 .shadow-on {
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,.25);
+	box-shadow: 0 1px 5px 0 rgba(@color-neutral-black,.25);
 }
 .shadow-off {
-	box-shadow: 0 1px 5px 0 rgba(0,0,0,0);
+	box-shadow: 0 1px 5px 0 rgba(@color-neutral-black,0);
 }
 
 /* DARK OVERRIDES */
@@ -60,19 +60,19 @@ main {
 	#mainnav {
 		background-color: transparent !important;
 		a {
-			color: rgb(@fly-dark-text-link-primary);
+			color: @fly-dynamic-text-link-primary;
 		}
 		a.hover-effect:hover > div {
-			background-color: rgba(@fly-dark-text-link-primary,.2);
+			background-color: rgba(@color-neutral-0,.2);
 		}
 		svg {
-			fill: rgb(@fly-dark-brand-primary);
+			fill: @fly-dynamic-brand-primary;
 		}
 	}
 }
 .flyout-account {
 	a {
-		color: rgb(@color-neutral-100) !important;
+		color: @fly-dynamic-text-link-primary !important;
 	}
 }
 
@@ -211,7 +211,7 @@ main {
 		font-style: normal;
 		font-size: 16px;
 		line-height: 1;
-		color: rgb(@fly-dark-text-primary);
+		color: @fly-dynamic-text-primary;
 	}
 	h2 {
 		margin: 5px 0 0 0;
@@ -219,7 +219,7 @@ main {
 		font-style: normal;
 		font-size: 12px;
 		line-height: 1;
-		color: rgb(@fly-dark-text-primary);
+		color: @fly-dynamic-text-primary;
 	}
 }
 @media only screen and (min-width: @break-sm) {
@@ -233,7 +233,7 @@ main {
 			display: block;
 		}
 		svg {
-			fill: rgb(@fly-dark-brand-primary);
+			fill: @fly-dynamic-brand-primary;
 			/* 100x11 */
 			width: 200px;
 			height: 22px;
@@ -311,8 +311,8 @@ main {
 	.wrapper::-webkit-scrollbar {
 		/* hide scrollbar: Safari, Chrome, Opera */
 		display: none;
-		width: 0px;
-		height: 0px;
+		width: 0;
+		height: 0;
 		background: transparent;
 	}
 	ul {
@@ -326,7 +326,7 @@ main {
 	}
 	a {
 		height: 40px;
-		color: rgb(@fly-dark-text-link-primary);
+		color: @fly-dynamic-text-link-primary;
 		font-family: "ProximaNova-Bold", sans-serif;
 		font-style: normal;
 		font-size: 12px;
@@ -340,7 +340,7 @@ main {
 			border-radius: 4px;
 		}
 		&:hover span {
-			background-color: rgba(@fly-dark-text-link-primary,.2);
+			background-color: rgba(@color-neutral-0,.2);
 		}
 	}
 }
@@ -385,19 +385,6 @@ main {
 
 
 
-/*
-/
-/	BRAND SUBNAV TABS
-/
-*/
-
-#subnav-brand {
-} 
-@media only screen and (min-width: @break-sm) {
-	#subnav-brand {
-	}
-}
-
 
 
 
@@ -408,9 +395,6 @@ main {
 /	VIDEO SHELF OVERRIDES
 /
 */
-
-@media only screen and (min-width: @break-sm) {
-}
 
 @media only screen and (min-width: @break-md) {
 	#include-video-single {
@@ -424,119 +408,12 @@ main {
 	}
 }
 
-@media only screen and (min-width: @break-lg) {
-}
-
-
-
-
-
-/*
-/
-/	VIDEO SHELF REDUX
-/
-*/
-
-#video-shelf-hero {
-	position: relative;
-	top: 40px;
-	background-color: rgb(@color-cbs-evening-news);
-	padding: 20px;
-	h1 {
-		margin: .5em 0 -.06em -.2em;
-		padding: 0 0 .06em .2em;
-		.zeta;
-		color: rgb(@fly-dark-text-primary);
-	}
-	p {
-		margin: .5em 0 0 0;
-		.related;
-		color: rgb(@fly-dark-text-primary);
-	}
-	.metadata {
-		color: rgb(@fly-dark-text-primary);
-		svg {
-			fill: rgb(@fly-dark-brand-primary);
-		}
-	}
-	.video-container div {
-		aspect-ratio: 16 / 9;
-		width: 100%;
-	}
-}
-@media only screen and (min-width: @break-sm) {
-	#video-shelf-hero {
-		top: -20px;
-		h1 {
-			margin: 0 0 -.06em -.2em;
-			padding: 0 0 .06em .2em;
-		}
-		.component {
-			display: grid;
-			grid-template-columns: repeat(12, 1fr);
-			grid-gap: 20px;
-		}
-		.card {
-			grid-column: 1/4;
-			grid-row: 1;
-		}
-		.video-container {
-			grid-column: 4/13;
-			grid-row: 1;
-		}
-	}
-}
-@media only screen and (min-width: @break-md) {
-	#video-shelf-hero {
-		top: 0;
-		padding: 0 0 40px 0;
-		.component {
-			width: @break-md-container;
-			margin: 0 auto;
-			grid-gap: 40px;
-		}
-		h1 {
-			.epsilon;
-		}
-		p {
-			.dek;
-		}
-	}
-}
-@media only screen and (min-width: @break-lg) {
-	#video-shelf-hero {
-		.component {
-			width: @break-lg-container;
-		}
-		h1 {
-			.delta();
-		}
-	} 
-}
 
 
 
 
 
 
-
-
-/*
-/
-/	GRID HERO LIST
-/
-*/
-
-#include-grid-hero-list {
-	position: relative;
-	top: 40px;
-}
-@media only screen and (min-width: @break-sm) {
-	#include-grid-hero-list {
-		position: relative;
-		top: 0;
-	}
-}
 
 
 
@@ -555,7 +432,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(@color-offblack,.65);
+	background-color: rgba(@color-neutral-100,.65);
 	text-align: center;
 	div {
 		width: 100%;
