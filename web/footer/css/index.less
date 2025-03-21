@@ -30,11 +30,11 @@ body {
 
 #footer {
 	padding: @spacing-20;
-	background-color: @third-party-generic-primary;
-	color: @fly-dynamic-text-primary;
 	display: flex;
 	flex-direction: column;
-	gap: @spacing-24;
+	gap: @spacing-20;
+	background-color: @third-party-generic-primary;
+	color: @fly-dynamic-text-primary;
 	svg {
 		margin: 0 auto;
 		fill: @fly-dynamic-brand-primary;
@@ -44,28 +44,28 @@ body {
 	.container {
 		display: flex;
 		flex-direction: column;
-		gap: @spacing-24;
+		gap: @spacing-20;
 	}
-	section {
-		padding: 0 0 @spacing-24 0;
+	dl {
+		padding: 0 0 20px 0;
 		display: flex;
 		flex-direction: column;
 		gap: @spacing-16;
 		.fly-dynamic-utility-border;
 	}
-	h1 {
+	dt {
 		font-family: "ProximaNova-Bold", sans-serif;
 		font-style: normal;
 		font-size: 16px;
 		line-height: 1.2;
 		color: inherit;
 	}
-	ul {
+	dl .list {
 		display: flex;
 		flex-direction: column;
 		gap: @spacing-12;
 	}
-	li {
+	dd {
 		font-family: "ProximaNova-Regular", sans-serif;
 		font-style: normal;
 		font-size: 16px;
@@ -93,21 +93,21 @@ body {
 @media only screen and (min-width: 432px) {
 	/* lists in two columns, at this breakpoint only */
 	#footer {
-		ul {
+		dl .list {
 			/* can't use flex for spacing here, because of column-count */
 			display: block;
 			column-count: 2;
 		}
-		li {
+		dd {
 			padding: 6px 0 6px 0;
 		}
 		.trending {
-			ul {
+			.list {
 				/* the trending list stays the same */
 				display: flex;
 				column-count: unset;
 			}
-			li {
+			dd {
 				padding: unset;
 			}
 		}
@@ -124,18 +124,18 @@ body {
 			grid-template-columns: repeat(2, 1fr);
 			gap: @spacing-20;
 		}
-		section {
+		dl {
 			padding: unset;
 			border: none;
 		}
-		ul {
+		dl .list {
 			/* revert all lists back to original state */
 			display: flex;
 			column-count: unset;
 			/* reduce gap like Sports */
 			gap: @spacing-8;
 		}
-		li {
+		dd {
 			padding: unset;
 		}
 	}
