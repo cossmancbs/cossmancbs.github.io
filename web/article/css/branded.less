@@ -316,8 +316,18 @@ iframe + p {
 		&:hover {
 			color: @fly-dynamic-text-link-primary-hover;
 		}
+	}
+	button.author1 {
 		/*********** CHROME ONLY ***********/
-		anchor-name: --authorBox-anchor;
+		anchor-name: --authorBox-anchor1;
+	}
+	button.author2 {
+		/*********** CHROME ONLY ***********/
+		anchor-name: --authorBox-anchor2;
+	}
+	button.author3 {
+		/*********** CHROME ONLY ***********/
+		anchor-name: --authorBox-anchor3;
 	}
 	.byline-container {
 		margin: 16px 0;
@@ -573,16 +583,29 @@ iframe + p {
 /
 */
 
-#authorBox {
+#authorBoxBrennan {
+	/********** CHROME/EDGE ONLY **********/
+	position-anchor: --authorBox-anchor1;
+	top: anchor(--authorBox-anchor1 bottom);
+}
+#authorBoxMacfarlane {
+	/********** CHROME/EDGE ONLY **********/
+	position-anchor: --authorBox-anchor2;
+	top: anchor(--authorBox-anchor2 bottom);
+}
+#authorBoxOdonnell {
+	/********** CHROME/EDGE ONLY **********/
+	position-anchor: --authorBox-anchor3;
+	top: anchor(--authorBox-anchor3 bottom);
+}
+
+.authorBox {
 	/* Reminder: this is a wrapper. Any display:flex styles here will interfere with popover behavior */
 	margin: 0 20px;
-	/* somehow a background color is being applied here???, so the below is required */
+	/* somehow a background color is being applied here, maybe default by browser, so the below is required */
 	background-color: transparent;
-	/********** CHROME/EDGE ONLY **********/
-	position-anchor: --authorBox-anchor;
-	top: anchor(--authorBox-anchor bottom);
 }
-#authorBox .notch {
+.authorBox .notch {
 	display: none;
 	padding: 0 0 0 16px;
 	svg {
@@ -591,8 +614,9 @@ iframe + p {
 		height: 8px;
 	}
 }
-#authorBox .container {
+.authorBox .container {
 	padding: 16px;
+	padding: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
@@ -603,9 +627,10 @@ iframe + p {
 	.heading {
 		display: flex;
 		flex-direction: row;
-		gap: 8px;
+		justify-content: space-between;
+		gap: 0;
 		a {
-			width: 100%;
+			padding: 16px 16px 0 16px;
 			display: flex;
 			flex-direction: row;
 			gap: 8px;
@@ -614,87 +639,116 @@ iframe + p {
 		}
 		a:hover h1 {
 			text-decoration: underline;
-			color: @fly-light-text-link-primary-hover;
+			color: rgb(@color-neutral-60);
 		}
-	}
-	.hgroup {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		justify-content: center;
-		height: 60px;
-	}
-	button {
-		height: 16px;
-		width: 16px;
-		background: none;
-		border: none;
-		padding: 0;
-		cursor: pointer;
-		outline: inherit;
-		svg {
-			fill: @fly-light-text-link-primary;
-			height: 16px;
-			width: 16px;
+		.hgroup {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			justify-content: center;
+			height: 60px;
 		}
-		&:hover {
+		img {
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+		}
+		h1 {
+			font-family: "PublicoHeadline-Bold", serif;
+			font-style: normal;
+			font-size: 18px;
+			line-height: 120%;
+		}
+		h2 {
+			font-family: "ProximaNova-Regular", sans-serif;
+			font-style: normal;
+			font-size: 16px;
+			line-height: 1.2;
+			color: @fly-light-text-primary;
+		}
+		button {
+			margin: 8px;
+			padding: 0;
+			background-color: rgb(@color-neutral-white);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 32px;
+			width: 32px;
+			background: none;
+			border: none;
+			cursor: pointer;
+			outline: inherit;
 			svg {
-				fill: @fly-light-text-link-primary-hover;
+				fill: rgb(@color-neutral-100);
+				height: 14px;
+				width: 14px;
+			}
+			&:hover {
+				background-color: rgb(@color-neutral-20);
+				svg {
+					fill: rgb(@color-neutral-100);
+				}
 			}
 		}
 	}
-	img {
-		height: 60px;
-		width: 60px;
-		border-radius: 50%;
-	}
-	h1 {
-		font-family: "PublicoHeadline-Bold", serif;
-		font-style: normal;
-		font-size: 18px;
-		line-height: 120%;
-	}
-	h2 {
-		font-family: "ProximaNova-Regular", sans-serif;
-		font-style: normal;
-		font-size: 16px;
-		line-height: 1.2;
-		color: @fly-light-text-primary;
-	}
-	p {
-		font-family: "ProximaNova-Regular", sans-serif;
-		font-style: normal;
-		font-size: 14px;
-		line-height: 1.2;
-		color: @fly-light-text-primary;
-	}
-	a {
-		font-family: "ProximaNova-Bold", sans-serif;
-		color: @fly-light-text-link-primary;
-		&:hover {
-			color: @fly-light-text-link-primary-hover;
+	.main {
+		padding: 0 16px 16px 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		p {
+			font-family: "ProximaNova-Regular", sans-serif;
+			font-style: normal;
+			font-size: 14px;
+			line-height: 1.2;
+			color: @fly-light-text-primary;
+		}
+		a {
+			text-decoration: none;
+			font-family: "ProximaNova-Bold", sans-serif;
+			color: @fly-light-text-link-primary;
+			&:hover {
+				text-decoration: underline;
+				color: rgb(@color-neutral-60);
+			}
 		}
 	}
 }
 @media only screen and (min-width: @break-sm) {
-	#authorBox {
+	#authorBoxBrennan {
+		/********** CHROME/EDGE ONLY! **********/
+		left: anchor(--authorBox-anchor1 left);
+	}
+	#authorBoxMacfarlane {
+		/********** CHROME/EDGE ONLY! **********/
+		left: anchor(--authorBox-anchor2 left);
+	}
+	#authorBoxOdonnell {
+		/********** CHROME/EDGE ONLY! **********/
+		left: anchor(--authorBox-anchor3 left);
+	}
+	.authorBox {
 		margin: 0;
 		width: 400px;
-		/********** CHROME/EDGE ONLY! **********/
-		left: anchor(--authorBox-anchor left);
 	}
-	#authorBox .notch {
+	.authorBox .notch {
 		display: block;
 	}
-	#authorBox .container {
-		h1 {
-			font-size: 20px;
+	.authorBox .container {
+		.heading {
+			h1 {
+				font-size: 20px;
+			}
+			h2 {
+				font-size: 18px;
+			}
 		}
-		h2 {
-			font-size: 18px;
-		}
-		p {
-			font-size: 16px;
+		.main {
+			p {
+				font-size: 16px;
+			}
 		}
 	}
 }
