@@ -583,6 +583,8 @@ iframe + p {
 /
 */
 
+
+
 #authorBoxBrennan {
 	/********** CHROME/EDGE ONLY **********/
 	position-anchor: --authorBox-anchor1;
@@ -629,6 +631,13 @@ iframe + p {
 		flex-direction: row;
 		justify-content: space-between;
 		gap: 0;
+		.hgroup {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			justify-content: center;
+			height: 60px;
+		}
 		a {
 			padding: 16px 16px 0 16px;
 			display: flex;
@@ -636,17 +645,7 @@ iframe + p {
 			gap: 8px;
 			text-decoration: none;
 			color: @fly-light-text-link-primary;
-		}
-		a:hover h1 {
-			text-decoration: underline;
-			color: rgb(@color-neutral-60);
-		}
-		.hgroup {
-			display: flex;
-			flex-direction: column;
-			gap: 4px;
-			justify-content: center;
-			height: 60px;
+			transition: all .3s ease-in-out;
 		}
 		img {
 			height: 60px;
@@ -658,6 +657,16 @@ iframe + p {
 			font-style: normal;
 			font-size: 18px;
 			line-height: 120%;
+			transition: all .3s ease-in-out;
+			text-decoration: underline 0em rgba(@color-neutral-60,0);
+		}
+		a:hover h1 {
+			text-decoration: underline .1em rgba(@color-neutral-60,1);
+			color: rgb(@color-neutral-60);
+		}
+		a:active h1 {
+			text-decoration: underline .15em rgba(@color-neutral-100,1);
+			color: rgb(@color-neutral-100);
 		}
 		h2 {
 			font-family: "ProximaNova-Regular", sans-serif;
@@ -680,16 +689,28 @@ iframe + p {
 			border: none;
 			cursor: pointer;
 			outline: inherit;
+			transition: all .3s ease-in-out;
 			svg {
 				fill: rgb(@color-neutral-100);
 				height: 14px;
 				width: 14px;
+				transition: all .3s ease-in-out;
 			}
-			&:hover {
-				background-color: rgb(@color-neutral-20);
-				svg {
-					fill: rgb(@color-neutral-100);
-				}
+		}
+		button:hover {
+			background-color: rgb(@color-neutral-5);
+			svg {
+				fill: rgb(@color-neutral-60);
+				height: 16px;
+				width: 16px;
+			}
+		}
+		button:active {
+			background-color: rgb(@color-neutral-20);
+			svg {
+				fill: rgb(@color-neutral-100);
+				height: 12px;
+				width: 12px;
 			}
 		}
 	}
@@ -706,13 +727,18 @@ iframe + p {
 			color: @fly-light-text-primary;
 		}
 		a {
-			text-decoration: none;
 			font-family: "ProximaNova-Bold", sans-serif;
 			color: @fly-light-text-link-primary;
-			&:hover {
-				text-decoration: underline;
-				color: rgb(@color-neutral-60);
-			}
+			text-decoration: underline 0em rgba(@color-neutral-60,0);
+			transition: all .3s ease-in-out;
+		}
+		a:hover {
+			color: rgb(@color-neutral-60);
+			text-decoration: underline .1em rgba(@color-neutral-60,1);
+		}
+		a:active {
+			color: rgb(@color-neutral-100);
+			text-decoration: underline .15em rgba(@color-neutral-100,1);
 		}
 	}
 }
@@ -754,6 +780,62 @@ iframe + p {
 }
 
 
+
+
+
+
+/*
+/
+/	POPOVER TRANSITIONS
+/
+*/
+
+#authorBoxBrennan {
+	transition: opacity 0.3s, scale 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+	opacity: 0;
+	&:popover-open {
+		opacity: 1;
+	}
+}
+#authorBoxMacfarlane {
+	transition: opacity 0.3s, scale 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+	opacity: 0;
+	scale: .8;
+	transform-origin: center;
+	&:popover-open {
+		opacity: 1;
+		scale: 1;
+	}
+}
+#authorBoxOdonnell {
+	transition: opacity 0.3s, translate 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+	opacity: 0;
+	translate: 0 .7em;
+	&:popover-open {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+@starting-style {
+	#authorBoxBrennan {
+		&:popover-open {
+			opacity: 0;
+		}
+	}
+	#authorBoxMacfarlane {
+		&:popover-open {
+			opacity: 0;
+			scale: .8;
+		}
+	}
+	#authorBoxOdonnell {
+		&:popover-open {
+			opacity: 0;
+			translate: 0 .7em;
+		}
+	}
+}
 
 
 
