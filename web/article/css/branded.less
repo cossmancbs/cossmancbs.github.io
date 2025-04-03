@@ -583,37 +583,20 @@ iframe + p {
 /
 */
 
-
-
-#authorBoxBrennan {
-	/********** CHROME/EDGE ONLY **********/
-	position-anchor: --authorBox-anchor1;
-	top: anchor(--authorBox-anchor1 bottom);
-}
-#authorBoxMacfarlane {
-	/********** CHROME/EDGE ONLY **********/
-	position-anchor: --authorBox-anchor2;
-	top: anchor(--authorBox-anchor2 bottom);
-}
-#authorBoxOdonnell {
-	/********** CHROME/EDGE ONLY **********/
-	position-anchor: --authorBox-anchor3;
-	top: anchor(--authorBox-anchor3 bottom);
-}
-
 .authorBox {
-	/* Reminder: this is a wrapper. Any display:flex styles here will interfere with popover behavior */
+	/* Reminder: this is a container div. Any display:flex styles here will interfere with popover behavior */
 	margin: 0 20px;
+	.fly-light-elevation-40;
 	/* somehow a background color is being applied here, maybe default by browser, so the below is required */
 	background-color: transparent;
 }
-.authorBox .notch {
+.authorBox .caret {
 	display: none;
-	padding: 0 0 0 16px;
+	padding: 0 0 0 8px;
 	svg {
 		fill: @fly-light-surface-primary;
-		width: 18px;
-		height: 8px;
+		width: 36px;
+		height: 12px;
 	}
 }
 .authorBox .container {
@@ -625,7 +608,6 @@ iframe + p {
 	background-color: @fly-light-surface-primary;
 	border-radius: 4px;
 	overflow: hidden;
-	.fly-light-elevation-40;
 	.heading {
 		display: flex;
 		flex-direction: row;
@@ -745,23 +727,11 @@ iframe + p {
 	}
 }
 @media only screen and (min-width: @break-sm) {
-	#authorBoxBrennan {
-		/********** CHROME/EDGE ONLY! **********/
-		left: anchor(--authorBox-anchor1 left);
-	}
-	#authorBoxMacfarlane {
-		/********** CHROME/EDGE ONLY! **********/
-		left: anchor(--authorBox-anchor2 left);
-	}
-	#authorBoxOdonnell {
-		/********** CHROME/EDGE ONLY! **********/
-		left: anchor(--authorBox-anchor3 left);
-	}
 	.authorBox {
 		margin: 0;
 		width: 400px;
 	}
-	.authorBox .notch {
+	.authorBox .caret {
 		display: block;
 	}
 	.authorBox .container {
@@ -784,6 +754,43 @@ iframe + p {
 
 
 
+/*
+/
+/	POPOVER POSITIONING
+/   ********** CHROME/EDGE ONLY **********
+/
+*/
+
+#authorBoxBrennan {
+	position-anchor: --authorBox-anchor1;
+	top: anchor(--authorBox-anchor1 bottom);
+}
+#authorBoxMacfarlane {
+	position-anchor: --authorBox-anchor2;
+	top: anchor(--authorBox-anchor2 bottom);
+}
+#authorBoxOdonnell {
+	position-anchor: --authorBox-anchor3;
+	top: anchor(--authorBox-anchor3 bottom);
+}
+
+@media only screen and (min-width: @break-sm) {
+	#authorBoxBrennan {
+		left: anchor(--authorBox-anchor1 left);
+	}
+	#authorBoxMacfarlane {
+		left: anchor(--authorBox-anchor2 left);
+	}
+	#authorBoxOdonnell {
+		left: anchor(--authorBox-anchor3 left);
+	}
+}
+
+
+
+
+
+
 
 
 /*
@@ -802,8 +809,8 @@ iframe + p {
 #authorBoxMacfarlane {
 	transition: opacity 0.3s, scale 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
 	opacity: 0;
-	scale: .8;
-	transform-origin: top left;
+	scale: .1;
+	transform-origin: top center;
 	&:popover-open {
 		opacity: 1;
 		scale: 1;
@@ -819,6 +826,13 @@ iframe + p {
 	}
 }
 
+@media only screen and (min-width: @break-sm) {
+	#authorBoxMacfarlane {
+		/* from top point of caret */
+		transform-origin: 26px 0;
+	}
+}
+
 @starting-style {
 	#authorBoxBrennan {
 		&:popover-open {
@@ -828,7 +842,7 @@ iframe + p {
 	#authorBoxMacfarlane {
 		&:popover-open {
 			opacity: 0;
-			scale: .8;
+			scale: .7;
 		}
 	}
 	#authorBoxOdonnell {
