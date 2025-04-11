@@ -67,43 +67,29 @@ nav {
 }
 @media only screen and (min-width: @break-md) {
 	nav {
-		padding: 0;
 		div {
 			margin: 0 auto;
-			padding: 0;
-			width: @break-md;
-		}
-		span {
-			margin: 0 auto;
-			width: 980px;
+			padding: 0 @spacing-20;
+			max-width: @break-md-container;
 		}
 	}
 	nav.nav-modified {
 		div {
-			padding: 0 @spacing-20;
-			width: unset;
-		}
-		span {
-			width: unset;
+			max-width: unset;
 		}
 	}
 }
 @media only screen and (min-width: @break-lg) {
 	nav {
 		div {
-			width: @break-lg;
-		}
-		span {
-			width: 1320px;
+			max-width: @break-lg-container;
 		}
 	}
+}
+@media only screen and (min-width: 1368px) {
 	nav.nav-modified {
 		div {
-			padding: 0;
-			width: @break-lg;
-		}
-		span {
-			width: 1320px;
+			max-width: 1328px;
 		}
 	}
 }
@@ -209,9 +195,11 @@ section {
 			}
 		}
 	}
+}
+@media only screen and (min-width: 1368px) {
 	section.grid-modified {
 		.component {
-			width: 1320px;
+			width: 1328px;
 		}
 	}
 }
