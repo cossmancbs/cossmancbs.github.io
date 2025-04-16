@@ -38,7 +38,7 @@ ul {
 */
 
 body {
-	background-color: @fly-light-surface-primary;
+	background-color: @fly-light-surface-secondary;
 	color: @fly-light-text-primary;
 }
 
@@ -53,6 +53,7 @@ body {
 */
 
 nav {
+	background-color: @fly-light-surface-primary;
 	.fly-light-utility-border;
 	div {
 		padding: 0 @spacing-20;
@@ -105,6 +106,7 @@ nav {
 */
 
 section {
+	background-color: @fly-light-surface-primary;
 	.component {
 		box-shadow: inset 0 0 0 1px rgba(@color-placeholder, .5);
 	}
@@ -123,7 +125,7 @@ section {
 		}
 		ul {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(1, 1fr);
 			grid-gap: @spacing-20;
 		}
 		li {
@@ -138,7 +140,7 @@ section {
 			.wireframe;
 		}
 		li {
-			&:nth-child(-n + 2) {
+			&:nth-child(-n + 1) {
 				display: list-item;
 			}
 		}
@@ -152,10 +154,10 @@ section {
 				.epsilon;
 			}
 			ul {
-				grid-template-columns: repeat(4, 1fr);
+				grid-template-columns: repeat(2, 1fr);
 			}
 			li {
-				&:nth-child(-n + 4) {
+				&:nth-child(-n + 2) {
 					display: list-item;
 				}
 			}
@@ -172,11 +174,13 @@ section {
 				.delta;
 			}
 			ul {
-				grid-template-columns: repeat(12, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 				grid-gap: @spacing-40;
 			}
 			li {
-				display: list-item;
+				&:nth-child(-n + 3) {
+					display: list-item;
+				}
 			}
 		}
 	}
@@ -192,6 +196,15 @@ section {
 			width: 1320px;
 			h1 {
 				.gamma;
+			}
+			ul {
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: @spacing-40;
+			}
+			li {
+				&:nth-child(-n + 4) {
+					display: list-item;
+				}
 			}
 		}
 	}
