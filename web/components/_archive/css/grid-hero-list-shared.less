@@ -8,27 +8,6 @@
 
 /*
 /
-/	FOR TESTING
-/
-*/
-
-.grid-hero,
-.hgroup,
-.grid,
-.item1,
-.item2,
-.item3,
-.item-list,
-.item-ad {
-	.wireframe-outline;
-}
-
-
-
-
-
-/*
-/
 /	BASIC STYLES
 /
 */
@@ -43,25 +22,27 @@ body {
 
 /*
 /
-/	SECTION
+/	COMPONENT
 /
 */
 
 .grid-hero {
-	padding: @spacing-20;
-	display: flex;
-	flex-direction: column;
-	gap: @spacing-20;
+	padding: 20px 0;
 	.fly-light-utility-border;
+	.empyou {
+		/* trick adblocker */
+		margin: 0 auto;
+		width: 300px;
+		height: 250px;
+	}
+	video {
+		width: 100%;
+	}
 }
 
 @media only screen and (min-width: @break-md) {
 	.grid-hero {
-		padding: @spacing-40 @spacing-20;
-	}
-}
-@media only screen and (min-width: @break-lg) {
-	.grid-hero {
+		padding: 40px 0;
 	}
 }
 
@@ -76,94 +57,50 @@ body {
 /	COMPONENT HEADINGS
 /
 */
-
 .grid-hero {
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-20;
 	.hgroup {
-		/*
+		background-color: salmon;
 		display: flex;
 		align-items: center;
 		align-items: flex-end;
-		*/
 		h1 {
-			/* .epsilon; */
-			font-family: "ProximaNova-Bold", sans-serif;
-			font-style: normal;
-			font-size: 20px;
-			line-height: 1;
+			.epsilon;
 			color: @fly-light-text-primary;
 		}
 	}
 }
 
 @media only screen and (min-width: @break-sm) {
-	.grid-hero .hgroup {
-		h1 {
-			/* .delta; */
-		}
-	}
-}
-
-@media only screen and (min-width: @break-md) {
-	.grid-hero .hgroup {
-		/*
-		margin: 0 auto;
-		width: @break-md-container;
-		*/
-		h1 {
-			/* .gamma; */
-			font-size: 28px;
-		}
-	}
-}
-
-@media only screen and (min-width: @break-lg) {
-	.grid-hero .hgroup {
-		margin: 0 auto;
-		width: @break-lg-container;
-		h1 {
-			/* .beta; */
-		}
-	}
-}
-
-
-
-
-
-
-
-/*
-/
-/	CARDS
-/
-*/
-
-.grid-hero {
-	.card {
-		h1 {
-			.zeta;
-		}
-		p {
-			margin: @spacing-8 0 0 0;
-			.dek-sm;
-			color: @fly-light-text-primary;
+	.grid-hero{
+		.hgroup {
+			h1 {
+				.delta;
+			}
 		}
 	}
 }
 
 @media only screen and (min-width: @break-md) {
 	.grid-hero {
-		.card {
+		.hgroup {
+			margin: 0 auto 20px auto;
+			width: @break-md-container;
 			h1 {
-				.epsilon;
-			}
-			p {
-				.dek;
+				.gamma;
 			}
 		}
-		.item-list .card {
+	}
+}
+
+@media only screen and (min-width: @break-lg) {
+	.grid-hero {
+		.hgroup {
+			width: @break-lg-container;
 			h1 {
-				.zeta;
+				.beta;
 			}
 		}
 	}
@@ -177,31 +114,103 @@ body {
 
 /*
 /
-/	CARD IMAGES
+/	CARDS: HERO and NORMAL
+/
+*/
+
+.grid-hero {
+	.card h1 {
+		margin: 0 0 -.06em -.2em;
+		padding: 0 0 .06em .2em;
+		.zeta;
+		.wireframe-outline;
+	}
+	.item1 h1,
+	.item2 h1,
+	.item3 h1,
+	.item-list h1 {
+		/* truncate */
+		/*
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		*/
+	}
+	.item1 p {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: @break-md) {
+	.grid-hero {
+		.item1 h1,
+		.item2 h1,
+		.item3 h1 {
+			.epsilon;
+		}
+		.item1 p {
+			display: block;
+			margin: 10px 0 0 0;
+			.dek;
+			color: @fly-light-text-primary;
+		}
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	CARDS - IMAGES
 /
 */
 
 .grid-hero {
 	.thumbWrap {
-		margin: 0 0 @spacing-8 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		background-size: cover;
+		background-position: center;
 		background-color: rgb(@color-placeholder);
+		background-size: cover;
 		overflow: hidden;
+	}
+	.item1 .thumbWrap {
+		margin: 0 0 10px 0;
 		width: 100%;
-		aspect-ratio: 16 / 9;
+		height: auto;
+		padding-top: 56.25%;	/* 16:9 Aspect Ratio */
+		position: relative;		/* If you want text inside of it */
+	}
+	.item2 .cardHoverWrap,
+	.item3 .cardHoverWrap,
+	.item-list .cardHoverWrap {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 20px;
+	}
+	.item2 .headWrap,
+	.item3 .headWrap,
+	.item-list .headWrap {
+		flex: 1;
+	}
+	.item2 .thumbWrap,
+	.item3 .thumbWrap,
+	.item-list .thumbWrap {
+		width: 100px;
+		height: 100px;
 	}
 }
 
 @media only screen and (min-width: @break-md) {
 	.grid-hero {
 		.item1 .thumbWrap {
-			/*
 			padding: 0;
 			width: 640px;
 			height: 360px;
-			*/
 		}
 		.item2 .cardHoverWrap,
 		.item3 .cardHoverWrap {
@@ -209,28 +218,24 @@ body {
 		}
 		.item2 .thumbWrap,
 		.item3 .thumbWrap {
-			/*
-			margin: 0 0 @spacing-8 0;
+			margin: 0 0 10px 0;
 			padding: 0;
 			width: 300px;
 			height: calc(300px*0.5625);
 			float: none;
-			*/
+		}
+		.item-list .thumbWrap {
+			display: none;
 		}
 	}
 }
 @media only screen and (min-width: @break-lg) {
 	.grid-hero {
-		/* used float & absolute widths here, because I can't think of a way to use grid or flex, while retaining the hover functionality */
 		.item1 .thumbWrap {
-			padding: 0;
-			margin: 0;
-			width: 640px;
-			height: 360px;
+			margin: 0 0 0 40px;
 			float: right;
 		}
-		.item1 .headWrap,
-		.item1 .relatedLinks {
+		.item1 .headWrap {
 			width: 300px;
 		}
 	}
@@ -248,14 +253,14 @@ body {
 
 .grid-hero {
 	.button-thumb {
-		background-color: rgba(@color-neutral-100,.5);
+		background-color: rgba(16,16,16,.5);
 		border: none;
 		border-radius: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		svg {
-			fill: rgb(@color-neutral-0);
+			fill: rgb(@color-offwhite);
 		}
 	}
 	.button-thumb-video svg {
@@ -263,13 +268,11 @@ body {
 		margin: 0 0 0 4px;
 	}
 	.item1 .button-thumb {
-		/*
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		*/
 		margin: auto;
 		padding: 0;
 		width: 50px;
@@ -279,13 +282,22 @@ body {
 			height: calc(50px/2.5);
 		}
 	}
+	.item2 .thumbWrap,
+	.item3 .thumbWrap,
+	.item-list .thumbWrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	.item2 .button-thumb,
-	.item3 .button-thumb {
+	.item3 .button-thumb,
+	.item-list .button-thumb {
 		width: 40px;
 		height: 40px;
 	}
 	.item2 .button-thumb svg,
-	.item3 .button-thumb svg {
+	.item3 .button-thumb svg,
+	.item-list .button-thumb svg {
 		width: calc(40px/2.5);
 		height: calc(40px/2.5);
 	}
@@ -311,6 +323,9 @@ body {
 			width: calc(50px/2.5);
 			height: calc(50px/2.5);
 		}
+		.item-list .thumbWrap {
+			display: none;
+		}
 	}
 }
 
@@ -329,23 +344,18 @@ body {
 
 .grid-hero {
 	.metadata {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		margin: @spacing-8 0 0 0;
-		font-family: "ProximaNova-Regular", sans-serif;
-		font-style: normal;
-		font-size: 16px;
-		line-height: 1;
-		color: @fly-light-text-secondary;
+		display: inline-flex;
+		margin: 8px 0 0 0;
+		.metadata-default();
+		color: @fly-light-text-primary;
 		svg {
-			margin: 0 @spacing-4 0 @spacing-12;
-			fill: @fly-light-utility-icon-secondary;
+			margin: 0 5px 0 15px;
+			fill: @fly-light-utility-icon-primary;
 		}
 		svg.video {
-			/* margin-top: 1px; */
-			width: 10px;
-			height: 10px;
+			margin-top: 1px;
+			width: 8px;
+			height: 8px;
 		}
 		svg.gallery {
 			width: 10px;
@@ -369,16 +379,25 @@ body {
 .grid-hero {
 	.relatedLinks {
 		margin: @spacing-20 0 0 0;
+		display: none;
 		h2 {
-			.metadata-large-bold;
+			.metadata-large-bold();
 			color: @fly-light-utility-icon-primary;
 		}
 		li {
-			.related-bold;
+			.related-bold();
 		}
 		a {
 			display: block;
-			padding: @spacing-8 0 0 0;
+			padding: 10px 0 0 0;
+		}
+	}
+}
+
+@media only screen and (min-width: @break-md) {
+	.grid-hero {
+		.relatedLinks {
+			display: inherit;
 		}
 	}
 }
@@ -451,71 +470,30 @@ body {
 
 .grid-hero {
 	.flag {
-		margin: 0 @spacing-4 @spacing-4 0;
-		padding: @spacing-4 @spacing-8;
-		text-box: trim-both cap alphabetic;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: @border-radius-4;
-		background-color: rgba(@color-neutral-100,.1);
+		margin: 0 5px 5px 0;
+		padding: 3px 5px 3px 6px;
+		border-radius: 3px;
+		background-color: rgba(@color-graydark,.1);
 		font-family: "ProximaNova-Bold", sans-serif;
 		font-size: 11px;
+		line-height: 1;
 		letter-spacing: 1.7px;
 		text-transform: uppercase;
 		color: @fly-light-text-primary;
-	}
-	.flag-live {
-		background-color: @fly-light-button-live-background;
-		color: @fly-light-button-live-text;
 	}
 }
 
 @media only screen and (min-width: @break-md) {
 	.grid-hero {
 		.flag {
+			padding: 5px 6px 3px 8px;
 			font-size: 12px;
 		}
 	}
 }
-
-
-
-
-
-
-
-
-/*
-/
-/	ADS
-/
-*/
-
-.empyou {
-	/* trick adblocker */
-	margin: 0 auto;
-	width: 300px;
-	background-color: @fly-light-surface-secondary;
-	div {
-		width: 300px;
-		height: 250px;
-		.wireframe;
-	}
-	p {
-		padding: @spacing-8;
-		font-family: "ProximaNova-Regular", sans-serif;
-		font-size: 12px;
-		text-transform: uppercase;
-		color: @fly-light-text-tertiary;
-		text-align: center;
-	}
-}
-
-
-
-
-
 
 
 
