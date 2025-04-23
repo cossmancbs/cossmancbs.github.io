@@ -250,14 +250,14 @@ body {
 
 .grid-hero {
 	.button-thumb {
-		background-color: rgba(@color-neutral-100,.5);
 		border: none;
 		border-radius: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background-color: @fly-dynamic-surface-overlay-solid;
 		svg {
-			fill: rgb(@color-neutral-0);
+			fill: @fly-dynamic-utility-ui-element-active;
 		}
 	}
 	.button-thumb-video svg {
@@ -265,13 +265,6 @@ body {
 		margin: 0 0 0 4px;
 	}
 	.item1 .button-thumb {
-		/*
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		*/
 		margin: auto;
 		padding: 0;
 		width: 50px;
@@ -414,6 +407,7 @@ body {
 		}
 		&:hover,
 		&:active {
+			color: @fly-light-text-link-primary-hover;
 		}
 	}
 	.cardHoverWrap {
@@ -425,15 +419,18 @@ body {
 				text-decoration: underline;
 			}
 			.button-thumb {
-				background-color: rgb(@color-offblack);
+				background-color: rgb(@color-neutral-100);
 			}
 		}
 	}
-	.relatedLinks {
-		a {
-			&:hover {
-				text-decoration: underline;
-			}
+	.relatedLinks a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.hgroup a {
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }
