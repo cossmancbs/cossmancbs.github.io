@@ -254,15 +254,23 @@ main {
 	.chip {
 		flex-shrink: 0;
 		align-self: stretch;
-		width: 80px;
-		min-height: 80px;
-		max-height: 120px;
+		width: 60px;
+		min-height: 60px;
+		max-height: 90px;
 		border-radius: @border-radius-4;
 		background-color: @third-party-generic-tertiary;
 		background-image: url('/web/article2025/img/chip-baltimore.jpg');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	svg {
+		fill: @fly-dynamic-brand-primary;
+		max-width: 52px;
+		height: auto;
 	}
 	.meta {
 		display: flex;
@@ -286,9 +294,14 @@ main {
 		flex-direction: column;
 		.chip {
 			width: 100%;
-			height: 54px;
+			height: 46px;
 			min-height: auto;
 			max-height: auto;
+		}
+		svg {
+			width: auto;
+			max-width: none; /* unset */
+			max-height: 30px;
 		}
 	}
 }
@@ -584,70 +597,92 @@ main {
 .article-body {
 }
 .block-text {
-}
-.block-text p {
-	.article2025-body-18-150;
-	color: @fly-light-text-primary;
-	/* vertical spacing between paragraphs */
-	&:not(:last-child) {
+	p {
+		.article2025-body-18-150;
+		color: @fly-light-text-primary;
+		/* vertical spacing between paragraphs */
+		&:not(:last-child) {
+			margin: 0 0 .8em 0;
+		}
+	}
+	strong {
+	}
+	em {
+	}
+	ul {
+		padding: 0 2.5em;
+		list-style-type: disc;
+		list-style-position: outside;
 		margin: 0 0 .8em 0;
 	}
-}
-.block-text strong {
-}
-.block-text em {
-}
-.block-text ul {
-	padding: 0 2.5em;
-	list-style-type: disc;
-	list-style-position: outside;
-	margin: 0 0 .8em 0;
-}
-.block-text ol {
-	padding: 0 2.5em;
-	list-style-type: decimal;
-	list-style-position: outside;
-	margin: 0 0 .8em 0;
-}
-.block-text li {
-	.article2025-body-18-150;
-	/* vertical spacing between list items */
-	&:not(:last-child) {
-		margin: 0 0 .2em 0;
+	ol {
+		padding: 0 2.5em;
+		list-style-type: decimal;
+		list-style-position: outside;
+		margin: 0 0 .8em 0;
+	}
+	li {
+		.article2025-body-18-150;
+		/* vertical spacing between list items */
+		&:not(:last-child) {
+			margin: 0 0 .2em 0;
+		}
+	}
+	blockquote {
+		margin: 0 0 .8em 1em;
+		padding: 0 2.5em 0 .8em;
+		.article2025-body-18-150;
+		border-left: 8px solid rgb(@color-neutral-30);
+	}
+	a,
+	a:active {
+		color: @fly-light-text-link-primary;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: @fly-light-text-link-primary-hover;
+	}
+	.contributors {
+		color: @fly-light-text-secondary;
+		a {
+			color: @fly-light-text-link-secondary;
+		}
+		a:hover {
+			color: @fly-light-text-link-secondary-hover;
+		}
 	}
 }
-.block-text blockquote {
-	margin: 0 0 .8em 1em;
-	padding: 0 2.5em 0 .8em;
-	.article2025-body-18-150;
-	border-left: 8px solid rgb(@color-neutral-30);
-}
-.block-text a,
-.block-text a:active {
-	color: @fly-light-text-link-primary;
-	text-decoration: underline;
-}
-.block-text a:hover {
-	color:  @fly-light-text-link-primary-hover;
-}
 @media only screen and (min-width: @break-md) {
-	.block-text p,
-	.block-text li {
-		.article2025-body-20-150;
+	.block-text {
+		p,
+		li,
+		blockquote {
+			.article2025-body-20-150;
+		}
 	}
 }
 @media (prefers-color-scheme: dark) {
-	.block-text p,
-	.block-text ul li,
-	.block-text ol li {
-		color: rgb(@color-neutral-0);
-	}
-	.block-text a,
-	.block-text a:active {
-		color: rgb(@color-neutral-0);
-	}
-	.block-text a:hover {
-		color: rgb(@color-neutral-30);
+	.block-text {
+		p,
+		li {
+			color: @fly-dark-text-primary;
+		}
+		a,
+		a:active {
+			color: @fly-dark-text-link-primary;
+		}
+		a:hover {
+			color: @fly-dark-text-link-primary-hover;
+		}
+		.contributors {
+			color: @fly-dark-text-secondary;
+			a {
+				color: @fly-dark-text-link-secondary;
+			}
+			a:hover {
+				color: @fly-dark-text-link-secondary-hover;
+			}
+		}
 	}
 }
 
