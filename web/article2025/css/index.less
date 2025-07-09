@@ -259,19 +259,32 @@ main {
 		min-height: 60px;
 		max-height: 90px;
 		border-radius: @border-radius-4;
-		background-color: @third-party-generic-tertiary;
 		background-image: url('/web/article2025/img/chip-baltimore.jpg');
+		background-color: rgba(2,129,254,0.5);
+		background-blend-mode: lighten;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		/*
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		*/
+		.container {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	svg {
 		fill: @fly-dynamic-brand-primary;
+		/* DOES NOT WORK
 		max-width: 52px;
 		height: auto;
+		*/
+		width: 52px; /* THIS IS A HACK: hard coded */
+		height: 14.05px; /* THIS IS A HACK: hard coded */
 	}
 	.meta {
 		display: flex;
@@ -301,6 +314,7 @@ main {
 		}
 		svg {
 			width: auto;
+			height: auto;
 			max-width: none; /* unset */
 			max-height: 30px;
 		}
