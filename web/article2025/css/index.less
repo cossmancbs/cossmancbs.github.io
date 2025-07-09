@@ -320,6 +320,19 @@ main {
 		}
 	}
 }
+@media (prefers-color-scheme: dark) {
+	.article-byline {
+		p {
+			color: @fly-dark-text-secondary;
+		}
+		a {
+			color: @fly-dark-text-link-secondary;
+		}
+		a:hover {
+			color: @fly-dark-text-link-secondary-hover;
+		}
+	}
+}
 
 
 
@@ -508,10 +521,21 @@ main {
 		background-image: linear-gradient(rgba(@color-neutral-100,1) 10%, rgba(@color-neutral-100,.8));
 		.fly-dark-utility-border;
 	}
+	.article-video {
+		h1 {
+			color: @fly-dark-text-primary;
+		}
+		p {
+			color: @fly-dark-text-secondary;
+		}
+	}
 }
-@media (prefers-color-scheme: dark) and (min-width: 768px) {
+@media (prefers-color-scheme: dark) and (min-width: @break-sm) {
 	.article-rail {
 		background-image: none;
+	}
+	.article-video {
+		background-color: rgba(@color-neutral-90,.8);
 	}
 }
 
@@ -576,8 +600,7 @@ main {
 			background-color: @fly-light-surface-primary;
 			border: 1px solid @fly-light-utility-border;
 			cursor: pointer;
-			span {
-				/* this doesn't work??? */
+			h2 {
 				color: @fly-light-text-link-primary-hover;
 			}
 		}
@@ -594,6 +617,27 @@ main {
 		.thumb {
 			height: 96px;
 			width: 96px;
+		}
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.article-rail .recirc {
+		h1 {
+			color: @fly-dark-text-tertiary;
+		}
+		h2 {
+			color: @fly-dark-text-link-primary;
+		}
+		li {
+			background-color: @fly-dark-surface-tertiary;
+			border: 1px solid @fly-dark-utility-border;
+		}
+		li:hover {
+			background-color: @fly-dark-surface-primary;
+			border: 1px solid @fly-dark-utility-border;
+			h2 {
+				color: @fly-dark-text-link-primary-hover;
+			}
 		}
 	}
 }
@@ -679,7 +723,8 @@ main {
 @media (prefers-color-scheme: dark) {
 	.block-text {
 		p,
-		li {
+		li,
+		blockquote {
 			color: @fly-dark-text-primary;
 		}
 		a,
@@ -1072,7 +1117,6 @@ figcaption {
 
 footer {
 	/* margin or padding not working??? */
-	background-color: @fly-light-surface-primary;
 }
 footer div {
 	margin: 0 @spacing-20;
