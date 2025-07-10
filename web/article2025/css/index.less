@@ -461,13 +461,6 @@ main {
 	.article-video {
 		margin: 0;
 		padding: @spacing-20 0 0 0; /* hide background */
-		/*
-		.spacer {
-			background-color: @fly-light-surface-primary;
-			width: 100%;
-			height: @spacing-20;
-		}
-		*/
 		flex-direction: column;
 		align-items: normal;
 		justify-content: normal;
@@ -518,7 +511,7 @@ main {
 }
 @media (prefers-color-scheme: dark) {
 	.article-rail {
-		background-image: linear-gradient(rgba(@color-neutral-100,1) 10%, rgba(@color-neutral-100,.8));
+		background-image: linear-gradient(rgba(@color-neutral-90,1) 10%, rgba(@color-neutral-90,.8));
 		.fly-dark-utility-border;
 	}
 	.article-video {
@@ -801,17 +794,13 @@ main {
 
 .block-picture {
 	margin: 0;
-}
-figure img {
-	width: 100%;
-}
-figcaption {
+	img {
+		width: 100%;
+	}
 	/* impossible to style figcaption text unless in a SPAN? */
 	span {
 		display: block;
-		margin: @spacing-8 @spacing-20 @spacing-4 @spacing-20;
-		.article2024-txt-normal;
-		.article2024-txt-s;
+		margin: @spacing-8 @spacing-20 @spacing-4 @spacing-20;.article2025-detail-16-125;
 		color: @fly-light-text-secondary;
 	}
 	.credit {
@@ -819,26 +808,31 @@ figcaption {
 	}
 }
 @media only screen and (min-width: @break-sm) {
-	figure img {
-		border-radius: @border-radius-4;
-		overflow: hidden;
-	}
-	figcaption {
+	.block-picture {
+		img {
+			border-radius: @border-radius-4;
+			overflow: hidden;
+		}
 		span {
 			margin: @spacing-8 0 @spacing-4 0;
-			.article2024-txt-m;
+		}
+	}
+}
+@media only screen and (min-width: @break-md) {
+	.block-picture {
+		img {
+			border-radius: @border-radius-8;
 		}
 	}
 }
 @media (prefers-color-scheme: dark) {
-	figcaption {
+	.block-picture {
 		span {
 			color: @fly-dark-text-secondary;
 		}
 		.credit {
 			color: @fly-dark-text-tertiary;
 		}
-		
 	}
 }
 

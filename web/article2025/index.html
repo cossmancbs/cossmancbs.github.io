@@ -118,7 +118,7 @@
 			</section>
 			
 			<section class="unit">
-				<a href=""><img src="/web/img/300x250-star-trek.jpg" width="300" height="250" alt="Star Trek Discovery"></a>
+				<a href=""><img src="/web/img/300x600-paramount.jpg" width="300" height="600" alt="Paramount"></a>
 			</section>
 			
 		</div>
@@ -353,15 +353,14 @@
 					if ($(document).scrollTop() < 50) {
 						// mobile, top
 						// window is narrower than 768, and scrolled less than 50
-						$('#include-nav-main').addClass('nav-border-off nav-shadow-off');
-						$('#include-nav-main').removeClass('nav-border-on nav-shadow-on');
+						$('#include-nav-main').addClass('nav-shadow-off');
+						$('#include-nav-main').removeClass('nav-shadow-on');
 						$('.article-rail').addClass('nav-shadow-off');
 						$('.article-rail').removeClass('nav-shadow-on');
 					} else {
 						// mobile, scrolled
 						// window is narrower than 768, and scrolled more than 50
-						$('#include-nav-main').addClass('nav-border-on');
-						$('#include-nav-main').removeClass('nav-shadow-on nav-border-off nav-shadow-off');
+						$('#include-nav-main').removeClass('nav-shadow-on nav-shadow-off');
 						$('.article-rail').addClass('nav-shadow-on');
 						$('.article-rail').removeClass('nav-shadow-off');
 					}
@@ -369,13 +368,13 @@
 					if ($(document).scrollTop() < 50) {
 						// desktop, top
 						// window is wider than 768, and scrolled less than 50
-						$('#include-nav-main').addClass('nav-border-on nav-shadow-off');
-						$('#include-nav-main').removeClass('nav-border-off nav-shadow-on');
+						$('#include-nav-main').addClass('nav-shadow-off');
+						$('#include-nav-main').removeClass('nav-shadow-on');
 					} else {
 						// desktop, scrolled
 						// window is wider than 768, and scrolled more than 50
-						$('#include-nav-main').addClass('nav-border-on nav-shadow-on');
-						$('#include-nav-main').removeClass('nav-border-off nav-shadow-off');
+						$('#include-nav-main').addClass('nav-shadow-on');
+						$('#include-nav-main').removeClass('nav-shadow-off');
 					}
 				}
 				
