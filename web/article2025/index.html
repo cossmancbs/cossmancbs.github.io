@@ -47,7 +47,7 @@
 			
 			<section class="article-video">
 				<video autoplay muted loop playsinline>
-					<source src="../media/60-minutes-overtime.mp4" type="video/mp4">
+					<source src="/web/media/baltimore-ivey.mp4" type="video/mp4">
 				</video>
 				<div class="card">
 					<h1>Maryland congressman talks about failed trip to El Salvador</h1>
@@ -363,14 +363,14 @@
 				if (windowSize < 768) {
 					if ($(document).scrollTop() < 50) {
 						// mobile, top
-						// window is narrower than 768, and scrolled less than 50
+						// window is narrower than 768, and near top
 						$('#include-nav-main').addClass('nav-shadow-off');
 						$('#include-nav-main').removeClass('nav-shadow-on');
 						$('.article-rail').addClass('nav-shadow-off');
 						$('.article-rail').removeClass('nav-shadow-on');
 					} else {
 						// mobile, scrolled
-						// window is narrower than 768, and scrolled more than 50
+						// window is narrower than 768, and scrolled
 						$('#include-nav-main').removeClass('nav-shadow-on nav-shadow-off');
 						$('.article-rail').addClass('nav-shadow-on');
 						$('.article-rail').removeClass('nav-shadow-off');
@@ -378,14 +378,20 @@
 				} else {
 					if ($(document).scrollTop() < 50) {
 						// desktop, top
-						// window is wider than 768, and scrolled less than 50
+						// window is wider than 768, and near top
 						$('#include-nav-main').addClass('nav-shadow-off');
 						$('#include-nav-main').removeClass('nav-shadow-on');
+						$('.article-rail').addClass('nav-shadow-off');
+						$('.article-rail').removeClass('nav-shadow-on');
+						
 					} else {
 						// desktop, scrolled
-						// window is wider than 768, and scrolled more than 50
+						// window is wider than 768, and scrolled
 						$('#include-nav-main').addClass('nav-shadow-on');
 						$('#include-nav-main').removeClass('nav-shadow-off');
+						$('.article-rail').addClass('nav-shadow-off');
+						$('.article-rail').removeClass('nav-shadow-on');
+						
 					}
 				}
 				
