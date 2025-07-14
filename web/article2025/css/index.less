@@ -115,7 +115,6 @@ main {
 	section {
 		margin: 0 @spacing-20;
 	}
-	.block-summary,
 	.block-picture,
 	.block-unit,
 	.block-media {
@@ -164,7 +163,9 @@ main {
 		}
 		.block-summary {
 			/* unsure why this isn't covered by the above? */
+			/*
 			margin: 0 auto;
+			*/
 		}
 		.block-media,
 		.block-picture,
@@ -575,7 +576,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: @spacing-12;
-	width: 100%;
 	.heading {
 		padding: 0 @spacing-8;
 		display: flex;
@@ -604,6 +604,11 @@ main {
 		.wireframe;
 		border-radius: @border-radius-4;
 		height: 56px;
+	}
+}
+@media only screen and (min-width: @break-sm) {
+	.block-recirc {
+		width: 100%;
 	}
 }
 @media only screen and (min-width: @break-md) {
@@ -670,8 +675,8 @@ main {
 		}
 		.thumb {
 			flex-shrink: 0;
-			height: 56px;
-			width: 56px;
+			height: 64px;
+			width: 64px;
 			border-radius: @border-radius-8;
 			.wireframe;
 		}
@@ -859,17 +864,17 @@ main {
 */
 
 .block-summary {
-	padding: @spacing-12 @spacing-20;
+	padding: 0 0 @spacing-16 0;
 	display: flex;
 	flex-direction: column;
-	gap: @spacing-4;
-	background-color: @fly-light-surface-tertiary;
+	gap: @spacing-8;
+	.fly-light-utility-border;
 	h1 {
 		.article2025-heading-16-100;
 		color: @fly-light-text-secondary;
 	}
 	ul {
-		padding: 0 0 0 1em;
+		padding: 0 0 0 1.25em;
 		display: flex;
 		flex-direction: column;
 		gap: @spacing-4;
@@ -883,16 +888,16 @@ main {
 }
 @media only screen and (min-width: @break-sm) {
 	.block-summary {
-		padding: @spacing-12;
-		border-radius: @border-radius-4;
 	}
 }
 @media only screen and (min-width: @break-md) {
 	.block-summary {
-		padding: @spacing-16;
-		border-radius: @border-radius-8;
+		gap: @spacing-12;
 		h1 {
 			.article2025-heading-18-100;
+		}
+		ul {
+			gap: @spacing-8;
 		}
 		li {
 			.article2025-detail-18-125;
@@ -901,7 +906,6 @@ main {
 }
 @media (prefers-color-scheme: dark) {
 	.block-summary {
-		background-color: @fly-dark-surface-tertiary;
 		h1,
 		li {
 			color: @fly-dark-text-secondary;
