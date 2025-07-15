@@ -1319,9 +1319,14 @@ footer div {
 		flex-direction: column;
 		gap: @spacing-4;
 	}
+	svg {
+		fill: @fly-light-brand-primary;
+		width: 183.33px; /* HACK: don't know how to scale SVG */
+		height: 10px;
+	}
 	.logo {
 		.wireframe;
-		height: @spacing-8;
+		height: 10px;
 	}
 	.thumb {
 		flex-shrink: 0;
@@ -1345,6 +1350,10 @@ footer div {
 }
 @media only screen and (min-width: @break-md) {
 	.card-recirc {
+		svg {
+			width: 220px; /* HACK: don't know how to scale SVG */
+			height: 12px;
+		}
 		h2 {
 			.article2025-detail-18-125;
 		}
@@ -1361,6 +1370,9 @@ footer div {
 	.card-recirc {
 		background-color: @fly-dark-surface-tertiary;
 		border: 1px solid @fly-dark-utility-border;
+		svg {
+			fill: @fly-dark-brand-primary;
+		}
 		h2 {
 			color: @fly-dark-text-link-primary;
 		}
@@ -1373,4 +1385,11 @@ footer div {
 		}
 	}
 }
+
+
+
+
+
+
+
 
