@@ -362,83 +362,87 @@
 	
 	
 	
-	<script>
+<script>
+	
+	
+	
+	//
+	// INCLUDES (JQUERY)
+	//
+	$(function() {
+		$('#include-nav-main').load('/web/nav/nav-v1.3-main.html');
+		$('#include-nav-sub').load('/web/nav/nav-v1.3-secondary-baltimore.html');
+	});
+	
+	
+	
+	//
+	// NAV (JQUERY)
+	//
+	$(document).ready(function() {
 		
-		
-		
-		//
-		// INCLUDES (JQUERY)
-		//
-		$(function() {
-			$('#include-nav-main').load('/web/nav/nav-v1.3-main.html');
-			$('#include-nav-sub').load('/web/nav/nav-v1.3-secondary-baltimore.html');
-		});
-		
-		
-		
-		//
-		// NAV (JQUERY)
-		//
-		$(document).ready(function() {
+		function checkNav() {
+			//if ($(document).scrollTop() < 50) {
+			//	scrolled less than 50
+			//} else {
+			//	scrolled more than 50
+			//}
 			
-			function checkNav() {
-				//if ($(document).scrollTop() < 50) {
-				//	scrolled less than 50
-				//} else {
-				//	scrolled more than 50
-				//}
-				
-				// WINDOW WIDTH
-				var windowSize = $(window).width();
-				if (windowSize < 768) {
-					if ($(document).scrollTop() < 50) {
-						// mobile, top
-						// window is narrower than 768, and near top
-						$('#include-nav-main').addClass('nav-shadow-off');
-						$('#include-nav-main').removeClass('nav-shadow-on');
-						$('.article-rail').addClass('nav-shadow-off');
-						$('.article-rail').removeClass('nav-shadow-on');
-					} else {
-						// mobile, scrolled
-						// window is narrower than 768, and scrolled
-						$('#include-nav-main').removeClass('nav-shadow-on nav-shadow-off');
-						$('.article-rail').addClass('nav-shadow-on');
-						$('.article-rail').removeClass('nav-shadow-off');
-					}
+			// WINDOW WIDTH
+			var windowSize = $(window).width();
+			if (windowSize < 768) {
+				if ($(document).scrollTop() < 75) {
+					// mobile, top
+					// window is narrower than 768, and near top
+					$('#include-nav-main').addClass('nav-shadow-off');
+					$('#include-nav-main').removeClass('nav-shadow-on');
+					$('.article-rail').addClass('nav-shadow-off');
+					$('.article-rail').removeClass('nav-shadow-on');
+					$('.article-video').addClass('vid-expanded');
+					$('.article-video').removeClass('vid-collapsed');
 				} else {
-					if ($(document).scrollTop() < 50) {
-						// desktop, top
-						// window is wider than 768, and near top
-						$('#include-nav-main').addClass('nav-shadow-off');
-						$('#include-nav-main').removeClass('nav-shadow-on');
-						$('.article-rail').addClass('nav-shadow-off');
-						$('.article-rail').removeClass('nav-shadow-on');
-						
-					} else {
-						// desktop, scrolled
-						// window is wider than 768, and scrolled
-						$('#include-nav-main').addClass('nav-shadow-on');
-						$('#include-nav-main').removeClass('nav-shadow-off');
-						$('.article-rail').addClass('nav-shadow-off');
-						$('.article-rail').removeClass('nav-shadow-on');
-						
-					}
+					// mobile, scrolled
+					// window is narrower than 768, and scrolled
+					$('#include-nav-main').removeClass('nav-shadow-on nav-shadow-off');
+					$('.article-rail').addClass('nav-shadow-on');
+					$('.article-rail').removeClass('nav-shadow-off');
+					$('.article-video').addClass('vid-collapsed');
+					$('.article-video').removeClass('vid-expanded');
 				}
-				
+			} else {
+				if ($(document).scrollTop() < 75) {
+					// desktop, top
+					// window is wider than 768, and near top
+					$('#include-nav-main').addClass('nav-shadow-off');
+					$('#include-nav-main').removeClass('nav-shadow-on');
+					$('.article-rail').addClass('nav-shadow-off');
+					$('.article-rail').removeClass('nav-shadow-on');
+					$('.article-video').removeClass('vid-expanded vid collapsed');
+				} else {
+					// desktop, scrolled
+					// window is wider than 768, and scrolled
+					$('#include-nav-main').addClass('nav-shadow-on');
+					$('#include-nav-main').removeClass('nav-shadow-off');
+					$('.article-rail').addClass('nav-shadow-off');
+					$('.article-rail').removeClass('nav-shadow-on');
+					$('.article-video').removeClass('vid-expanded vid collapsed');
+				}
 			}
 			
-			// Execute on load
+		}
+		
+		// Execute on load
+		checkNav();
+		// Bind event listener ("load" doesn't seem to work)
+		$(window).on("load resize scroll",function(e){
 			checkNav();
-			// Bind event listener ("load" doesn't seem to work)
-			$(window).on("load resize scroll",function(e){
-				checkNav();
-			});
-			
 		});
 		
-		
-		
-	</script>
+	});
+	
+	
+	
+</script>
 
 
 

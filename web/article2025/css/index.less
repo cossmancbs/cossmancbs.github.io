@@ -387,8 +387,6 @@ main {
 		}
 	}
 }
-@media only screen and (min-width: @break-sm) {
-}
 @media (prefers-color-scheme: dark) {
 	.article-header .flags {
 		span {
@@ -420,6 +418,18 @@ main {
 /
 */
 
+.vid-expanded {
+	video {
+		width: 176px;
+		border: 1px solid green;
+	}
+}
+.vid-collapsed {
+	video {
+		width: 128px;
+		border: 1px solid red;
+	}
+}
 .article-rail {
 	/*
 	background-image: linear-gradient(rgba(@color-neutral-white,1) 10%, rgba(@color-neutral-white,.8));
@@ -439,8 +449,11 @@ main {
 	align-items: center;
 	gap: @spacing-8;
 	video {
+		/*
 		width: 128px;
+		*/
 		border-radius: @border-radius-4;
+		transition: all .2s ease-out;
 	}
 	h1 {
 		.article2025-heading-16-125;
