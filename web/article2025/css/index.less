@@ -418,16 +418,11 @@ main {
 /
 */
 
-.vid-expanded {
-	video {
-		width: 176px;
-	}
-}
-.vid-collapsed {
-	video {
-		width: 128px;
-	}
-}
+/* VIDEO PLAYER SIZES */
+.vid-lg { video { width: 192px; } }
+.vid-md { video { width: 176px; } }
+.vid-sm { video { width: 128px; } }
+
 .article-rail {
 	/*
 	background-image: linear-gradient(rgba(@color-neutral-white,1) 10%, rgba(@color-neutral-white,.8));
@@ -447,9 +442,6 @@ main {
 	align-items: center;
 	gap: @spacing-8;
 	video {
-		/*
-		width: 128px;
-		*/
 		border-radius: @border-radius-4;
 		transition: all .25s ease-out;
 	}
@@ -528,16 +520,18 @@ main {
 /* 768 AND SHORT */
 @media only screen and (min-width: @break-sm) and (max-height: 500px) {
 	.article-video {
+		padding: @spacing-20 0;
 		flex-direction: row;
 		align-items: center;
-		video {
-			width: 128px;
+		.vid-sm;
+		.card {
+			padding: 0 0 0 @spacing-8;
 		}
 		h1 {
 			.article2025-heading-16-125;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
+			-webkit-line-clamp: 3;
 			overflow: hidden;
 		}
 		p {
@@ -549,16 +543,18 @@ main {
 /* 1020 AND SHORT */
 @media only screen and (min-width: @break-md) and (max-height: 500px) {
 	.article-video {
+		padding: @spacing-20 0;
 		flex-direction: row;
 		align-items: center;
-		video {
-			width: 176px;
+		.vid-lg;
+		.card {
+			padding: 0 0 0 @spacing-8;
 		}
 		h1 {
 			.article2025-heading-16-125;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 3;
+			-webkit-line-clamp: 4;
 			overflow: hidden;
 		}
 		p {
@@ -589,8 +585,6 @@ main {
 	.article-video {
 		background-color: rgba(@color-neutral-90,.8);
 		.fly-dark-utility-border;
-		.card {
-		}
 	}
 }
 
@@ -1351,7 +1345,7 @@ footer div {
 	justify-content: space-between;
 	background-color: @fly-light-surface-tertiary;
 	border: 1px solid rgba(0,0,0,0);
-	border-radius: @border-radius-8;
+	border-radius: @border-radius-4;
 	article {
 		display: flex;
 		flex-direction: column;
@@ -1370,7 +1364,7 @@ footer div {
 		flex-shrink: 0;
 		height: 64px;
 		width: 64px;
-		border-radius: @border-radius-8;
+		border-radius: @border-radius-4;
 		.wireframe;
 	}
 	h2 {
@@ -1388,6 +1382,7 @@ footer div {
 }
 @media only screen and (min-width: @break-md) {
 	.card-recirc {
+		border-radius: @border-radius-8;
 		svg {
 			width: 220px; /* HACK: don't know how to scale SVG */
 			height: 12px;
@@ -1401,6 +1396,7 @@ footer div {
 		.thumb {
 			height: 96px;
 			width: 96px;
+			border-radius: @border-radius-8;
 		}
 	}
 }
