@@ -37,12 +37,13 @@ nav a {
 */
 
 #mainnav {
+	margin: 0;
 	padding: 0 @spacing-12;
 	background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.9));
 	background-color: rgba(@color-neutral-white,0);
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
-	.fly-light-utility-border();
+	.fly-light-utility-border;
 	.main-outer {
 		width: 100%;
 		/* easier to use grid in this case, as opposed to flexbox, because the middle item must be centered */
@@ -72,7 +73,7 @@ nav a {
 }
 
 .logo {
-	padding: 0 @spacing-16;
+	padding: 0 16px;
 	width: 142.86px;
 	width: 143px;
 	height: 20px;
@@ -97,7 +98,8 @@ nav a {
 .username {
 	display: none;
 }
-.chevron {
+#mainnav .chevron,
+#subnav .chevron {
 	fill: @fly-light-text-link-primary;
 	width: 8px;
 	height: 8px;
@@ -108,27 +110,22 @@ nav a {
 
 
 #subnav {
-	.fly-light-utility-border();
-	.container {
-		padding: 0 0 0 @spacing-12;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		gap: 0;
-	}
+	margin: 0;
+	padding: 0 0 0 @spacing-12;
+	overflow-x: scroll;
+	-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
+	scrollbar-width: none;  /* hide scrollbar: Firefox */
+	.fly-light-utility-border;
 	ul {
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
-		overflow-x: scroll;
-		-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
-		scrollbar-width: none;  /* hide scrollbar: Firefox */
 	}
 	li {
 		flex-shrink: 0;
 	}
 	a {
-		padding: 0 @spacing-12;
+		padding: 0 12px;
 		height: 44px;
 	}
 	.separator {
@@ -136,25 +133,8 @@ nav a {
 		font-size: 16px;
 		color: @fly-light-utility-border;
 	}
-	.weather {
-		padding: 0 @spacing-12;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: @spacing-4;
-		background-color: @fly-light-surface-primary;
-		border-left: 1px solid @fly-light-utility-border;
-		color: @fly-light-text-primary;
-		font-family: "ProximaNova-Regular", sans-serif;
-		font-size: 16px;
-		line-height: 1;
-		img {
-			width: 20px;
-			height: 20px;
-		}
-	}
 }
-#subnav ul::-webkit-scrollbar {
+#subnav::-webkit-scrollbar {
 	/* hide scrollbar: Safari, Chrome, Opera */
 	display: none;
 	width: 0;
@@ -264,9 +244,7 @@ nav a {
 		}
 	}
 	#subnav {
-		.container {
-			padding: 0 @spacing-32;
-		}
+		padding: 0 0 0 @spacing-32;
 	}
 }
 
@@ -290,8 +268,8 @@ nav a {
 		}
 	}
 	#subnav {
-		.container {
-			padding: 0;
+		padding: 0;
+		ul {
 			margin: 0 auto;
 			width: calc(@break-lg-container + @spacing-24);
 		}
@@ -331,29 +309,29 @@ nav a {
 		height: 9px;
 	}
 	ul {
-		padding: @spacing-16;
+		padding: 16px;
 		display: flex;
 		flex-direction: row;
-		gap: @spacing-16;
+		gap: 16px;
 		background-color: @fly-light-surface-primary;
 		border: 1px solid @fly-light-utility-border;
-		.border-radius-8();
+		border-radius: 8px;
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
 	}
 	a {
-		padding: @spacing-12 0 !important;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background-color: rgb(@color-neutral-white);
 		color: rgb(@color-neutral-100);
 		border: 1px solid rgb(@color-neutral-20);
-		.border-radius-4();
+		border-radius: 4px;
 		height: auto !important;
 		width: 104px !important;
-		&:hover {
-			border: 1px solid rgb(@color-neutral-100);
-		}
+		padding: 12px 0 !important;
+	}
+	a:hover {
+		border: 1px solid rgb(@color-neutral-100);
 	}
 }
 /* flyouts above 768 */
@@ -383,33 +361,29 @@ nav a {
 		backdrop-filter: saturate(200%) blur(20px);
 		*/
 		background-color: rgba(@color-neutral-90,0);
-		.fly-dark-utility-border();
-		svg {
-			fill: @fly-dark-brand-primary;
-		}
+		.fly-dark-utility-border;
+	}
+	#mainnav .chevron,
+	#subnav .chevron {
+		fill: @fly-dark-text-link-primary;
 	}
 	#subnav {
 		background-color: @fly-dark-surface-primary;
-		.fly-dark-utility-border();
-		.separator {
-			color: @fly-dark-utility-border;
-		}
-		.weather {
-			color: @fly-dark-text-primary;
-			background-color: @fly-dark-surface-primary;
-			border-left: 1px solid @fly-dark-utility-border;
-		}
+		.fly-dark-utility-border;
 	}
 	#mainnav a,
 	#subnav a {
 		color: @fly-dark-text-link-primary;
 	}
+	#mainnav svg {
+		fill: @fly-dark-brand-primary;
+	}
 	#mainnav a.hover-effect:hover > div,
 	#subnav a.hover-effect:hover > div  {
 		background-color: @fly-dark-surface-overlay-solid-primary;
 	}
-	.chevron {
-		fill: @fly-dark-text-link-primary;
+	#subnav .separator {
+		color: @fly-dark-utility-border;
 	}
 }
 
