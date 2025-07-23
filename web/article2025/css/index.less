@@ -6,11 +6,7 @@
 
 
 
-/*
-/
-// // // BASIC STYLES
-/
-*/
+// // // Basic Styles
 
 body {
 	background-color: @fly-light-surface-primary;
@@ -44,11 +40,7 @@ body {
 
 
 
-/*
-/
-// // // Z-INDEX
-/
-*/
+// // // Z-Indices
 
 #stickers {
 	z-index: 99;
@@ -58,11 +50,7 @@ body {
 
 
 
-/*
-/
-// // // STRUCTURE
-/
-*/
+// // // Structure
 
 main,
 .article-header,
@@ -211,11 +199,7 @@ main {
 
 
 
-/*
-/
-// // // ARTICLE HEADER
-/
-*/
+// // // Header
 
 .article-header {
 	display: flex;
@@ -253,11 +237,7 @@ main {
 
 
 
-/*
-/
-// // // ARTICLE BRANDING
-/
-*/
+// // // Branding Chip
 
 .article-branding {
 	.chip {
@@ -315,11 +295,8 @@ main {
 
 
 
-/*
-/
-// // // ARTICLE BYLINE
-/
-*/
+
+// // // Byline
 
 .article-byline {
 	display: flex;
@@ -359,11 +336,7 @@ main {
 
 
 
-/*
-/
-// // // ARTICLE HEADER: TOPICS & FLAGS
-/
-*/
+// // // Topics & Flags
 
 .article-header .flags {
 	display: flex;
@@ -413,11 +386,8 @@ main {
 
 
 
-/*
-/
-// // // ARTICLE RAIL WITH VIDEO
-/
-*/
+
+// // // Rail With Video
 
 /* VIDEO PLAYER SIZES */
 .vid-lg { video { width: 192px; } }
@@ -589,11 +559,8 @@ main {
 
 
 
-/*
-/
-// // // ARTICLE BODY
-/
-*/
+
+// // // Body
 
 .article-body {
 }
@@ -694,11 +661,8 @@ main {
 
 
 
-/*
-/
-// // // SUMMARY
-/
-*/
+
+// // // Summary
 
 .block-summary {
 	padding: 0 0 @spacing-16 0;
@@ -752,11 +716,8 @@ main {
 
 
 
-/*
-/
-// // // EMBED: IMAGE
-/
-*/
+
+// // // Embed: Image
 
 .block-picture {
 	margin: 0;
@@ -806,11 +767,7 @@ main {
 
 
 
-/*
-/
-// // // EMBED: MEDIA
-/
-*/
+// // // Embed: Media
 
 .block-media {
 	.media {
@@ -885,7 +842,7 @@ main {
 		.card {
 			margin: @spacing-24;
 			gap: @spacing-8;
-		}	
+		}
 		.button {
 			width: 72px;
 			height: 72px;
@@ -907,11 +864,7 @@ main {
 
 
 
-/*
-/
-// // // TAGS
-/
-*/
+// // // Tags
 
 .block-tags {
 	display: flex;
@@ -946,7 +899,7 @@ main {
 		a {
 			.article2025-action-18-125();
 		}
-		
+
 	}
 }
 @media (prefers-color-scheme: dark) {
@@ -967,11 +920,8 @@ main {
 
 
 
-/*
-/
-// // // AUTHOR
-/
-*/
+
+// // // Author
 
 .block-author {
 	display: flex;
@@ -1020,11 +970,8 @@ main {
 
 
 
-/*
-/
-// // // COPYRIGHT
-/
-*/
+
+// // // Copyright
 
 .block-copyright {
 	p {
@@ -1051,11 +998,8 @@ main {
 
 
 
-/*
-/
-// // // FOOTER
-/
-*/
+
+// // // Footer
 
 footer {
 	div {
@@ -1077,11 +1021,8 @@ footer {
 
 
 
-/*
-/
-// // // ADS
-/
-*/
+
+// // // Ads
 
 #topunit {
 	display: none;
@@ -1176,11 +1117,7 @@ footer {
 
 
 
-/*
-/
-// // // RECIRCULATION (RIGHT COLUMN)
-/
-*/
+// // // Recirculation: Right Column
 
 .article-rail .recirc {
 	display: none;
@@ -1202,11 +1139,8 @@ footer {
 
 
 
-/*
-/
-// // // RECIRCULATION (WITHIN BODY)
-/
-*/
+
+// // // Recirculation: Within Body
 
 .block-recirc {
 	display: flex;
@@ -1272,11 +1206,8 @@ footer {
 
 
 
-/*
-/
-// // // RECIRCULATION CARDS
-/
-*/
+
+// // // Recirculation: Cards
 
 .card-recirc {
 	padding: @spacing-8;
@@ -1294,7 +1225,7 @@ footer {
 	}
 	svg {
 		fill: @fly-light-brand-primary;
-		width: 183.33px; /* STUPID HACK! need auto width for SVGs */
+		width: 183.33px;  // STUPID HACK
 		height: 10px;
 	}
 	svg.uplift {
@@ -1309,14 +1240,10 @@ footer {
 	svg.hours {
 		fill: @shows-48-hours-primary;
 	}
-	.logo {
-		.wireframe();
-		height: 10px;
-	}
 	.thumb {
 		flex-shrink: 0;
-		height: 64px;
-		width: 64px;
+		height: 72px;
+		width: 72px;
 		border-radius: @border-radius-4;
 		.wireframe();
 	}
@@ -1340,13 +1267,13 @@ footer {
 			gap: @spacing-8;
 		}
 		svg {
-			width: 220px; /* STUPID HACK! need auto width for SVGs */
+			width: 220px;  // STUPID HACK
 			height: 12px;
 		}
 		h2 {
 			.article2025-detail-18-125();
 		}
-		.logo {
+		.flag {
 			height: 12px;
 		}
 		.thumb {
