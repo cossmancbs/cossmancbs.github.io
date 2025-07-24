@@ -248,7 +248,7 @@ main {
 		height: 100%;
 		min-height: 60px;
 		max-height: 90px;
-		border-radius: @border-radius-4;
+		.border-radius-4();
 		background-image: url('/web/article2025/img/chip-baltimore.jpg');
 		background-color: rgba(2,129,254,0.5);
 		background-blend-mode: lighten;
@@ -286,7 +286,7 @@ main {
 @media only screen and (min-width: @break-md) {
 	.article-branding {
 		.chip {
-			border-radius: @border-radius-8;
+			.border-radius-8();
 		}
 	}
 }
@@ -413,7 +413,7 @@ main {
 	align-items: center;
 	gap: @spacing-8;
 	video {
-		border-radius: @border-radius-4;
+		.border-radius-4();
 		transition: all .25s ease-out;
 	}
 	h1 {
@@ -473,7 +473,7 @@ main {
 @media only screen and (min-width: @break-md) {
 	.article-video {
 		video {
-			border-radius: @border-radius-8;
+			.border-radius-8();
 		}
 		h1 {
 			.article2025-heading-18-125();
@@ -737,7 +737,7 @@ main {
 @media only screen and (min-width: @break-sm) {
 	.block-picture {
 		img {
-			border-radius: @border-radius-4;
+			.border-radius-4();
 			overflow: hidden;
 		}
 		span {
@@ -748,7 +748,7 @@ main {
 @media only screen and (min-width: @break-md) {
 	.block-picture {
 		img {
-			border-radius: @border-radius-8;
+			.border-radius-8();
 		}
 	}
 }
@@ -829,7 +829,7 @@ main {
 @media only screen and (min-width: @break-sm) {
 	.block-media {
 		.media {
-			border-radius: @border-radius-4;
+			.border-radius-4();
 			overflow: hidden;
 		}
 	}
@@ -837,7 +837,7 @@ main {
 @media only screen and (min-width: @break-md) {
 	.block-media {
 		.media {
-			border-radius: @border-radius-8;
+			.border-radius-8();
 		}
 		.card {
 			margin: @spacing-24;
@@ -1217,7 +1217,7 @@ footer {
 	justify-content: space-between;
 	background-color: @fly-light-surface-tertiary;
 	border: 1px solid rgba(0,0,0,0);
-	border-radius: @border-radius-4;
+	.border-radius-4();
 	article {
 		display: flex;
 		flex-direction: column;
@@ -1244,7 +1244,7 @@ footer {
 		flex-shrink: 0;
 		height: 72px;
 		width: 72px;
-		border-radius: @border-radius-4;
+		.border-radius-4();
 		.wireframe();
 	}
 	h2 {
@@ -1262,7 +1262,7 @@ footer {
 }
 @media only screen and (min-width: @break-md) {
 	.card-recirc {
-		border-radius: @border-radius-8;
+		.border-radius-8();
 		article {
 			gap: @spacing-8;
 		}
@@ -1279,7 +1279,7 @@ footer {
 		.thumb {
 			height: 96px;
 			width: 96px;
-			border-radius: @border-radius-8;
+			.border-radius-8();
 		}
 	}
 }
