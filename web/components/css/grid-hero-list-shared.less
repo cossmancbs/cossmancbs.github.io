@@ -6,12 +6,11 @@
 
 
 
-/*
-/
-/	FOR TESTING
-/
-*/
+// // // BASIC STYLES
 
+body {
+	background-color: @fly-light-surface-primary;
+}
 .grid-hero,
 .hgroup,
 .grid,
@@ -20,41 +19,24 @@
 .item3,
 .item-list,
 .item-ad {
+	/* FOR TESTING */
 	/*
-	.wireframe-outline;
 	*/
+	.wireframe-outline;
 }
 
 
 
 
 
-/*
-/
-/	BASIC STYLES
-/
-*/
-
-body {
-	background-color: @fly-light-surface-primary;
-}
-
-
-
-
-
-/*
-/
-/	SECTION
-/
-*/
+// // // SECTION
 
 .grid-hero {
 	padding: @spacing-20;
 	display: flex;
 	flex-direction: column;
 	gap: @spacing-20;
-	.fly-light-utility-border;
+	.fly-light-utility-border();
 }
 
 @media only screen and (min-width: @break-md) {
@@ -71,13 +53,7 @@ body {
 
 
 
-
-
-/*
-/
-/	COMPONENT HEADINGS
-/
-*/
+// // // COMPONENT HEADINGS
 
 .grid-hero {
 	.hgroup {
@@ -134,11 +110,7 @@ body {
 
 
 
-/*
-/
-/	CARDS
-/
-*/
+// // // CARDS
 
 .grid-hero {
 	.card {
@@ -177,11 +149,7 @@ body {
 
 
 
-/*
-/
-/	CARD IMAGES
-/
-*/
+// // // Thumbnails
 
 .grid-hero {
 	.thumbWrap {
@@ -242,11 +210,7 @@ body {
 
 
 
-/*
-/
-/	CARDS - BUTTONS
-/
-*/
+// // // Buttons
 
 .grid-hero {
 	.button-thumb {
@@ -262,7 +226,7 @@ body {
 	}
 	.button-thumb-video svg {
 		/* stupid hack to make video buttons look better */
-		margin: 0 0 0 4px;
+		margin: 0 0 0 @spacing-4;
 	}
 	.item1 .button-thumb {
 		margin: auto;
@@ -316,11 +280,7 @@ body {
 
 
 
-/*
-/
-/	METADATA
-/
-*/
+// // // Metadata
 
 .grid-hero {
 	.metadata {
@@ -355,11 +315,7 @@ body {
 
 
 
-/*
-/
-/	RELATED LINKS
-/
-*/
+// // // Related Links
 
 .grid-hero {
 	.relatedLinks {
@@ -392,11 +348,7 @@ body {
 
 
 
-/*
-/
-/	HOVERS
-/
-*/
+// // // Hovers
 
 .grid-hero {
 	a {
@@ -442,11 +394,7 @@ body {
 
 
 
-/*
-/
-/	FLAGS
-/
-*/
+// // // Flags
 
 .grid-hero {
 	.flag {
@@ -456,7 +404,7 @@ body {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: @border-radius-4;
+		.border-radius-4();
 		background-color: rgba(@color-neutral-100,.1);
 		font-family: "ProximaNova-Bold", sans-serif;
 		font-size: 11px;
@@ -485,11 +433,7 @@ body {
 
 
 
-/*
-/
-/	ADS
-/
-*/
+// // // Ads
 
 .empyou {
 	/* trick adblocker */
