@@ -341,11 +341,11 @@
 			<li>Taboola</li>
 		</ul>
 	</section>
-
-
-
+	
+	
+	
 	<footer>
-		<div>footer</div>
+		<div>CBS News Footer</div>
 	</footer>
 
 
@@ -378,14 +378,14 @@
 	// NAV (JQUERY)
 	//
 	$(document).ready(function() {
-
+		
 		function checkNav() {
 			//if ($(document).scrollTop() < 50) {
 			//	scrolled less than 50
 			//} else {
 			//	scrolled more than 50
 			//}
-
+			
 			// WINDOW WIDTH
 			var windowSize = $(window).width();
 			if (windowSize < 768) {
@@ -426,16 +426,16 @@
 					$('.article-video').removeClass('vid-sm vid-lg');
 				}
 			}
-
+			
 		}
-
+		
 		// Execute on load
 		checkNav();
 		// Bind event listener ("load" doesn't seem to work)
 		$(window).on("load resize scroll",function(e){
 			checkNav();
 		});
-
+		
 	});
 
 
