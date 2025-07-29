@@ -6,11 +6,15 @@
 
 
 
-// // // Basic Styles
+/*
+/
+/	TOGGLE CLASSES
+/
+*/
 
 nav li,
 nav a {
-	/* toggle on for testing */
+	/* toggle on for editing */
 	/*
 	.wireframe-outline;
 	*/
@@ -26,17 +30,20 @@ nav a {
 
 
 
-
-
-// // // <768
+/*
+/
+/	<768
+/
+*/
 
 #mainnav {
-	padding: 0 @spacing-8;
-	background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.9));
-	background-color: rgba(@color-neutral-white,0);
+	margin: 0;
+	padding: 0 @spacing-12;
+	background-image: linear-gradient(rgba(@color-neutral-white,1), rgba(@color-neutral-white,.85));
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
-	.fly-light-utility-border();
+	background-color: rgba(@color-neutral-white,0);
+	.hr-light;
 	.main-outer {
 		width: 100%;
 		/* easier to use grid in this case, as opposed to flexbox, because the middle item must be centered */
@@ -59,17 +66,27 @@ nav a {
 	.main-right ul {
 		display: flex;
 		flex-direction: row;
+		/*
+		justify-content: flex-end;
+		*/
+	}
+	.main-right ul li {
+		/*
+		flex-basis: max-content;
+		*/
 	}
 	a {
 		height: 48px;
+		font-size: 14px;
 	}
 }
 
 .logo {
-	padding: 0 @spacing-16;
-	width: 142.86px; /* want auto width here, but don't know how */
+	padding: 0 16px;
+	width: 142.86px;
+	width: 143px;
 	height: 20px;
-	fill: @fly-light-brand-primary;
+	fill: rgb(@color-neutral-100);
 }
 .more-grid,
 .more-dots,
@@ -77,22 +94,18 @@ nav a {
 .icon-search {
 	width: 16px;
 	height: 16px;
-	fill: @fly-light-text-link-primary;
+	fill: rgb(@color-neutral-100);
 }
 .livedot {
 	display: inline-block;
+	/* margin: 0 4px 2px 0; */
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background-color: @fly-light-utility-status-alert;
+	background-color: rgb(@color-live);
 }
 .username {
 	display: none;
-}
-.chevron {
-	fill: @fly-light-text-link-primary;
-	width: 8px;
-	height: 8px;
 }
 
 
@@ -100,53 +113,35 @@ nav a {
 
 
 #subnav {
-	.fly-light-utility-border();
-	.container {
-		padding: 0 0 0 @spacing-8;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		gap: 0;
-	}
+	margin: 0;
+	padding: 0 0 0 @spacing-12;
+	overflow-x: scroll;
+	-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
+	scrollbar-width: none;  /* hide scrollbar: Firefox */
+	.hr-light;
 	ul {
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
-		overflow-x: scroll;
-		-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
-		scrollbar-width: none;  /* hide scrollbar: Firefox */
 	}
 	li {
 		flex-shrink: 0;
 	}
 	a {
-		padding: 0 @spacing-12;
-		height: 44px;
+		padding: 0 12px;
+		height: 40px;
+		font-size: 12px;
+	}
+	.branded {
+		text-transform: uppercase;
 	}
 	.separator {
-		padding: 0 @spacing-8;
-		font-size: 16px;
-		color: @fly-light-utility-border;
-	}
-	.weather {
-		padding: 0 @spacing-12;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: @spacing-4;
-		background-color: @fly-light-surface-primary;
-		border-left: 1px solid @fly-light-utility-border;
-		color: @fly-light-text-primary;
-		font-family: "ProximaNova-Regular", sans-serif;
-		font-size: 16px;
-		line-height: 1;
-		img {
-			width: 20px;
-			height: 20px;
-		}
+		padding: 0 6px;
+		font-size: 14px;
+		color: rgb(@color-neutral-100);
 	}
 }
-#subnav ul::-webkit-scrollbar {
+#subnav::-webkit-scrollbar {
 	/* hide scrollbar: Safari, Chrome, Opera */
 	display: none;
 	width: 0;
@@ -155,12 +150,6 @@ nav a {
 }
 
 
-
-
-
-
-
-// // // Tab Buttons
 
 #mainnav a.hover-effect,
 #subnav a.hover-effect {
@@ -174,28 +163,23 @@ nav a {
 	align-items: center;
 	justify-content: center;
 	gap: @spacing-4;
-	background-color: rgba(@color-neutral-white,0);
+	border-radius: @spacing-4;
+	background-color: rgba(@color-neutral-10,0);
 	transition: all 0.15s linear;
-	.border-radius-4();
 }
 #mainnav a.hover-effect:hover > div,
 #subnav a.hover-effect:hover > div  {
-	background-color: @fly-light-surface-overlay-solid-primary;
+	background-color: rgba(@color-neutral-10,1);
 }
 #mainnav a,
 #subnav a {
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
-	font-family: "ProximaNova-Regular", sans-serif;
-	font-size: 16px;
-	line-height: 1;
-	color: @fly-light-text-link-primary;
-	text-decoration: none;
-}
-#mainnav a,
-#subnav .branded a {
 	font-family: "ProximaNova-Bold", sans-serif;
+	line-height: 1;
+	color: rgb(@color-neutral-100);
+	text-decoration: none;
 }
 #mainnav a:hover,
 #subnav a:hover {
@@ -208,8 +192,11 @@ nav a {
 
 
 
-
-// // // ≥768
+/*
+/
+/	≥768
+/
+*/
 
 @media only screen and (min-width: @break-sm) {
 }
@@ -222,17 +209,21 @@ nav a {
 
 
 
-
-// // // ≥1020
+/*
+/
+/	≥1020
+/
+*/
 
 @media only screen and (min-width: @break-md) {
 	#mainnav {
-		.main-outer {
-			margin: 0 auto;
-			width: calc(@break-md-container + @spacing-24);
-		}
+		padding: 0;
 		a {
 			height: 64px;
+		}
+		.main-outer {
+			margin: 0 auto;
+			width: calc(@break-md-container + @spacing-32);
 		}
 		.main-left li:first-child {
 			/* hide grid icon */
@@ -245,8 +236,12 @@ nav a {
 		.main-left a,
 		.main-right a {
 			height: 64px;
-			/*
 			padding: 0 @spacing-8;
+			font-size: 14px;
+		}
+		.main-right li {
+			/* DOES NOT WORK
+			flex-basis: 0;
 			*/
 		}
 		.logo {
@@ -254,13 +249,22 @@ nav a {
 			height: 24px;
 		}
 		.username {
+			/* DOES NOT WORK
+			text-align: right;
+			display: initial;
+			flex-basis: 0;
+			width: max-content;
+			border: 1px solid salmon;
+			*/
 			display: flex;
 			flex-basis: fit-content;
 		}
 	}
 	#subnav {
-		.container {
-			/* padding: 0 @spacing-8; */
+		padding: 0;
+		ul {
+			margin: 0 auto;
+			width: calc(@break-md-container + @spacing-24);
 		}
 	}
 }
@@ -271,24 +275,24 @@ nav a {
 
 
 
-
-// // // ≥1360
+/*
+/
+/	≥1360
+/
+*/
 
 @media only screen and (min-width: @break-lg) {
 	#mainnav {
 		.main-outer {
-			margin: 0 auto;
-			width: calc(@break-lg-container + @spacing-24);
+			width: calc(@break-lg-container + @spacing-32);
 		}
 	}
 	#subnav {
-		.container {
-			padding: 0;
-			margin: 0 auto;
+		ul {
 			width: calc(@break-lg-container + @spacing-24);
 		}
 	}
-
+	
 }
 
 
@@ -297,8 +301,11 @@ nav a {
 
 
 
-
-// // // FLYOUTS
+/*
+/
+/	FLYOUTS
+/
+*/
 
 .flyout-account-container {
 	position: relative;
@@ -320,29 +327,29 @@ nav a {
 		height: 9px;
 	}
 	ul {
-		padding: @spacing-16;
+		padding: 16px;
 		display: flex;
 		flex-direction: row;
-		gap: @spacing-16;
-		background-color: @fly-light-surface-primary;
-		border: 1px solid @fly-light-utility-border;
+		gap: 16px;
+		background-color: rgb(@color-neutral-white);
+		border: 1px solid rgb(@color-neutral-5);
+		border-radius: 8px;
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-		.border-radius-8();
 	}
 	a {
-		padding: @spacing-12 0 !important;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background-color: rgb(@color-neutral-white);
 		color: rgb(@color-neutral-100);
 		border: 1px solid rgb(@color-neutral-20);
+		border-radius: 4px;
 		height: auto !important;
 		width: 104px !important;
-		.border-radius-4();
-		&:hover {
-			border: 1px solid rgb(@color-neutral-100);
-		}
+		padding: 12px 0 !important;
+	}
+	a:hover {
+		border: 1px solid rgb(@color-neutral-100);
 	}
 }
 /* flyouts above 768 */
@@ -358,43 +365,46 @@ nav a {
 
 
 
+/*
+/
+/	DARK
+/
+*/
 
-
-// // // Dark Mode
-
+/*
 @media (prefers-color-scheme: dark) {
 	#mainnav {
-		background-image: linear-gradient(rgba(@color-neutral-90,1), rgba(@color-neutral-90,.85));
-		background-color: rgba(@color-neutral-90,0);
-		.fly-dark-utility-border();
-		svg {
-			fill: @fly-dark-brand-primary;
-		}
+		background-image: linear-gradient(rgba(@color-neutral-100,1), rgba(@color-neutral-100,.85));
+		-webkit-backdrop-filter: saturate(200%) blur(20px);
+		backdrop-filter: saturate(200%) blur(20px);
+		background-color: rgba(@color-neutral-100,0);
+		.hr-dark;
 	}
 	#subnav {
-		background-color: @fly-dark-surface-primary;
-		.fly-dark-utility-border();
-		.separator {
-			color: @fly-dark-utility-border;
-		}
-		.weather {
-			color: @fly-dark-text-primary;
-			background-color: @fly-dark-surface-primary;
-			border-left: 1px solid @fly-dark-utility-border;
-		}
+		background-color: rgb(@color-neutral-100);
+		.hr-dark;
 	}
 	#mainnav a,
 	#subnav a {
-		color: @fly-dark-text-link-primary;
+		color: rgb(@color-neutral-0);
+	}
+	#mainnav svg {
+		fill: rgb(@color-neutral-0);
 	}
 	#mainnav a.hover-effect:hover > div,
 	#subnav a.hover-effect:hover > div  {
-		background-color: @fly-dark-surface-overlay-solid-primary;
+		background-color: rgba(@color-neutral-0,.2);
 	}
-	.chevron {
-		fill: @fly-dark-text-link-primary;
+	#subnav .separator {
+		color: rgb(@color-neutral-0);
 	}
 }
+*/
+
+
+
+
+
 
 
 
