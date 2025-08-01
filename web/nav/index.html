@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Navigation</title>
+	
+	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/nav/css/index.less">
+	
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121">
+
+</head>
+
+<body>
+	
+	
+	
+	<div id="stickers">
+		<div id="topunit">
+			<div class="wireframe">ad unit</div>
+		</div>
+		<div id="include-nav-primary"></div>
+	</div>
+	
+	
+	
+	<div id="include-nav-secondary"></div>
+	<div id="include-nav-tertiary"></div>
+	
+	
+	
+	<main>
+		
+		<div class="content">Page Content</div>
+		
+	</main>
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+	
+	
+	
+	<script>
+		
+		
+		
+		//
+		// INCLUDES (JQUERY)
+		//
+		$(function() {
+			$('#include-nav-primary').load('/web/nav/nav-v1.3-main.html');
+			$('#include-nav-secondary').load('/web/nav/nav-v1.3-baltimore.html');
+			$('#include-nav-tertiary').load('/web/nav/nav-v1.3-show.html');
+		});
+		
+		
+		
+		//
+		// NAV (JQUERY)
+		//
+		$(document).ready(function() {
+			
+			function checkNav() {
+				if ($(document).scrollTop() < 75) {
+					// scrolled less than 75
+					$('#stickers').addClass('nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on');
+				} else {
+					// scrolled more than 75
+					$('#stickers').addClass('nav-shadow-on');
+					$('#stickers').removeClass('nav-shadow-off');
+				}
+				
+			}
+			
+			// Execute on load
+			checkNav();
+			// Bind event listener ("load" doesn't seem to work)
+			$(window).on("load resize scroll",function(e){
+				checkNav();
+			});
+			
+		});
+		
+		
+		
+	</script>
+
+
+
+
+
+</body>
+
+</html>

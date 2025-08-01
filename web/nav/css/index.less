@@ -1,0 +1,112 @@
+@import "../../css/colors.less";
+@import "../../css/typography.less";
+@import "../../css/utility.less";
+
+
+
+
+
+// // // Basic Styles
+
+body {
+	background-color: @fly-light-surface-primary;
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+
+
+
+
+
+// // // Z-Indices
+
+#stickers {
+	z-index: 99;
+}
+
+
+
+
+
+// // // Structure
+
+main,
+section {
+	/* for testing */
+	//.wireframe-outline();
+}
+#stickers {
+	/* top ad and sticky nav */
+	position: sticky;
+	top: 0;
+	width: 100%;
+}
+main {
+	margin: @spacing-20;
+	.content {
+		height: 2000px;
+		.wireframe();
+	}
+}
+@media only screen and (min-width:  @break-sm) {
+}
+@media only screen and (min-width:  @break-md) {
+	main {
+		padding: 0 @spacing-20;
+		margin: @spacing-40 auto;
+		width: @break-md-container;
+	}
+}
+@media only screen and (min-width:  @break-lg) {
+	main {
+		width: @break-lg-container;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // // Ads
+
+#topunit {
+	display: none;
+}
+@media only screen and (min-width: @break-sm) {
+	#topunit {
+		display: initial;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background-color: @fly-light-surface-primary;
+		div {
+			width: 768px;
+			height: 90px;
+		}
+	}
+}
+@media (prefers-color-scheme: dark) {
+	#topunit {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+
+
+
+
+

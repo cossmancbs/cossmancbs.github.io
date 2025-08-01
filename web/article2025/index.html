@@ -359,10 +359,10 @@
 
 
 	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="/web/js/less.js"></script>
-
-<script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+	
+	<script>
 
 
 
@@ -371,7 +371,7 @@
 	//
 	$(function() {
 		$('#include-nav-main').load('/web/nav/nav-v1.3-main.html');
-		$('#include-nav-sub').load('/web/nav/nav-v1.3-secondary-baltimore.html');
+		$('#include-nav-sub').load('/web/nav/nav-v1.3-baltimore.html');
 	});
 
 
@@ -394,8 +394,8 @@
 				if ($(document).scrollTop() < 75) {
 					// mobile, top
 					// window is narrower than 768, and near top
-					$('#include-nav-main').addClass('nav-shadow-off');
-					$('#include-nav-main').removeClass('nav-shadow-on');
+					$('#stickers').addClass('nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on');
 					$('.article-rail').addClass('nav-shadow-off');
 					$('.article-rail').removeClass('nav-shadow-on');
 					$('.article-video').addClass('vid-lg');
@@ -403,7 +403,7 @@
 				} else {
 					// mobile, scrolled
 					// window is narrower than 768, and scrolled
-					$('#include-nav-main').removeClass('nav-shadow-on nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on nav-shadow-off');
 					$('.article-rail').addClass('nav-shadow-on');
 					$('.article-rail').removeClass('nav-shadow-off');
 					$('.article-video').addClass('vid-sm');
@@ -413,16 +413,16 @@
 				if ($(document).scrollTop() < 75) {
 					// desktop, top
 					// window is wider than 768, and near top
-					$('#include-nav-main').addClass('nav-shadow-off');
-					$('#include-nav-main').removeClass('nav-shadow-on');
+					$('#stickers').addClass('nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on');
 					$('.article-rail').addClass('nav-shadow-off');
 					$('.article-rail').removeClass('nav-shadow-on');
 					$('.article-video').removeClass('vid-sm vid-lg');
 				} else {
 					// desktop, scrolled
 					// window is wider than 768, and scrolled
-					$('#include-nav-main').addClass('nav-shadow-on');
-					$('#include-nav-main').removeClass('nav-shadow-off');
+					$('#stickers').addClass('nav-shadow-on');
+					$('#stickers').removeClass('nav-shadow-off');
 					$('.article-rail').addClass('nav-shadow-off');
 					$('.article-rail').removeClass('nav-shadow-on');
 					$('.article-video').removeClass('vid-sm vid-lg');
