@@ -4,21 +4,20 @@
 <head>
 	
 	<meta charset="utf-8">
-	<title>New York</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#020F34">
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020F34"> <!-- same for now, but maybe later support system themes? -->
-	
-	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg?">
-	<link rel="icon" type="image/png" href="/web/img/favicon.png?">
+	<title>New York</title>
 	
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
 	<link rel="stylesheet/less" type="text/css" href="/web/show/css/new-york.less">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="/web/js/less.js"></script>
+	<meta name="theme-color" content="#101010">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010"> <!-- same, because of dynamic header -->
+	
+	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/web/img/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-title" content="CBS News" />
+	<link rel="manifest" href="/web/img/site.webmanifest" />
 	
 </head>
 
@@ -42,14 +41,14 @@
 		
 		<div id="brand-header">
 			
-			<div class="hgroup">
+			<article>
 				<div class="show-logo">logo max. dimensions</div>
 				<h1>Show or Local Name</h1>
 				<h2>Lorem ipsum dolor sit amet<br>
 					Totam at eius excepturi deleniti</h2>
-			</div>
+			</article>
 			
-			<div id="subnav-brand">
+			<div id="nav-secondary">
 				<div class="wrapper">
 					<ul>
 						<li><a href=""><span>Secondary Nav Tab</span></a></li>
@@ -96,6 +95,9 @@
 	
 	
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+	
 	
 <script>
 	
@@ -103,8 +105,8 @@
 	// INCLUDES
 	//
 	$(function() {
-		$("#include-nav-main").load("/web/nav/nav-v1.2-main.html");
-		$("#include-video-single").load("/web/components/video-single.html");
+		$("#include-nav-main").load("/web/nav/nav-v1.3-main.html");
+		$("#include-video-single").load("/web/components/video-single-redux.html");
 		$("#include-grid-hero-list").load("/web/components/grid-hero-list.html");
 		$("#include-footer").load("/web/footer/index.html");
 	});

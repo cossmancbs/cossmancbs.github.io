@@ -37,6 +37,17 @@
 /
 */
 
+// TESTING
+
+main,
+#brand-header,
+#brand-header article,
+#nav-secondary,
+#include-video-single {
+	//.wireframe-outline();
+}
+
+
 body {
 	background-color: @fly-light-surface-primary;
 }
@@ -413,15 +424,18 @@ main {
 /
 */
 
-@media only screen and (min-width: @break-md) {
+#include-video-single {
+	padding: 20px 0 0 0;  // HACK!!! Need to fix this
+	.shelfVideo {
+		background-color: rgb(@brand-color) !important;
+	}
+	.heading {
+		display: none !important;
+	}
+}
+@media only screen and (min-width: @break-sm) {
 	#include-video-single {
-		.shelfVideo {
-			padding-top: 0;
-			background-color: rgb(@brand-color);
-		}
-		.heading {
-			display: none;
-		}
+		padding: 0;
 	}
 }
 
