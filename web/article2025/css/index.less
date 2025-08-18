@@ -129,9 +129,10 @@ main {
 		top: 0;
 	}
 	.article-header {
-		margin: 0 0 @spacing-12 0;
+		margin: 0 auto @spacing-12 auto;
 		grid-column: 1;
 		grid-row: span 2 / span 2;
+		max-width: 640px;
 	}
 	.article-branding {
 		margin: 0;
@@ -139,9 +140,11 @@ main {
 		grid-row-start: 1;
 	}
 	.article-byline {
-		margin: 0;
+		margin: 0 auto;
 		grid-column-start: 1;
 		grid-row-start: 3;
+		width: 100%;
+		max-width: 640px;
 	}
 	.article-body {
 		grid-column: 1;
@@ -340,14 +343,23 @@ main {
 	flex-direction: row;
 	align-items: center;
 	gap: @spacing-16;
-	span {
-		.article2025-detail-16-100();
-		color: @fly-light-text-secondary;
+	.flag {
+		padding: 0 @spacing-8;
 		display: flex;
 		align-self: flex-start;
 		align-items: center;
 		flex-direction: row;
 		gap: @spacing-4;
+		background-color: @fly-light-surface-overlay-solid-primary;
+		.border-radius-4();
+		span {
+			padding: @spacing-8 0;
+			color: @fly-light-text-primary;
+			leading-trim: both;
+			text-edge: cap;
+			text-transform: uppercase;
+			.article2025-detail-12-100();
+		}
 	}
 	svg {
 		width: 14px;
@@ -355,6 +367,7 @@ main {
 		fill: @fly-light-utility-icon-primary;
 	}
 	a {
+		.article2025-detail-16-100();
 		color: @fly-light-text-link-secondary;
 		text-decoration: underline;
 		&:hover {
