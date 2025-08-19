@@ -352,19 +352,20 @@ main {
 		gap: @spacing-4;
 		background-color: @fly-light-surface-overlay-solid-primary;
 		.border-radius-4();
+		svg {
+			width: 14px;
+			height: 14px;
+			fill: @fly-light-utility-icon-primary;
+		}
 		span {
 			padding: @spacing-8 0;
 			color: @fly-light-text-primary;
 			leading-trim: both;
 			text-edge: cap;
+			text-box: trim-both cap alphabetic;
 			text-transform: uppercase;
 			.article2025-detail-12-100();
 		}
-	}
-	svg {
-		width: 14px;
-		height: 14px;
-		fill: @fly-light-utility-icon-primary;
 	}
 	a {
 		.article2025-detail-16-100();
@@ -377,11 +378,14 @@ main {
 }
 @media (prefers-color-scheme: dark) {
 	.article-header .flags {
-		span {
-			color: @fly-dark-text-secondary;
-		}
-		svg {
-			fill: @fly-dark-utility-icon-primary;
+		.flag {
+			background-color: @fly-dark-surface-overlay-solid-primary;
+			svg {
+				fill: @fly-dark-utility-icon-primary;
+			}
+			span {
+				color: @fly-dark-text-primary;
+			}
 		}
 		a {
 			color: @fly-dark-text-link-secondary;
