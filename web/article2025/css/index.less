@@ -1307,8 +1307,9 @@ footer {
 		background-color: @fly-dark-surface-tertiary;
 		border: 1px solid @fly-dark-utility-border;
 		svg {
-			/* override all */
-			fill: @fly-dark-brand-primary !important;
+			/* override all with FILTER, not FILL, to support multi-color logos */
+			//fill: @fly-dark-brand-primary !important;
+			filter: brightness(0) invert(1);
 		}
 		h2 {
 			color: @fly-dark-text-link-primary;
