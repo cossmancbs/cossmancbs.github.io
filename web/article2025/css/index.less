@@ -1243,21 +1243,9 @@ footer {
 		gap: @spacing-4;
 	}
 	svg {
-		fill: @fly-light-brand-primary;
-		width: 183.33px;  // STUPID HACK
+		// fill: @fly-light-brand-primary;
+		width: 164px;
 		height: 10px;
-	}
-	svg.uplift {
-		fill: @shows-uplift-primary;
-	}
-	svg.face-the-nation {
-		fill: @shows-face-the-nation-primary;
-	}
-	svg.evening-news {
-		fill: @shows-cbs-evening-news-primary;
-	}
-	svg.hours {
-		fill: @shows-48-hours-primary;
 	}
 	.thumb {
 		flex-shrink: 0;
@@ -1286,7 +1274,7 @@ footer {
 			gap: @spacing-8;
 		}
 		svg {
-			width: 220px;  // STUPID HACK
+			width: 196.8px;  // want auto width, but don't know how
 			height: 12px;
 		}
 		h2 {
@@ -1307,8 +1295,8 @@ footer {
 		background-color: @fly-dark-surface-tertiary;
 		border: 1px solid @fly-dark-utility-border;
 		svg {
-			/* override all with FILTER, not FILL, to support multi-color logos */
 			//fill: @fly-dark-brand-primary !important;
+			/* override all with FILTER, not FILL, to support multi-color logos */
 			filter: brightness(0) invert(1);
 		}
 		h2 {
