@@ -314,10 +314,6 @@ main {
 		}
 	}
 }
-@media only screen and (min-width: @break-sm) {
-	.article-byline {
-	}
-}
 @media (prefers-color-scheme: dark) {
 	.article-byline {
 		p {
@@ -404,14 +400,11 @@ main {
 // // // Rail With Video
 
 /* video player sizes */
-.vid-lg { video { width: 192px; } }
-.vid-md { video { width: 176px; } }
 .vid-sm { video { width: 128px; } }
+.vid-md { video { width: 176px; } }
+.vid-lg { video { width: 192px; } }
 
 .article-rail {
-	/*
-	background-image: linear-gradient(rgba(@color-neutral-white,1) 10%, rgba(@color-neutral-white,.8));
-	*/
 	background-color: rgba(@color-neutral-white,.9);
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
@@ -545,7 +538,6 @@ main {
 
 @media (prefers-color-scheme: dark) {
 	.article-rail {
-		/* background-image: linear-gradient(rgba(@color-neutral-90,1) 10%, rgba(@color-neutral-90,.8)); */
 		background-color: rgba(@color-neutral-90,.9);
 		.fly-dark-utility-border();
 	}
@@ -1226,6 +1218,7 @@ footer {
 
 
 
+
 // // // Recirculation: Cards
 
 .card-recirc {
@@ -1244,8 +1237,9 @@ footer {
 	}
 	svg {
 		// fill: @fly-light-brand-primary;
-		width: 164px;
-		height: 10px;
+		width: 196.8px;  // want auto width, but don't know how
+		height: 12px;
+		// .wireframe-outline();
 	}
 	.thumb {
 		flex-shrink: 0;
@@ -1272,10 +1266,6 @@ footer {
 		.border-radius-8();
 		article {
 			gap: @spacing-8;
-		}
-		svg {
-			width: 196.8px;  // want auto width, but don't know how
-			height: 12px;
 		}
 		h2 {
 			.article2025-detail-18-125();
