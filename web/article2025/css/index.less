@@ -253,9 +253,9 @@ main {
 		min-height: 60px;
 		max-height: 90px;
 		.border-radius-4();
-		background-image: url('/web/article2025/img/chip-bgd-cbs-news-baltimore.jpg');
-		background-color: rgba(2,129,254,0.5);
-		background-blend-mode: lighten;
+		//background-image: url('/web/article2025/img/chip-bgd-cbs-news-baltimore.jpg');
+		//background-color: rgba(2,129,254,.5);
+		//background-blend-mode: lighten;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -263,7 +263,66 @@ main {
 	svg {
 		fill: @fly-dynamic-brand-primary;
 		width: 52px;
-		height: 14.05px; /* THIS IS A HACK: hard coded */
+	}
+	.bm {
+		background-image: url('/web/article2025/img/chip-bgd-cbs-news-baltimore.jpg');
+		svg {
+			height: 14.05px; /* auto height possible? */
+		}
+	}
+	.ba {
+		background-image: url('/web/article2025/img/chip-bgd-cbs-news-bay-area.jpg');
+		svg {
+			height: 16.89px; /* auto height possible? */
+		}
+	}
+	.forty {
+		background-image: url('/web/article2025/img/chip-bgd-48-hours.jpg');
+		svg {
+			height: 26.87px; /* auto height possible? */
+		}
+	}
+	.sixty {
+		background-image: url('/web/article2025/img/chip-bgd-60-minutes.jpg');
+		svg {
+			height: 32.25px; /* auto height possible? */
+		}
+	}
+	.ad {
+		background-image: url('/web/article2025/img/chip-bgd-america-decides.jpg');
+		svg {
+			height: 30.28px; /* auto height possible? */
+		}
+	}
+	.dish {
+		background-image: url('/web/article2025/img/chip-bgd-dish.jpg');
+		svg {
+			height: 39px; /* auto height possible? */
+		}
+	}
+	.dr {
+		background-image: url('/web/article2025/img/chip-bgd-daily-report.jpg');
+		svg {
+			height: 28.48px; /* auto height possible? */
+		}
+	}
+	.eoa {
+		background-image: url('/web/article2025/img/chip-bgd-eye-on-america.jpg');
+		svg {
+			height: 40.15px; /* auto height possible? */
+		}
+	}
+	.mw {
+		background-image: url('/web/article2025/img/chip-bgd-moneywatch.jpg');
+		svg {
+			height: 21.77px; /* auto height possible? */
+		}
+	}
+	.sm {
+		background-image: url('/web/article2025/img/chip-bgd-sunday-morning.jpg');
+		svg {
+			height: 22.03px; /* auto height possible? */
+		}
 	}
 }
 @media only screen and (min-width: @break-sm) {
@@ -274,12 +333,12 @@ main {
 			height: 46px;
 			min-height: auto;
 			max-height: auto;
-		}
-		svg {
-			width: auto;
-			height: auto;
-			max-width: none; /* unset */
-			max-height: 30px;
+			svg {
+				width: auto;
+				height: auto;
+				max-width: none; /* unset */
+				max-height: 30px;
+			}
 		}
 	}
 }
@@ -1306,6 +1365,50 @@ footer {
 
 
 
+
+// // // Graphics
+
+.graphics {
+	margin: @spacing-40;
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-8;
+	max-width: 300px;
+	.buttons {
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 32px;
+			height: 32px;
+			background-color: @fly-light-button-secondary-background;
+			border: 1px solid @fly-light-button-secondary-border;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: @fly-light-button-secondary-text;
+		}
+		&:hover {
+			div {
+				background-color: @fly-light-button-secondary-background-hover;
+			}
+			svg {
+				fill: @fly-light-button-secondary-text-hover;
+			}
+		}
+	}
+	.article-branding {
+	}
+	.logos {
+		svg {
+			width: 196.8px;  // auto?
+			height: 12px;
+		}
+	}
+}
 
 
 

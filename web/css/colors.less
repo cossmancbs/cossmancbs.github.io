@@ -2,19 +2,28 @@
 
 @color-neutral-black:		0,0,0;
 @color-neutral-100:			16,16,16;			/* #101010 CBS News offblack */
-@color-neutral-95:			24,24,24;
+@color-neutral-95:			24,24,24;			/* #181818 */
 @color-neutral-90:			33,33,33;			/* #212121 */
-@color-neutral-80:			51,51,51;
-@color-neutral-70:			72,72,72;
-@color-neutral-60:			95,95,95;
-@color-neutral-50:			118,118,118;		/* closest to graydark */
-@color-neutral-40:			143,143,143;
-@color-neutral-30:			171,171,171;
-@color-neutral-20:			200,200,200;
-@color-neutral-10:			220,220,220;
+@color-neutral-80:			51,51,51;			/* #333333 */
+@color-neutral-70:			72,72,72;			/* #484848 */
+@color-neutral-60:			95,95,95;			/*  */
+@color-neutral-50:			118,118,118;		/*  */
+@color-neutral-40:			143,143,143;		/*  */
+@color-neutral-30:			171,171,171;		/*  */
+@color-neutral-20:			200,200,200;		/*  */
+@color-neutral-10:			220,220,220;		/* #DCDCDC */
 @color-neutral-5:			232,232,232;		/* #E9E9E9 CBS News graylight */
 @color-neutral-0:			242,242,242;		/* #F2F2F2 CBS News offwhite */
 @color-neutral-white:		255,255,255;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,6 +52,11 @@
 @fly-light-utility-ui-element-active:		rgb(@color-neutral-100);
 @fly-light-button-live-background:			rgb(204,14,0);
 @fly-light-button-live-text:				rgb(@color-neutral-white);
+@fly-light-button-secondary-background:			rgb(@color-neutral-white);
+@fly-light-button-secondary-background-hover:	rgb(@color-neutral-0);
+@fly-light-button-secondary-border:				rgb(@color-neutral-10);
+@fly-light-button-secondary-text:				rgb(@color-neutral-95);
+@fly-light-button-secondary-text-hover:			rgb(@color-neutral-95);
 @fly-light-utility-status-alert:			#e10500;
 
 /* FLY DARK */
@@ -61,6 +75,11 @@
 @fly-dark-text-link-primary-hover:			rgb(@color-neutral-20);
 @fly-dark-text-link-secondary:				rgb(@color-neutral-20);
 @fly-dark-text-link-secondary-hover:		rgb(@color-neutral-0);
+@fly-dark-button-secondary-background:			rgba(@color-neutral-white,0);
+@fly-dark-button-secondary-background-hover:	rgb(@color-neutral-white);
+@fly-dark-button-secondary-border:				rgb(@color-neutral-white);
+@fly-dark-button-secondary-text:				rgb(@color-neutral-white);
+@fly-dark-button-secondary-text-hover:			rgb(@color-neutral-70);
 @fly-dark-utility-border:					rgb(@color-neutral-70);
 @fly-dark-utility-icon-primary:				rgb(@color-neutral-0);
 @fly-dark-utility-ui-background:			rgb(@color-neutral-100);
@@ -120,14 +139,17 @@
 
 /* CBS NEWS: SHOWS AND BRANDS */
 
-@color-show:					48,65,85;		/* #304155 (GENERIC SHOW) */
-@color-48-hours:				36,44,59;		/* DEPRECATED */
-@color-48-hours-red-light:		152,42,6;		/* DEPRECATED */
-@color-48-hours-red-dark:		69,32,25;		/* DEPRECATED */
-@color-48-hours-blue:			24,17,71;		/* #181147; */
-@color-48-hours-red:			157,27,10;		/* #9D1B0A; */
-@color-48-hours-web:			36,44,59;		/* #242C3B; */
-@color-60-minutes:				166,10,02;		/* #A60A02 */
+@color-rgb-local-generic-tertiary:     2,129,254;
+@color-rgb-48-hours:                   0,74,206;
+@color-rgb-60-minutes:                 166,10,2;
+@color-rgb-america-decides-primary:    0,85,153;
+@color-rgb-daily-report:               36,49,74;
+@color-rgb-dish:                       238,127,29;
+@color-rgb-eye-on-america:             127,88,36;
+@color-rgb-moneywatch:                 1,151,35;
+@color-rgb-sunday-morning:             205,137,0;
+
+@color-show:                        48,65,85;		/* #304155 (GENERIC SHOW) */
 @color-agent-of-betrayal:		59,14,17;		/* #3B0E11; */
 @color-america-decides-blue:	0,85,153;		/* #005599; */
 @color-america-decides-red:		206,0,8;		/* #CE0008; */
@@ -140,9 +162,6 @@
 @color-cbs-evening-news:		2,15,52;		/* #020F34 */
 @color-cbsn-am:					48,65,85;		/* DEPRECATED */
 @color-crime-without-punishment:	21,59,92;	/* #153B5C; */
-@color-daily-report-dark:		36,49,74;		/* #24314A; */
-@color-daily-report-light:		16,71,141;		/* #10478D; */
-@color-dish:					238,127,29;		/* #EE7F1D; */
 @color-eye-on-america:			127,88,36;		/* #7F5824 */
 @color-face-the-nation-blue:	0,120,157;		/* #00789D */
 @color-face-the-nation-red:		157,3,3;		/* #9D0303 */
