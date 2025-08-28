@@ -1375,6 +1375,9 @@ footer {
 	gap: @spacing-8;
 	max-width: 300px;
 	.buttons {
+		display: flex;
+		flex-direction: row;
+		gap: @spacing-8;
 		div {
 			display: flex;
 			justify-content: center;
@@ -1385,17 +1388,15 @@ footer {
 			border: 1px solid @fly-light-button-secondary-border;
 			border-radius: 50%;
 			cursor: pointer;
+			&:hover {
+				background-color: @fly-light-button-secondary-background-hover;
+			}
 		}
 		svg {
 			width: 16px;
 			height: 16px;
 			fill: @fly-light-button-secondary-text;
-		}
-		&:hover {
-			div {
-				background-color: @fly-light-button-secondary-background-hover;
-			}
-			svg {
+			&:hover {
 				fill: @fly-light-button-secondary-text-hover;
 			}
 		}
@@ -1406,6 +1407,30 @@ footer {
 		svg {
 			width: 196.8px;  // auto?
 			height: 12px;
+		}
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.graphics {
+		.buttons {
+			div {
+				background-color: @fly-dark-button-secondary-background;
+				border: 1px solid @fly-dark-button-secondary-border;
+				&:hover {
+					background-color: @fly-dark-button-secondary-background-hover;
+				}
+			}
+			svg {
+				fill: @fly-dark-button-secondary-text;
+				&:hover {
+					fill: @fly-dark-button-secondary-text-hover;
+				}
+			}
+		}
+	}
+	.logos {
+		svg {
+			filter: brightness(0) invert(1);
 		}
 	}
 }
