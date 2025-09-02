@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EAAG</title>
+	
+	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/elections/eaag/css/main.less">
+	
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121">
+
+</head>
+
+<body>
+	
+	
+	
+	<div id="stickers">
+		<div id="topunit">
+			<div class="wireframe">ad unit</div>
+		</div>
+		<div id="include-nav-primary"></div>
+	</div>
+	
+	
+	
+	<div id="include-nav-secondary"></div>
+	
+	
+	
+	<article class="eaag">
+		
+		
+		
+		<section class="live-updates">
+			<button class="pag-left">
+				<svg><use xlink:href="/web/elections/eaag/img/sprite.svg#chevron-right"></use></svg>
+			</button>
+			<div class="branding">
+				<svg><use xlink:href="/web/elections/eaag/img/sprite.svg#logo-PLACEHOLDER"></use></svg>
+			</div>
+			<div class="carousel">
+				<article>
+					<div class="flag"><span></span>Latest</div>
+					<h1>Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeius</h1>
+				</article>
+				<article>
+					<div class="flag">7m ago</div>
+					<h1>Totam at eius excepturi deleniti sed error repellat itaque omnise</h1>
+				</article>
+				<article>
+					<div class="flag">23m ago</div>
+					<h1>Possimus deserunt nisi perferendis consequuntur odio et asperiamp</h1>
+				</article>
+				<article>
+					<div class="flag">57m ago</div>
+					<h1>Vel nam odio dolorem voluptas sequi minuque teompore animi estqus</h1>
+				</article>
+				<article>
+					<div class="flag">1h ago</div>
+					<h1>Excepteur sint occaecat cupidatat non proident sunt in culpa quip</h1>
+				</article>
+				<article>
+					<div class="flag">2h ago</div>
+					<h1>Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeius</h1>
+				</article>
+			</div>
+			<button class="pag-right">
+				<svg><use xlink:href="/web/elections/eaag/img/sprite.svg#chevron-right"></use></svg>
+			</button>
+		</section>
+		
+		
+		
+		
+		
+		
+		
+		<div class="rule-horiz"></div>
+		
+		
+		
+		
+		
+		
+		
+		<section class="key-races">
+			
+			<div class="segmented-controls">
+				Segmented Controls
+			</div>
+			
+			<section class="results">
+				
+				<article>
+					<div class="heading">
+						<h1>New York City Mayor Results</h1>
+						<div class="map">map</div>
+					</div>
+					<div class="candidates">
+						<div>candidate</div>
+						<div>candidate</div>
+						<div>candidate</div>
+						<div>candidate</div>
+						<div>candidate</div>
+					</div>
+					<div class="buttons">
+						<button>Latest Polls</button>
+						<button>Full Coverage</button>
+						<button>Candidates</button>
+					</div>
+				</article>
+				
+				<article class="rule-vert"></article>
+				
+				<article>
+					<div class="heading">
+						<h1>New Jersey Governor Results</h1>
+						<div class="map">map</div>
+					</div>
+					<div class="candidates">
+						<div>candidate</div>
+						<div>candidate</div>
+					</div>
+					<div class="buttons">
+						<button>Latest Polls</button>
+						<button>Full Coverage</button>
+						<button>Candidates</button>
+					</div>
+				</article>
+				
+				<article class="rule-vert"></article>
+				
+				<article>
+					<div class="heading">
+						<h1>Virginia Governor Results</h1>
+						<div class="map">map</div>
+					</div>
+					<div class="candidates">
+						<div>candidate</div>
+						<div>candidate</div>
+					</div>
+					<div class="buttons">
+						<button>Latest Polls</button>
+						<button>Full Coverage</button>
+						<button>Candidates</button>
+					</div>
+				</article>
+				
+			</section>
+			
+		</section>
+		
+		
+		
+		
+		
+		
+		
+		<div class="rule-horiz"></div>
+		
+		
+		
+		
+		
+		
+		
+	</article>
+	
+	
+	
+	
+	
+	
+	
+	<main>
+		
+		<div class="content">Page Content</div>
+		
+	</main>
+	
+	
+	
+	
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+	
+	
+	
+	<script>
+		
+		
+		
+		//
+		// INCLUDES (JQUERY)
+		//
+		$(function() {
+			$('#include-nav-primary').load('/web/nav/nav-v1.3-main.html');
+			$('#include-nav-secondary').load('/web/nav/nav-v1.3-national.html');
+		});
+		
+		
+		
+		//
+		// NAV (JQUERY)
+		//
+		$(document).ready(function() {
+			
+			function checkNav() {
+				if ($(document).scrollTop() < 75) {
+					// scrolled less than 75
+					$('#stickers').addClass('nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on');
+				} else {
+					// scrolled more than 75
+					$('#stickers').addClass('nav-shadow-on');
+					$('#stickers').removeClass('nav-shadow-off');
+				}
+				
+			}
+			
+			// Execute on load
+			checkNav();
+			// Bind event listener ("load" doesn't seem to work)
+			$(window).on("load resize scroll",function(e){
+				checkNav();
+			});
+			
+		});
+		
+		
+		
+	</script>
+
+
+
+
+
+</body>
+
+</html>
