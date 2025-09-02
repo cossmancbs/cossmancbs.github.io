@@ -110,7 +110,7 @@ main {
 	margin: @spacing-12 0;
 	display: flex;
 	flex-direction: column;
-	gap: @spacing-8;
+	gap: 0;
 }
 .rule-horiz {
 	margin: @spacing-12 @spacing-20;
@@ -125,7 +125,7 @@ main {
 }
 @media only screen and (min-width:  @break-md) {
 	.rule-horiz {
-		margin: 0 auto;
+		margin: @spacing-12 auto;
 		width: @break-md-container;
 	}
 }
@@ -152,8 +152,8 @@ main {
 		align-items: center;
 		justify-content: center;
 		min-width: 20px;
-		background-color: @fly-light-surface-primary;
 		opacity: 0;
+		background-color: @fly-light-surface-primary;
 		svg {
 			width: 12px;
 			height: 12px;
@@ -170,7 +170,7 @@ main {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 0 @spacing-8;
+		margin: 0 @spacing-12 0 0;
 		svg {
 			width: 60px;
 			height: 48px;
@@ -267,23 +267,56 @@ main {
 // // // EAAG: Key Races
 
 .key-races {
+	margin: 0;
 	padding: 0 @spacing-20;
 	display: flex;
 	flex-direction: column;
 	gap: @spacing-12;
-	.segmented-controls {
-		.wireframe();
+	nav {
+		display: flex;
+		flex-direction: row;
+		gap: 0;
+		padding: @spacing-2;
+		background-color: @fly-light-surface-primary;
+		border: 1px solid @fly-light-utility-border;
+		.border-radius-6();
+		button {
+			flex-grow: 1;
+			padding: @spacing-8;
+			.action-12-trim();
+			color: @fly-light-button-secondary-text;
+			background-color: @fly-light-button-secondary-background;
+			.border-radius-4();
+			cursor: pointer;
+		}
+		.focus {
+			color: @fly-light-button-secondary-text-disabled;
+			background-color: @fly-light-button-secondary-border-focused;
+			cursor: default;
+		}
 	}
 	.results {
 		article {
+			display: flex;
+			flex-direction: column;
+			gap: @spacing-16;
 			.heading {
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				gap: @spacing-8;
-				h1 {
-					.headline-16-125();
-					color: @fly-light-text-primary;
+				.hgroup {
+					display: flex;
+					flex-direction: column;
+					gap: @spacing-4;
+					h1 {
+						.headline-16-125();
+						color: @fly-light-text-primary;
+					}
+					p {
+						.detail-12-125();
+						color: @fly-light-text-secondary;
+					}
 				}
 				.map {
 					min-width: 80px;
@@ -296,10 +329,11 @@ main {
 				display: flex;
 				flex-direction: column;
 				gap: 0;
-				div {
-					margin: @spacing-8 0;
+				.candidate {
+					padding: @spacing-8 0;
 					border-bottom: 1px dashed @fly-light-utility-border;
-					.wireframe();
+					.headline-12-trim();
+					color: @fly-light-text-primary;
 				}
 			}
 			.buttons {
@@ -329,19 +363,20 @@ main {
 
 @media only screen and (min-width:  @break-sm) {
 	.key-races {
-		.segmented-controls {
+		gap: 0;
+		nav {
 			display: none;
 		}
 		.results {
-			article {
-				&:not(:first-child) {
-					display: inline;
-				}
-			}
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-columns: 1fr 32px 1fr 32px 1fr;
 			gap: 0;
+			article {
+				&:not(:first-child) {
+					display: flex;
+				}
+			}
 		}
 	}
 }
@@ -383,8 +418,22 @@ main {
 	text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
+.detail-12-125 {
+	font-family: "TTNormsPro-Regular", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	line-height: 125%;
+}
 
 // Headline
+.headline-12-trim {
+	font-family: "TTNormsPro-Bold", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	leading-trim: both;
+	text-edge: cap;
+	text-box: trim-both cap alphabetic;
+}
 .headline-14-125 {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
