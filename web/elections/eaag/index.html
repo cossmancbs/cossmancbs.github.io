@@ -47,6 +47,7 @@
 				<svg><use xlink:href="/web/elections/eaag/img/sprite.svg#logo-PLACEHOLDER"></use></svg>
 			</div>
 			<div class="carousel">
+				<div class="cell-container">
 				<article>
 					<div class="flag"><span></span>Latest</div>
 					<h1>Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeius</h1>
@@ -75,6 +76,7 @@
 					<div class="flag">3h ago</div>
 					<h1>Totam at eius excepturi deleniti sed error repellat itaque omnise</h1>
 				</article>
+				</div>
 			</div>
 			<button>
 				<div>
@@ -377,7 +379,6 @@
 			
 			function checkNav() {
 				setTimeout(function() {
-					$('article').addClass('slidein');
 				}, 2000);
 				if ($(document).scrollTop() < 75) {
 					// scrolled less than 75

@@ -189,9 +189,6 @@ main {
 		}
 	}
 	.carousel {
-		display: flex;
-		flex-direction: row;
-		gap: 0;
 		overflow-x: scroll;
 		-ms-overflow-style: none;  /* hide scrollbar: IE, Edge */
 		scrollbar-width: none;  /* hide scrollbar: Firefox */
@@ -202,9 +199,23 @@ main {
 			height: 0;
 			background: transparent;
 		}
-		article {
+		.cell-container {
 			position: relative;
 			left: -216px;
+			display: flex;
+			flex-direction: row;
+			gap: 0;
+			border: 1ps solid salmon;
+			animation-name: slideIn;
+			animation-duration: 1s;
+			animation-timing-function: ease-in-out;
+			animation-delay: 2s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+		article {
+			//position: relative;
+			//left: -216px;
 			display: flex;
 			flex-direction: column;
 			gap: @spacing-4;
@@ -213,8 +224,10 @@ main {
 			cursor: pointer;
 			.border-radius-4();
 			background-color: @fly-light-surface-primary;
-			transition: background-color .3s ease-in-out;
-			transition: left 1s ease-in-out;
+			transition: all .3s ease-in-out;
+			//transition: left 1s ease-in-out;
+			//animation: slideIn 1s 1 linear;
+			//animation-delay: 2s;
 			.flag {
 				.headline-12-trim();
 				color: @fly-light-text-alert;
@@ -243,6 +256,14 @@ main {
 				background-color: @fly-light-surface-primary;
 				animation: cellBgd 1s 3 linear;
 				animation-delay: 3s;
+			}
+			@keyframes slideIn {
+				0% {
+					left: -216px;
+				}
+				100% {
+					left: 0;
+				}
 			}
 			@keyframes dotPulse {
 				0% {
@@ -275,9 +296,6 @@ main {
 					transition: all .3s ease-out;
 				}
 			}
-		}
-		.slidein {
-			left: 0;
 		}
 	}
 	&:hover {
