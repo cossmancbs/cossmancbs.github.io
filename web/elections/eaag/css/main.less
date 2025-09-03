@@ -148,12 +148,19 @@ main {
 	flex-direction: row;
 	gap: 0;
 	button {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 20px;
 		opacity: 0;
 		background-color: @fly-light-surface-primary;
+		cursor: pointer;
+		transition: all .3s ease-out;
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 20px;
+			padding: @spacing-12 0;
+			.border-radius-4();
+			background-color: @fly-light-button-secondary-background;
+		}
 		svg {
 			width: 12px;
 			height: 12px;
@@ -163,6 +170,11 @@ main {
 			svg {
 				rotate: 180deg;
 				opacity: 0.5;
+			}
+		}
+		&:hover {
+			div {
+				background-color: @fly-light-button-secondary-background-hover;
 			}
 		}
 	}
@@ -215,7 +227,7 @@ main {
 				}
 			}
 			h1 {
-				.headline-14-125();
+				.detail-14-125();
 				color: @fly-light-text-link-primary;
 				text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 				-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
@@ -332,39 +344,65 @@ main {
 				}
 			}
 			table {
+				border-collapse: separate;
 				border-spacing: 0;
-				border-collapse: collapse;
 				thead {
 					th {
 						text-align: left;
-						.detail-10-trim();
+						.detail-12-trim();
 						color: @fly-light-text-tertiary;
 					}
 				}
 				tbody {
 					tr {
-						border-bottom: 1px dashed @fly-light-utility-border;
 					}
 					td {
-						padding: @spacing-8 0;
+						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
+						padding: @spacing-8 @spacing-4;
+						vertical-align: middle;
+						&:first-child {
+							padding-left: 0;
+						}
+						&:last-child {
+							padding-right: 0;
+						}
+						div {
+							display: flex;
+							flex-direction: row;
+							gap: @spacing-4;
+							align-items: center;
+						}
 					}
-					.headshot {
+					svg {
 						width: 20px;
+						min-width: 20px;
 						height: 20px;
 						.border-radius-2();
+						fill: rgb(@color-el-no-race);
+					}
+					svg.d {
+						background-color: rgb(@color-el-d-won);
+					}
+					svg.r {
+						background-color: rgb(@color-el-r-won);
+					}
+					svg.i {
 						background-color: rgb(@color-el-other);
 					}
 					.candidate {
-						display: flex;
-						flex-direction: row;
-						gap: @spacing-4;
-						align-items: center;
-						.headline-12-trim();
-						color: @fly-light-text-primary;
+						width: 99%;
+						h2 {
+							.headline-12-trim();
+							color: @fly-light-text-primary;
+						}
+						h3 {
+							.detail-12-trim();
+							color: @fly-light-text-tertiary;
+						}
 					}
 					.votes {
 						.detail-12-trim();
-						color: @fly-light-text-secondary;
+						color: @fly-light-text-primary;
 					}
 					.percent {
 						.headline-12-trim();
@@ -455,7 +493,7 @@ main {
 	text-box: trim-both cap alphabetic;
 }
 .detail-12-trim {
-	font-family: "TTNormsPro-Bold", sans-serif;
+	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 12px;
 	leading-trim: both;
@@ -463,9 +501,15 @@ main {
 	text-box: trim-both cap alphabetic;
 }
 .detail-12-125 {
-	font-family: "TTNormsPro-Regular", sans-serif;
+	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 12px;
+	line-height: 125%;
+}
+.detail-14-125 {
+	font-family: "TTNormsPro-Normal", sans-serif;
+	font-style: normal;
+	font-size: 14px;
 	line-height: 125%;
 }
 
@@ -479,7 +523,7 @@ main {
 	text-box: trim-both cap alphabetic;
 }
 .headline-14-125 {
-	font-family: "TTNormsPro-Normal", sans-serif;
+	font-family: "TTNormsPro-Bold", sans-serif;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 125%;
