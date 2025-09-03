@@ -235,15 +235,6 @@ main {
 				flex-direction: row;
 				align-items: center;
 				gap: @spacing-2;
-				span {
-					width: 4px;
-					height: 4px;
-					background-color: @fly-light-utility-status-alert;
-					border-radius: 50%;
-					opacity: 1;
-					animation: dotPulse 1s infinite linear;
-					animation-delay: 6s;
-				}
 			}
 			h1 {
 				.detail-14-125();
@@ -256,36 +247,6 @@ main {
 				background-color: @fly-light-surface-primary;
 				animation: cellBgd 1s 3 linear;
 				animation-delay: 3s;
-			}
-			@keyframes slideIn {
-				0% {
-					left: -216px;
-				}
-				100% {
-					left: 0;
-				}
-			}
-			@keyframes dotPulse {
-				0% {
-					opacity: 1;
-				}
-				50% {
-					opacity: .25;
-				}
-				100% {
-					opacity: 1;
-				}
-			}
-			@keyframes cellBgd {
-				0% {
-					background-color: @fly-light-surface-primary;
-				}
-				50% {
-					background-color: @fly-light-surface-tertiary;
-				}
-				100% {
-					background-color: @fly-light-surface-primary;
-				}
 			}
 			&:hover {
 				background-color: @fly-light-surface-tertiary;
@@ -360,6 +321,7 @@ main {
 	}
 	.results {
 		.bar {
+			display: inline;
 			width: 40px;
 			height: 10px;
 			background-color: rgb(@color-el-no-race);
@@ -378,6 +340,13 @@ main {
 					display: flex;
 					flex-direction: column;
 					gap: @spacing-4;
+					.meta {
+						display: flex;
+						flex-direction: row;
+						gap: @spacing-4;
+						vertical-align: middle;
+						align-items : center;
+					}
 					h1 {
 						.headline-16-125();
 						color: @fly-light-text-primary;
@@ -385,6 +354,9 @@ main {
 					p {
 						.detail-12-125();
 						color: @fly-light-text-secondary;
+					}
+					em {
+						color: @fly-light-text-alert;
 					}
 				}
 				.map {
@@ -600,3 +572,49 @@ main {
 
 
 
+
+
+
+
+// // // Animation
+
+.dot {
+	width: 4px;
+	height: 4px;
+	background-color: @fly-light-utility-status-alert;
+	border-radius: 50%;
+	opacity: 1;
+	animation: dotPulse 1s infinite linear;
+	animation-delay: 6s;
+}
+
+@keyframes slideIn {
+	0% {
+		left: -216px;
+	}
+	100% {
+		left: 0;
+	}
+}
+@keyframes dotPulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: .25;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes cellBgd {
+	0% {
+		background-color: @fly-light-surface-primary;
+	}
+	50% {
+		background-color: @fly-light-surface-tertiary;
+	}
+	100% {
+		background-color: @fly-light-surface-primary;
+	}
+}
