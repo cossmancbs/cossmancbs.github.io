@@ -376,6 +376,9 @@
 		$(document).ready(function() {
 			
 			function checkNav() {
+				setTimeout(function() {
+					$('article').addClass('slidein');
+				}, 2000);
 				if ($(document).scrollTop() < 75) {
 					// scrolled less than 75
 					$('#stickers').addClass('nav-shadow-off');
@@ -385,7 +388,6 @@
 					$('#stickers').addClass('nav-shadow-on');
 					$('#stickers').removeClass('nav-shadow-off');
 				}
-				
 			}
 			
 			// Execute on load
