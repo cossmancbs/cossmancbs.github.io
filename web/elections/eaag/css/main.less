@@ -296,10 +296,6 @@ main {
 		.carousel {
 			article {
 				background-color: @fly-dark-surface-primary;
-				&:first-of-type {
-					background-color: @fly-dark-surface-primary;
-					animation: cellPulseDark 1s 3 linear;
-				}
 				.flag {
 					color: @fly-dark-text-alert;
 				}
@@ -308,6 +304,11 @@ main {
 					text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
 					-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
 					transition: all .3s ease-out;
+				}
+				&:first-of-type {
+					background-color: @fly-dark-surface-primary;
+					animation: cellPulseDark 1s 3 linear;
+					animation-delay: 4s;
 				}
 				&:hover {
 					background-color: @fly-dark-surface-tertiary;
@@ -559,7 +560,7 @@ main {
 							border-bottom: 1px dashed @fly-dark-utility-border;
 						}
 						.candidate {
-							h2 {
+							p {
 								color: @fly-dark-text-primary;
 							}
 							span {
@@ -567,10 +568,10 @@ main {
 							}
 						}
 						.votes {
-							color: @fly-dark-text-primary;
+							p {color: @fly-dark-text-primary;}
 						}
 						.percent {
-							div {
+							p {
 								color: @fly-dark-text-primary;
 							}
 						}
