@@ -384,7 +384,30 @@ main {
 			height: 10px;
 			background-color: rgb(@color-el-no-race);
 			border-radius: 5px;
+			overflow: hidden;
+			div {
+				width: 0%;
+				height: 10px;
+				border-right: 1px solid @fly-light-surface-primary;
+				background-color: rgb(@color-el-i-likely);
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-delay: 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
 		}
+		.barD { div { background-color: rgb(@color-el-d-won); } }
+		.barR { div { background-color: rgb(@color-el-r-won); } }
+		.barI { div { background-color: rgb(@color-el-other); } }
+		.bar05 { div { animation-name: barIn05; } }
+		.bar09 { div { animation-name: barIn09; } }
+		.bar11 { div { animation-name: barIn11; } }
+		.bar16 { div { animation-name: barIn16; } }
+		.bar32 { div { animation-name: barIn32; } }
+		.bar59 { div { animation-name: barIn59; } }
+		.bar63 { div { animation-name: barIn63; } }
+		.bar73 { div { animation-name: barIn73; } }
 		article {
 			display: flex;
 			flex-direction: column;
@@ -451,9 +474,8 @@ main {
 						div {
 							display: flex;
 							flex-direction: row;
-							gap: @spacing-4;
+							gap: @spacing-8;
 							align-items: center;
-							vertical-align: baseline;
 						}
 					}
 					svg {
@@ -478,7 +500,7 @@ main {
 							.detail-14-strong();
 							color: @fly-light-text-primary;
 						}
-						h3 {
+						span {
 							.detail-12();
 							color: @fly-light-text-secondary;
 						}
@@ -538,6 +560,11 @@ main {
 			}
 		}
 		.results {
+			.bar {
+				div {
+					border-right: 1px solid @fly-dark-surface-primary;
+				}
+			}
 			article {
 				.heading {
 					.hgroup {
@@ -566,7 +593,7 @@ main {
 							h2 {
 								color: @fly-dark-text-primary;
 							}
-							h3 {
+							span {
 								color: @fly-dark-text-secondary;
 							}
 						}
@@ -745,6 +772,15 @@ main {
 	animation: dotPulse 1s infinite linear;
 	animation-delay: 6s;
 }
+
+@keyframes barIn05 { 0% {width: 0%;} 100% {width: 05%} }
+@keyframes barIn09 { 0% {width: 0%;} 100% {width: 09%} }
+@keyframes barIn11 { 0% {width: 0%;} 100% {width: 11%} }
+@keyframes barIn16 { 0% {width: 0%;} 100% {width: 16%} }
+@keyframes barIn32 { 0% {width: 0%;} 100% {width: 32%} }
+@keyframes barIn59 { 0% {width: 0%;} 100% {width: 59%} }
+@keyframes barIn63 { 0% {width: 0%;} 100% {width: 63%} }
+@keyframes barIn73 { 0% {width: 0%;} 100% {width: 73%} }
 
 @keyframes slideIn {
 	0% {
