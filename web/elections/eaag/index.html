@@ -138,10 +138,12 @@
 										<h2>Zohran Mamdani <span>Dem.</span></h2>
 									</div>
 								</td>
-								<td class="votes">1,304,923</td>
+								<td class="votes">
+									<span id="voteMa">&mdash;</span>
+								</td>
 								<td class="percent">
 									<div>
-										59.7%
+										<span id="per59">&mdash;</span>
 										<div class="bar bar59 barD"><div></div></div>
 									</div>
 								</td>
@@ -153,10 +155,12 @@
 										<h2>Curtis Sliwa <span>Rep.</span></h2>
 									</div>
 								</td>
-								<td class="votes">21,042</td>
+								<td class="votes">
+									<span id="voteSl">&mdash;</span>
+								</td>
 								<td class="percent">
 									<div>
-										11.2%
+										<span id="per11">&mdash;</span><!--.2%-->
 										<div class="bar bar11 barR"><div></div></div>
 									</div>
 								</td>
@@ -168,10 +172,12 @@
 										<h2>Eric Adams <span>Ind.</span></h2>
 									</div>
 								</td>
-								<td class="votes">19,761</td>
+								<td class="votes">
+									<span id="voteAd">&mdash;</span>
+								</td>
 								<td class="percent">
 									<div>
-										9.8%
+										<span id="per09">&mdash;</span><!--.8%-->
 										<div class="bar bar09 barI"><div></div></div>
 									</div>
 								</td>
@@ -183,10 +189,12 @@
 										<h2>Andrew Cuomo <span>Ind.</span></h2>
 									</div>
 								</td>
-								<td class="votes">2,943</td>
+								<td class="votes">
+									<span id="voteCu">&mdash;</span>
+								</td>
 								<td class="percent">
 									<div>
-										5.6%
+										<span id="per05">&mdash;</span><!--.6%-->
 										<div class="bar bar05 barI"><div></div></div>
 									</div>
 								</td>
@@ -231,10 +239,12 @@
 										<h2>Mikie Sherrill <span>Dem.</span></h2>
 									</div>
 								</td>
-								<td class="votes">93,871</td>
+								<td class="votes">
+									<span id="voteSh">&mdash;</span>
+								</td>
 								<td class="percent">
 									<div>
-										63.2%
+										<span id="per63">&mdash;</span><!--.2%-->
 										<div class="bar bar63 barD"><div></div></div>
 									</div>
 								</td>
@@ -246,10 +256,12 @@
 										<h2>Jack Ciatterelli <span>Rep.</span></h2>
 									</div>
 								</td>
-								<td class="votes">21,984</td>
+								<td class="votes">
+									<span id="voteCi">&mdash;</span>
+								</td>
 								<td class="percent">
 									<div>
-										16.7%
+										<span id="per16">&mdash;</span><!--.7%-->
 										<div class="bar bar16 barR"><div></div></div>
 									</div>
 								</td>
@@ -339,6 +351,10 @@
 	
 	
 	
+	<span id="percentTest"></span>
+	
+	
+	
 	
 	
 	<main>
@@ -363,8 +379,7 @@
 	
 	<script>
 		
-		
-		
+
 		
 		
 		
@@ -385,8 +400,6 @@
 		$(document).ready(function() {
 			
 			function checkNav() {
-				//setTimeout(function() {
-				//}, 2000);
 				if ($(document).scrollTop() < 75) {
 					// scrolled less than 75
 					$('#stickers').addClass('nav-shadow-off');
@@ -404,7 +417,39 @@
 			$(window).on("load resize scroll",function(e){
 				checkNav();
 			});
+
+			// BoP: increase delegate count:
+			const obj05 = document.getElementById('per05');
+			const obj09 = document.getElementById('per09');
+			const obj11 = document.getElementById('per11');
+			const obj16 = document.getElementById('per16');
+			const obj32 = document.getElementById('per32');
+			const obj59 = document.getElementById('per59');
+			const obj63 = document.getElementById('per63');
+			const obj73 = document.getElementById('per73');
+			const objVoteMa = document.getElementById('voteMa');
+			const objVoteSl = document.getElementById('voteSl');
+			const objVoteAd = document.getElementById('voteAd');
+			const objVoteCu = document.getElementById('voteCu');
+			const objVoteSh = document.getElementById('voteSh');
+			const objVoteCi = document.getElementById('voteCi');
 			
+			setTimeout(function() {
+				animatePercentage(obj05, 0, 5, 1000);
+				animatePercentage(obj09, 0, 9, 1000);
+				animatePercentage(obj11, 0, 11, 1000);
+				animatePercentage(obj16, 0, 16, 1000);
+				animatePercentage(obj32, 0, 32, 1000);
+				animatePercentage(obj59, 0, 59, 1000);
+				animatePercentage(obj63, 0, 63, 1000);
+				animatePercentage(obj73, 0, 73, 1000);
+				animateValue(objVoteMa, 0, 1304923, 1000);
+				animateValue(objVoteSl, 0, 21042, 1000);
+				animateValue(objVoteAd, 0, 19761, 1000);
+				animateValue(objVoteCu, 0, 2943, 1000);
+				animateValue(objVoteSh, 0, 93871, 1000);
+				animateValue(objVoteCi, 0, 21984, 1000);
+			}, 1000);
 		});
 		
 		
@@ -439,6 +484,42 @@ document.getElementById("mycountdown").innerHTML = "First results expected soon"
 		
 		
 		
+		
+		// INCREMENT
+		//
+		// NUMERALS
+		//
+		function numberWithCommas(x) {
+			return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+		}
+		function animateValue(obj, start, end, duration) {
+			let startTimestamp = null;
+			const step = (timestamp) => {
+				if (!startTimestamp) startTimestamp = timestamp;
+				const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+				const doTheMath = Math.floor(progress * (end - start) + start);
+				obj.innerHTML = numberWithCommas(doTheMath);
+				if (progress < 1) {
+					window.requestAnimationFrame(step);
+				}
+			};
+			window.requestAnimationFrame(step);
+		}
+		//
+		// PERCENTAGES (how to calculate with decimal point?)
+		//
+		function animatePercentage(obj, start, end, duration) {
+			let startTimestamp = null;
+			const step = (timestamp) => {
+				if (!startTimestamp) startTimestamp = timestamp;
+				const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+				obj.innerHTML = Math.floor(progress * (end - start) + start) + ".0%";
+				if (progress < 1) {
+					window.requestAnimationFrame(step);
+				}
+			};
+			window.requestAnimationFrame(step);
+		}
 		
 		
 		
