@@ -219,7 +219,7 @@ main {
 			animation-name: slideIn;
 			animation-duration: 1s;
 			animation-timing-function: ease-in-out;
-			animation-delay: 2s;
+			animation-delay: 3s;
 			animation-iteration-count: 1;
 			animation-fill-mode: forwards;
 		}
@@ -378,36 +378,6 @@ main {
 		}
 	}
 	.results {
-		.bar {
-			display: inline;
-			width: 40px;
-			height: 10px;
-			background-color: rgb(@color-el-no-race);
-			border-radius: 5px;
-			overflow: hidden;
-			div {
-				width: 0%;
-				height: 10px;
-				border-right: 1px solid @fly-light-surface-primary;
-				background-color: rgb(@color-el-i-likely);
-				animation-duration: 1s;
-				animation-timing-function: ease-in-out;
-				animation-delay: 1s;
-				animation-iteration-count: 1;
-				animation-fill-mode: forwards;
-			}
-		}
-		.barD { div { background-color: rgb(@color-el-d-won); } }
-		.barR { div { background-color: rgb(@color-el-r-won); } }
-		.barI { div { background-color: rgb(@color-el-other); } }
-		.bar05 { div { animation-name: barIn05; } }
-		.bar09 { div { animation-name: barIn09; } }
-		.bar11 { div { animation-name: barIn11; } }
-		.bar16 { div { animation-name: barIn16; } }
-		.bar32 { div { animation-name: barIn32; } }
-		.bar59 { div { animation-name: barIn59; } }
-		.bar63 { div { animation-name: barIn63; } }
-		.bar73 { div { animation-name: barIn73; } }
 		article {
 			display: flex;
 			flex-direction: column;
@@ -496,7 +466,7 @@ main {
 					}
 					.candidate {
 						width: 99%;
-						h2 {
+						p {
 							.detail-14-strong();
 							color: @fly-light-text-primary;
 						}
@@ -506,13 +476,18 @@ main {
 						}
 					}
 					.votes {
-						text-align: right;
-						.detail-14();
-						color: @fly-light-text-primary;
+						p {
+							text-align: right;
+							.detail-14();
+							color: @fly-light-text-primary;
+						}
 					}
 					.percent {
-						div {
+						.container {
 							justify-content: right;
+						}
+						p {
+							text-align: right;
 							.detail-14-strong();
 							color: @fly-light-text-primary;
 						}
@@ -560,11 +535,6 @@ main {
 			}
 		}
 		.results {
-			.bar {
-				div {
-					border-right: 1px solid @fly-dark-surface-primary;
-				}
-			}
 			article {
 				.heading {
 					.hgroup {
@@ -772,6 +742,50 @@ main {
 	animation: dotPulse 1s infinite linear;
 	animation-delay: 6s;
 }
+@media (prefers-color-scheme: dark) {
+	.dot {
+		background-color: @fly-dark-utility-status-alert;
+	}
+}
+
+.bar {
+	display: inline;
+	width: 40px;
+	height: 10px;
+	background-color: rgb(@color-el-no-race);
+	border-radius: 5px;
+	overflow: hidden;
+	div {
+		width: 0%;
+		height: 10px;
+		border-right: 1px solid @fly-light-surface-primary;
+		background-color: rgb(@color-el-i-likely);
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.bar {
+		div {
+			border-right: 1px solid @fly-dark-surface-primary;
+		}
+	}
+}
+
+.barD  { div { background-color: rgb(@color-el-d-won); } }
+.barR  { div { background-color: rgb(@color-el-r-won); } }
+.barI  { div { background-color: rgb(@color-el-other); } }
+.bar05 { div { animation-name: barIn05; } }
+.bar09 { div { animation-name: barIn09; } }
+.bar11 { div { animation-name: barIn11; } }
+.bar16 { div { animation-name: barIn16; } }
+.bar32 { div { animation-name: barIn32; } }
+.bar59 { div { animation-name: barIn59; } }
+.bar63 { div { animation-name: barIn63; } }
+.bar73 { div { animation-name: barIn73; } }
 
 @keyframes barIn05 { 0% {width: 0%;} 100% {width: 05%} }
 @keyframes barIn09 { 0% {width: 0%;} 100% {width: 09%} }
@@ -783,45 +797,23 @@ main {
 @keyframes barIn73 { 0% {width: 0%;} 100% {width: 73%} }
 
 @keyframes slideIn {
-	0% {
-		left: -216px;
-	}
-	100% {
-		left: 0;
-	}
+	0%   { left: -216px; }
+	100% { left: 0; }
 }
 @keyframes dotPulse {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: .25;
-	}
-	100% {
-		opacity: 1;
-	}
+	0%   { opacity: 1; }
+	50%  { opacity: .25; }
+	100% { opacity: 1; }
 }
 @keyframes cellPulseLight {
-	0% {
-		background-color: @fly-light-surface-primary;
-	}
-	50% {
-		background-color: @fly-light-surface-tertiary;
-	}
-	100% {
-		background-color: @fly-light-surface-primary;
-	}
+	0%   { background-color: @fly-light-surface-primary; }
+	50%  { background-color: @fly-light-surface-tertiary; }
+	100% { background-color: @fly-light-surface-primary; }
 }
 @keyframes cellPulseDark {
-	0% {
-		background-color: @fly-dark-surface-primary;
-	}
-	50% {
-		background-color: @fly-dark-surface-tertiary;
-	}
-	100% {
-		background-color: @fly-dark-surface-primary;
-	}
+	0%   { background-color: @fly-dark-surface-primary; }
+	50%  { background-color: @fly-dark-surface-tertiary; }
+	100% { background-color: @fly-dark-surface-primary; }
 }
 
 
