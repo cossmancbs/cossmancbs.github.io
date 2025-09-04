@@ -37,7 +37,7 @@ section {
 	z-index: 99;
 }
 main {
-	margin: @spacing-20;
+	margin: 0 @spacing-20;
 	.content {
 		height: 2000px;
 		.wireframe();
@@ -48,7 +48,7 @@ main {
 @media only screen and (min-width:  @break-md) {
 	main {
 		padding: 0 @spacing-20;
-		margin: @spacing-40 auto;
+		margin: 0 auto;
 		width: @break-md-container;
 	}
 }
@@ -251,7 +251,7 @@ main {
 			&:first-of-type {
 				background-color: @fly-light-surface-primary;
 				animation: cellPulseLight 1s 3 linear;
-				animation-delay: 3s;
+				animation-delay: 4s;
 			}
 			&:hover {
 				background-color: @fly-light-surface-tertiary;
@@ -299,7 +299,6 @@ main {
 				&:first-of-type {
 					background-color: @fly-dark-surface-primary;
 					animation: cellPulseDark 1s 3 linear;
-					animation-delay: 3s;
 				}
 				.flag {
 					color: @fly-dark-text-alert;
@@ -750,14 +749,14 @@ main {
 
 .bar {
 	display: inline;
-	width: 40px;
-	height: 10px;
+	width: @spacing-40;
+	height: @spacing-12;
 	background-color: rgb(@color-el-no-race);
-	border-radius: 5px;
+	.border-radius-6();
 	overflow: hidden;
 	div {
 		width: 0%;
-		height: 10px;
+		height: @spacing-12;
 		border-right: 1px solid @fly-light-surface-primary;
 		background-color: rgb(@color-el-i-likely);
 		animation-duration: 1s;
@@ -815,9 +814,6 @@ main {
 	50%  { background-color: @fly-dark-surface-tertiary; }
 	100% { background-color: @fly-dark-surface-primary; }
 }
-
-
-
 
 
 
