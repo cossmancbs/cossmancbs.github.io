@@ -120,6 +120,14 @@ main {
 	margin: 0 @spacing-16;
 	border-right: 1px solid @fly-light-utility-border;
 }
+@media (prefers-color-scheme: dark) {
+	.rule-horiz {
+		border-bottom: 1px solid @fly-dark-utility-border;
+	}
+	.rule-vert {
+		border-right: 1px solid @fly-dark-utility-border;
+	}
+}
 
 @media only screen and (min-width:  @break-sm) {
 }
@@ -141,7 +149,7 @@ main {
 
 
 
-// // // EAAG: Live Updates
+// // // Live Updates
 
 .live-updates {
 	display: flex;
@@ -149,9 +157,9 @@ main {
 	gap: 0;
 	button {
 		opacity: 0;
-		background-color: @fly-light-surface-primary;
 		cursor: pointer;
 		transition: all .3s ease-out;
+		background-color: transparent;
 		div {
 			display: flex;
 			align-items: center;
@@ -173,6 +181,9 @@ main {
 			}
 		}
 		&:hover {
+			svg {
+				fill: @fly-light-button-secondary-text-hover;
+			}
 			div {
 				background-color: @fly-light-button-secondary-background-hover;
 			}
@@ -205,7 +216,6 @@ main {
 			display: flex;
 			flex-direction: row;
 			gap: 0;
-			border: 1ps solid salmon;
 			animation-name: slideIn;
 			animation-duration: 1s;
 			animation-timing-function: ease-in-out;
@@ -214,8 +224,6 @@ main {
 			animation-fill-mode: forwards;
 		}
 		article {
-			//position: relative;
-			//left: -216px;
 			display: flex;
 			flex-direction: column;
 			gap: @spacing-4;
@@ -225,11 +233,8 @@ main {
 			.border-radius-4();
 			background-color: @fly-light-surface-primary;
 			transition: all .3s ease-in-out;
-			//transition: left 1s ease-in-out;
-			//animation: slideIn 1s 1 linear;
-			//animation-delay: 2s;
 			.flag {
-				.headline-12-trim();
+				.detail-12-strong();
 				color: @fly-light-text-alert;
 				display: flex;
 				flex-direction: row;
@@ -237,7 +242,7 @@ main {
 				gap: @spacing-2;
 			}
 			h1 {
-				.detail-14-125();
+				.headline-14();
 				color: @fly-light-text-link-primary;
 				text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 				-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
@@ -245,7 +250,7 @@ main {
 			}
 			&:first-of-type {
 				background-color: @fly-light-surface-primary;
-				animation: cellBgd 1s 3 linear;
+				animation: cellPulseLight 1s 3 linear;
 				animation-delay: 3s;
 			}
 			&:hover {
@@ -262,6 +267,59 @@ main {
 	&:hover {
 		button {
 			opacity: 1;
+		}
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.live-updates {
+		button {
+			div {
+				background-color: @fly-dark-button-secondary-background;
+			}
+			svg {
+				fill: @fly-dark-button-secondary-text;
+			}
+			&:hover {
+				svg {
+					fill: @fly-dark-button-secondary-text-hover;
+				}
+				div {
+					background-color: @fly-dark-button-secondary-background-hover;
+				}
+			}
+		}
+		.branding {
+			svg {
+				filter: brightness(0) invert(1);
+			}
+		}
+		.carousel {
+			article {
+				background-color: @fly-dark-surface-primary;
+				&:first-of-type {
+					background-color: @fly-dark-surface-primary;
+					animation: cellPulseDark 1s 3 linear;
+					animation-delay: 3s;
+				}
+				.flag {
+					color: @fly-dark-text-alert;
+				}
+				h1 {
+					color: @fly-dark-text-link-primary;
+					text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+					-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+					transition: all .3s ease-out;
+				}
+				&:hover {
+					background-color: @fly-dark-surface-tertiary;
+					h1 {
+						color: @fly-dark-text-link-primary-hover;
+						text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
+						-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
+						transition: all .3s ease-out;
+					}
+				}
+			}
 		}
 	}
 }
@@ -288,7 +346,7 @@ main {
 
 
 
-// // // EAAG: Key Races
+// // // Key Races (Results)
 
 .key-races {
 	margin: 0;
@@ -307,7 +365,7 @@ main {
 		button {
 			flex-grow: 1;
 			padding: @spacing-8;
-			.action-12-trim();
+			.action-12();
 			color: @fly-light-button-secondary-text;
 			background-color: @fly-light-button-secondary-background;
 			.border-radius-4();
@@ -348,11 +406,11 @@ main {
 						align-items : center;
 					}
 					h1 {
-						.headline-16-125();
+						.headline-16-strong();
 						color: @fly-light-text-primary;
 					}
 					p {
-						.detail-12-125();
+						.body-14();
 						color: @fly-light-text-secondary;
 					}
 					em {
@@ -371,14 +429,15 @@ main {
 				border-spacing: 0;
 				thead {
 					th {
-						text-align: left;
-						.detail-12-trim();
-						color: @fly-light-text-tertiary;
+						text-align: center;
+						.detail-12();
+						color: @fly-light-text-secondary;
+						&:first-of-type {
+							text-align: left;
+						}
 					}
 				}
 				tbody {
-					tr {
-					}
 					td {
 						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
 						padding: @spacing-8 @spacing-4;
@@ -394,6 +453,7 @@ main {
 							flex-direction: row;
 							gap: @spacing-4;
 							align-items: center;
+							vertical-align: baseline;
 						}
 					}
 					svg {
@@ -415,21 +475,25 @@ main {
 					.candidate {
 						width: 99%;
 						h2 {
-							.headline-12-trim();
+							.detail-14-strong();
 							color: @fly-light-text-primary;
 						}
 						h3 {
-							.detail-12-trim();
-							color: @fly-light-text-tertiary;
+							.detail-12();
+							color: @fly-light-text-secondary;
 						}
 					}
 					.votes {
-						.detail-12-trim();
+						text-align: right;
+						.detail-14();
 						color: @fly-light-text-primary;
 					}
 					.percent {
-						.headline-12-trim();
-						color: @fly-light-text-primary;
+						div {
+							justify-content: right;
+							.detail-14-strong();
+							color: @fly-light-text-primary;
+						}
 					}
 				}
 			}
@@ -444,7 +508,7 @@ main {
 					border: 1px solid @fly-light-button-secondary-border;
 					.border-radius-4();
 					cursor: pointer;
-					.action-12-trim();
+					.action-12();
 					&:hover {
 						color: @fly-light-button-secondary-text-hover;
 						background-color: @fly-light-button-secondary-background-hover;
@@ -453,6 +517,80 @@ main {
 			}
 			&:not(:first-child) {
 				display: none;
+			}
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.key-races {
+		nav {
+			background-color: @fly-dark-surface-primary;
+			border: 1px solid @fly-dark-utility-border;
+			button {
+				color: @fly-dark-button-secondary-text;
+				background-color: @fly-dark-button-secondary-background;
+			}
+			.focus {
+				// no appropriate Fly button text color?
+				color: rgb(@color-neutral-100);
+				background-color: @fly-dark-button-secondary-border-focused;
+			}
+		}
+		.results {
+			article {
+				.heading {
+					.hgroup {
+						h1 {
+							color: @fly-dark-text-primary;
+						}
+						p {
+							color: @fly-dark-text-secondary;
+						}
+						em {
+							color: @fly-dark-text-alert;
+						}
+					}
+				}
+				table {
+					thead {
+						th {
+							color: @fly-dark-text-secondary;
+						}
+					}
+					tbody {
+						td {
+							border-bottom: 1px dashed @fly-dark-utility-border;
+						}
+						.candidate {
+							h2 {
+								color: @fly-dark-text-primary;
+							}
+							h3 {
+								color: @fly-dark-text-secondary;
+							}
+						}
+						.votes {
+							color: @fly-dark-text-primary;
+						}
+						.percent {
+							div {
+								color: @fly-dark-text-primary;
+							}
+						}
+					}
+				}
+				.buttons {
+					button {
+						background-color: @fly-dark-button-secondary-background;
+						color: @fly-dark-button-secondary-text;
+						border: 1px solid @fly-dark-button-secondary-border;
+						&:hover {
+							color: @fly-dark-button-secondary-text-hover;
+							background-color: @fly-dark-button-secondary-background-hover;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -507,59 +645,79 @@ main {
 // // // Typography
 
 // Detail
-.detail-10-trim {
-	font-family: "TTNormsPro-Normal", sans-serif;
-	font-style: normal;
-	font-size: 10px;
-	leading-trim: both;
-	text-edge: cap;
-	text-box: trim-both cap alphabetic;
-}
-.detail-12-trim {
-	font-family: "TTNormsPro-Normal", sans-serif;
-	font-style: normal;
-	font-size: 12px;
-	leading-trim: both;
-	text-edge: cap;
-	text-box: trim-both cap alphabetic;
-}
-.detail-12-125 {
+.detail-12 {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 12px;
 	line-height: 125%;
+	leading-trim: both;
+	text-edge: cap;
+	text-box: trim-both cap alphabetic;
 }
-.detail-14-125 {
+.detail-12-strong {
+	font-family: "TTNormsPro-Bold", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	line-height: 125%;
+	leading-trim: both;
+	text-edge: cap;
+	text-box: trim-both cap alphabetic;
+}
+.detail-14 {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 125%;
+	leading-trim: both;
+	text-edge: cap;
+	text-box: trim-both cap alphabetic;
+}
+.detail-14-strong {
+	font-family: "TTNormsPro-Bold", sans-serif;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 125%;
+	leading-trim: both;
+	text-edge: cap;
+	text-box: trim-both cap alphabetic;
 }
 
 // Headline
-.headline-12-trim {
-	font-family: "TTNormsPro-Bold", sans-serif;
+.headline-14 {
+	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
-	font-size: 12px;
-	leading-trim: both;
-	text-edge: cap;
-	text-box: trim-both cap alphabetic;
+	font-size: 14px;
+	line-height: 125%;
 }
-.headline-14-125 {
+.headline-14-strong {
 	font-family: "TTNormsPro-Bold", sans-serif;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 125%;
 }
-.headline-16-125 {
+.headline-16 {
+	font-family: "TTNormsPro-Normal", sans-serif;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 125%;
+}
+.headline-16-strong {
 	font-family: "TTNormsPro-Bold", sans-serif;
 	font-style: normal;
 	font-size: 16px;
 	line-height: 125%;
 }
 
+// Body
+.body-14 {
+	font-family: "TTNormsPro-Normal", sans-serif;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 125%;
+}
+
 // Action
-.action-12-trim {
+.action-12 {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 12px;
@@ -579,7 +737,7 @@ main {
 // // // Animation
 
 .dot {
-	width: 4px;
+	min-width: 4px;
 	height: 4px;
 	background-color: @fly-light-utility-status-alert;
 	border-radius: 50%;
@@ -607,7 +765,7 @@ main {
 		opacity: 1;
 	}
 }
-@keyframes cellBgd {
+@keyframes cellPulseLight {
 	0% {
 		background-color: @fly-light-surface-primary;
 	}
@@ -616,5 +774,16 @@ main {
 	}
 	100% {
 		background-color: @fly-light-surface-primary;
+	}
+}
+@keyframes cellPulseDark {
+	0% {
+		background-color: @fly-dark-surface-primary;
+	}
+	50% {
+		background-color: @fly-dark-surface-tertiary;
+	}
+	100% {
+		background-color: @fly-dark-surface-primary;
 	}
 }
