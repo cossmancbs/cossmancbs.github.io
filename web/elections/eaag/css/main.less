@@ -422,6 +422,7 @@ main {
 				border-spacing: 0;
 				thead {
 					th {
+						padding: 0 0 @spacing-4 0;
 						text-align: center;
 						.detail-12();
 						color: @fly-light-text-secondary;
@@ -433,7 +434,7 @@ main {
 				tbody {
 					td {
 						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
-						padding: @spacing-8 @spacing-4;
+						padding: @spacing-4;
 						vertical-align: middle;
 						&:first-child {
 							padding-left: 0;
@@ -447,6 +448,21 @@ main {
 							gap: @spacing-8;
 							align-items: center;
 						}
+					}
+					img {
+						width: 28px;
+						min-width: 28px;
+						height: 28px;
+						.border-radius-4();
+					}
+					img.d {
+						background-color: rgb(@color-el-d-won);
+					}
+					img.r {
+						background-color: rgb(@color-el-r-won);
+					}
+					img.i {
+						background-color: rgb(@color-el-other);
 					}
 					svg {
 						width: 20px;
