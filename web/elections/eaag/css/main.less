@@ -262,6 +262,12 @@ main {
 					transition: all .3s ease-out;
 				}
 			}
+			&:active {
+				background-color: @fly-light-surface-secondary;
+				h1 {
+					color: @fly-light-text-link-primary;
+				}
+			}
 		}
 	}
 	&:hover {
@@ -317,6 +323,12 @@ main {
 						text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
 						-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
 						transition: all .3s ease-out;
+					}
+				}
+				&:active {
+					background-color: @fly-dark-surface-secondary;
+					h1 {
+						color: @fly-dark-text-link-primary;
 					}
 				}
 			}
@@ -432,6 +444,11 @@ main {
 					}
 				}
 				tbody {
+					tr {
+						&:first-of-type {
+							background-color: rgba(@color-el-d-won,.1);
+						}
+					}
 					td {
 						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
 						padding: @spacing-4;
@@ -465,20 +482,10 @@ main {
 						background-color: rgb(@color-el-other);
 					}
 					svg {
-						width: 20px;
-						min-width: 20px;
-						height: 20px;
-						.border-radius-2();
-						fill: rgb(@color-el-no-race);
-					}
-					svg.d {
-						background-color: rgb(@color-el-d-won);
-					}
-					svg.r {
-						background-color: rgb(@color-el-r-won);
-					}
-					svg.i {
-						background-color: rgb(@color-el-other);
+						width: 16px;
+						min-width: 16px;
+						height: 16px;
+						fill: rgb(@color-el-d-won);
 					}
 					.candidate {
 						width: 99%;
@@ -522,7 +529,8 @@ main {
 					.border-radius-4();
 					cursor: pointer;
 					.action-12();
-					&:hover {
+					&:hover,
+					&:active {
 						color: @fly-light-button-secondary-text-hover;
 						background-color: @fly-light-button-secondary-background-hover;
 					}
@@ -598,7 +606,8 @@ main {
 						background-color: @fly-dark-button-secondary-background;
 						color: @fly-dark-button-secondary-text;
 						border: 1px solid @fly-dark-button-secondary-border;
-						&:hover {
+						&:hover,
+						&:active {
 							color: @fly-dark-button-secondary-text-hover;
 							background-color: @fly-dark-button-secondary-background-hover;
 						}
