@@ -392,7 +392,7 @@ main {
 		width: 100%;
 		border-radius: 99px;
 		container-type: size; // in order to use CQW
-		height: 32px; // required
+		height: 34px; // required
 		input {
 			display: none;
 		}
@@ -517,11 +517,6 @@ main {
 					}
 				}
 				tbody {
-					tr {
-						&:first-of-type {
-							//background-color: rgba(@color-el-d-won,.1);
-						}
-					}
 					tr.win {
 						background-color: rgba(@color-el-d-won,.1);
 					}
@@ -618,6 +613,46 @@ main {
 		}
 	}
 }
+
+
+
+
+
+
+
+// Results display panel
+
+.display-first {
+	article {
+		&:nth-of-type(1) { display: flex !important; }
+		&:nth-of-type(2) { display: none !important; }
+		&:nth-of-type(3) { display: none !important; }
+	}
+}
+.display-second {
+	article {
+		&:nth-of-type(1) { display: none !important; }
+		&:nth-of-type(2) { display: flex !important; }
+		&:nth-of-type(3) { display: none !important; }
+	}
+}
+.display-third {
+	article {
+		&:nth-of-type(1) { display: none !important; }
+		&:nth-of-type(2) { display: none !important; }
+		&:nth-of-type(3) { display: flex !important; }
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (prefers-color-scheme: dark) {
 	.key-races {
