@@ -358,6 +358,24 @@ main {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // // Key Races (Results)
 
 .key-races {
@@ -367,6 +385,60 @@ main {
 	flex-direction: column;
 	gap: @spacing-12;
 	nav {
+		position: relative;
+		background-color: @fly-light-surface-primary;
+		border: 1px solid @fly-light-utility-border;
+		z-index: 5;
+		width: 100%;
+		border-radius: 99px;
+		container-type: size; // in order to use CQW
+		height: 32px; // required
+		input {
+			display: none;
+		}
+		.label,
+		#focus {
+			padding: @spacing-12 0;
+			.action-14();
+			width: 33.33cqw;
+		}
+		.label {
+			display: inline-block; // required
+			margin-right: -4px; // hack for above
+			text-align: center;
+			cursor: pointer;
+			color: @fly-light-button-secondary-text;
+		}
+		#focus {
+			position: absolute;
+			left: -1px;
+			top: -1px;
+			z-index: -1;
+			border-radius: 99px;
+			background-color: @fly-light-surface-brand;
+		}
+		#radio1:checked ~ #focus {
+			transform: translateX(0);
+			transition: transform .3s ease-in-out;
+		}
+		#radio2:checked ~ #focus {
+			transform: translateX(33.33cqw);
+			transition: transform .3s ease-in-out;
+		}
+		#radio3:checked ~ #focus {
+			transform: translateX(66.66cqw);
+			transition: transform .3s ease-in-out;
+		}
+		#radio1:checked ~ .label:first-of-type,
+		#radio2:checked ~ .label:nth-of-type(2),
+		#radio3:checked ~ .label:nth-of-type(3) {
+			transition: color .3s linear;
+			// no appropriate Fly text color?
+			color: rgb(@color-neutral-0);
+		}
+	}
+	/*
+	nav.buttons {
 		display: flex;
 		flex-direction: row;
 		gap: 0;
@@ -389,6 +461,7 @@ main {
 			cursor: default;
 		}
 	}
+	*/
 	.results {
 		article {
 			display: flex;
@@ -423,8 +496,8 @@ main {
 					}
 				}
 				.map {
-					min-width: 80px;
-					height: 80px;
+					min-width: 96px;
+					height: 96px;
 					.border-radius-4();
 					.wireframe();
 				}
@@ -446,8 +519,11 @@ main {
 				tbody {
 					tr {
 						&:first-of-type {
-							background-color: rgba(@color-el-d-won,.1);
+							//background-color: rgba(@color-el-d-won,.1);
 						}
+					}
+					tr.win {
+						background-color: rgba(@color-el-d-won,.1);
 					}
 					td {
 						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
@@ -548,6 +624,23 @@ main {
 		nav {
 			background-color: @fly-dark-surface-primary;
 			border: 1px solid @fly-dark-utility-border;
+			.label {
+				color: @fly-dark-button-secondary-text;
+			}
+			#focus {
+				background-color: @fly-dark-surface-brand;
+			}
+			#radio1:checked ~ .label:first-of-type,
+			#radio2:checked ~ .label:nth-of-type(2),
+			#radio3:checked ~ .label:nth-of-type(3) {
+				// no appropriate Fly text color?
+				color: rgb(@color-neutral-100);
+			}
+		}
+		/*
+		nav.buttons {
+			background-color: @fly-dark-surface-primary;
+			border: 1px solid @fly-dark-utility-border;
 			button {
 				color: @fly-dark-button-secondary-text;
 				background-color: @fly-dark-button-secondary-background;
@@ -558,6 +651,7 @@ main {
 				background-color: @fly-dark-button-secondary-border-focused;
 			}
 		}
+		*/
 		.results {
 			article {
 				.heading {
@@ -743,6 +837,14 @@ main {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 12px;
+	leading-trim: both;
+	text-edge: cap;
+	text-box: trim-both cap alphabetic;
+}
+.action-14 {
+	font-family: "TTNormsPro-Normal", sans-serif;
+	font-style: normal;
+	font-size: 14px;
 	leading-trim: both;
 	text-edge: cap;
 	text-box: trim-both cap alphabetic;
