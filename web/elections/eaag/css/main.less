@@ -396,13 +396,10 @@ main {
 		input {
 			display: none;
 		}
-		.label,
-		#focus {
+		.label {
+			width: 33.33cqw;
 			padding: @spacing-12 0;
 			.action-14();
-			width: 33.33cqw;
-		}
-		.label {
 			display: inline-block; // required
 			margin-right: -4px; // hack for above
 			text-align: center;
@@ -410,6 +407,8 @@ main {
 			color: @fly-light-button-secondary-text;
 		}
 		#focus {
+			width: 33.33cqw;
+			height: 36px; // required
 			position: absolute;
 			left: -1px;
 			top: -1px;
