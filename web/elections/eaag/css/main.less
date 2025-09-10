@@ -969,14 +969,25 @@ main {
 
 // // // Animation: Map
 
-.map .ny {
+.map svg {
 	path {
+		fill: rgb(@color-el-no-race);
 		stroke-width: 4px;
 		stroke: @fly-light-surface-primary;
 		@media (prefers-color-scheme: dark) {
 			stroke: @fly-dark-surface-primary;
 		}
 	}
+}
+.map .nj {
+	#Warren, #Middlesex, #Cumberland, #Ocean {
+		fill: rgb(@color-el-r-won);
+	}
+	#Essex, #Somerset, #Burlington, #Gloucester {
+		fill: rgb(@color-el-d-won);
+	}
+}
+.map .ny {
 	#bronx {
 		fill: rgb(@color-el-d-won);
 	}
@@ -984,18 +995,10 @@ main {
 		fill: rgb(@color-el-d-won);
 	}
 	#manhattan {
-		fill: rgb(@color-el-no-race);
-		animation-name: mapPulse;
-		animation-duration: 3s;
-		animation-timing-function: ease-in-out;
-		animation-delay: 8s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
 	}
 	#queens {
-		fill: rgb(@color-el-no-race);
 		animation-name: mapPulse;
-		animation-duration: 3s;
+		animation-duration: 2s;
 		animation-timing-function: ease-in-out;
 		animation-delay: 8s;
 		animation-iteration-count: 1;
@@ -1023,7 +1026,7 @@ main {
 .key-races { .results { article { table { tbody { .win {
 	background-color: rgba(@color-el-d-won,0);
 	animation-name: candidatePulse;
-	animation-duration: 3s;
+	animation-duration: 2s;
 	animation-timing-function: ease-in-out;
 	animation-delay: 8s;
 	animation-iteration-count: 1;
@@ -1034,7 +1037,7 @@ main {
 	animation-name: candidateCheck;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
-	animation-delay: 8s;
+	animation-delay: 10s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 } } } } } }
