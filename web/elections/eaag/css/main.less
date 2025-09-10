@@ -508,10 +508,6 @@ main {
 						background-color: @fly-dark-surface-primary;
 						border: 1px solid @fly-dark-utility-border;
 					}
-					img {
-						width: 92px;
-						height: 92px;
-					}
 					svg {
 						width: 92px;
 						height: 92px;
@@ -533,9 +529,9 @@ main {
 					}
 				}
 				tbody {
-					tr.win {
-						background-color: rgba(@color-el-d-won,.1);
-					}
+					//.win {
+					//	background-color: rgba(@color-el-d-won,.1);
+					//}
 					td {
 						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
 						padding: @spacing-4;
@@ -913,25 +909,34 @@ main {
 
 
 
-// // // Animation
 
-.map .ny {
-	#bronx {
-		fill: rgb(@color-el-d-won);
-	}
-	#brooklyn {
-		fill: rgb(@color-el-d-won);
-	}
-	#manhattan {
-		fill: rgb(@color-el-no-race);
-	}
-	#queens {
-		fill: rgb(@color-el-no-race);
-	}
-	#statenisland {
-		fill: rgb(@color-el-r-won);
-	}
+
+
+
+
+
+// // // Animation: Live Updates
+
+@keyframes slideIn {
+	0%   { left: -216px; }
+	100% { left: 0; }
 }
+@keyframes cellPulseLight {
+	0%   { background-color: @fly-light-surface-primary; }
+	50%  { background-color: @fly-light-surface-tertiary; }
+	100% { background-color: @fly-light-surface-primary; }
+}
+@keyframes cellPulseDark {
+	0%   { background-color: @fly-dark-surface-primary; }
+	50%  { background-color: @fly-dark-surface-tertiary; }
+	100% { background-color: @fly-dark-surface-primary; }
+}
+
+
+
+
+
+// // // Animation: Dot
 
 .dot {
 	display: inline-block;
@@ -944,12 +949,110 @@ main {
 	opacity: 1;
 	animation: dotPulse 1s infinite linear;
 	animation-delay: 6s;
-}
-@media (prefers-color-scheme: dark) {
-	.dot {
+	@media (prefers-color-scheme: dark) {
 		background-color: @fly-dark-utility-status-alert;
 	}
 }
+
+@keyframes dotPulse {
+	0%   { opacity: 1; }
+	50%  { opacity: .25; }
+	100% { opacity: 1; }
+}
+
+
+
+
+
+// // // Animation: Map
+
+.map .ny {
+	path {
+		stroke-width: 4px;
+		stroke: @fly-light-surface-primary;
+		@media (prefers-color-scheme: dark) {
+			stroke: @fly-dark-surface-primary;
+		}
+	}
+	#bronx {
+		fill: rgb(@color-el-d-won);
+	}
+	#brooklyn {
+		fill: rgb(@color-el-d-won);
+	}
+	#manhattan {
+		fill: rgb(@color-el-no-race);
+		animation-name: mapPulse;
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 8s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	#queens {
+		fill: rgb(@color-el-no-race);
+		animation-name: mapPulse;
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+		animation-delay: 8s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	#statenisland {
+		fill: rgb(@color-el-r-won);
+	}
+}
+@keyframes mapPulse {
+	0%   { fill: rgb(@color-el-no-race); }
+	20%  { fill: rgb(@color-el-d-won); }
+	40%  { fill: rgb(@color-el-no-race); }
+	60%  { fill: rgb(@color-el-d-won); }
+	80%  { fill: rgb(@color-el-no-race); }
+	100% { fill: rgb(@color-el-d-won); }
+}
+
+
+
+
+
+// // // Animation: Candidate
+
+.key-races { .results { article { table { tbody { .win {
+	background-color: rgba(@color-el-d-won,0);
+	animation-name: candidatePulse;
+	animation-duration: 3s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+} } } } } }
+.key-races { .results { article { table { tbody { svg {
+	opacity: 0;
+	animation-name: candidateCheck;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+} } } } } }
+@keyframes candidatePulse {
+	0%   { background-color: rgba(@color-el-d-won,0); }
+	20%  { background-color: rgba(@color-el-d-won,.25); }
+	40%  { background-color: rgba(@color-el-d-won,0); }
+	60%  { background-color: rgba(@color-el-d-won,.25); }
+	80%  { background-color: rgba(@color-el-d-won,0); }
+	100% { background-color: rgba(@color-el-d-won,.1); }
+}
+@keyframes candidateCheck {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
+
+
+
+// // // Animation: Bars
 
 .bar {
 	display: inline;
@@ -968,11 +1071,7 @@ main {
 		animation-delay: 1s;
 		animation-iteration-count: 1;
 		animation-fill-mode: forwards;
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.bar {
-		div {
+		@media (prefers-color-scheme: dark) {
 			border-right: 1px solid @fly-dark-surface-primary;
 		}
 	}
@@ -999,25 +1098,7 @@ main {
 @keyframes barIn63 { 0% {width: 0%;} 100% {width: 63%} }
 @keyframes barIn73 { 0% {width: 0%;} 100% {width: 73%} }
 
-@keyframes slideIn {
-	0%   { left: -216px; }
-	100% { left: 0; }
-}
-@keyframes dotPulse {
-	0%   { opacity: 1; }
-	50%  { opacity: .25; }
-	100% { opacity: 1; }
-}
-@keyframes cellPulseLight {
-	0%   { background-color: @fly-light-surface-primary; }
-	50%  { background-color: @fly-light-surface-tertiary; }
-	100% { background-color: @fly-light-surface-primary; }
-}
-@keyframes cellPulseDark {
-	0%   { background-color: @fly-dark-surface-primary; }
-	50%  { background-color: @fly-dark-surface-tertiary; }
-	100% { background-color: @fly-dark-surface-primary; }
-}
+
 
 
 
