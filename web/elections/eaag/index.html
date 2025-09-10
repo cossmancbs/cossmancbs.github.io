@@ -295,10 +295,7 @@
 						<div class="hgroup">
 							<h1>Virginia Governor Results</h1>
 							<p>Polls open until 9pm ET</p>
-							<div class="meta">
-								<span class="dot"></span>
-								<p><em id="mycountdown"></em></p>
-							</div>
+							<p><span class="dot"></span> <em>First results expected in <span id="mycountdown"></span></em></p>
 						</div>
 						<div class="map">map</div>
 					</div>
@@ -401,15 +398,15 @@
 		//
 		// RESULTS CONTROLS
 		//
-		function panelOne() {
-			$('.results').addClass('display-first');
-		}
-		function panelTwo() {
-			$('.results').addClass('display-second');
-		}
-		function panelThree() {
-			$('.results').addClass('display-third');
-		}
+		//function panelOne() {
+		//	$('.results').addClass('display-first');
+		//}
+		//function panelTwo() {
+		//	$('.results').addClass('display-second');
+		//}
+		//function panelThree() {
+		//	$('.results').addClass('display-third');
+		//}
 		
 		
 		
@@ -490,7 +487,7 @@
 			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 			// Display the result in the element with id
-			document.getElementById("mycountdown").innerHTML = "First results expected in " + hours + "h "
+			document.getElementById("mycountdown").innerHTML = hours + "h "
 + minutes + "m " + seconds + "s";
 			// If the countdown is finished
 			if (distance < 0) {

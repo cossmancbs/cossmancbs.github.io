@@ -552,6 +552,8 @@ main {
 						background-color: rgb(@color-el-other);
 					}
 					svg {
+						//display: inline-block;
+						//vertical-align: middle;
 						width: 16px;
 						min-width: 16px;
 						height: 16px;
@@ -621,6 +623,7 @@ main {
 
 // Results display panel
 
+/*
 .display-first {
 	article {
 		&:nth-of-type(1) { display: flex !important; }
@@ -642,6 +645,7 @@ main {
 		&:nth-of-type(3) { display: flex !important; }
 	}
 }
+*/
 
 
 
@@ -895,7 +899,10 @@ main {
 // // // Animation
 
 .dot {
-	min-width: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 4px;
+	//min-width: 4px;
 	height: 4px;
 	background-color: @fly-light-utility-status-alert;
 	border-radius: 50%;
