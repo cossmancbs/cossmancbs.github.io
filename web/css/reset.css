@@ -59,9 +59,11 @@ html {
 }
 
 /* allow styling of individual svg symbol instances */
+/*
 svg path {
 	fill: inherit;
 }
+*/
 
 /* nice to have */
 html {

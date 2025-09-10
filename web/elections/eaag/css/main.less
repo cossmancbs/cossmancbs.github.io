@@ -495,10 +495,27 @@ main {
 					}
 				}
 				.map {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 96px;
 					min-width: 96px;
 					height: 96px;
 					.border-radius-4();
-					.wireframe();
+					background-color: @fly-light-surface-primary;
+					border: 1px solid @fly-light-utility-border;
+					@media (prefers-color-scheme: dark) {
+						background-color: @fly-dark-surface-primary;
+						border: 1px solid @fly-dark-utility-border;
+					}
+					img {
+						width: 92px;
+						height: 92px;
+					}
+					svg {
+						width: 92px;
+						height: 92px;
+					}
 				}
 			}
 			table {
@@ -897,6 +914,24 @@ main {
 
 
 // // // Animation
+
+.map .ny {
+	#bronx {
+		fill: rgb(@color-el-d-won);
+	}
+	#brooklyn {
+		fill: rgb(@color-el-d-won);
+	}
+	#manhattan {
+		fill: rgb(@color-el-no-race);
+	}
+	#queens {
+		fill: rgb(@color-el-no-race);
+	}
+	#statenisland {
+		fill: rgb(@color-el-r-won);
+	}
+}
 
 .dot {
 	display: inline-block;
