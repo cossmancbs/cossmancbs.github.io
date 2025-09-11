@@ -6,6 +6,46 @@
 
 
 
+// // // Prototype Controls
+
+#prototype {
+	position: fixed;
+	bottom: 8px;
+	left: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 16px;
+	border-radius: 8px;
+	background-color: rgba(@color-neutral-100,.75);
+	-webkit-backdrop-filter: saturate(200%) blur(20px);
+	backdrop-filter: saturate(200%) blur(20px);
+	z-index: 99;
+	color: white;
+	font-family: sans-serif;
+	font-size: small;
+	button {
+		padding: 8px;
+		font-family: sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		border-radius: 4px;
+		color: darkslategrey;
+		background-color: gainsboro;
+	}
+	button:hover {
+		color: black;
+		background-color: white;
+	}
+	button:active {
+		color: darkslategrey;
+		background-color: gainsboro;
+	}
+}
+
+
+
+
 // // // Basic Styles
 
 body {
@@ -478,13 +518,6 @@ main {
 					display: flex;
 					flex-direction: column;
 					gap: @spacing-4;
-					.meta {
-						display: flex;
-						flex-direction: row;
-						gap: @spacing-4;
-						vertical-align: middle;
-						align-items : center;
-					}
 					h1 {
 						.headline-16-strong();
 						color: @fly-light-text-primary;
@@ -532,9 +565,6 @@ main {
 					}
 				}
 				tbody {
-					//.win {
-					//	background-color: rgba(@color-el-d-won,.1);
-					//}
 					td {
 						border-bottom: 1px dashed @fly-light-utility-border; // won't work on TR for some reason?
 						padding: @spacing-4;
@@ -979,36 +1009,46 @@ main {
 		}
 	}
 }
-.map .nj {
+.map #nj {
 	#Warren, #Middlesex, #Cumberland, #Ocean {
-		fill: rgb(@color-el-r-won);
+		.mapPulseRep();
 	}
 	#Essex, #Somerset, #Burlington, #Gloucester {
-		fill: rgb(@color-el-d-won);
+		.mapPulseDem();
 	}
 }
-.map .ny {
+.map #ny {
 	#bronx {
-		fill: rgb(@color-el-d-won);
+		.mapPulseDem();
 	}
 	#brooklyn {
-		fill: rgb(@color-el-d-won);
+		.mapPulseDem();
 	}
 	#manhattan {
 	}
 	#queens {
-		animation-name: mapPulse;
-		animation-duration: 2s;
-		animation-timing-function: ease-in-out;
-		animation-delay: 8s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
 	}
 	#statenisland {
-		fill: rgb(@color-el-r-won);
+		.mapPulseRep();
 	}
 }
-@keyframes mapPulse {
+.mapPulseDem {
+	animation-name: mapDem;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+.mapPulseRep {
+	animation-name: mapRep;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+@keyframes mapDem {
 	0%   { fill: rgb(@color-el-no-race); }
 	20%  { fill: rgb(@color-el-d-won); }
 	40%  { fill: rgb(@color-el-no-race); }
@@ -1016,31 +1056,44 @@ main {
 	80%  { fill: rgb(@color-el-no-race); }
 	100% { fill: rgb(@color-el-d-won); }
 }
+@keyframes mapRep {
+	0%   { fill: rgb(@color-el-no-race); }
+	20%  { fill: rgb(@color-el-r-won); }
+	40%  { fill: rgb(@color-el-no-race); }
+	60%  { fill: rgb(@color-el-r-won); }
+	80%  { fill: rgb(@color-el-no-race); }
+	100% { fill: rgb(@color-el-r-won); }
+}
 
 
 
 
 
-// // // Animation: Candidate
+// // // Animation: Results Table
 
-.key-races { .results { article { table { tbody { .win {
+.key-races { .results { article { table { tbody { #win {
 	background-color: rgba(@color-el-d-won,0);
-	animation-name: candidatePulse;
-	animation-duration: 2s;
-	animation-timing-function: ease-in-out;
-	animation-delay: 8s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
 } } } } } }
 .key-races { .results { article { table { tbody { svg {
 	opacity: 0;
+	transform: scale(.7);
+} } } } } }
+.tablePulse {
+	animation-name: candidatePulse;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+.checkPulse {
 	animation-name: candidateCheck;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
-	animation-delay: 10s;
+	animation-delay: 0;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
-} } } } } }
+}
 @keyframes candidatePulse {
 	0%   { background-color: rgba(@color-el-d-won,0); }
 	20%  { background-color: rgba(@color-el-d-won,.25); }
@@ -1050,8 +1103,9 @@ main {
 	100% { background-color: rgba(@color-el-d-won,.1); }
 }
 @keyframes candidateCheck {
-	0%   { opacity: 0; }
-	100% { opacity: 1; }
+	0%   { opacity: 0; transform: scale(.7); }
+	75%  { opacity: 1; transform: scale(1.25); }
+	100% { opacity: 1; transform: scale(1); }
 }
 
 
@@ -1061,13 +1115,16 @@ main {
 // // // Animation: Bars
 
 .bar {
-	display: inline;
+	display: inline-block;
+	vertical-align: middle;
 	width: @spacing-40;
+	min-width: @spacing-40;
 	height: @spacing-12;
 	background-color: rgb(@color-el-no-race);
 	.border-radius-6();
 	overflow: hidden;
-	div {
+	span {
+		display: block;
 		width: 0%;
 		height: @spacing-12;
 		border-right: 1px solid @fly-light-surface-primary;
@@ -1082,19 +1139,19 @@ main {
 		}
 	}
 }
+.barD  { span { background-color: rgb(@color-el-d-won); } }
+.barR  { span { background-color: rgb(@color-el-r-won); } }
+.barI  { span { background-color: rgb(@color-el-other); } }
 
-.barD  { div { background-color: rgb(@color-el-d-won); } }
-.barR  { div { background-color: rgb(@color-el-r-won); } }
-.barI  { div { background-color: rgb(@color-el-other); } }
-.bar05 { div { animation-name: barIn05; } }
-.bar09 { div { animation-name: barIn09; } }
-.bar11 { div { animation-name: barIn11; } }
-.bar16 { div { animation-name: barIn16; } }
-.bar32 { div { animation-name: barIn32; } }
-.bar59 { div { animation-name: barIn59; } }
-.bar63 { div { animation-name: barIn63; } }
-.bar73 { div { animation-name: barIn73; } }
-
+// first load:
+.bar05 { span { animation-name: barIn05; } }
+.bar09 { span { animation-name: barIn09; } }
+.bar11 { span { animation-name: barIn11; } }
+.bar16 { span { animation-name: barIn16; } }
+.bar32 { span { animation-name: barIn32; } }
+.bar59 { span { animation-name: barIn59; } }
+.bar63 { span { animation-name: barIn63; } }
+.bar73 { span { animation-name: barIn73; } }
 @keyframes barIn05 { 0% {width: 0%;} 100% {width: 05%} }
 @keyframes barIn09 { 0% {width: 0%;} 100% {width: 09%} }
 @keyframes barIn11 { 0% {width: 0%;} 100% {width: 11%} }
@@ -1103,6 +1160,38 @@ main {
 @keyframes barIn59 { 0% {width: 0%;} 100% {width: 59%} }
 @keyframes barIn63 { 0% {width: 0%;} 100% {width: 63%} }
 @keyframes barIn73 { 0% {width: 0%;} 100% {width: 73%} }
+
+// new data:
+.bar05update { span {
+	width: 5%;
+	animation-name: barIn05update;
+	animation-delay: 0;
+} }
+.bar09update { span {
+	width: 9%;
+	animation-name: barIn09update;
+	animation-delay: 0;
+} }
+.bar11update { span {
+	width: 11%;
+	animation-name: barIn11update;
+	animation-delay: 0;
+} }
+.bar59update { span {
+	width: 59%;
+	animation-name: barIn59update;
+	animation-delay: 0;
+} }
+.bar73update { span {
+	width: 73%;
+	animation-name: barIn73update;
+	animation-delay: 0;
+} }
+@keyframes barIn05update { 0% {width: 05%;} 100% {width: 06%} }
+@keyframes barIn09update { 0% {width: 09%;} 100% {width: 12%} }
+@keyframes barIn11update { 0% {width: 11%;} 100% {width: 14%} }
+@keyframes barIn59update { 0% {width: 59%;} 100% {width: 68%} }
+@keyframes barIn73update { 0% {width: 73%;} 100% {width: 89%} }
 
 
 
