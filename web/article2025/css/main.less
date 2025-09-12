@@ -10,27 +10,23 @@
 
 body {
 	background-color: @fly-light-surface-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-primary;
+	}
 }
 ::-moz-selection {
-	/* no fly text style for light text, in light mode */
+	/* no Fly text style for light text, in light mode */
 	color: rgb(@color-neutral-0);
 	background: @fly-light-surface-brand;
+	@media (prefers-color-scheme: dark) {
+		color: rgb(@color-neutral-100);
+		background: @fly-dark-surface-brand;
+	}
 }
 ::selection {
 	color: rgb(@color-neutral-0);
 	background: @fly-light-surface-brand;
-}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		background-color: @fly-dark-surface-primary;
-	}
-	/* no fly text style for dark text, in dark mode */
-	::-moz-selection {
-		color: rgb(@color-neutral-100);
-		background: @fly-dark-surface-brand;
-	}
-	::selection {
+	@media (prefers-color-scheme: dark) {
 		color: rgb(@color-neutral-100);
 		background: @fly-dark-surface-brand;
 	}
@@ -217,22 +213,15 @@ main {
 	h1 {
 		.article2025-heading-24-125();
 		color: @fly-light-text-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
 	}
 }
 @media only screen and (min-width: @break-md) {
 	.article-header {
 		h1 {
 			.article2025-heading-32-125();
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.article-header {
-		h1 {
-			color: @fly-dark-text-primary;
-		}
-		p {
-			color: @fly-dark-text-secondary;
 		}
 	}
 }
@@ -253,9 +242,6 @@ main {
 		min-height: 60px;
 		max-height: 90px;
 		.border-radius-4();
-		//background-image: url('/web/article2025/img/chip-bgd-cbs-news-baltimore.jpg');
-		//background-color: rgba(2,129,254,.5);
-		//background-blend-mode: lighten;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -364,6 +350,9 @@ main {
 	p {
 		.article2025-detail-16-125();
 		color: @fly-light-text-secondary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-secondary;
+		}
 	}
 	a {
 		color: @fly-light-text-link-secondary;
@@ -371,14 +360,7 @@ main {
 		&:hover {
 			color: @fly-light-text-link-secondary-hover;
 		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.article-byline {
-		p {
-			color: @fly-dark-text-secondary;
-		}
-		a {
+		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-link-secondary;
 			&:hover {
 				color: @fly-dark-text-link-secondary-hover;
@@ -405,21 +387,30 @@ main {
 		align-items: center;
 		flex-direction: row;
 		gap: @spacing-4;
-		background-color: @fly-light-surface-overlay-solid-primary;
 		.border-radius-4();
+		background-color: @fly-light-surface-overlay-solid-primary;
+		@media (prefers-color-scheme: dark) {
+			background-color: @fly-dark-surface-overlay-solid-primary;
+		}
 		svg {
 			width: 14px;
 			height: 14px;
 			fill: @fly-light-utility-icon-primary;
+			@media (prefers-color-scheme: dark) {
+				fill: @fly-dark-utility-icon-primary;
+			}
 		}
 		span {
 			padding: @spacing-8 0;
-			color: @fly-light-text-primary;
 			leading-trim: both;
 			text-edge: cap;
 			text-box: trim-both cap alphabetic;
 			text-transform: uppercase;
 			.article2025-detail-12-100();
+			color: @fly-light-text-primary;
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-primary;
+			}
 		}
 	}
 	a {
@@ -429,20 +420,7 @@ main {
 		&:hover {
 			color: @fly-light-text-link-secondary-hover;
 		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.article-header .flags {
-		.flag {
-			background-color: @fly-dark-surface-overlay-solid-primary;
-			svg {
-				fill: @fly-dark-utility-icon-primary;
-			}
-			span {
-				color: @fly-dark-text-primary;
-			}
-		}
-		a {
+		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-link-secondary;
 			&:hover {
 				color: @fly-dark-text-link-secondary-hover;
@@ -629,9 +607,12 @@ main {
 .article-body {
 }
 .block-text {
+	color: @fly-light-text-primary;
+	@media (prefers-color-scheme: dark) {
+		color: @fly-dark-text-primary;
+	}
 	p {
 		.article2025-body-18-150();
-		color: @fly-light-text-primary;
 		/* vertical spacing between paragraphs */
 		&:not(:last-child) {
 			margin: 0 0 .8em 0;
@@ -664,13 +645,22 @@ main {
 		margin: 0 0 1em 1em;
 		padding: 0 1em 0 1em;
 		.article2025-body-18-150();
-		border-left: 8px solid rgb(@color-neutral-30);
+		border-left: 8px solid @fly-light-utility-border;
+		@media (prefers-color-scheme: dark) {
+			border-left: 8px solid @fly-dark-utility-border;
+		}
 	}
 	a {
 		color: @fly-light-text-link-primary;
 		text-decoration: underline;
 		&:hover {
 			color: @fly-light-text-link-primary-hover;
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-link-primary;
+			&:hover {
+				color: @fly-dark-text-link-primary-hover;
+			}
 		}
 	}
 	.contributors {
@@ -680,6 +670,15 @@ main {
 			color: @fly-light-text-link-secondary;
 			&:hover {
 				color: @fly-light-text-link-secondary-hover;
+			}
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-secondary;
+			a {
+				color: @fly-dark-text-link-secondary;
+				&:hover {
+					color: @fly-dark-text-link-secondary-hover;
+				}
 			}
 		}
 	}
@@ -693,30 +692,6 @@ main {
 		}
 		.contributors {
 			.article2025-body-sans-18-150();
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.block-text {
-		p,
-		li,
-		blockquote {
-			color: @fly-dark-text-primary;
-		}
-		a {
-			color: @fly-dark-text-link-primary;
-			&:hover {
-				color: @fly-dark-text-link-primary-hover;
-			}
-		}
-		.contributors {
-			color: @fly-dark-text-secondary;
-			a {
-				color: @fly-dark-text-link-secondary;
-				&:hover {
-					color: @fly-dark-text-link-secondary-hover;
-				}
-			}
 		}
 	}
 }
@@ -734,9 +709,15 @@ main {
 	flex-direction: column;
 	gap: @spacing-8;
 	.fly-light-utility-border();
+	@media (prefers-color-scheme: dark) {
+		.fly-dark-utility-border();
+	}
 	h1 {
 		.article2025-heading-16-100();
 		color: @fly-light-text-secondary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-secondary;
+		}
 	}
 	ul {
 		padding: 0 0 0 1.25em;
@@ -749,6 +730,9 @@ main {
 	li {
 		.article2025-detail-16-125();
 		color: @fly-light-text-secondary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-secondary;
+		}
 	}
 }
 @media only screen and (min-width: @break-md) {
@@ -766,15 +750,6 @@ main {
 		}
 	}
 }
-@media (prefers-color-scheme: dark) {
-	.block-summary {
-		.fly-dark-utility-border();
-		h1,
-		li {
-			color: @fly-dark-text-secondary;
-		}
-	}
-}
 
 
 
@@ -785,44 +760,51 @@ main {
 
 .block-picture {
 	margin: 0;
+	.media {
+		display: flex;
+		justify-content: center;
+		background-color: @fly-light-surface-tertiary;
+		@media (prefers-color-scheme: dark) {
+			background-color: @fly-dark-surface-tertiary;
+		}
+	}
 	img {
-		width: 100%;
+		max-width: 100%;
+		max-height: 500px;
+	}
+	figcaption {
+		margin: @spacing-8 @spacing-20;
 	}
 	/* impossible to style figcaption text unless in a SPAN? */
 	span {
-		display: block;
-		margin: @spacing-8 @spacing-20 @spacing-4 @spacing-20;.article2025-detail-16-125();
+		display: block;.article2025-detail-16-125();
 		color: @fly-light-text-secondary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-secondary;
+		}
 	}
 	.credit {
 		color: @fly-light-text-tertiary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-tertiary;
+		}
 	}
 }
 @media only screen and (min-width: @break-sm) {
 	.block-picture {
-		img {
+		.media {
 			.border-radius-4();
 			overflow: hidden;
 		}
-		span {
-			margin: @spacing-8 0 @spacing-4 0;
+		figcaption {
+			margin: @spacing-8 0;
 		}
 	}
 }
 @media only screen and (min-width: @break-md) {
 	.block-picture {
-		img {
+		.media {
 			.border-radius-8();
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.block-picture {
-		span {
-			color: @fly-dark-text-secondary;
-		}
-		.credit {
-			color: @fly-dark-text-tertiary;
 		}
 	}
 }
@@ -938,6 +920,9 @@ main {
 	h1 {
 		.article2025-detail-16-125();
 		color: @fly-light-text-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
 	}
 	ul {
 		display: flex;
@@ -950,9 +935,15 @@ main {
 		.article2025-action-16-125();
 		color: @fly-light-text-link-primary;
 		text-decoration: underline;
-	}
-	a:hover {
-		color: @fly-light-text-link-primary-hover;
+		&:hover {
+			color: @fly-light-text-link-primary-hover;
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-link-primary;
+			&:hover {
+				color: @fly-dark-text-link-primary-hover;
+			}
+		}
 	}
 }
 @media only screen and (min-width: @break-md) {
@@ -966,27 +957,15 @@ main {
 
 	}
 }
-@media (prefers-color-scheme: dark) {
-	.block-tags {
-		h1 {
-			color: @fly-dark-text-primary;
-		}
-		a {
-			color: @fly-dark-text-link-primary;
-		}
-		a:hover {
-			color: @fly-dark-text-link-primary-hover;
-		}
-	}
-}
 
 
 
 
 
 
-// // // Author
+// // // Author - REMOVED
 
+/*
 .block-author {
 	display: flex;
 	flex-direction: column;
@@ -1001,9 +980,9 @@ main {
 	a {
 		color: @fly-light-text-link-primary;
 		text-decoration: underline;
-	}
-	a:hover {
-		color: @fly-light-text-link-primary-hover;
+		&:hover {
+			color: @fly-light-text-link-primary-hover;
+		}
 	}
 }
 @media only screen and (min-width: @break-md) {
@@ -1029,6 +1008,7 @@ main {
 		}
 	}
 }
+*/
 
 
 
@@ -1041,19 +1021,15 @@ main {
 	p {
 		.article2025-detail-16-125();
 		color: @fly-light-text-tertiary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-tertiary;
+		}
 	}
 }
 @media only screen and (min-width: @break-md) {
 	.block-copyright {
 		p {
 			.article2025-detail-18-125();
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.block-copyright {
-		p {
-			color: @fly-dark-text-tertiary;
 		}
 	}
 }
@@ -1108,6 +1084,9 @@ footer {
 		width: 76px;
 		height: 11px;
 		fill: #154C91;
+		@media (prefers-color-scheme: dark) {
+			fill: @fly-dark-utility-icon-primary;
+		}
 	}
 	ul {
 		display: grid;
@@ -1145,6 +1124,9 @@ footer {
 			width: 768px;
 			height: 90px;
 		}
+		@media (prefers-color-scheme: dark) {
+			background-color: @fly-dark-surface-primary;
+		}
 	}
 	.block-tbl {
 		ul {
@@ -1170,16 +1152,6 @@ footer {
 		margin: 0 auto;
 		padding: @spacing-40 0;
 		width: @break-lg-container;
-	}
-}
-@media (prefers-color-scheme: dark) {
-	#topunit {
-		background-color: @fly-dark-surface-primary;
-	}
-	.block-tbl {
-		svg {
-			fill: @fly-dark-utility-icon-primary;
-		}
 	}
 }
 
@@ -1225,6 +1197,9 @@ footer {
 		h1 {
 			.article2025-heading-16-100();
 			color: @fly-light-text-primary;
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-primary;
+			}
 		}
 		a {
 			.article2025-detail-16-100();
@@ -1233,6 +1208,12 @@ footer {
 			&:hover {
 				color: @fly-light-text-link-primary-hover;
 				text-decoration: underline;
+			}
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-link-primary;
+				&:hover {
+					color: @fly-dark-text-link-primary-hover;
+				}
 			}
 		}
 	}
@@ -1253,21 +1234,6 @@ footer {
 		}
 		ul {
 			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.block-recirc {
-		.heading {
-			h1 {
-				color: @fly-dark-text-primary;
-			}
-			a {
-				color: @fly-dark-text-link-primary;
-				&:hover {
-					color: @fly-dark-text-link-primary-hover;
-				}
-			}
 		}
 	}
 }
@@ -1295,10 +1261,12 @@ footer {
 		gap: @spacing-4;
 	}
 	svg {
-		// fill: @fly-light-brand-primary;
-		width: 196.8px;  // want auto width, but don't know how
+		width: 196.8px;  // auto width?
 		height: 12px;
-		// .wireframe-outline();
+		@media (prefers-color-scheme: dark) {
+			/* override all with FILTER, not FILL, to support multi-color logos */
+			filter: brightness(0) invert(1);
+		}
 	}
 	.thumb {
 		flex-shrink: 0;
@@ -1310,6 +1278,9 @@ footer {
 	h2 {
 		.article2025-detail-16-125();
 		color: @fly-light-text-link-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-link-primary;
+		}
 	}
 	&:hover {
 		background-color: @fly-light-surface-primary;
@@ -1317,6 +1288,16 @@ footer {
 		cursor: pointer;
 		h2 {
 			color: @fly-light-text-link-primary-hover;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-tertiary;
+		&:hover {
+			background-color: @fly-dark-surface-primary;
+			border: 1px solid @fly-dark-utility-border;
+			h2 {
+				color: @fly-dark-text-link-primary-hover;
+			}
 		}
 	}
 }
@@ -1336,27 +1317,6 @@ footer {
 			height: 96px;
 			width: 96px;
 			.border-radius-8();
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.card-recirc {
-		background-color: @fly-dark-surface-tertiary;
-		border: 1px solid @fly-dark-utility-border;
-		svg {
-			//fill: @fly-dark-brand-primary !important;
-			/* override all with FILTER, not FILL, to support multi-color logos */
-			filter: brightness(0) invert(1);
-		}
-		h2 {
-			color: @fly-dark-text-link-primary;
-		}
-		&:hover {
-			background-color: @fly-dark-surface-primary;
-			border: 1px solid @fly-dark-utility-border;
-			h2 {
-				color: @fly-dark-text-link-primary-hover;
-			}
 		}
 	}
 }
@@ -1391,6 +1351,13 @@ footer {
 			&:hover {
 				background-color: @fly-light-button-secondary-background-hover;
 			}
+			@media (prefers-color-scheme: dark) {
+				background-color: @fly-dark-button-secondary-background;
+				border: 1px solid @fly-dark-button-secondary-border;
+				&:hover {
+					background-color: @fly-dark-button-secondary-background-hover;
+				}
+			}
 		}
 		svg {
 			width: 16px;
@@ -1399,28 +1366,7 @@ footer {
 			&:hover {
 				fill: @fly-light-button-secondary-text-hover;
 			}
-		}
-	}
-	.article-branding {
-	}
-	.logos {
-		svg {
-			width: 196.8px;  // auto?
-			height: 12px;
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.graphics {
-		.buttons {
-			div {
-				background-color: @fly-dark-button-secondary-background;
-				border: 1px solid @fly-dark-button-secondary-border;
-				&:hover {
-					background-color: @fly-dark-button-secondary-background-hover;
-				}
-			}
-			svg {
+			@media (prefers-color-scheme: dark) {
 				fill: @fly-dark-button-secondary-text;
 				&:hover {
 					fill: @fly-dark-button-secondary-text-hover;
@@ -1430,7 +1376,11 @@ footer {
 	}
 	.logos {
 		svg {
-			filter: brightness(0) invert(1);
+			width: 196.8px;  // auto?
+			height: 12px;
+			@media (prefers-color-scheme: dark) {
+				filter: brightness(0) invert(1);
+			}
 		}
 	}
 }
