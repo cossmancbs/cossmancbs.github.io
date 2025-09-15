@@ -1,5 +1,4 @@
 @import "../../../css/colors.less";
-@import "../../../css/typography.less";
 @import "../../../css/utility.less";
 
 
@@ -50,9 +49,7 @@
 
 body {
 	background-color: @fly-light-surface-primary;
-}
-@media (prefers-color-scheme: dark) {
-	body {
+	@media (prefers-color-scheme: dark) {
 		background-color: @fly-dark-surface-primary;
 	}
 }
@@ -130,11 +127,9 @@ main {
 			width: 768px;
 			height: 90px;
 		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	#topunit {
-		background-color: @fly-dark-surface-primary;
+		@media (prefers-color-scheme: dark) {
+			background-color: @fly-dark-surface-primary;
+		}
 	}
 }
 
@@ -155,16 +150,14 @@ main {
 .rule-horiz {
 	margin: @spacing-12 @spacing-20;
 	border-bottom: 1px solid @fly-light-utility-border;
+	@media (prefers-color-scheme: dark) {
+		border-bottom: 1px solid @fly-dark-utility-border;
+	}
 }
 .rule-vert {
 	margin: 0 @spacing-16;
 	border-right: 1px solid @fly-light-utility-border;
-}
-@media (prefers-color-scheme: dark) {
-	.rule-horiz {
-		border-bottom: 1px solid @fly-dark-utility-border;
-	}
-	.rule-vert {
+	@media (prefers-color-scheme: dark) {
 		border-right: 1px solid @fly-dark-utility-border;
 	}
 }
@@ -208,11 +201,17 @@ main {
 			padding: @spacing-12 0;
 			.border-radius-4();
 			background-color: @fly-light-button-secondary-background;
+			@media (prefers-color-scheme: dark) {
+				background-color: @fly-dark-button-secondary-background;
+			}
 		}
 		svg {
 			width: 12px;
 			height: 12px;
 			fill: @fly-light-button-secondary-text;
+			@media (prefers-color-scheme: dark) {
+				fill: @fly-dark-button-secondary-text;
+			}
 		}
 		&:first-of-type {
 			svg {
@@ -223,9 +222,15 @@ main {
 		&:hover {
 			svg {
 				fill: @fly-light-button-secondary-text-hover;
+				@media (prefers-color-scheme: dark) {
+					fill: @fly-dark-button-secondary-text-hover;
+				}
 			}
 			div {
 				background-color: @fly-light-button-secondary-background-hover;
+				@media (prefers-color-scheme: dark) {
+					background-color: @fly-dark-button-secondary-background-hover;
+				}
 			}
 		}
 	}
@@ -237,6 +242,9 @@ main {
 		svg {
 			width: 60px;
 			height: 48px;
+			@media (prefers-color-scheme: dark) {
+				filter: brightness(0) invert(1);
+			}
 		}
 	}
 	.carousel {
@@ -273,6 +281,9 @@ main {
 			.border-radius-4();
 			background-color: @fly-light-surface-primary;
 			transition: all .3s ease-in-out;
+			@media (prefers-color-scheme: dark) {
+				background-color: @fly-dark-surface-primary;
+			}
 			.flag {
 				.detail-12-strong();
 				color: @fly-light-text-alert;
@@ -280,6 +291,10 @@ main {
 				flex-direction: row;
 				align-items: center;
 				gap: @spacing-2;
+				//.wireframe-outline();
+				@media (prefers-color-scheme: dark) {
+					color: @fly-dark-text-alert;
+				}
 			}
 			h1 {
 				.headline-14();
@@ -287,25 +302,50 @@ main {
 				text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 				-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 				transition: all .3s ease-out;
+				//.wireframe-outline();
+				@media (prefers-color-scheme: dark) {
+					color: @fly-dark-text-link-primary;
+					text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+					-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+				}
 			}
 			&:first-of-type {
 				background-color: @fly-light-surface-primary;
 				animation: cellPulseLight 1s 3 linear;
 				animation-delay: 4s;
+				@media (prefers-color-scheme: dark) {
+					background-color: @fly-dark-surface-primary;
+					animation: cellPulseDark 1s 3 linear;
+					animation-delay: 4s;
+				}
 			}
 			&:hover {
 				background-color: @fly-light-surface-tertiary;
+				@media (prefers-color-scheme: dark) {
+					background-color: @fly-dark-surface-tertiary;
+				}
 				h1 {
 					color: @fly-light-text-link-primary-hover;
 					text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,1);
 					-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,1);
 					transition: all .3s ease-out;
+					@media (prefers-color-scheme: dark) {
+						color: @fly-dark-text-link-primary-hover;
+						text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
+						-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
+					}
 				}
 			}
 			&:active {
 				background-color: @fly-light-surface-secondary;
+				@media (prefers-color-scheme: dark) {
+					background-color: @fly-dark-surface-secondary;
+				}
 				h1 {
 					color: @fly-light-text-link-primary;
+					@media (prefers-color-scheme: dark) {
+						color: @fly-dark-text-link-primary;
+					}
 				}
 			}
 		}
@@ -313,65 +353,6 @@ main {
 	&:hover {
 		button {
 			opacity: 1;
-		}
-	}
-}
-@media (prefers-color-scheme: dark) {
-	.live-updates {
-		button {
-			div {
-				background-color: @fly-dark-button-secondary-background;
-			}
-			svg {
-				fill: @fly-dark-button-secondary-text;
-			}
-			&:hover {
-				svg {
-					fill: @fly-dark-button-secondary-text-hover;
-				}
-				div {
-					background-color: @fly-dark-button-secondary-background-hover;
-				}
-			}
-		}
-		.branding {
-			svg {
-				filter: brightness(0) invert(1);
-			}
-		}
-		.carousel {
-			article {
-				background-color: @fly-dark-surface-primary;
-				.flag {
-					color: @fly-dark-text-alert;
-				}
-				h1 {
-					color: @fly-dark-text-link-primary;
-					text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
-					-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
-					transition: all .3s ease-out;
-				}
-				&:first-of-type {
-					background-color: @fly-dark-surface-primary;
-					animation: cellPulseDark 1s 3 linear;
-					animation-delay: 4s;
-				}
-				&:hover {
-					background-color: @fly-dark-surface-tertiary;
-					h1 {
-						color: @fly-dark-text-link-primary-hover;
-						text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
-						-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
-						transition: all .3s ease-out;
-					}
-				}
-				&:active {
-					background-color: @fly-dark-surface-secondary;
-					h1 {
-						color: @fly-dark-text-link-primary;
-					}
-				}
-			}
 		}
 	}
 }
@@ -855,8 +836,8 @@ main {
 	font-style: normal;
 	font-size: 12px;
 	line-height: 125%;
-	leading-trim: both;
-	text-edge: cap;
+	//leading-trim: both;
+	//text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
 .detail-12-strong {
@@ -864,8 +845,10 @@ main {
 	font-style: normal;
 	font-size: 12px;
 	line-height: 125%;
-	leading-trim: both;
-	text-edge: cap;
+	//text-box-trim: trim-both;
+	//text-box-edge: cap alphabetic;
+	//leading-trim: both;
+	//text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
 .detail-14 {
@@ -873,8 +856,8 @@ main {
 	font-style: normal;
 	font-size: 14px;
 	line-height: 125%;
-	leading-trim: both;
-	text-edge: cap;
+	//leading-trim: both;
+	//text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
 .detail-14-strong {
@@ -882,8 +865,8 @@ main {
 	font-style: normal;
 	font-size: 14px;
 	line-height: 125%;
-	leading-trim: both;
-	text-edge: cap;
+	//leading-trim: both;
+	//text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
 
@@ -926,16 +909,16 @@ main {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 12px;
-	leading-trim: both;
-	text-edge: cap;
+	//leading-trim: both;
+	//text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
 .action-14 {
 	font-family: "TTNormsPro-Normal", sans-serif;
 	font-style: normal;
 	font-size: 14px;
-	leading-trim: both;
-	text-edge: cap;
+	//leading-trim: both;
+	//text-edge: cap;
 	text-box: trim-both cap alphabetic;
 }
 

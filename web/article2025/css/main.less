@@ -809,6 +809,44 @@ main {
 	}
 }
 
+.block-picture-blur {
+	.container {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		overflow: hidden;
+	}
+	.media {
+		//background-color: transparent;
+		background-color: rgba(@color-neutral-0,.5);
+		-webkit-backdrop-filter: saturate(200%) blur(100px);
+		backdrop-filter: saturate(200%) blur(100px);
+		@media (prefers-color-scheme: dark) {
+			background-color: rgba(@color-neutral-80,.5);
+		}
+	}
+}
+@media only screen and (min-width: @break-sm) {
+	.container {
+		.border-radius-4();
+	}
+	.block-picture-blur {
+		.media {
+			border-radius: 0;
+		}
+	}
+}
+@media only screen and (min-width: @break-md) {
+	.container {
+		.border-radius-8();
+	}
+	.block-picture-blur {
+		.media {
+			border-radius: 0;
+		}
+	}
+}
+
 
 
 
