@@ -790,25 +790,7 @@ main {
 		}
 	}
 }
-@media only screen and (min-width: @break-sm) {
-	.block-picture {
-		.media {
-			.border-radius-4();
-			overflow: hidden;
-		}
-		figcaption {
-			margin: @spacing-8 0;
-		}
-	}
-}
-@media only screen and (min-width: @break-md) {
-	.block-picture {
-		.media {
-			.border-radius-8();
-		}
-	}
-}
-
+// alternate option, with background blur
 .block-picture-blur {
 	.container {
 		background-repeat: no-repeat;
@@ -827,25 +809,42 @@ main {
 	}
 }
 @media only screen and (min-width: @break-sm) {
-	.container {
-		.border-radius-4();
+	.block-picture {
+		.media {
+			.border-radius-4();
+			overflow: hidden;
+		}
+		figcaption {
+			margin: @spacing-8 0;
+		}
 	}
 	.block-picture-blur {
+		.container {
+			.border-radius-4();
+		}
 		.media {
 			border-radius: 0;
 		}
 	}
 }
 @media only screen and (min-width: @break-md) {
-	.container {
-		.border-radius-8();
+	.block-picture {
+		.media {
+			.border-radius-8();
+		}
 	}
 	.block-picture-blur {
+		.container {
+			.border-radius-8();
+		}
 		.media {
 			border-radius: 0;
 		}
 	}
 }
+
+
+
 
 
 
