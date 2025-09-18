@@ -537,11 +537,12 @@ main {
 				border-spacing: 0;
 				thead {
 					th {
-						padding: 0 0 @spacing-4 0;
+						padding: 0 0 @spacing-4 @spacing-4;
 						text-align: center;
 						.detail-12();
 						color: @fly-light-text-secondary;
 						&:first-of-type {
+							padding: 0 0 @spacing-4 0;
 							text-align: left;
 						}
 						@media (prefers-color-scheme: dark) {

@@ -101,7 +101,8 @@ main {
 	}
 	.block-picture,
 	.block-unit,
-	.block-media {
+	.block-media,
+	.block-post {
 		margin: 0;
 	}
 	.block-recirc {
@@ -157,7 +158,8 @@ main {
 		.block-recirc {
 			max-width: none;
 		}
-		.block-recirc {
+		.block-recirc,
+		.block-post {
 			margin: 0 auto;
 		}
 	}
@@ -249,6 +251,12 @@ main {
 	svg {
 		fill: @fly-dynamic-brand-primary;
 		width: 52px;
+	}
+	.at {
+		background-image: url('/web/article2025/img/chip-bgd-cbs-news-atlanta.jpg');
+		svg {
+			height: 17px; /* auto height possible? */
+		}
 	}
 	.bm {
 		background-image: url('/web/article2025/img/chip-bgd-cbs-news-baltimore.jpg');
@@ -402,8 +410,8 @@ main {
 		}
 		span {
 			padding: @spacing-8 0;
-			leading-trim: both;
-			text-edge: cap;
+			//leading-trim: both;
+			//text-edge: cap;
 			text-box: trim-both cap alphabetic;
 			text-transform: uppercase;
 			.article2025-detail-12-100();
@@ -411,6 +419,27 @@ main {
 			@media (prefers-color-scheme: dark) {
 				color: @fly-dark-text-primary;
 			}
+		}
+	}
+	.flag-live {
+		background-color: @fly-dynamic-utility-status-alert;
+		.dot {
+			height: 8px;
+			width: 8px;
+			border-radius: 50%;
+			background-color: @fly-dynamic-text-primary;
+			opacity: 1;
+			animation: dotPulse 1s infinite linear;
+		}
+		span {
+			color: @fly-dynamic-text-primary;
+		}
+	}
+	p {
+		.article2025-detail-16-100();
+		color: @fly-light-text-alert;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-alert;
 		}
 	}
 	a {
@@ -473,6 +502,19 @@ main {
 		.article2025-detail-14-100();
 		line-height: 100%;
 		color: @fly-light-text-secondary;
+	}
+	.flag-live {
+		padding: @spacing-8;
+		text-box: trim-both cap alphabetic;
+		text-transform: uppercase;
+		.article2025-detail-12-100();
+		color: @fly-dynamic-text-primary;
+		background-color: @fly-dynamic-utility-status-alert;
+		display: flex;
+		align-self: flex-start;
+		align-items: center;
+		flex-direction: row;
+		.border-radius-4();
 	}
 }
 @media only screen and (min-width: @break-sm) {
@@ -602,6 +644,12 @@ main {
 
 
 
+
+
+
+
+
+
 // // // Body
 
 .article-body {
@@ -700,6 +748,70 @@ main {
 
 
 
+// // // Liveblog Post
+
+.block-post {
+	padding: 0 0 @spacing-20 0;
+	.fly-light-utility-border();
+	article {
+		margin: 0 @spacing-20;
+		//.wireframe-outline();
+	}
+	.hgroup {
+		margin: 0 0 .8em 0;
+	}
+	.flag {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: @spacing-4;
+		.article2025-detail-16-100();
+		color: @fly-light-text-alert;
+	}
+	.dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: @fly-light-text-alert;
+		opacity: 1;
+		animation: dotPulse 1s infinite linear;
+	}
+	h1 {
+		.article2025-heading-24-125();
+		color: @fly-light-text-primary;
+	}
+	p {
+		.article2025-body-18-150();
+		color: @fly-light-text-primary;
+		/* vertical spacing between paragraphs */
+		&:not(:last-child) {
+			margin: 0 0 .8em 0;
+		}
+	}
+}
+@media only screen and (min-width: @break-sm) {
+	.block-post {
+		article {
+			margin: @spacing-20 0 0 0;
+		}
+	}
+}
+@media only screen and (min-width: @break-md) {
+	.block-post {
+		padding: 0 0 @spacing-40 0;
+		h1 {
+			.article2025-heading-32-125();
+		}
+		p {
+			.article2025-body-20-150();
+		}
+	}
+}
+
+
+
+
+
 
 // // // Summary
 
@@ -746,6 +858,61 @@ main {
 			gap: @spacing-8;
 		}
 		li {
+			.article2025-detail-18-125();
+		}
+	}
+}
+
+
+
+
+// // // Summary: Live Updates
+
+.block-summary-live {
+	padding: 0 0 @spacing-16 0;
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-8;
+	h1 {
+		.article2025-heading-16-100();
+		color: @fly-light-text-secondary;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-4;
+		list-style-type: disc;
+		list-style-position: outside;
+	}
+	li {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-2;
+	}
+	a {
+		.article2025-detail-16-125();
+		color: @fly-light-text-link-primary;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.timestamp {
+		.article2025-detail-16-125();
+		color: @fly-light-text-tertiary;
+	}
+}
+@media only screen and (min-width: @break-md) {
+	.block-summary-live {
+		padding: @spacing-16 0;
+		gap: @spacing-12;
+		h1 {
+			.article2025-heading-18-100();
+		}
+		ul {
+			gap: @spacing-8;
+		}
+		a {
 			.article2025-detail-18-125();
 		}
 	}
@@ -1358,6 +1525,18 @@ footer {
 	}
 }
 
+
+
+
+
+
+// // // Animation
+
+@keyframes dotPulse {
+	0%   { opacity: 1; }
+	50%  { opacity: .25; }
+	100% { opacity: 1; }
+}
 
 
 
