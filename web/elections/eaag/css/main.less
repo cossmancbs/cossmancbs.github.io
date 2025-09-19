@@ -291,7 +291,6 @@ main {
 				flex-direction: row;
 				align-items: center;
 				gap: @spacing-2;
-				//.wireframe-outline();
 				@media (prefers-color-scheme: dark) {
 					color: @fly-dark-text-alert;
 				}
@@ -302,7 +301,6 @@ main {
 				text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 				-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 				transition: all .3s ease-out;
-				//.wireframe-outline();
 				@media (prefers-color-scheme: dark) {
 					color: @fly-dark-text-link-primary;
 					text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
@@ -561,7 +559,7 @@ main {
 						&:last-child {
 							padding-right: 0;
 						}
-						div {
+						.container {
 							display: flex;
 							flex-direction: row;
 							gap: @spacing-8;
@@ -586,14 +584,32 @@ main {
 					img.i {
 						background-color: rgb(@color-el-other);
 					}
-					svg {
+					svg#check {
 						width: 16px;
 						min-width: 16px;
 						height: 16px;
 						fill: rgb(@color-el-d-won);
 					}
+					.flag {
+						padding: @spacing-8;
+						.detail-12-strong();
+						.border-radius-4();
+						.text-elevation();
+						color: @fly-dynamic-text-primary;
+					}
+					.flag-d-likely {
+						background-color: rgb(@color-el-d-likely);
+					}
+					.flag-d-lean {
+						background-color: rgb(@color-el-d-lean);
+					}
 					.candidate {
 						width: 99%;
+						.name {
+							display: flex;
+							flex-direction: column;
+							gap: @spacing-2;
+						}
 						p {
 							.detail-14-strong();
 							color: @fly-light-text-primary;
@@ -601,7 +617,7 @@ main {
 								color: @fly-dark-text-primary;
 							}
 						}
-						span {
+						small {
 							.detail-12();
 							color: @fly-light-text-secondary;
 							@media (prefers-color-scheme: dark) {
@@ -973,26 +989,15 @@ main {
 
 // // // Animation: Results Table
 
+// winner row background color
 .key-races { .results { article { table { tbody { #win {
 	background-color: rgba(@color-el-d-won,0);
-} } } } } }
-.key-races { .results { article { table { tbody { svg {
-	opacity: 0;
-	transform: scale(.7);
 } } } } } }
 .tablePulse {
 	animation-name: candidatePulse;
 	animation-duration: 2s;
 	animation-timing-function: ease-in-out;
 	animation-delay: 1;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-.checkPulse {
-	animation-name: candidateCheck;
-	animation-duration: 1s;
-	animation-timing-function: ease-in-out;
-	animation-delay: 0;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 }
@@ -1004,11 +1009,28 @@ main {
 	80%  { background-color: rgba(@color-el-d-won,0); }
 	100% { background-color: rgba(@color-el-d-won,.1); }
 }
-@keyframes candidateCheck {
-	0%   { opacity: 0; transform: scale(.7); }
-	75%  { opacity: 1; transform: scale(1.25); }
-	100% { opacity: 1; transform: scale(1); }
+
+/*
+// winner checkbox
+.key-races { .results { article { table { tbody { svg {
+	opacity: 0;
+	transform: scale(.7);
+} } } } } }
+.checkPulse {
+	animation-name: candidateCheck;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
+@keyframes candidateCheck {
+	0%   { display: none; opacity: 0; transform: scale(.7); }
+	1%   { display: block; opacity: 0; transform: scale(.7); }
+	75%  { display: block; opacity: 1; transform: scale(1.25); }
+	100% { display: block; opacity: 1; transform: scale(1); }
+}
+*/
 
 
 
