@@ -383,58 +383,79 @@ main {
 
 // // // Topics & Flags
 
+.flag-pill {
+	padding: 0 @spacing-8;
+	display: flex;
+	align-self: flex-start;
+	align-items: center;
+	flex-direction: row;
+	gap: @spacing-4;
+	.border-radius-4();
+	background-color: @fly-light-surface-overlay-solid-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-overlay-solid-primary;
+	}
+	svg {
+		width: 14px;
+		height: 14px;
+		fill: @fly-light-utility-icon-primary;
+		@media (prefers-color-scheme: dark) {
+			fill: @fly-dark-utility-icon-primary;
+		}
+	}
+	span {
+		padding: @spacing-8 0;
+		//leading-trim: both;
+		//text-edge: cap;
+		text-box: trim-both cap alphabetic;
+		text-transform: uppercase;
+		.article2025-detail-12-100();
+		color: @fly-light-text-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
+	}
+}
+.flag-pill-live {
+	background-color: @fly-dynamic-utility-status-alert;
+	.dot {
+		height: 8px;
+		width: 8px;
+		border-radius: 50%;
+		background-color: @fly-dynamic-text-primary;
+		opacity: 1;
+		animation: dotPulse 1s infinite linear;
+	}
+	span {
+		color: @fly-dynamic-text-primary;
+	}
+}
+.flag-text {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: @spacing-4;
+	.article2025-detail-16-100();
+	color: @fly-light-text-alert;
+	.dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: @fly-light-text-alert;
+		opacity: 1;
+		animation: dotPulse 1s infinite linear;
+	}
+}
+
+
+
+
+
 .article-header .flags {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: @spacing-16;
-	.flag {
-		padding: 0 @spacing-8;
-		display: flex;
-		align-self: flex-start;
-		align-items: center;
-		flex-direction: row;
-		gap: @spacing-4;
-		.border-radius-4();
-		background-color: @fly-light-surface-overlay-solid-primary;
-		@media (prefers-color-scheme: dark) {
-			background-color: @fly-dark-surface-overlay-solid-primary;
-		}
-		svg {
-			width: 14px;
-			height: 14px;
-			fill: @fly-light-utility-icon-primary;
-			@media (prefers-color-scheme: dark) {
-				fill: @fly-dark-utility-icon-primary;
-			}
-		}
-		span {
-			padding: @spacing-8 0;
-			//leading-trim: both;
-			//text-edge: cap;
-			text-box: trim-both cap alphabetic;
-			text-transform: uppercase;
-			.article2025-detail-12-100();
-			color: @fly-light-text-primary;
-			@media (prefers-color-scheme: dark) {
-				color: @fly-dark-text-primary;
-			}
-		}
-	}
-	.flag-live {
-		background-color: @fly-dynamic-utility-status-alert;
-		.dot {
-			height: 8px;
-			width: 8px;
-			border-radius: 50%;
-			background-color: @fly-dynamic-text-primary;
-			opacity: 1;
-			animation: dotPulse 1s infinite linear;
-		}
-		span {
-			color: @fly-dynamic-text-primary;
-		}
-	}
 	p {
 		.article2025-detail-16-100();
 		color: @fly-light-text-alert;
@@ -494,6 +515,13 @@ main {
 		flex-direction: column;
 		gap: @spacing-4;
 	}
+	article.if-live {
+		@media only screen and (min-width: @break-sm) {
+			flex-direction: row;
+			align-items: center;
+			gap: @spacing-8;
+		}
+	}
 	h1 {
 		.article2025-heading-16-125();
 		color: @fly-light-text-primary;
@@ -503,18 +531,13 @@ main {
 		line-height: 100%;
 		color: @fly-light-text-secondary;
 	}
-	.flag-live {
-		padding: @spacing-8;
-		text-box: trim-both cap alphabetic;
-		text-transform: uppercase;
-		.article2025-detail-12-100();
-		color: @fly-dynamic-text-primary;
-		background-color: @fly-dynamic-utility-status-alert;
-		display: flex;
-		align-self: flex-start;
-		align-items: center;
-		flex-direction: row;
-		.border-radius-4();
+	svg {
+		width: 147px;
+		height: 20px;
+		fill: @fly-light-brand-primary;
+		@media (prefers-color-scheme: dark) {
+			fill: @fly-dark-brand-primary;
+		}
 	}
 }
 @media only screen and (min-width: @break-sm) {
@@ -759,22 +782,6 @@ main {
 	}
 	.hgroup {
 		margin: 0 0 .8em 0;
-	}
-	.flag {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: @spacing-4;
-		.article2025-detail-16-100();
-		color: @fly-light-text-alert;
-	}
-	.dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background-color: @fly-light-text-alert;
-		opacity: 1;
-		animation: dotPulse 1s infinite linear;
 	}
 	h1 {
 		.article2025-heading-24-125();
