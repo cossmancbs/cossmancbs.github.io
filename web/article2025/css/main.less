@@ -8,6 +8,9 @@
 
 // // // Basic Styles
 
+html {
+	scroll-behavior: smooth;
+}
 body {
 	background-color: @fly-light-surface-primary;
 	@media (prefers-color-scheme: dark) {
@@ -38,9 +41,9 @@ body {
 
 // // // Z-Indices
 
-#stickers {
-	z-index: 99;
-}
+#stickers { z-index: 999; }
+// ANNOYING: this is necessary because applying a CSS filter to the logos changes their z-index
+.article-rail { .article-video { z-index: 99; } }
 
 
 
@@ -418,14 +421,6 @@ main {
 }
 .flag-pill-live {
 	background-color: @fly-dynamic-utility-status-alert;
-	.dot {
-		height: 8px;
-		width: 8px;
-		border-radius: 50%;
-		background-color: @fly-dynamic-text-primary;
-		opacity: 1;
-		animation: dotPulse 1s infinite linear;
-	}
 	span {
 		color: @fly-dynamic-text-primary;
 	}
@@ -437,13 +432,8 @@ main {
 	gap: @spacing-4;
 	.article2025-detail-16-100();
 	color: @fly-light-text-alert;
-	.dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background-color: @fly-light-text-alert;
-		opacity: 1;
-		animation: dotPulse 1s infinite linear;
+	@media (prefers-color-scheme: dark) {
+		color: @fly-dark-text-alert;
 	}
 }
 
@@ -734,22 +724,22 @@ main {
 			}
 		}
 	}
-	.contributors {
-		.article2025-body-sans-16-150();
-		color: @fly-light-text-secondary;
-		a {
-			color: @fly-light-text-link-secondary;
-			&:hover {
-				color: @fly-light-text-link-secondary-hover;
-			}
+}
+.contributors {
+	.article2025-body-sans-16-150();
+	color: @fly-light-text-secondary;
+	a {
+		color: @fly-light-text-link-secondary;
+		&:hover {
+			color: @fly-light-text-link-secondary-hover;
 		}
-		@media (prefers-color-scheme: dark) {
-			color: @fly-dark-text-secondary;
-			a {
-				color: @fly-dark-text-link-secondary;
-				&:hover {
-					color: @fly-dark-text-link-secondary-hover;
-				}
+	}
+	@media (prefers-color-scheme: dark) {
+		color: @fly-dark-text-secondary;
+		a {
+			color: @fly-dark-text-link-secondary;
+			&:hover {
+				color: @fly-dark-text-link-secondary-hover;
 			}
 		}
 	}
@@ -774,11 +764,14 @@ main {
 // // // Liveblog Post
 
 .block-post {
+	scroll-margin-top: 180px; // smooth scrolling + sticky nav
 	padding: 0 0 @spacing-20 0;
 	.fly-light-utility-border();
+	@media (prefers-color-scheme: dark) {
+		.fly-dark-utility-border();
+	}
 	article {
 		margin: 0 @spacing-20;
-		//.wireframe-outline();
 	}
 	.hgroup {
 		margin: 0 0 .8em 0;
@@ -786,13 +779,80 @@ main {
 	h1 {
 		.article2025-heading-24-125();
 		color: @fly-light-text-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
 	}
 	p {
 		.article2025-body-18-150();
 		color: @fly-light-text-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
 		/* vertical spacing between paragraphs */
 		&:not(:last-child) {
 			margin: 0 0 .8em 0;
+		}
+	}
+	.foot {
+		margin: @spacing-20 0 0 0;
+		display: flex;
+		flex-direction: row;
+		gap: @spacing-16;
+		justify-content: space-between;
+		p {
+			.article2025-detail-16-125();
+			color: @fly-light-text-secondary;
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-secondary;
+			}
+		}
+	}
+	.buttons {
+		display: flex;
+		flex-direction: row;
+		gap: @spacing-8;
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 32px;
+			height: 32px;
+			background-color: @fly-light-button-secondary-background;
+			border: 1px solid @fly-light-button-secondary-border;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all .3s ease-out;
+			&:hover {
+				background-color: @fly-light-button-secondary-background-hover;
+			}
+			&:active {
+				background-color: @fly-light-button-secondary-background;
+			}
+			@media (prefers-color-scheme: dark) {
+				background-color: @fly-dark-button-secondary-background;
+				border: 1px solid @fly-dark-button-secondary-border;
+				&:hover {
+					background-color: @fly-dark-button-secondary-background-hover;
+				}
+				&:active {
+					background-color: @fly-dark-button-secondary-background;
+				}
+			}
+		}
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: @fly-light-button-secondary-text;
+			&:hover {
+				fill: @fly-light-button-secondary-text-hover;
+			}
+			@media (prefers-color-scheme: dark) {
+				fill: @fly-dark-button-secondary-text;
+				&:hover {
+					fill: @fly-dark-button-secondary-text-hover;
+				}
+			}
 		}
 	}
 }
@@ -873,54 +933,126 @@ main {
 
 
 
+
 // // // Summary: Live Updates
 
 .block-summary-live {
-	padding: 0 0 @spacing-16 0;
+	margin: 0;
+	padding: @spacing-16;
 	display: flex;
 	flex-direction: column;
-	gap: @spacing-8;
+	gap: @spacing-16;
+	.border-radius-4();
+	transition: all .3s ease-out;
+	border: 1px solid @fly-light-utility-border;
+	background-color: @fly-light-surface-primary;
+	&:hover {
+		background-color: @fly-light-surface-tertiary;
+	}
+	@media only screen and (min-width: @break-md) {
+		padding: @spacing-20;
+		gap: @spacing-20;
+		.border-radius-8();
+	}
+	@media (prefers-color-scheme: dark) {
+		border: 1px solid @fly-dark-utility-border;
+		background-color: @fly-dark-surface-primary;
+		&:hover {
+			background-color: @fly-dark-surface-tertiary;
+		}
+	}
 	h1 {
 		.article2025-heading-16-100();
 		color: @fly-light-text-secondary;
+		@media only screen and (min-width: @break-md) {
+			.article2025-heading-18-100();
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-secondary;
+		}
 	}
 	ul {
 		display: flex;
 		flex-direction: column;
-		gap: @spacing-4;
+		gap: 0;
 		list-style-type: disc;
 		list-style-position: outside;
 	}
 	li {
 		display: flex;
+		flex-direction: row;
+		gap: @spacing-12;
+		// stupid hack to hide last vertical rule
+		&:last-of-type { .rule { opacity: 0; } }
+	}
+	article {
+		margin: 0 0 @spacing-4 0;
+		display: flex;
 		flex-direction: column;
-		gap: @spacing-2;
+		gap: @spacing-4;
+		@media only screen and (min-width: @break-md) {
+			margin: 0 0 @spacing-8 0;
+		}
 	}
 	a {
 		.article2025-detail-16-125();
 		color: @fly-light-text-link-primary;
-		text-decoration: none;
+		text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
+		-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
+		transition: all .3s ease-out;
 		&:hover {
-			text-decoration: underline;
+			color: @fly-light-text-link-primary-hover;
+			text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,1);
+			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,1);
+			transition: all .3s ease-out;
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-link-primary-hover;
+				text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
+				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,1);
+			}
+		}
+		&:active {
+			color: @fly-light-text-link-primary;
+			text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,1);
+			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,1);
+			transition: all .3s ease-out;
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-link-primary;
+				text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,1);
+				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,1);
+			}
+		}
+		@media only screen and (min-width: @break-md) {
+			.article2025-detail-18-125();
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-link-primary;
+		}
+	}
+	.bullet {
+		padding: 6px 0 0 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: @spacing-2;
+		container-type: size;
+		.rule {
+			height: 100cqh;
+			margin: 0 0 0 3px;
+			border-left: 2px solid @fly-light-utility-border;
+			@media (prefers-color-scheme: dark) {
+				border-left: 2px solid @fly-dark-utility-border;
+			}
 		}
 	}
 	.timestamp {
-		.article2025-detail-16-125();
+		.article2025-detail-14-100();
 		color: @fly-light-text-tertiary;
-	}
-}
-@media only screen and (min-width: @break-md) {
-	.block-summary-live {
-		padding: @spacing-16 0;
-		gap: @spacing-12;
-		h1 {
-			.article2025-heading-18-100();
+		@media only screen and (min-width: @break-md) {
+			.article2025-detail-16-100();
 		}
-		ul {
-			gap: @spacing-8;
-		}
-		a {
-			.article2025-detail-18-125();
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-tertiary;
 		}
 	}
 }
@@ -1477,6 +1609,8 @@ footer {
 		@media (prefers-color-scheme: dark) {
 			/* override all with FILTER, not FILL, to support multi-color logos */
 			filter: brightness(0) invert(1);
+			//path:nth-of-type(1) {fill: red;}
+			//fill: salmon !important;
 		}
 	}
 	.thumb {
@@ -1539,6 +1673,24 @@ footer {
 
 // // // Animation
 
+.dot {
+	width: 8px;
+	height: 8px;
+	min-width: 8px;
+	min-height: 8px;
+	border-radius: 50%;
+	background-color: @fly-light-text-alert;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-text-alert;
+	}
+}
+.dot-dynamic {
+	background-color: @fly-dynamic-text-primary;
+}
+.dot-anim {
+	opacity: 1;
+	animation: dotPulse 1s infinite linear;
+}
 @keyframes dotPulse {
 	0%   { opacity: 1; }
 	50%  { opacity: .25; }
@@ -1557,46 +1709,6 @@ footer {
 	flex-direction: column;
 	gap: @spacing-8;
 	max-width: 300px;
-	.buttons {
-		display: flex;
-		flex-direction: row;
-		gap: @spacing-8;
-		div {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 32px;
-			height: 32px;
-			background-color: @fly-light-button-secondary-background;
-			border: 1px solid @fly-light-button-secondary-border;
-			border-radius: 50%;
-			cursor: pointer;
-			&:hover {
-				background-color: @fly-light-button-secondary-background-hover;
-			}
-			@media (prefers-color-scheme: dark) {
-				background-color: @fly-dark-button-secondary-background;
-				border: 1px solid @fly-dark-button-secondary-border;
-				&:hover {
-					background-color: @fly-dark-button-secondary-background-hover;
-				}
-			}
-		}
-		svg {
-			width: 16px;
-			height: 16px;
-			fill: @fly-light-button-secondary-text;
-			&:hover {
-				fill: @fly-light-button-secondary-text-hover;
-			}
-			@media (prefers-color-scheme: dark) {
-				fill: @fly-dark-button-secondary-text;
-				&:hover {
-					fill: @fly-dark-button-secondary-text-hover;
-				}
-			}
-		}
-	}
 	.logos {
 		svg {
 			width: 196.8px;  // auto?

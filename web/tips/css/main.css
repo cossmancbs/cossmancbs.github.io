@@ -1,0 +1,390 @@
+/*
+/
+/	RESET
+/
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+
+/* fix vertical spacing */
+img {
+	display: block;
+}
+/* allow styling of individual svg symbol instances */
+svg path {
+	fill: inherit;
+}
+/* fix webfont issues */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	FONTS
+/
+*/
+
+@font-face {
+	font-family: "ProximaNova-Regular";
+	src: url('../../fonts/proximanova-regular-webfont.eot');
+	src: url('../../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/proximanova-regular-webfont.woff2') format('woff2'),
+		 url('../../fonts/proximanova-regular-webfont.woff') format('woff');
+}
+@font-face {
+	font-family: "ProximaNova-Bold";
+	src: url('../../fonts/proximanova-bold-webfont.eot');
+	src: url('../../fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/proximanova-bold-webfont.woff2') format('woff2'),
+		 url('../../fonts/proximanova-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family: "PublicoHeadline-Bold";
+	src: url('../../fonts/PublicoHeadline-Bold-Web.eot');
+	src: url('../../fonts/PublicoHeadline-Bold-Web.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/PublicoHeadline-Bold-Web.woff2') format('woff2'),
+		 url('../../fonts/PublicoHeadline-Bold-Web.woff') format('woff');
+}
+
+@font-face {
+	font-family: "PublicoText-Roman";
+	src: url('../../fonts/PublicoText-Roman-Web.eot'); 
+	src: url('../../fonts/PublicoText-Roman-Web.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/PublicoText-Roman-Web.woff2') format('woff2'),
+		 url('../../fonts/PublicoText-Roman-Web.woff') format('woff');
+}
+
+@font-face {
+	font-family: "PublicoHeadline-Black";
+	src: url('../../fonts/PublicoHeadline-Black-Web.eot');
+	src: url('../../fonts/PublicoHeadline-Black-Web.eot?#iefix') format('embedded-opentype'),
+		 url('../../fonts/PublicoHeadline-Black-Web.woff2') format('woff2'),
+		 url('../../fonts/PublicoHeadline-Black-Web.woff') format('woff');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+:root {
+	--color-offblack: #101010;
+	--color-offwhite: #F2F2F2;
+}
+body {
+	background: white;
+}
+main {
+	margin: 0 20px;
+}
+.sidenav {
+	display: none;
+}
+article {
+	margin: 0 0 40px 0;
+}
+.hgroup {
+	display: flex;
+	align-items: center;
+}
+.hgroup img {
+	margin: 0 0 12px 8px;
+	width: 30px;
+	height: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+	main {
+		margin: 0 40px;
+	}
+	article {
+		margin: 0 0 80px 0;
+	}
+	.hgroup img {
+		width: 40px;
+		height: 40px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	main {
+		margin: 0 auto;
+		width: 980px;
+	}
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-row-gap: 0;
+		grid-column-gap: 40px;
+		align-items: start;
+	}
+	.sidenav {
+		display: inherit;
+		grid-column: 1/2;
+	}
+	.content {
+		grid-column: 2/5;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	main {
+		width: 1320px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	HEADER
+/
+*/
+
+header {
+	margin: 0 0 20px 0;
+	background: var(--color-offblack);
+	height: 45px;
+	display: flex;
+	align-items: center;
+}
+.logo {
+	margin: 0 0 0 20px;
+	list-style: none;
+	display: flex;
+}
+.logo li {
+	font-size: 0;
+}
+.logo li:first-child {
+	margin: 0 5px 0 0;
+}
+.logo svg {
+	width: 62.5px;
+	height: 20px;
+	fill: var(--color-offwhite);
+}
+@media only screen and (min-width: 768px) {
+	.logo {
+		margin: 0 0 0 40px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	header {
+		margin: 0 0 40px 0;
+		height: 104px;
+	}
+	.logo {
+		margin: 0 auto;
+		width: 980px;
+	}
+	.logo svg {
+		width: 125px;
+		height: 40px;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	.logo {
+		width: 1320px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	TEXT STYLES
+/
+*/
+
+hr {
+	margin: 20px 0;
+	border: 0;
+	height: 0;
+	border-top: 1px solid #e8e8e8;
+}
+ul {
+	margin: 0 40px;
+}
+.caret {
+	width: 10px;
+	height: 10px;
+}
+
+h1 {
+	margin: 0 0 10px 0;
+	font-family: "PublicoHeadline-Black", serif;
+	font-size: 32px;
+	line-height: 1;
+	color: var(--color-offblack);
+}
+h2 {
+	margin: 0 0 10px 0;
+	font-family: "PublicoHeadline-Bold", serif;
+	font-size: 24px;
+	line-height: 26px;
+	color: var(--color-offblack);
+}
+h3 {
+	margin: 0 0 25px 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-size: 18px;
+	line-height: 22px;
+	color: var(--color-offblack);
+}
+p, main li {
+	margin: 0 0 10px 0;
+	font-family: "PublicoText-Roman", serif;
+	font-size: 18px;
+	line-height: 25px;
+	color: var(--color-offblack);
+}
+p.dek {
+	margin: 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 18px;
+	line-height: 22px;
+	color: var(--color-offblack);
+}
+a {
+	color: var(--color-offblack);
+	text-decoration: underline;
+}
+a:link {}
+a:visited {}
+a:hover {}
+a:active {}
+
+.sidenav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sidenav li {
+	margin: 0 0 25px 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 18px;
+	color: var(--color-offblack);
+}
+.sidenav li a {
+	text-decoration: none;
+}
+.sidenav li a:hover {
+	text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+	hr {
+		margin: 40px 0;
+	}
+	ul {
+		margin: 0 80px;
+	}
+	.caret {
+		width: 12px;
+		height: 12px;
+	}
+
+	h1 {
+		font-size: 45px;
+	}
+	h2 {
+		font-family: "PublicoHeadline-Black", serif;
+		font-size: 32px;
+		line-height: 1;
+	}
+	p, main li {
+		font-size: 21px;
+		line-height: 31px;
+	}
+}
+@media only screen and (min-width: 1020px) {
+	h1 {
+		font-size: 56px;
+		letter-spacing: -1.2px;
+	}
+}
+
+
+
+
+
+
+/*
+#guidelines {
+	display: none;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

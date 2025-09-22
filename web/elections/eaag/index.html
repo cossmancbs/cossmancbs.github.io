@@ -160,10 +160,10 @@
 										<div class="name">
 											<p>Zohran Mamdani</p> <p><small>Dem.</small></p>
 										</div>
-										<span class="flag flag-d-likely">Likely</span>
-										<!--
-										<svg id="check"><use xlink:href="/web/elections/eaag/img/sprite.svg#check"></use></svg>
-										-->
+										<span id="flag-mamdami" class="flag flag-d-likely">
+											<!--<svg id="check"><use xlink:href="/web/elections/eaag/img/sprite.svg#check"></use></svg>-->
+											<span id="flag-mamdami-label">Likely</span>
+										</span>
 									</div>
 								</td>
 								<td class="votes">
@@ -293,7 +293,9 @@
 										<div class="name">
 											<p>Mikie Sherrill</p> <p><small>Dem.</small></p>
 										</div>
-										<span class="flag flag-d-lean">Lean</span>
+										<span class="flag flag-d-lean">
+											<span>Lean</span>
+										</span>
 									</div>
 								</td>
 								<td class="votes">
@@ -565,8 +567,13 @@ document.getElementById("mycountdown").innerHTML = "First results expected soon"
 			}, 1000);
 			// checkmark
 			setTimeout(function() {
-				// checkmark
-				// $('#check').addClass('checkPulse');
+				// flag checkmark
+				//$('#check').addClass('checkPulse');
+				// flag color
+				$('#flag-mamdami').removeClass('flag-d-likely');
+				$('#flag-mamdami').addClass('flag-d-win');
+				// flag text
+				document.getElementById('flag-mamdami-label').innerHTML = '&#x2713; Win';
 			}, 3000);
 		}
 		

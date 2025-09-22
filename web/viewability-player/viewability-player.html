@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Draggable Video Player</title>
+
+	<link rel="stylesheet" href="css/viewability-player.css">
+
+	<!-- jquery-ui required for draggable player -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<main>
+
+
+
+
+
+		<!-- MINIPLAYER -->
+
+		<div id="mini-player">
+
+			<header>
+				<ul>
+					<li id="btnGrab">
+						<img src="img/miniplayer-grab.svg" class="widget gripper">
+						<h1>Lorem ipsum dolor sit amet consectetur</h1>
+						<h2>Watch Now</h2>
+						<h3>CBSN</h3>
+					</li>
+					<li id="btnCollapse"><img src="img/miniplayer-collapse.svg" class="widget"></li>
+					<li id="btnOpen"><img src="img/miniplayer-open.svg" class="widget"></li>
+				</ul>
+			</header>
+
+			<video src="/web/media/vegas-cbs-this-morning.mp4" autoplay loop muted id="mini-video"></video>
+
+		</div>
+
+
+
+
+
+		<!-- DUMMY CONTENT -->
+
+		<ul id="page-content">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+
+
+
+
+	</main>
+
+
+
+
+
+	<script>
+
+
+
+		/* variables */
+		var mniPly = document.getElementById('mini-player');
+		var mniVid = document.getElementById('mini-video');
+
+
+
+		/* scroll position and direction */
+		var position = $(window).scrollTop();
+		$(window).scroll(function() {
+			/* console.log(position); */
+			var scroll = $(window).scrollTop();
+			/* miniplayer display */
+			if (position <= 590) {
+				mniVid.pause();
+				$(mniPly).fadeOut( 'fast' );
+			} else {
+				mniVid.play();
+				$(mniPly).fadeIn( 'fast' );
+			}
+			position = scroll;
+		});
+
+
+
+		/* miniplayer controls */
+		$(mniVid).hover(function() {
+			if (mniVid.hasAttribute('controls')) {
+				mniVid.removeAttribute('controls');
+			} else {
+				mniVid.setAttribute('controls', 'controls');
+			}
+		});
+
+
+
+		/* miniplayer grab */
+		$(function() {
+			$(mniPly).draggable({
+				handle: '#btnGrab'
+			});
+		});
+		$('#btnGrab').mousedown(function() {
+			$(mniPly).css('transform', 'scale(1.02)');
+		});
+		$('#btnGrab').mouseup(function() {
+			$(mniPly).css('transform', 'scale(1)');
+		});
+
+
+
+		/* miniplayer close/collapse  */
+		$('#btnCollapse').click(function() {
+			$(mniPly).animate({
+				width: 340,
+				height: 99
+			}, 150);
+			$('header').css('width', 169);
+			$('header li').css('height', 99);
+			$('header h1').css('display', 'none');
+			$('header h2').css('display', 'inherit');
+			$('header h3').css('display', 'inherit');
+			$('.gripper').css('float', 'none');
+			$('#btnCollapse').removeClass('showMe').addClass('hideMe');
+			$('#btnOpen').removeClass('hideMe').addClass('showMe');
+			$('#btnGrab').css('width', 125);
+			$(mniVid).css('float', 'left');
+			$(mniVid).animate({
+				width: 176,
+				top: 0
+			}, 150);
+		});
+
+
+
+		/* miniplayer expand btnOpen */
+		$('#btnOpen').click(function() {
+			$(mniPly).animate({
+				width: 416,
+				height: 278
+			}, 150);
+			$('header').css('width', 416);
+			$('header li').css('height', 44);
+			$('header h1').css('display', 'inherit');
+			$('header h2').css('display', 'none');
+			$('header h3').css('display', 'none');
+			$('.gripper').css('float', 'left');
+			$('#btnCollapse').removeClass('hideMe').addClass('showMe');
+			$('#btnOpen').removeClass('showMe').addClass('hideMe');
+			$('#btnGrab').css('width', 370);
+			$(mniVid).css('float', 'none');
+			$(mniVid).animate({
+				width: 416,
+				top: 44
+			}, 150);
+		});
+
+
+
+		/* on page load */
+		$(document).ready(function() {
+
+			$(mniVid).prop('muted', true);
+			$('#btnOpen').addClass('hideMe');
+
+		});
+
+
+
+	</script>
+
+
+
+
+
+</body>
+
+</html>

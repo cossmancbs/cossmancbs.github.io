@@ -1,0 +1,236 @@
+/*
+*
+*    RESET
+*
+*/
+
+html,
+body,
+div,
+h1,
+h2,
+h3,
+p,
+a,
+ul,
+li,
+img,
+main,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+img,
+video,
+ul,
+li {
+    display: block;
+}
+
+
+
+
+
+
+
+/*
+/
+/	GLOBAL
+/
+*/
+
+body {
+	background-color: white;
+}
+
+.showMe {
+	display: initial;
+}
+
+.hideMe {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+/*
+/
+/	miniplayer
+/
+*/
+
+#mini-player {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 416px;
+	height: 278px;
+	box-shadow: 0 0 40px rgba(0,0,0,.5);
+	overflow: hidden;
+	background: black;
+	display: none;
+}
+#mini-player * {
+	transition: opacity .2s ease-in-out;
+}
+
+#mini-player video {
+	position: absolute;
+	top: 44px;
+	width: 416px;
+	height: auto;
+}
+
+header {
+	position: relative;
+	width: 416px;
+	float: right;
+}
+header h1 {
+	padding: 13px 0 0 0;
+	font-family: sans-serif;
+	font-weight: 500;
+	font-size: 17px;
+	color: white;
+}
+header h2 {
+	margin: 0;
+	padding: 5px 0 0 15px;
+	font-family: sans-serif;
+	font-weight: 900;
+	font-size: 12px;
+	letter-spacing: 1.33px;
+	text-transform: uppercase;
+	color: white;
+	display: none;
+}
+header h3 {
+	margin: 0;
+	padding: 5px 0 0 15px;
+	font-family: sans-serif;
+	font-weight: 900;
+	font-size: 26px;
+	text-transform: uppercase;
+	color: white;
+	display: none;
+}
+
+header ul {
+	float: right;
+}
+
+header li {
+	float: left;
+	height: 44px;
+}
+
+.widget {
+	width: 44px;
+	height: 44px;
+	opacity: .5;
+}
+
+.gripper {
+	float: left;
+}
+
+#btnCollapse,
+#btnOpen {
+	cursor: pointer;
+}
+
+#btnCollapse:hover .widget,
+#btnOpen:hover .widget {
+	opacity: 1;
+}
+
+#btnGrab {
+	width: 370px;
+	cursor: move;
+	/* fallback */
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+#btnGrab:hover .gripper {
+	opacity: 1;
+}
+#btnGrab:active {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+
+
+
+
+
+
+/*
+/
+/	page content
+/
+*/
+
+#page-content {
+	padding: 20px;
+}
+#page-content li {
+	margin: 0 0 20px 0;
+	background-color: WhiteSmoke;
+	height: 200px;
+}
+
+@media only screen and (min-width: 1020px) {
+	#page-content {
+		margin: 0 auto;
+		width: 980px;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	z-axes
+/
+*/
+
+#miniplayer {
+	z-index: 2;
+}
+#page-content {
+	z-index: 1;
+}
+
+
+
+
+
+
+
+

@@ -584,18 +584,30 @@ main {
 					img.i {
 						background-color: rgb(@color-el-other);
 					}
-					svg#check {
-						width: 16px;
-						min-width: 16px;
-						height: 16px;
-						fill: rgb(@color-el-d-won);
+					/*
+					#check {
+						width: 8px;
+						min-width: 8px;
+						height: 8px;
+						fill: @fly-dynamic-text-primary;
+						.text-elevation();
 					}
+					*/
 					.flag {
 						padding: @spacing-8;
-						.detail-12-strong();
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						gap: @spacing-2;
 						.border-radius-4();
-						.text-elevation();
-						color: @fly-dynamic-text-primary;
+						span {
+							.detail-12-strong();
+							.text-elevation();
+							color: @fly-dynamic-text-primary;
+						}
+					}
+					.flag-d-win {
+						background-color: rgb(@color-el-d-won);
 					}
 					.flag-d-likely {
 						background-color: rgb(@color-el-d-likely);
@@ -1010,8 +1022,8 @@ main {
 	100% { background-color: rgba(@color-el-d-won,.1); }
 }
 
+// winner checkmark
 /*
-// winner checkbox
 .key-races { .results { article { table { tbody { svg {
 	opacity: 0;
 	transform: scale(.7);

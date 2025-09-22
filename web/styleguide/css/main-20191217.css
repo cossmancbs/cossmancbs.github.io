@@ -1,0 +1,1247 @@
+/*
+*
+*    GLOBAL
+*
+*/
+
+* {}
+
+
+
+/*
+*
+*    RESET
+*
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+
+/* fix spacing */
+img,
+video,
+ul,
+li {
+    display: block;
+}
+
+/* fix webfont issues */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*    FONTS & COLORS
+*
+*/
+
+:root {
+	--color-offblack: #101010;
+	--color-offblack-rgb: 16,16,16;
+	--color-offwhite: #F2F2F2;
+	--color-offwhite-rgb: 242,242,242;
+	--color-graydark: #7F7F7F;
+	--color-graylight: #E8E8E8;
+	--color-live: #B60505;
+	--color-styleguide: #76BCED;
+}
+
+@font-face {
+	font-family: "ProximaNova-Regular";
+	src: url("../fonts/ProximaNova-Regular-webfont.eot"); 
+	src: url("../fonts/ProximaNova-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/ProximaNova-Regular-webfont.woff2") format("woff2"),
+		 url("../fonts/ProximaNova-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "ProximaNova-Bold";
+	src: url("../fonts/ProximaNova-Bold-webfont.eot"); 
+	src: url("../fonts/ProximaNova-Bold-webfont.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/ProximaNova-Bold-webfont.woff2") format("woff2"),
+		 url("../fonts/ProximaNova-Bold-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "PublicoHeadline-Bold";
+	src: url("../fonts/PublicoHeadline-Bold-Web.eot"); 
+	src: url("../fonts/PublicoHeadline-Bold-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/PublicoHeadline-Bold-Web.woff2") format("woff2"),
+		 url("../fonts/PublicoHeadline-Bold-Web.woff") format("woff");
+}
+
+@font-face {
+	font-family: "PublicoHeadline-Black";
+	src: url("../fonts/PublicoHeadline-Black-Web.eot"); 
+	src: url("../fonts/PublicoHeadline-Black-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/PublicoHeadline-Black-Web.woff2") format("woff2"),
+		 url("../fonts/PublicoHeadline-Black-Web.woff") format("woff");
+}
+
+@font-face {
+	font-family: "PublicoText-Roman";
+	src: url("../fonts/PublicoText-Roman-Web.eot"); 
+	src: url("../fonts/PublicoText-Roman-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/PublicoText-Roman-Web.woff2") format("woff2"),
+		 url("../fonts/PublicoText-Roman-Web.woff") format("woff");
+}
+
+@font-face {
+	font-family: "PublicoText-Italic";
+	src: url("../fonts/PublicoText-Italic-Web.eot"); 
+	src: url("../fonts/PublicoText-Italic-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/PublicoText-Italic-Web.woff2") format("woff2"),
+		 url("../fonts/PublicoText-Italic-Web.woff") format("woff");
+}
+
+@font-face {
+	font-family: "PublicoText-Bold";
+	src: url("../fonts/PublicoText-Bold-Web.eot"); 
+	src: url("../fonts/PublicoText-Bold-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/PublicoText-Bold-Web.woff2") format("woff2"),
+		 url("../fonts/PublicoText-Bold-Web.woff") format("woff");
+}
+
+@font-face {
+	font-family: "PublicoText-BoldItalic";
+	src: url("../fonts/PublicoText-BoldItalic-Web.eot"); 
+	src: url("../fonts/PublicoText-BoldItalic-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/PublicoText-BoldItalic-Web.woff2") format("woff2"),
+		 url("../fonts/PublicoText-BoldItalic-Web.woff") format("woff");
+}
+
+
+
+
+
+/*
+*
+*    LAYOUT
+*
+*/
+
+.grid {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+}
+main {
+	padding: 40px;
+	color: var(--color-offblack);
+}
+section {
+	margin: 0 0 100px 0;
+}
+
+
+
+
+
+
+
+/*
+*
+*    GENERIC STYLE GUIDE STYLES
+*
+*/
+
+body {
+	background: #F7F7F8;
+}
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+}
+h2 {
+	margin-bottom: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 34px;
+	text-transform: uppercase;
+	color: var(--color-styleguide);
+}
+h3 {
+	margin: 60px 0 20px 0;
+	padding: 0 0 5px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	color: var(--color-styleguide);
+	width: 100%;
+	border-bottom: 1px solid var(--color-styleguide);
+}
+h4 {
+	margin: 10px 0 40px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: var(--color-styleguide);
+}
+p {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 1.2;
+}
+ul {
+	margin: 20px 0 40px 0;
+}
+ul ul {
+	margin: 5px 0 15px 30px;
+}
+li {
+	margin: 0 0 10px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+hr {
+	margin: 100px 0 50px 0;
+	border: 0;
+	height: 1px;
+	background: black;
+	opacity: .2;
+}
+strong {
+}
+em {
+}
+small {
+	font-size: 14px;
+	color: var(--color-graydark);
+}
+code, pre {
+	font-family: monospace;
+	font-size: 14px;
+	line-height: 1;
+	color: var(--color-graydark);
+}
+pre {
+	white-space: pre-line;
+}
+/* tried using CSS filter to adjust color, but it blurs text */
+a:link, a:visited {
+	color: #4A90E2;
+	text-decoration: underline;
+}
+a:hover, a:active {
+	color: #3468A5;
+	text-decoration: underline;
+}
+
+
+
+
+
+/*
+*
+*    SUBNAV
+*
+*/
+
+.leftcol {
+	background-color: var(--color-offblack);
+}
+nav {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 20px;
+	margin: 0 20px;
+	width: 260px;
+}
+nav h1 {
+	color: var(--color-offwhite);
+}
+nav a:link, nav a:visited {
+	color: var(--color-graylight);
+	text-decoration: none;
+}
+nav a:hover, nav a:active {
+	color: var(--color-offwhite);
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+/*
+*
+*    BUTTONS
+*
+*/
+
+#buttons ul {
+	margin: 20px 0;
+	font-size: 0;    /* remove whitespace */
+}
+#buttons li {
+	margin: 0 20px 0 0;
+	padding: 20px;
+	display: inline-block;
+	background-color: white;
+}
+.buttons-ondark li {
+	background-color: rgba(var(--color-offblack-rgb),.5) !important;
+}
+
+
+
+/* more button */
+.button-more {
+	padding: 14px 20px 13px 20px;
+	width: auto;
+	min-width: 300px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 13px;
+	letter-spacing: 0.3px;
+	color: var(--color-offblack);
+	background-color: white;
+	border: 1px solid var(--color-graylight);
+}
+.button-more svg {
+	width: 9px;
+	height: 9px;
+}
+.button-more-river svg {
+	transform: rotate(90deg);
+}
+.button-more-desktop {
+	margin: 0 0 0 15px;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 15px;
+	letter-spacing: 0.3px;
+	color: var(--color-offblack);
+	background-color: transparent;
+	cursor: pointer;
+}
+.button-more-desktop svg {
+	width: 9px;
+	height: 9px;
+}
+
+
+
+/* commerce button */
+.button-commerce {
+	padding: 14px 20px 13px 20px;
+	width: auto;
+	min-width: 300px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 13px;
+	letter-spacing: 1px;
+	color: var(--color-offwhite);
+	text-transform: uppercase;
+	background-color: var(--color-live);
+	border: 1px solid var(--color-live);
+}
+.button-commerce:hover {
+	color: var(--color-live);
+	background-color: white;
+}
+.button-commerce:active {
+	color: white;
+	background-color: var(--color-live);
+}
+
+
+
+/* unmute button */
+.button-unmute {
+	display: flex;
+	align-items: center;
+	padding: 14px 20px 13px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 999px; /* large number for pill shape */
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	letter-spacing: 2px;
+	color: var(--color-offblack);
+	text-transform: uppercase;
+	background-color: var(--color-offwhite);
+}
+.button-unmute svg {
+	margin: 0 10px 0 0;
+	width: 18px;
+	height: 18px;
+	fill: var(--color-offblack);
+}
+
+
+
+/* circular buttons */
+.button-circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(var(--color-offblack-rgb),.35);
+}
+.button-circle svg {
+	width: 45%;
+	height: 45%;
+	fill: var(--color-offwhite);
+}
+.button-circle:hover {
+	background-color: var(--color-offblack);
+}
+
+/* close button */
+#buttons li:last-child .button-circle {
+	background-color: rgba(var(--color-offwhite-rgb),.6);
+}
+#buttons li:last-child .button-circle:hover {
+	background-color: var(--color-offwhite);
+}
+#buttons li:last-child .button-circle svg {
+	fill:  var(--color-offblack);
+}
+
+
+
+
+
+
+
+
+/*
+*
+*    FORMS
+*
+*/
+
+.form-grid {
+	display: flex;
+}
+.form-grid-cell {
+	margin: 0 20px 0 0;
+	padding: 20px;
+	background-color: white;
+}
+
+.form-element-wrapper {
+	margin: 0 0 20px 0;
+	display: flex;
+}
+.form-element-wrapper-compact {
+	margin: 0 0 20px 0;
+	display: flex;
+	flex-direction: column;
+}
+label {
+	margin: 15px 15px 0 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--color-offblack);
+}
+.form-element-wrapper-compact label {
+	margin: 0 0 5px 0;
+}
+.error-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.error-wrapper span {
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 14px;
+	color: var(--color-live);
+}
+.form-element-wrapper-compact .error-wrapper span {
+	font-size: 12px;
+}
+
+
+
+
+
+/*
+*
+*    FORMS: INPUT & TEXTAREA
+*
+*/
+
+/* inputs */
+input[type=text], textarea {
+	-webkit-appearance: none; 
+	appearance: none;
+	width: 320px;
+	padding: 14px 15px 13px 15px;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	color: var(--color-offblack);
+	border: 1px solid var(--color-graydark);
+	border-radius: 3px;
+}
+/* form elements: text focus */
+input[type=text]:focus, textarea:focus {
+	border-color: var(--color-offblack);
+}
+/* form elements: text hover */
+input[type=text]:hover, textarea:hover {
+	border-color: var(--color-offblack);
+}
+input[type=text]:disabled, textarea:disabled {
+	background: var(--color-graylight);
+	border: 1px solid var(--color-graylight);
+}
+/* form elements: text error */
+input[type=text].error, textarea.error {
+	border: 1px solid var(--color-live);
+	/* color: var(--color-live); */
+}
+
+/* compact */
+.form-element-wrapper-compact input[type=text], .form-element-wrapper-compact textarea {
+	font-size: 16px;
+	width: 280px;
+	padding: 10px 13px 9px 13px;
+}
+
+
+
+
+
+/*
+*
+*    BUTTONS
+*
+*/
+
+input[type=submit] {
+	padding: 14px 15px 13px 15px;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	background: var(--color-offblack);
+	color: var(--color-offwhite);
+	border: 0 none;
+	cursor: pointer;
+	border-radius: 3px;
+	width: 320px;
+}
+input[type=submit]:disabled {
+	background: var(--color-graydark);
+	cursor: default;
+}
+
+/* compact */
+input[type=submit].compact {
+	font-size: 16px;
+	width: 280px;
+	padding: 10px 13px 9px 13px;
+}
+
+
+
+
+
+/*
+*
+*    CHECKBOXES & RADIO BUTTONS (from w3schools.com)
+*
+*/
+
+/* checkbox & radio container */
+.container {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	text-transform: none;
+	letter-spacing: normal;
+	color: var(--color-offblack);
+}
+.container-compact {
+	font-size: 16px;
+}
+/* checkbox & radio hide default */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* custom radio button */
+.radio {
+position: absolute;
+top: 0;
+left: 0;
+height: 18px;
+width: 18px;
+background-color: white;
+border: 1px solid var(--color-graydark);
+border-radius: 50%;
+}
+/* radio hover */
+.container:hover input ~ .radio {
+border: 1px solid var(--color-offblack);
+}
+/* radio checked */
+.container input:checked ~ .radio {
+height: 16px;
+width: 16px;
+border: 2px solid var(--color-offblack);
+}
+/* radio indicator create */
+.radio:after {
+content: "";
+position: absolute;
+display: none;
+}
+/* radio indicator show */
+.container input:checked ~ .radio:after {
+display: block;
+}
+/* radio indicator style */
+.container .radio:after {
+top: 2px;
+left: 2px;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: var(--color-offblack);
+}
+
+/* custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 18px;
+width: 18px;
+background-color: white;
+border: 1px solid var(--color-graydark);
+border-radius: 3px;
+}
+/* checkbox hover */
+.container:hover input ~ .checkmark {
+border: 1px solid var(--color-offblack);
+}
+/* checkbox checked */
+.container input:checked ~ .checkmark {
+background-color: var(--color-offblack);
+border: 1px solid var(--color-offblack);
+}
+/* checkbox indicator create */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+/* checkbox indicator show */
+.container input:checked ~ .checkmark:after {
+display: block;
+}
+/* checkbox indicator style */
+.container .checkmark:after {
+left: 6px;
+top: 1px;
+width: 5px;
+height: 11px;
+border: solid var(--color-offwhite);
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+/* disabled */
+.container-disabled {
+	color: var(--color-graydark);
+	cursor: default;
+}
+.container-disabled .radio {
+height: 20px;
+width: 20px;
+background-color: var(--color-graylight);
+border: none;
+border-radius: 50%;
+}
+.container-disabled .checkmark {
+height: 20px;
+width: 20px;
+background-color: var(--color-graylight);
+border: none;
+border-radius: 3px;
+}
+.container-disabled:hover input ~ .radio,
+.container-disabled:hover input ~ .checkmark {
+border: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*    SELECT
+*
+*/
+
+.custom-select {
+	position: relative;
+	width: 320px;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	color: var(--color-offblack);
+}
+
+/* hide original element: */
+.custom-select select {
+	display: none;
+}
+
+/* default state */
+.select-selected {
+	background-color: white;
+	border: 1px solid var(--color-graydark);
+	border-radius: 3px;
+}
+
+/* on click: option */
+.select-arrow-active {
+	border-radius: 3px 3px 0 0;
+	border-color:  var(--color-offblack) var(--color-offblack) #ccc var(--color-offblack);
+}
+/* on click: arrow */
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 16px;
+	right: 15px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: var(--color-offblack) transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+	border-color: transparent transparent var(--color-offblack) transparent;
+	top: 10px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+	position: absolute;
+	background-color: white;
+	color: var(--color-offblack);
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+.select-items div {
+	border: 1px solid transparent;
+	border-color: transparent var(--color-offblack) transparent var(--color-offblack);
+}
+.select-items div:last-child {
+	border-radius: 0 0 3px 3px;
+	border-color: transparent var(--color-offblack) var(--color-offblack) var(--color-offblack);
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+	display: none;
+}
+
+/* hovered item */
+.select-items div:hover,
+.same-as-selected {
+	color: var(--color-offwhite);
+	background-color: var(--color-offblack);
+}
+
+
+
+/* disabled */
+.custom-select-disabled {
+	position: relative;
+	width: 320px;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	color: var(--color-graydark);
+}
+.custom-select-disabled select {
+	display: none;
+}
+.custom-select-disabled .select-selected {
+	background-color: var(--color-graylight);
+	border: 1px solid var(--color-graylight);
+	border-radius: 3px;
+}
+.custom-select-disabled .select-selected:after {
+	position: absolute;
+	content: "";
+	top: 16px;
+	right: 15px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: var(--color-graydark) transparent transparent transparent;
+}
+.custom-select-disabled .select-items div,
+.custom-select-disabled .select-selected {
+	cursor: default;
+}
+
+
+
+/* error */
+.custom-select-error {
+	/* color: var(--color-live); */
+}
+.custom-select-error .select-selected {
+	border: 1px solid var(--color-live);
+}
+.custom-select-error .select-selected:after {
+	border-color: var(--color-live) transparent transparent transparent;
+}
+.custom-select-error .select-selected.select-arrow-active:after {
+	border-color: transparent transparent var(--color-live) transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* custom select */
+.select-css {
+	display: block;	
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	color: var(--color-offblack);
+	padding: 14px 15px 13px 15px;
+	width: 320px;
+	box-sizing: border-box;
+	border: 1px solid var(--color-graydark);
+	border-radius: 3px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: white;
+	/* svg data uri for the arrow icon. For the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference */
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+	background-repeat: no-repeat;
+	/* arrow icon position (1em from the right, 50% vertical) */
+	background-position: right .7em top 50%;
+	/* icon size */
+	background-size: .65em auto;
+}
+
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+	display: none;
+}
+/* Hover style */
+.select-css:hover {
+	border-color: var(--color-offblack);
+}
+/* Focus style */
+.select-css:focus {
+}
+/* Set options to normal weight */
+.select-css option {
+	font-weight: normal;
+}
+/* disabled */
+.select-css:disabled, .select-css[aria-disabled=true] {
+	color: var(--color-graydark);
+	background-color: var(--color-graylight);
+	border: 1px solid var(--color-graylight);
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+}
+.select-css:disabled:hover, .select-css[aria-disabled=true] {
+}
+/* disabled */
+.select-css.error {
+	border: 1px solid var(--color-live);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*    COLORS
+*
+*/
+
+.color-grid {
+	/*display: flex;*/
+}
+.color-grid li {
+	width: 180px;
+	display: inline-block;
+	padding: 0 20px 20px 0;
+	vertical-align: top;
+}
+.color-chip {
+	width: 180px;
+	height: 180px;
+}
+.color-grid h4 {
+	margin-bottom: 5px;
+}
+.color-grd pre {
+}
+
+
+
+
+
+
+
+/*
+*
+*	TYPOGRAPHY
+*
+*/
+
+.specimen {
+	font-style: normal;
+	font-size: 30px;
+}
+.subsection {
+	display: flex;
+}
+.subsection span {
+	padding: 20px;
+	background-color: white;
+	color: var(--color-offblack);
+}
+.subsection span:nth-child(2) {
+	color: var(--color-offwhite) !important;
+	background-color: var(--color-offblack);
+}
+
+
+
+
+
+/*
+*
+*	TYPOGRAPHY: TEXT STYLES
+*
+*/
+
+.alpha {
+	font-family: "PublicoHeadline-Black", serif;
+	font-style: normal;
+	font-size: 70px;
+	line-height: 1;
+	letter-spacing: -1.5px;
+}
+.beta {
+	font-family: "PublicoHeadline-Black", serif;
+	font-style: normal;
+	font-size: 56px;
+	line-height: 1;
+	letter-spacing: -1.2px;
+}
+.gamma {
+	font-family: "PublicoHeadline-Black", serif;
+	font-style: normal;
+	font-size: 45px;
+	line-height: 1;
+}
+.delta {
+	font-family: "PublicoHeadline-Black", serif;
+	font-style: normal;
+	font-size: 32px;
+	line-height: 1;
+}
+.epsilon {
+	font-family: "PublicoHeadline-Bold", serif;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 26px;
+}
+.zeta {
+	font-family: "PublicoHeadline-Bold", serif;
+	font-style: normal;
+	font-size: 17px;
+	line-height: 20px;
+}
+.eta {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+}
+
+.body-copy {
+	font-family: "PublicoText-Roman", serif;
+	font-style: normal;
+}
+.body-copy-desktop {
+	font-size: 21px;
+	line-height: 31px;
+}
+.body-copy-mobile {
+	font-size: 18px;
+	line-height: 25px;
+}
+.body-copy em {
+	font-family: "PublicoText-Italic", serif;
+	font-style: normal;
+	font-weight: normal;
+}
+.body-copy strong {
+	font-family: "PublicoText-Bold", serif;
+	font-style: normal;
+	font-weight: normal;
+}
+.body-copy strong em {
+	font-family: "PublicoText-BoldItalic", serif;
+	font-style: normal;
+	font-weight: normal;
+}
+.body-copy a:link, .body-copy a:visited {
+	color: var(--color-offblack);
+	text-decoration: underline;
+}
+.body-copy a:hover, .body-copy a:active {
+	color: var(--color-offblack);
+	text-decoration: underline;
+}
+
+.metadata {
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 11px;
+	letter-spacing: 1.7px;
+	text-transform: uppercase;
+}
+.metadata-large {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.related {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 15px;
+	letter-spacing: 0.3px;
+	line-height: 17px;
+}
+.dek {
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.pullquote-desktop {
+	font-family: "PublicoText-Italic", serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	letter-spacing: 0.3px;
+	line-height: 38px;
+	text-align: center;
+}
+.pullquote-mobile {
+	font-family: "PublicoText-Italic", serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	letter-spacing: 0.26px;
+	line-height: 30px;
+	text-align: center;
+}
+.pullquote-desktop footer, .pullquote-mobile footer {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*	ASSETS
+*
+*/
+
+#assets ul li {
+	display: inline-block;
+	padding: 0 40px 0 0;
+}
+#assets svg {
+	height: 100px;
+	width: 100px;
+	color: var(--color-offblack);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

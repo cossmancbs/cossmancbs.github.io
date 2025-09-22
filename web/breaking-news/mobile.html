@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>CBS News | Breaking News</title>
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="css/mobile.css">
+
+	<script src="../js/smartquotes.js"></script>
+	<script src="../js/skrollr.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+	<main>
+
+
+
+		<div id="ad"><img src="img/banner.png" width="320px" height="50px"></div>
+
+
+
+		<header><img src="img/header-mobile@2x.png" width="320px" height="53px"></header>
+
+
+
+		<div id="breakingNews"
+			data-0="top:103px;"
+			data-103="top:0px;"
+		>
+			<img src="img/btn-close.svg" id="close">
+			<video src="../video/video-flynn.mp4" autoplay loop muted></video>
+			<h1>breaking news</h1>
+			<h2>President Trump reacts to Flynn's guilty plea</h2>
+		</div>
+
+
+
+		<div id="pageContent"><img src="img/page-mobile@2x.jpg" width="320px" height="1000px"></div>
+
+
+
+	</main>
+
+
+
+
+
+	<script>
+
+		window.onload = function() {
+
+			skrollr.init({
+				smoothScrolling: false,
+				forceHeight: false
+			});
+
+			smartquotes();
+
+		}
+
+	</script>
+
+
+
+
+
+</body>
+
+</html>

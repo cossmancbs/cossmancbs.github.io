@@ -1,0 +1,382 @@
+/*
+/
+/	  WEBFONTS
+/
+*/
+
+@font-face {
+	font-family: 'PublHeadBold';
+	src: url('../../fonts/PublicoHeadline-Bold-Web.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'PublHeadBlack';
+	src: url('../../fonts/PublicoHeadline-Black-Web.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	src: url('../../fonts/ProximaNova-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'ProximaNovaBold';
+	src: url('../../fonts/ProximaNova-Bold-webfont.woff') format('woff');
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	MAIN
+/
+/
+*/
+
+.podcastsWrapper {
+	padding: 0 0 80px 0;
+	text-align: center;
+}
+.bgdPodcasts {
+	background:
+		url('https://cbsnews1.cbsistatic.com/hub/i/2018/01/31/99c9b05d-0a2b-406c-96e4-52aa3bade6af/podcast-skin-4.png'),
+		linear-gradient( to right, #141516, #08283D );
+    background-repeat:
+    	no-repeat,
+    	no-repeat;
+	background-size:
+		600px 600px,
+		auto;
+	background-position:
+		top right,
+		center;
+}
+.bgdGlobalGoalcasts {
+	background-color: #562715;
+	background-image:
+		url('https://cbsnews1.cbsistatic.com/hub/i/2018/01/31/c4ae4745-6b40-4c60-9902-3f3241b3e9de/podcast-skin-goalscast2.jpg');
+    background-repeat:
+    	no-repeat;
+	background-size:
+		100%;
+}
+@media only screen and (min-width: 500px) {
+	.bgdPodcasts {
+		background-size:
+			800px 800px,
+			auto;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.bgdPodcasts {
+		background-size:
+			100%,
+			auto;
+	}
+}
+.podcastsWrapper h1 {
+	margin: 0 auto;
+	padding: 40px 0 20px 0;
+	font-family: "PublHeadBlack", serif;
+	font-size: 25px;
+	color: rgb(245,245,245);
+}
+@media only screen and (min-width: 500px) {
+	.podcastsWrapper h1 {
+		padding: 80px 0 40px 0;
+		font-size: 45px;
+	}
+}
+.podcastsWrapper p {
+	font-family: "ProximaNovaRegular", sans-serif;
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(255,255,255,.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	  GRID
+/
+*/
+
+.podcastsWrapper .grid {
+	margin: 0 20px;
+}
+.podcastsWrapper section {
+	margin: 20px;
+	text-align: left;
+}
+.podcastEmbed {
+	margin: 0 auto;
+	border: none;
+	width: 100%;
+	display: block;
+}
+
+@media only screen and (min-width: 500px) {
+	.podcastsWrapper .grid {
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1;
+		grid-gap: 40px;
+		width: 460px;
+	}
+	.podcastsWrapper section {
+		margin: 0 auto;
+		width: 460px;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.podcastsWrapper .grid {
+		grid-template-columns: repeat(2, 1fr);
+		width: 960px;
+	}
+	.podcastsWrapper section {
+		width: 960px;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	  CARDS
+/
+*/
+
+.card {
+	margin: 0 0 20px 0;
+	background: rgb(245,245,245);
+	text-align: left;
+}
+.cardWide {
+	margin: 0 20px;
+}
+.thumb {
+	width: 100%;
+	display: block;
+}
+.cardContents {
+	padding: 15px 20px 0 20px;
+}
+.card h1 {
+	margin: 0;
+	padding: 0;
+	font-family: "PublHeadBold", serif;
+	font-size: 20px;
+	color: rgba(0,0,0,.7);
+}
+.card h2 {
+	margin: 20px 0 10px 0;
+	font-family: "ProximaNovaBold", sans-serif;
+	font-size: 16px;
+	color: rgba(0,0,0,.7);
+}
+.card p {
+	margin: 15px 0 0 0;
+	font-family: "ProximaNovaRegular", sans-serif;
+	font-size: 17px;
+	line-height: 22px;
+	color: rgba(0,0,0,.7);
+}
+.card ul {
+	padding: 0 0 10px 0;
+}
+.card li {
+	margin: 0 10px 10px 0;
+	font-family: "ProximaNovaRegular", sans-serif;
+	font-size: 16px;
+	display: inline-block;
+}
+.card .more {
+	padding: 0 0 0 8px;
+}
+@media only screen and (min-width: 500px) {
+	.card {
+		margin: 0;
+	}
+	.thumb {
+		width: 460px;
+	}
+	.card ul {
+		display: flex;
+	}
+	.card li {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 500px) {
+	.cardWide {
+		margin: 0 auto;
+		width: 460px;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.cardWide {
+		width: 960px;
+	}
+	.cardWide .thumb {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/	  LINKS
+/
+*/
+
+.card a {
+	font-weight: normal;
+	color: rgba(177,33,36,.7);
+}
+.card a:link,
+.card a:visited {
+	text-decoration: none;
+}
+.card a:hover,
+.card a:active {
+	color: rgba(177,33,36,1);
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	  BUTTONS
+/
+*/
+
+.buttons {
+	margin: 0 auto;
+}
+.buttons li {
+	display: inline-block;
+}
+.buttons a {
+	display: block;
+	margin: 0 10px 20px 10px;
+	padding: 16px 0 14px 0;
+	font-family: "ProximaNovaBold", sans-serif;
+	font-size: 14px;
+	letter-spacing: 1.67px;
+	text-transform: uppercase;
+	color: rgb(245,245,245);
+	background: none;
+	border: 1px solid rgba(245,245,245,0.30);
+	border-radius: 4px;
+	text-decoration: none;
+	width: 205px;
+}
+.buttons a.buttonWide {
+	width: auto;
+	margin: 40px 20px 0 20px;
+	padding: 16px 20px 14px 20px;
+}
+.buttons a:hover {
+	color: rgb(16,16,16);
+	background: rgb(245,245,245);
+}
+.buttons a:active {
+	color: rgb(245,245,245);
+	background: rgb(16,16,16);
+	border: 1px solid rgb(16,16,16);
+}
+@media only screen and (min-width: 500px) {
+	.buttons {
+		width: 460px;
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.buttons {
+		width: 960px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

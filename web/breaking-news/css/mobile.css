@@ -1,0 +1,206 @@
+/* Meyer CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	MAIN
+/
+*/
+
+:root {
+	--height-header: 53px;
+	--height-breaking: 80px;
+	--page-width: 320px;
+	--page-height: 2000px;
+	--padding-breaking: 13px;
+}
+
+@font-face {
+	font-family: "FoundationSansBlack";
+	src: url("../../fonts/FoundationSans-Black-webfont.woff2") format("woff2"),
+		 url("../../fonts/FoundationSans-Black-webfont.woff") format("woff"),
+		 url("../../fonts/FoundationSans-Black.otf") format("opentype");
+}
+
+body {
+	background-color: lightGrey;
+}
+
+main {
+	margin: 0 auto;
+	width: var(--page-width);
+}
+
+/* remove mysterious padding below some elements */
+img {
+	display: block;
+}
+
+#ad {
+}
+
+
+
+header {
+	height: calc( var(--height-header) + var(--height-breaking) );
+	background: #1C1E21;
+}
+
+#pageContent {
+	height: var(--page-height);
+	background: white;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	breaking news banner
+/
+*/
+
+/*
+@keyframes animH1 {
+	0%			{ top: 13px; opacity: 1; }
+	35%			{ top: 13px; opacity: 1; }
+	40%			{ top: 8px; opacity: 0; }
+	95%			{ top: 18px; opacity: 0; }
+	100%		{ top: 13px; opacity: 1; }
+}
+@keyframes animH2 {
+	0%			{ top: 18px; opacity: 0; }
+	35%			{ top: 18px; opacity: 0; }
+	40%			{ top: 13px; opacity: 1; }
+	95%			{ top: 13px; opacity: 1; }
+	100%		{ top: 8px; opacity: 0; }
+}
+*/
+
+#breakingNews {
+	position: fixed;
+	padding: var(--padding-breaking) var(--padding-breaking) 0 var(--padding-breaking);
+	width: calc(var(--page-width) - var(--padding-breaking) - var(--padding-breaking));
+	height: calc(var(--height-breaking) - var(--padding-breaking));
+	background-color: rgba(183,8,0,.97);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
+	/*
+	background-image: url("../img/btn-play.svg");
+	background-repeat: no-repeat;
+	background-position: 230px center;
+	display: flex;
+	align-items: center;
+	*/
+}
+#breakingNews h1 {
+	padding: 0 0 3px 0;
+	font-family: "FoundationSansBlack", sans-serif;
+	font-size: 13px;
+	color: white;
+	text-transform: uppercase;
+	/* animation: name duration delay repeat easing
+	animation: animH1 8s 0s infinite ease-in-out;
+	*/
+}
+#breakingNews h2 {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	color: white;
+	/* animation: name duration delay repeat easing
+	animation: animH2 8s 0s infinite ease-in-out;
+	*/
+}
+#breakingNews #close {
+	top: var(--padding-breaking);
+	right: var(--padding-breaking);
+	position: absolute;
+	opacity: .75;
+}
+#breakingNews video {
+	padding: 0 var(--padding-breaking) 0 0;
+	float: left;
+	width: auto;
+	height: 54px;
+	/*
+	border-radius: 2px;
+	overflow: hidden;
+	*/
+}
+
+
+
+
+
+
+
+
+
+/*
+/
+/	z-indices
+/
+*/
+
+#breakingNews {
+	z-index: 999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
