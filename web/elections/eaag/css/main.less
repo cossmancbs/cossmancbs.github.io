@@ -650,7 +650,14 @@ main {
 					}
 					.percent {
 						.container {
+							gap: @spacing-4 @spacing-2;
 							justify-content: right;
+							@media only screen and (min-width:  @break-sm) {
+								flex-direction: column;
+							}
+							@media only screen and (min-width:  @break-md) {
+								flex-direction: row;
+							}
 						}
 						p {
 							text-align: right;
