@@ -1070,6 +1070,13 @@ main {
 		display: flex;
 		justify-content: center;
 		background-color: @fly-light-surface-tertiary;
+		@media only screen and (min-width: @break-sm) {
+			.border-radius-4();
+			overflow: hidden;
+		}
+		@media only screen and (min-width: @break-md) {
+			.border-radius-8();
+		}
 		@media (prefers-color-scheme: dark) {
 			background-color: @fly-dark-surface-tertiary;
 		}
@@ -1080,22 +1087,35 @@ main {
 	}
 	figcaption {
 		margin: @spacing-8 @spacing-20;
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-4;
+		@media only screen and (min-width: @break-sm) {
+			margin: @spacing-8 0;
+		}
 	}
-	/* impossible to style figcaption text unless in a SPAN? */
 	span {
-		display: block;.article2025-detail-16-125();
+		.article2025-detail-16-125();
 		color: @fly-light-text-secondary;
+		@media only screen and (min-width: @break-md) {
+			.article2025-detail-18-125();
+		}
 		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-secondary;
 		}
 	}
 	.credit {
+		.article2025-detail-14-100();
 		color: @fly-light-text-tertiary;
+		@media only screen and (min-width: @break-md) {
+			.article2025-detail-16-100();
+		}
 		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-tertiary;
 		}
 	}
 }
+
 // alternate option, with background blur
 .block-picture-blur {
 	.container {
@@ -1103,48 +1123,25 @@ main {
 		background-size: cover;
 		background-position: center;
 		overflow: hidden;
+		@media only screen and (min-width: @break-sm) {
+			.border-radius-4();
+		}
+		@media only screen and (min-width: @break-md) {
+			.border-radius-8();
+		}
 	}
 	.media {
-		//background-color: transparent;
 		background-color: rgba(@color-neutral-0,.5);
 		-webkit-backdrop-filter: saturate(200%) blur(100px);
 		backdrop-filter: saturate(200%) blur(100px);
+		@media only screen and (min-width: @break-sm) {
+			border-radius: 0;
+		}
+		@media only screen and (min-width: @break-md) {
+			border-radius: 0;
+		}
 		@media (prefers-color-scheme: dark) {
 			background-color: rgba(@color-neutral-80,.5);
-		}
-	}
-}
-@media only screen and (min-width: @break-sm) {
-	.block-picture {
-		.media {
-			.border-radius-4();
-			overflow: hidden;
-		}
-		figcaption {
-			margin: @spacing-8 0;
-		}
-	}
-	.block-picture-blur {
-		.container {
-			.border-radius-4();
-		}
-		.media {
-			border-radius: 0;
-		}
-	}
-}
-@media only screen and (min-width: @break-md) {
-	.block-picture {
-		.media {
-			.border-radius-8();
-		}
-	}
-	.block-picture-blur {
-		.container {
-			.border-radius-8();
-		}
-		.media {
-			border-radius: 0;
 		}
 	}
 }
