@@ -1,0 +1,466 @@
+/*
+/
+/	  RESET
+/
+*/
+
+/* fix webfont issues */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+/* allow styling of individual svg symbol instances */
+svg path {
+	fill: inherit;
+}
+
+
+
+
+
+/*
+/
+/	  OVERRIDES
+/
+*/
+
+body {
+	background: white;
+}
+.card {
+	background: none;
+	box-shadow: none;
+}
+
+
+
+
+
+
+
+/*
+/
+/	  GRID
+/
+*/
+
+.shelfVideo {
+	position: relative;
+	/* border-bottom: 1px solid var(--color-graylight); */
+}
+.hgroup {
+	position: absolute;
+	margin: 0 20px;
+	height: 441px;
+	display: flex;
+	flex-direction: column;
+}
+.hgroup li:first-child {
+	margin: 120px auto 0 auto;
+}
+.hgroup li:last-child {
+	margin: auto 0 0 0;
+}
+.hgroup .button {
+	width: 80px;
+	height: 80px;
+	background: rgba(16,16,16,.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hgroup .button svg {
+	width: 34px;
+	height: auto;
+	fill: var(--color-offwhite);
+}
+.hgroup h1 {
+	margin: 0 0 5px 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: rgba(242,242,242,.6);
+}
+.hgroup h2 {
+	font-family: "PublicoHeadline-Black", serif;
+	font-size: 32px;
+	line-height: 1;
+	color: var(--color-offwhite);
+}
+/*
+.hgroup {
+	cursor: pointer;
+}
+.hgroup:hover .button {
+	background: var(--color-offwhite);
+	color: var(--color-offblack);
+}
+.hgroup:hover .button svg {
+	fill: var(--color-offblack);
+}
+*/
+.thumbnail {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+    background: lightgray;
+	background-image: url("../img/image.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.item1 .thumbnail {
+	background-image:
+		linear-gradient(to right top, rgba(34,34,34,0.55), rgba(65,65,65,0)),
+		url("../../img/thumb-mormon.jpg");
+	background-repeat: no-repeat, no-repeat;
+	background-size: auto, 100% 100%;
+}
+.heroWrap {
+	display: none;
+}
+.card h1 {
+	padding: 10px 0 0 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: .3px;
+	color: var(--color-offwhite);
+	text-transform: none;
+}
+.metadata {
+	padding: 8px 0 0 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-weight: 400;
+	font-size: 10px;
+	letter-spacing: 1.6px;
+	color: var(--color-offwhite);
+	text-transform: uppercase;
+}
+.grid {
+	position: relative;
+	padding: 0 20px;
+	top: 481px;
+	width: 750px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 10px;
+}
+.item0,
+.item1 {
+	display: none;
+}
+#bgdOverlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 320px;
+	background-image:
+		linear-gradient(rgba(24,111,117,0.25) 0%, rgba(24,66,117,0.40) 50%, rgba(16,16,16,1) 100%),
+		url(../../img/thumb-mormon.jpg);
+	background-repeat: no-repeat, no-repeat;
+	background-size: auto, 768px auto;
+	background-position: top, top;
+	overflow: hidden;
+}
+#bgdPanel {
+	background: var(--color-offblack);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 660px;
+}
+
+@media only screen and (min-width: 768px) {
+	.hgroup {
+		height: auto;
+		display: block;
+		margin: 0;
+	}
+	.hgroup h1 {
+		padding: 20px;
+		font-family: "PublicoHeadline-Black", serif;
+		font-size: 32px;
+		line-height: 1;
+		text-align: left;
+		text-transform: none;
+		letter-spacing: normal;
+		color: var(--color-offwhite);
+	}
+	.hgroup li:first-child,
+	.hgroup h2 {
+		display: none;
+	}
+	.card h1 {
+		padding: 10px 0 0 0;
+		font-family: "PublicoHeadline-Bold", serif;
+		font-size: 17px;
+		line-height: 20px;
+		color: var(--color-offblack);
+		text-transform: none;
+	}
+	.cardHero h1 {
+		font-size: 24px;
+		line-height: 26px;
+		color: var(--color-offwhite);
+	}
+	.metadata {
+		color: #7F7F7F;
+	}
+	.cardHero .metadata {
+		color: var(--color-offwhite);
+	}
+	.grid {
+		padding: 0 20px;
+		top: 70px;
+		width: auto;
+		grid-template-rows: repeat(2, auto);
+		grid-gap: 20px;
+	}
+	.item1 {
+		display: list-item;
+		grid-row: 1;
+		grid-column: 1/5;
+	}
+	.item2 {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.item3 {
+		grid-row: 2;
+		grid-column: 2;
+	}
+	.item4 {
+		grid-row: 2;
+		grid-column: 3;
+	}
+	.item5 {
+		grid-row: 2;
+		grid-column: 4;
+	}
+	#bgdOverlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: auto;
+	    padding-top: 70.5%; /* aspect ratio (not 16:9) */
+		background-image:
+			url(../img/panel-overlay.svg),
+			linear-gradient(to right, rgba(24,111,117,0.80) 0%, rgba(24,66,117,0.80) 50%, rgba(16,16,16,.8) 100%),
+			url(../../img/thumb-mormon.jpg);
+		background-repeat: no-repeat, no-repeat, no-repeat;
+		background-size: auto 100%, auto, auto 100%;
+		background-position: left -50px top 0, right, right;
+	}
+	#bgdPanel {
+		height: auto;
+	    padding-top: 70.5%; /* aspect ratio (not 16:9) */
+	    background-color: var(--color-offblack);
+	}
+	.heroWrap {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		text-align: center;
+		width: 60%;
+		height: 80px; /* same height as button to force vertical centering */
+	}
+	.heroWrap .button {
+		margin: 0 auto;
+		height: 80px;
+		width: 80px;
+		background: rgba(16,16,16,.8);
+		/* box-shadow: inset 0 0 0 2px rgba(242,242,242,.2); */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.heroWrap .button svg {
+		width: 34px;
+		height: auto;
+		fill: var(--color-offwhite);
+	}
+	.heroHead h2 {
+		padding: 0;
+		color: var(--color-offwhite);
+	}
+	.heroHead .dek {
+		display: none;
+	}
+
+	/* hover
+	.heroHead {
+		cursor: pointer;
+	}
+	.heroHead:hover h2 {
+		text-decoration: underline;
+	}
+	.cardHero {
+		cursor: pointer;
+	}
+	.cardHero:hover .button {
+		background: var(--color-offwhite);
+	}
+	.cardHero:hover .button svg {
+		fill: var(--color-offblack);
+	}
+	.cardHero:hover h1 {
+		text-decoration: underline;
+	}
+	*/
+
+}
+
+@media only screen and (min-width: 1020px) {
+	.hgroup {
+		display: initial;
+		margin: 0 auto 0 -490px; /* half of width */
+		padding: 20px 0 0 0;
+		width: 980px;
+		left: 50%;
+		text-align: left;
+	}
+	.hgroup h1 {
+		padding: 0;
+		font-family: "PublicoHeadline-Black", serif;
+		font-size: 45px;
+		line-height: 1;
+		color: var(--color-offwhite);
+	}
+	.grid {
+		margin: 0 auto;
+		padding: 0;
+		top: 90px;
+		width: 980px;
+		grid-gap: 40px;
+	}
+	.item0 {
+		display: inherit;
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.item1 {
+		grid-column: 2/5;
+	}
+	#bgdOverlay {
+	    padding-top: 0;
+		width: calc(603px * 1.7777777777);
+	    height: 603px;
+		background-position: right 0 top 0, right, right;
+	}
+	#bgdPanel {
+	    padding-top: 0;
+	    height: 603px;
+	}
+	.heroHead h2 {
+		padding: 0 0 20px 0;
+		font-family: "PublicoHeadline-Bold", serif;
+		font-size: 24px;
+		line-height: 26px;
+	}
+	.heroHead .dek {
+		padding: 0 0 10px 0;
+		display: inherit;
+		font-family: "ProximaNova-Regular", sans-serif;
+		font-size: 18px;
+		line-height: 22px;
+		color: var(--color-offwhite);
+	}
+	.heroWrap h1,
+	.heroWrap .metadata {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1360px) {
+	.hgroup {
+		margin: 0 auto 0 -660px; /* half of width */
+		width: 1320px;
+	}
+	.hgroup h1 {
+		font-size: 56px;
+		line-height: 1;
+		letter-spacing: -1.2px;
+	}
+	.grid {
+		width: 1320px;
+	}
+	.card h1 {
+		font-size: 24px;
+		line-height: 26px;
+	}
+	#bgdOverlay {
+		width: calc(765px * 1.7777777777);
+	    height: 765px;
+		background-position: right 100px top 0, right, right;
+	}
+	#bgdPanel {
+	    height: 765px;
+	}
+	.heroHead h2 {
+		font-size: 32px;
+		line-height: 32px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	  Z-INDICES
+/
+*/
+
+.hgroup {
+	z-index: 4;
+}
+.grid {
+	z-index: 3;
+}
+#bgdOverlay {
+	z-index: 2;
+}
+#bgdPanel {
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,593 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, hr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+/* fix */
+img {
+	display: block;
+}
+/* allow styling of individual svg symbol instances */
+svg path {
+	fill: inherit;
+}
+/* fix webfont issues */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+/*
+/
+/		OVERRIDES
+/
+*/
+
+body {
+	background: white;
+}
+.card {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.wireframe {
+	background: rgba(118,188,237,.25);
+	box-shadow: inset 0 0 0 1px rgb(118,188,237);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 0.05em;
+	color: var(--color-sg);
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/*
+/
+/		HEADER
+/
+*/
+
+header {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 55px;
+}
+@media only screen and (min-width: 1020px) {
+	header {
+		margin: 0 auto;
+		width: 980px;
+		height: 104px;
+		left: 0;
+		right: 0;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	header {
+		width: 1320px;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/		COMPONENT LAYOUT
+/
+*/
+
+.shelfVideo {
+	margin: 0;
+	padding: 0 0 20px 0;
+	position: relative;
+	top: 0;
+	height: auto;
+	background-color: var(--color-offblack);
+	min-width: 320px;
+}
+.cardHero {
+	position: relative;
+	padding: 55px 20px 40px 20px;
+	/* un-comment for debugging */
+	/* background: rgba(255,0,0,.2); */
+}
+.cardHero .grid {
+	height: 386px;
+	display: flex;
+	flex-direction: column;
+}
+.cardHero .grid div:first-child {
+	margin: 75px auto 0 auto;
+}
+.cardHero .grid div:last-child {
+	margin: auto 0 0 0;
+}
+.cardHero button {
+	margin: 0 auto;
+	padding: 0;
+	width: 80px;
+	height: 80px;
+	background-color: rgba(16,16,16,.8);
+	border: none;
+	cursor: pointer;
+}
+.cardHero button svg {
+	fill: var(--color-offwhite);
+	width: 34px;
+	height: 34px;
+}
+.cardHero button:focus {
+	outline: 0;
+}
+.cardHero .grid div {
+	cursor: pointer;
+}
+.cardHero .grid div:hover h2,
+.card:hover h1 {
+	text-decoration: underline;
+}
+.cardHero h1 {
+	font-family: "PublicoHeadline-BlackItalic", serif;
+	font-size: 24px;
+	color: var(--color-live); /* fallback */
+	display: inline-block;
+	background: linear-gradient(70deg, var(--color-live), #E04105);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	
+}
+.cardHero h2 {
+	margin: 0 0 10px 0;
+	font-family: "PublicoHeadline-Black", serif;
+	font-size: 32px;
+	line-height: 1;
+	color: var(--color-offwhite);
+}
+.cardHero ul {
+	display: none;
+}
+
+.slider {
+	padding: 0 20px;
+	position: relative;
+	width: 750px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+}
+.card {
+	cursor: pointer;
+}
+.card .thumbnail {
+	width: 100%;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	position: relative; /* If you want text inside of it */
+	background-color: var(--color-graylight);
+	background-image: url("../img/image.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.card h1 {
+	padding: 10px 0 0 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-weight: 400; /* normal weight necessary for Safari */
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	color: var(--color-offwhite);
+	text-transform: none;
+}
+.metadata {
+	padding: 10px 0 0 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 10px;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+	color: var(--color-graydark);
+}
+.shelfLeaderboard {
+	position: relative;
+	margin: 20px 0;
+	border-top: 1px solid rgba(242,242,242,.15);
+	border-bottom: 1px solid rgba(242,242,242,.15);
+}
+.leaderboard {
+	margin: 20px auto;
+	width: 320px;
+	height: 50px;
+}
+.river {
+	position: relative;
+	margin: 20px 20px 0 20px;
+	padding: 0;
+	height: 500px;
+}
+#bgdVideoOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 320px;
+	background-image:
+		linear-gradient(rgba(11,106,177,0.25) 0%, rgba(24,66,117,0.25) 50%, #101010 100%);
+	border-bottom: 1px dashed rgba(248,231,28,.9);
+}
+#bgdVideoOutline {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 768px;
+	height: calc(768px * .5625);
+	float: right;
+	border-bottom: 1px dashed rgba(126,211,33,.9);
+}
+#bgdVideoWrapper {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 768px;
+	height: 320px;
+	overflow: hidden;
+	float: right;
+}
+#bgdVideoWrapper video {
+	width: 768px;
+	height: auto;
+}
+
+@media only screen and (min-width: 768px) {
+	.cardHero .grid {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 20px;
+	}
+	.cardHero .grid div:first-child {
+		display: none;
+	}
+	.cardHero .grid div:last-child {
+		grid-column: 1/10;
+	}
+	.slider {
+		padding: 0 20px;
+		grid-gap: 20px;
+		width: auto;
+	}
+	.cardHero ul {
+		display: flex;
+	}
+	.cardHero li {
+		height: 52px;
+		font-family: "ProximaNova-Bold", sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.cardHero li:first-child {
+		width: 117px;
+		background:  var(--color-offwhite);
+	}
+	.cardHero li:first-child .icon {
+		margin: 0 5px 0 0;
+		width: 12px;
+		height: 12px;
+		fill: var(--color-offblack);
+	}
+	.cardHero li:first-child .label {
+		margin: 2px 0 0 0;
+		color: var(--color-offblack);
+	}
+	/*
+	.cardHero .grid div:hover li:first-child {
+		color: var(--color-offblack);
+		background: var(--color-offwhite);
+		box-shadow: none;
+	}
+	.cardHero .grid div:hover li:first-child .icon {
+		fill: var(--color-offblack);
+	}
+	*/
+	.cardHero li:last-child {
+	}
+	.cardHero h2 {
+		font-size: 45px;
+	}
+	.card h1 {
+		font-family: "PublicoHeadline-Bold", serif;
+		font-size: 17px;
+		line-height: 20px;
+		letter-spacing: 0;
+	}
+	.leaderboard {
+		width: 728px;
+		height: 90px;
+	}
+	#bgdVideoOverlay {
+		width: 100vw;
+		height: 432px;
+		background-image:
+			linear-gradient(to right, #101010 0%, rgba(16,16,16,0.00) 50%),
+			linear-gradient(rgba(11,106,177,0.25) 0%, rgba(24,66,117,0.25) 50%, #101010 100%);
+	}
+	#bgdVideoOutline {
+		width: 100vw;
+		height: calc(100vw * .5625);
+		left: 0;
+		transform: none;
+	}
+	#bgdVideoWrapper {
+		width: 100vw;
+		height: 432px;
+		left: 0;
+		transform: none;
+	}
+	#bgdVideoWrapper video {
+		width: 100vw;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 1020px) {
+	.shelfVideo {
+		padding: 0 0 40px 0;
+	}
+	.cardHero {
+		margin: 0 auto;
+		padding: 104px 0 40px 0;
+		width: 980px;
+	}
+	.cardHero .grid {
+		height: auto;
+		grid-gap: 40px;
+		height: 383px;
+	}
+	.cardHero h1 {
+		font-size: 45px;
+	}
+	.cardHero h2 {
+		font-size: 56px;
+		line-height: 1;
+		letter-spacing: -1.2px;
+	}
+	.slider {
+		margin: 0 auto;
+		padding: 0;
+		width: 980px;
+		grid-gap: 40px;
+	}
+	.shelfLeaderboard {
+		margin: 40px 0;
+	}
+	.leaderboard {
+		margin: 40px auto;
+		width: 970px;
+		height: 66px;
+	}
+	.river {
+		margin: 40px auto 0 auto;
+		width: 980px;
+	}
+	#bgdVideoOverlay {
+		height: 576px;
+	}
+	#bgdVideoWrapper {
+		height: 576px;
+	}
+}
+
+@media only screen and (min-width: 1360px) {
+	.shelfVideo {
+		height: 600px;
+	}
+	.cardHero {
+		padding: 104px 0 0 0;
+		width: 1320px;
+		align-items: center;
+	}
+	.cardHero .grid {
+		height: 473px;
+	}
+	.cardHero .grid div:last-child {
+		margin: auto 0;
+		grid-column: 2/10;
+	}
+	.slider {
+		width: 1320px;
+	}
+	.river {
+		width: 1320px;
+	}
+	.card h1 {
+		font-size: 24px;
+		line-height: 26px;
+	}
+	#bgdVideoOverlay {
+		width: 1360px;
+		height: 640px;
+		left: auto;
+		right: 0;
+		border-left: 1px dashed rgba(248,231,28,.9);
+	}
+	#bgdVideoOutline {
+		width: 1360px;
+		height: calc(1360px * .5625);
+		left: auto;
+		right: 0;
+		border-left: 2px dashed rgba(126,211,33,.9);
+	}
+	#bgdVideoWrapper {
+		width: 1360px;
+		height: 640px;
+		left: auto;
+		right: 0;
+	}
+	#bgdVideoWrapper video {
+		width: 1360px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	README
+/
+*/
+
+#readme {
+	padding: 20px;
+	position: fixed;
+	left: 15px;
+	bottom: 15px;
+	background: rgba(182,5,5,.9);
+	border-radius: 5px;
+	width: 300px;
+}
+#readme h1 {
+	padding: 0 0 20px 0;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: var(--color-offwhite);
+}
+#readme p {
+	padding: 0 0 15px 0;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: var(--color-offwhite);
+}
+#readme ul {
+	list-style-type: disc;
+	margin: 0 0 20px 20px;
+}
+#readme li {
+	display: list-item;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--color-offwhite);
+}
+
+
+
+
+
+
+
+/*
+/
+/		Z-INDICES
+/
+*/
+
+#readme{
+	z-index: 999;
+}
+header,
+.cardHero,
+.slider,
+.shelfLeaderboard,
+.river {
+	z-index: 4;
+}
+#bgdVideoOverlay {
+	z-index: 3;
+}
+#bgdVideoOutline {
+	z-index: 2;
+}
+#bgdVideoWrapper {
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

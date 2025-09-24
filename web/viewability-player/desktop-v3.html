@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CBSN - desktop miniplayer v3</title>
+    <meta name="description" content="">
+
+	<link rel="stylesheet" href="https://use.typekit.net/lyi2bff.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="css/desktop-v3.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <main>
+
+
+
+        <!-- miniplayer -->
+        <div id="playerWrapper" onmouseover="showControls()">
+	        <div id="playerCloseOverlay"><img src="img/icon-close-lg.svg" id="playerCloseIcon"></div>
+            <div id="playerOverlay" onmousedown="playerLift()" onmouseup="playerDrop()">
+	            <header>
+		            <img src="img/icon-drag-lg.svg" id="playerGrabIcon">
+		            <h1>California fires continue to threaten Yosemite</h1>
+	            </header>
+	        </div>
+            <video loop muted autoplay id="playerVideo">
+                <source src="../media/video-fires.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+
+        <!-- pill button -->
+        <div class="watchlive">
+        	<div class="pulseContainer">
+            	<div class="pulseRefillWhite"></div>
+				<div class="pulseRefillRed"></div>
+				<div class="pulse"></div>
+				<div class="disc"></div>
+    		</div>
+		<a href="javascript:;"><strong>Watch Live</strong><span class="slugHed">: White House budget eliminates Meals on Wheels</span></a>
+		</div>
+
+
+
+        <!-- page top -->
+        <img src="img/screen-top-2@2x.jpg" alt="" class="backgroundImg">
+
+
+
+    </main>
+
+
+
+
+
+    <script>
+
+
+		/* drag */
+        $(function() {
+            $("#playerWrapper").draggable();
+        });
+
+
+		/* player controls */
+		var myVideo = document.getElementById("playerVideo");
+		$('#playerWrapper').hover(function toggleControls() {
+			if (myVideo.hasAttribute("controls")) {
+	        	myVideo.removeAttribute("controls")
+	    	} else {
+        		myVideo.setAttribute("controls", "controls")
+	    	}
+		});
+
+
+		/* player lift & drop */
+		var myPlayer = document.getElementById("playerWrapper");
+		function playerLift() {
+			myPlayer.style.borderRadius="5px";
+			myPlayer.style.transform=("scale(1.03)");
+			myPlayer.style.boxShadow=("0 0 25px rgba(0, 0, 0, 0.7)");
+		};
+		function playerDrop() {
+			myPlayer.style.borderRadius="1px";
+			myPlayer.style.transform=("scale(1)");
+			myPlayer.style.boxShadow=("0 0 25px rgba(0, 0, 0, 0.3)");
+		};
+
+
+		/* player dismiss */
+        $("#playerCloseIcon").click(function() {
+	        $( "#playerWrapper" ).effect( "drop", {direction: "up"}, 200 );
+    	});
+
+
+    </script>
+
+
+
+</body>
+
+</html>

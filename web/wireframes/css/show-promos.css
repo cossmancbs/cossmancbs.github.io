@@ -1,0 +1,87 @@
+/*
+/
+/	  GRID
+/
+*/
+
+.heading {
+	padding: 20px;
+}
+li {
+	background: var(--color-offblack);
+}
+li:nth-child(2) {
+    border-left: 1px solid rgba(242,242,242,.1);
+    border-right: 1px solid rgba(242,242,242,.1);
+}
+li:last-child {
+    border-top: 1px solid rgba(242,242,242,.1);
+}
+.card {
+	background: none;
+}
+.card h1 {
+	padding: 20px 0 200px 20px;
+}
+.grid {
+}
+.item1,
+.item2,
+.item3 {
+	display: none;
+}
+.thumb {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+	background-image:
+		url("../img/image.png"),
+		linear-gradient(#7F7F7F, #101010);
+	background-repeat: no-repeat, no-repeat;
+	background-size: 100% 100%, auto;
+}
+
+@media only screen and (min-width: 650px) {
+}
+
+@media only screen and (min-width: 1020px) {
+	.annotation {
+		display: none;
+	}
+	.grid {
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 0;
+	}
+	.item1 {
+		display: block; /* don't use 'inherit' */
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.item2 {
+		display: block;
+		grid-row: 1;
+		grid-column: 2;
+	}
+	.item3 {
+		display: block;
+		grid-row: 1;
+		grid-column: 3;
+	}
+	.item4 {
+		grid-row: 2;
+		grid-column: 1/4;
+	}
+}
+
+@media only screen and (min-width: 1360px) {
+}
+
+
+
+
+
+
+
+

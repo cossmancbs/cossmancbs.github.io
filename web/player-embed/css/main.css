@@ -1,0 +1,382 @@
+:root {
+    --color-white: #f5f5f5;
+    --color-hexa: #0255AE;
+    --color-hexb: #000000;
+    --color-twitter: #00b6f1;
+    --color-facebook: #3b5998;
+    --color-email: #F6706B;
+    --color-link: #E8C12E;
+}
+
+html,
+body,
+div,
+span,
+h1,
+p,
+a,
+ul,
+li,
+img,
+svg,
+footer,
+header,
+main,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    background: var(--color-white);
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    margin: 20px auto 0 auto;
+    width: 300px;
+}
+
+* {
+    transition: fill .25s, background .25s, opacity .25s, transform .25s;
+}
+
+
+/*
+*
+*    PLAYER
+*
+*/
+
+.videoWrapper {
+    height: 0;
+    /* 16:9 */
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.videoPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/player-trek@2x.jpg);
+    background-size: cover;
+}
+
+.videoOverlay {
+    background-image: linear-gradient(rgba(1, 24, 57, 0.00) 50%, rgba(1, 24, 57, 0.60) 100%), linear-gradient(45deg, rgba(1, 24, 57, 0.80), rgba(2, 85, 174, 0.80));
+    height: 100%;
+    position: relative;
+}
+
+.scrubber {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/*
+*
+*    FOOTER
+*
+*/
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(135deg, #011839, #0255AE);
+}
+
+.logo {
+    padding: 0 10px 0 0;
+    height: auto;
+    float: left;
+    width: 80px;
+    margin: 16px 0 0 16px;
+    border-right: none;
+}
+
+footer h1 {
+    font-family: "proxima-nova";
+    color: var(--color-white);
+    font-weight: 800;
+    text-transform: uppercase;
+    float: left;
+    display: none;
+}
+
+.headline {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+
+/*
+*
+*    SOCIAL
+*
+*/
+
+.social {
+    margin: 10px 10px 0 0;
+    float: right;
+}
+
+.social li {
+    margin: 0 0 0 10px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.social li svg {
+    padding: 5px;
+    width: 18px;
+}
+
+.social li:hover {
+    background: var(--color-white);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.social-twt,
+.social-fbk,
+.social-eml,
+.social-lnk {
+    fill: var(--color-white);
+}
+
+.social li:hover .social-twt {
+    fill: var(--color-twitter);
+}
+
+.social li:hover .social-fbk {
+    fill: var(--color-facebook);
+}
+
+.social li:hover .social-eml {
+    fill: var(--color-email);
+}
+
+.social li:hover .social-lnk {
+    fill: var(--color-link);
+}
+
+
+/*
+*
+*    UP NEXT OVERLAY
+*
+*/
+
+.upnextWrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.upnext {
+    display: none;
+}
+
+.upnext li {
+    margin: 4% 0 0 4%;
+    padding: 0;
+    width: 44%;
+    height: 70%;
+    background: rgba(2, 85, 174, .2);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+.thumbnail {
+    margin: 0 5% 0 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.thumbnailOverlay {
+    background: linear-gradient(#0255AE, rgba(0, 0, 0, .5));
+    height: 100%;
+    opacity: .15;
+}
+
+.metadata {
+    margin: 8px 0 0 8px;
+    padding: 7px 10px 5px 10px;
+    font-size: 10px;
+    font-family: "proxima-nova";
+    font-weight: 800;
+    color: var(--color-white);
+    letter-spacing: 1.67px;
+    background: var(--color-hexa);
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.8;
+    display: inline-block;
+}
+
+.upnext h1 {
+    margin: 5px 5px 0 8px;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: "proxima-nova";
+    font-weight: 500;
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+.upnext li:hover {
+    background: rgba(2, 85, 174, .6);
+    transform: scale(1.025);
+}
+
+.upnext li:hover .metadata,
+.upnext li:hover .h1 {
+    opacity: 1;
+}
+
+.upnext li:hover .thumbnailOverlay {
+    opacity: 0;
+}
+
+.up4 {
+    display: none;
+}
+
+.up6 {
+    display: none;
+}
+
+
+/*
+*
+*    MEDIA QUERIES
+*
+*/
+
+@media only screen and (min-width: 300px) {
+    main {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    .upnext {
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .upnext li {
+        margin: 2% 0 0 2%;
+        padding: 2%;
+        width: 43%;
+        height: 32%;
+    }
+    .metadata {
+        margin: 0;
+    }
+    .upnext h1 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .thumbnail {
+        margin: 0 5% 0 0;
+        float: left;
+        width: 43%;
+        height: 100%;
+    }
+    .up4 {
+        display: inline;
+    }
+    .logo {
+        border-right: 1px solid rgba(245, 245, 245, 0.25);
+    }
+    footer h1 {
+        padding: 19px 0 0 10px;
+        font-size: 14px;
+        letter-spacing: 1.px;
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .upnextWrapper {
+        width: 800px;
+    }
+    .upnext li {
+        height: 150px;
+    }
+    .upnext h1 {
+        margin: 10px 0 0 0;
+        font-size: 24px;
+        line-height: 26px;
+    }
+    footer {
+        height: 60px;
+    }
+    .logo {
+        width: 104px;
+        margin: 18px 0 0 18px;
+    }
+    footer h1 {
+        padding: 21px 0 0 10px;
+        font-size: 19px;
+        letter-spacing: 1.6px;
+    }
+    .social li svg {
+        padding: 9px;
+        width: 22px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    main {
+        width: 1280px;
+    }
+    .up6 {
+        display: block;
+    }
+    .upnextWrapper {
+        margin: 0;
+        padding: 2% 0 0 10%;
+        width: 90%;
+        height: 628px;
+    }
+    .upnext li {
+        margin: 0 3% 3% 0;
+        padding: 0;
+        width: 27.33%;
+        height: 45%;
+    }
+    .thumbnail {
+        float: none;
+        width: 100%;
+        height: 50%;
+    }
+    .metadata,
+    .upnext h1 {
+        margin: 10px 10px 0 10px;
+    }
+}

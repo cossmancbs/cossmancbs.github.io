@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+	<title>CBSN Playlist Responsive Prototype</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.typekit.net/lyi2bff.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/morphext.css">
+    <link rel="stylesheet" href="css/main-v2.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="../js/inview.min.js"></script>
+	<script src="../js/morphext.min.js"></script>
+	<script src="../js/smartquotes.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+<main>
+
+
+
+
+
+	<!-- viewability player -->
+	<div id="miniplayer"><video src="../media/north-korea.mp4" autoplay loop muted></video></div>
+
+
+
+
+
+	<!-- pill button -->
+	<div id="watchLive">
+		<div class="pulseContainer">
+			<div class="pulseRefillWhite"></div>
+			<div class="pulseRefillRed"></div>
+			<div class="pulse"></div>
+			<div class="disc"></div>
+		</div>
+		<a href="javascript:;"><strong>Watch Live</strong><span>: White House budget eliminates Meals on Wheels</span></a>
+	</div>
+
+
+
+
+
+	<section id="playerPanel">
+
+
+
+
+
+		<section id="liveShelf">
+			<ul>
+				<li>
+					<div class="cardLive">
+						<div class="cardLiveThumb nowplaying">
+							<img src="../img/thumb-cbsn.jpg">
+						</div>
+						<div class="details">
+							<div class="metadata live">now playing</div>
+							<!-- <div class="metadata">CBSN</div> -->
+							<h1 class="morphext1">
+								Trump vows new sanctions against North Korea
+								|
+								Sessions lied under oath
+								|
+								Supreme Court hears case on marriage equality
+							</h1>
+						</div>
+					</div>
+				</li>
+				<li class="cbsn2">
+					<div class="cardLive">
+						<div class="cardLiveThumb">
+							<video src="../media/tillerson-cbs.mp4" autoplay loop muted></video>
+						</div>
+						<div class="details">
+							<div class="metadata live">live</div>
+							<!-- <div class="metadata">CBSN 2</div> -->
+							<h1 class="morphext2">
+								Mensa offers IQ tests for Trump and Tillerson
+								|
+								Republicans refute Trump
+								|
+								Federal judges deem travel ban discriminatory
+							</h1>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="cardLive">
+						<div class="cardLiveThumb">
+							<video src="../media/sports-football.mp4" autoplay loop muted></video>
+						</div>
+						<div class="details">
+							<div class="metadata live">live</div>
+							<!-- <div class="metadata">CBS Sports HQ</div> -->
+							<h1 class="morphext3">
+								QB Carson Wentz leads NFL with 23 passing TDs
+								|
+								US athletes win
+								|
+								Football sports foul ball game scored records
+							</h1>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+
+
+
+
+		<header id="headerMobile">
+			<ul>
+				<li><img src="../img/navicon.svg"></li>
+				<li><img src="img/logo-eye.svg"> <img src="img/logo-cbs-news.svg"></li>
+				<li><svg width="16px" height="16px" viewBox="0 0 16 16"><path d="M15 14l-3.3-3.3c.8-1 1.3-2.3 1.3-3.7 0-3.3-2.7-6-6-6S1 3.7 1 7s2.7 6 6 6c1.4 0 2.7-.5 3.7-1.3L14 15c.1.1.3.2.5.2s.4-.1.5-.2c.3-.3.3-.7 0-1zm-8-2.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"></svg></li>
+			</ul>
+		</header>
+
+		<header id="headerDesktop">
+			<ul>
+				<li><a href="javascript:;"><img src="img/logo-eye.svg"> <img src="img/logo-cbs-news.svg" class="logoFull"></a></li>
+				<li><a href="javascript:;">News</a></li>
+				<li><a href="javascript:;">Shows</a></li>
+				<li><a href="javascript:;">Video</a></li>
+				<li><a href="javascript:;">CBSN</a></li>
+				<li><a href="javascript:;">More</a></li>
+				<li><a href="javascript:;" class="headerIcon"><svg width="16px" height="16px" viewBox="0 0 16 16"><path d="M15 14l-3.3-3.3c.8-1 1.3-2.3 1.3-3.7 0-3.3-2.7-6-6-6S1 3.7 1 7s2.7 6 6 6c1.4 0 2.7-.5 3.7-1.3L14 15c.1.1.3.2.5.2s.4-.1.5-.2c.3-.3.3-.7 0-1zm-8-2.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"></svg></a></li>
+			</ul>
+		</header>
+
+
+
+
+
+		<div class="bannerPaid bannerPaidTop"><img src="../img/banner-intel@2x.png"></div>
+
+		<video src="../media/north-korea.mp4" autoplay loop muted id="player"></video>
+
+		<div class="bannerPaid bannerPaidBottom"><img src="../img/banner-intel@2x.png"></div>
+
+
+
+
+
+		<ul id="playerHeadline">
+			<li><div class="metadata live">Live</div></li>
+			<li><h1>Trump vows new sanctions against North Korea</h1></li>
+		</ul>
+
+
+
+
+
+
+
+		<div class="hgroup">
+			<h1>
+				<script>
+					if (window.location.search.indexOf('live') > -1) {
+						document.write('Last Hour');
+					} else {
+						document.write('Playlist Title');
+					}
+				</script>
+			</h1>
+		</div>
+
+		<ul class="vidGrid">
+
+			<li class="vid1">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn1.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Lorem ipsum dolor sit amet consectetur veniam</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid2">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn2.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Dolor lorem ipsem errate amet tenta consectet</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid3">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn3.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Totam at eius excepturi deleniti sed errordit</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid4">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn4.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Lorem ipsum dolor sit amet consectetur veniam</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid5">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn5.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Dolor lorem ipsem errate amet tenta consectet</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid6">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn6.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Totam at eius excepturi deleniti sed errordit</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid7">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn7.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Lorem ipsum dolor sit amet consectetur veniam</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid8">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn8.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Dolor lorem ipsem errate amet tenta consectet</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid9">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn9.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Totam at eius excepturi deleniti sed errordit</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid10">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn10.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Lorem ipsum dolor sit amet consectetur veniam</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid11">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn11.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Dolor lorem ipsem errate amet tenta consectet</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vid12">
+				<div class="cardVideo">
+					<div class="cardVideoThumbWrap">
+						<div class="cardVideoThumb" style="background-image:url('img/thumb-ftn12.jpg');">
+							<div class="cardVideoContents">
+								<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+								<div class="metadata">Nov 20, 2017</div>
+							</div>
+						</div>
+					</div>
+					<h1>Totam at eius excepturi deleniti sed errordit</h1>
+					<h2 class="metamobile">Nov 20, 2017</h2>
+				</div>
+			</li>
+
+			<li class="vidFoot"><button class="btnPrimary">More +</button></li>
+
+		</ul>
+
+
+
+		<!-- BACKGROUND IMAGE -->
+		<script>
+			if (window.location.search.indexOf('live') > -1) {
+				document.write('<img src="../img/bgd-newsroom-color.jpg" alt="" id="bgdImg">');
+			} else if (window.location.search.indexOf('paid') > -1) {
+				document.write('<img src="../img/bgd-computer.jpg" alt="" id="bgdImg">');
+			}
+			else {
+				document.write('<img src="../img/bgd-capitol.jpg" alt="" id="bgdImg">');
+			}
+		</script>
+
+
+
+	</section>
+
+
+
+
+
+
+
+	<section id="pageContent">
+
+
+
+
+
+
+
+	<section id="liveShelfMobile">
+
+		<div class="hgroup">
+			<h1><img src="img/logo-eye-black.svg">CBS Live</h1>
+		</div>
+	
+		<ul class="vidGrid">
+	
+			<li class="vid1">
+				<div class="cardVideo">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-cbsn.jpg');"></div>
+					<div class="metadata live">now playing</div>
+					<h1>Trump vows new sanctions against North Korea</h1>
+				</div>
+			</li>
+	
+			<li class="vid2 cbsn2">
+				<div class="cardVideo">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-cbsn2.jpg');"></div>
+					<div class="metadata live">live</div>
+					<h1>Mensa offers IQ tests for Trump and Tillerson</h1>
+				</div>
+			</li>
+	
+			<li class="vid3">
+				<div class="cardVideo">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-sportshq.jpg');"></div>
+					<div class="metadata live">live</div>
+					<h1>QB Carson Wentz leads NFL with 23 passing TDs</h1>
+				</div>
+			</li>
+	
+		</ul>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="hgroup">
+		<h1>Top Stories</h1>
+	</div>
+
+	<ul class="vidGrid">
+
+		<li class="vid1">
+			<div class="cardVideo cardVideoHero">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb1.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Oct 5, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Obamacare reduced uninsured rate by millions</h1>
+				<h2 class="metamobile">Oct 5, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid2">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb2.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Oct 4, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Clinton and Warren on the 2016 campaign trail</h1>
+				<h2 class="metamobile">Oct 4, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid3">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb3.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Oct 2, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>First Lady Michelle Obama on husband's legacy</h1>
+				<h2 class="metamobile">Oct 2, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid4">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb-paid-cs2.jpg');">
+						<div class="cardVideoContents">
+							<div class="metadata sponsored">Paid</div>
+						</div>
+					</div>
+				</div>
+				<h1>Diversifying investments spreads risk around</h1>
+				<h2><a href="javascript:;" class="sponsorLinkNew"><span>Promoted by</span> <strong>Charles Schwab</strong></a></h2>
+			</div>
+		</li>
+
+		<li class="vid5">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb5.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Oct 1, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Women's March on Washington to protest Trump</h1>
+				<h2 class="metamobile">Oct 1, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid6">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb6.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 30, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Press Sec. Spicer cites verifiable falsehoods</h1>
+				<h2 class="metamobile">Sept 30, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid7">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb7.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 29, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Watch the new Star Wars: The Last Jedi teaser</h1>
+				<h2 class="metamobile">Sept 29, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid8">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb8.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 29, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Manhunt: Inside the Boston Marathon bombing</h1>
+				<h2 class="metamobile">Sept 29, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid9">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb9.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 28, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>China building solar farms shaped like pandas</h1>
+				<h2 class="metamobile">Sept 28, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid10">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb10.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 27, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Will men's rompers be the hot summer outfit?</h1>
+				<h2 class="metamobile">Sept 27, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid11">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb11.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 27, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>50th Anniversary of The Beatles' Sgt. Pepper</h1>
+				<h2 class="metamobile">Sept 27, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vid12">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('img/thumb12.jpg');">
+						<div class="cardVideoContents">
+							<img src="img/btn-play-mobile.svg" class="btnPlay" alt="">
+							<div class="metadata">Sept 27, 2017</div>
+						</div>
+					</div>
+				</div>
+				<h1>Wolf populations in Montana highest in years</h1>
+				<h2 class="metamobile">Sept 27, 2017</h2>
+			</div>
+		</li>
+
+		<li class="vidFoot"><button class="btnPrimary">More +</button></li>
+
+	</ul>
+
+
+
+
+
+
+
+
+
+	<div class="hgroup">
+		<h1>Playlists</h1>
+	</div>
+
+	<ul class="playlistGrid">
+
+		<li class="playlist1">
+			<div class="cardPlaylist cardPlaylistHero" style="background-image:url('img/thumb13.jpg');">
+				<div class="cardPlaylistContents">
+					<div class="metadata">3 videos</div><h1>Lorem ipsum dolor</h1>
+				</div>
+			</div>
+		</li>
+
+		<li class="playlist2">
+			<div class="cardPlaylist" style="background-image:url('img/thumb14.jpg');">
+				<div class="cardPlaylistContents">
+					<div class="metadata">12 videos</div><h1>consectetur adipiscing elit</h1>
+				</div>
+			</div>
+		</li>
+
+		<li class="playlist3">
+			<div class="cardPlaylist" style="background-image:url('img/thumb15.jpg');">
+				<div class="cardPlaylistContents">
+					<div class="metadata">8 videos</div><h1>commodo consequat Duis</h1>
+				</div>
+			</div>
+		</li>
+
+		<li class="playlist4">
+			<div class="cardPlaylist" style="background-image:url('img/thumb16.jpg');">
+				<div class="cardPlaylistContents">
+					<div class="metadata">106 videos</div><h1>Possimus deserunt perferendis</h1>
+				</div>
+			</div>
+		</li>
+
+		<li class="playlistFoot"><button class="btnPrimary">More +</button></li>
+
+	</ul>
+
+
+
+
+
+
+
+
+
+	<div class="hgroup">
+		<h1>Around the Web</h1>
+		<h2><a href="javascript:;" class="taboolaLink">Sponsored links by Taboola <img src="img/taboola.png" width="19" height="15" alt=""></a></h2>
+	</div>
+
+	<ul class="taboolaGrid">
+
+		<li class="taboola1">
+			<div class="cardVideo cardVideoHero">
+				<div class="cardVideoThumbWrap">
+				<div class="cardVideoThumb" style="background-image:url('../img/thumb-taboola1.jpg');">
+					<div class="cardVideoContents"></div>
+				</div>
+				<h1>Only a few Americans can name these 50s icons</h1>
+				<h2>Celeb Weekly</h2>
+			</div>
+		</li>
+
+		<li class="taboola2">
+			<div class="cardVideo cardVideoHero">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-taboola2.jpg');">
+						<div class="cardVideoContents"></div>
+					</div>
+				</div>
+				<h1>2017 luxury model SUVs raising the bar again</h1>
+				<h2>Car & Driver</h2>
+			</div>
+		</li>
+
+		<li class="taboola3">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-taboola3.jpg');">
+						<div class="cardVideoContents"></div>
+					</div>
+				</div>
+				<h1>The best & worst medical alert systems ranked</h1>
+				<h2>Health Today</h2>
+			</div>
+		</li>
+
+		<li class="taboola4">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-taboola4.jpg');">
+						<div class="cardVideoContents"></div>
+					</div>
+				</div>
+				<h1>Find cruise liners with unsold inventory</h1>
+				<h2>Travel Guide</h2>
+			</div>
+		</li>
+
+		<li class="taboola5">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-taboola5.jpg');">
+						<div class="cardVideoContents"></div>
+					</div>
+				</div>
+				<h1>We tried Bombas Socks. Here's what happened</h1>
+				<h2>Runner's World</h2>
+			</div>
+		</li>
+
+		<li class="taboola6">
+			<div class="cardVideo">
+				<div class="cardVideoThumbWrap">
+					<div class="cardVideoThumb" style="background-image:url('../img/thumb-taboola6.jpg');">
+						<div class="cardVideoContents"></div>
+					</div>
+				</div>
+				<h1>Nicole Kidman's yacht is not what you expect</h1>
+				<h2>Celeb Weekly</h2>
+			</div>
+		</li>
+
+	</ul>
+
+
+
+
+
+    <section style="padding-top:60px;"></section>
+
+
+
+
+
+	</section>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<script>
+
+
+
+	/* function to read URL variables */
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split('&');
+		for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split('=');
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+
+
+
+	/* function to calculate browser width */
+	function getWidth() {
+		return Math.max(
+			document.body.scrollWidth,
+			document.documentElement.scrollWidth,
+			document.body.offsetWidth,
+			document.documentElement.offsetWidth,
+			document.documentElement.clientWidth
+		);
+	}
+
+
+
+	/* page logic */
+	function pageLogic() {
+
+		var howWide = getWidth();
+
+		/* LIVE */
+		if (window.location.search.indexOf('live') > -1) {
+			document.title = 'CBSN Live Responsive Prototype';
+			$('#watchLive').css('display', 'none');
+			$('#playerHeadline .metadata').css('display', 'inherit');
+			$('head').append(' <link rel="stylesheet" href="css/main-v2-live.css"> ');
+		}
+
+		/* NUMBER OF LIVE FEEDS */
+		var howManyFeeds = getQueryVariable('feeds');
+		if (howManyFeeds == 2) {
+			$('#liveShelf .cbsn2').css('display', 'none');
+			$('#liveShelfMobile .cbsn2').css('display', 'none');
+			if (howWide <= 1600) {
+				$('#liveShelf li').css('width', '45%');
+			} else {
+				$('#liveShelf li').css('width', '30%');
+			}
+		}
+
+		/* PAID BANNER */
+		var dolladollabills = getQueryVariable('paid');
+		if (window.location.href.indexOf('paid') > -1) {
+			document.title = 'CBSN Paid Responsive Prototype';
+			$('head').append(' <link rel="stylesheet" href="css/main-v2-paid.css"> ');
+			if (dolladollabills == 'top') {
+				$('.bannerPaidTop').css('display', 'inherit');
+				$('.bannerPaidBottom').css('display', 'none');
+			} else if (dolladollabills == 'bottom') {
+				$('.bannerPaidTop').css('display', 'none');
+				$('.bannerPaidBottom').css('display', 'inherit');
+			}
+			/* EXCEPTION BASED ON BROWSER WIDTH
+			if (howWide <= 1080) {
+				[MOBILE]
+			} else {
+				[DESKTOP]
+			}
+			*/
+		}
+
+	}
+
+
+
+	/* video play/pause */
+	var heroPlayer = document.getElementById('player');
+	heroPlayer.onclick = function() {
+		if (heroPlayer.paused) {
+			heroPlayer.play();
+		} else {
+			heroPlayer.pause();
+		}
+	}
+
+
+
+	/* miniplayer waypoints */
+	var inview = new Waypoint.Inview( {
+		element: $('#player')[0],
+		enter: function(direction) {
+			/* element begins to enter */
+			$('#miniplayer').css('display', 'none');
+		},
+		entered: function(direction) {
+			/* element has completely entered */
+		},
+		exit: function(direction) {
+			/* element begins to exit */
+		},
+		exited: function(direction) {
+			/* element has completely exited */
+			$('#miniplayer').css('display', 'inherit');
+		}
+	} )
+
+
+
+	$(document).ready(function() {
+
+		smartquotes();
+		pageLogic();
+		window.addEventListener('resize', pageLogic);
+	
+		$('.morphext1').Morphext({
+			animation: 'fadeIn',
+			separator: '|',
+			speed: 3000
+		});
+	
+		$('.morphext2').Morphext({
+			animation: 'fadeIn',
+			separator: '|',
+			speed: 5000
+		});
+	
+		$('.morphext3').Morphext({
+			animation: 'fadeIn',
+			separator: '|',
+			speed: 4000
+		});
+	
+	});
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>

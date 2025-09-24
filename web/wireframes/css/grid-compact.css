@@ -1,0 +1,333 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, hr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* remove vertical spacing below elements */
+img, video, svg {
+	display: block;
+}
+/* fix webfont issue */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+/* allow styling of individual svg symbol instances */
+svg path {
+	fill: inherit;
+}
+
+
+
+
+
+/*
+/
+/		COLORS & FONTS
+/
+*/
+
+:root {
+	--color-offblack: 16,16,16;						/* #101010 */
+	--color-offwhite: 242,242,242;					/* #f2f2f2 */
+	--color-graylight: rgb(232,232,232);			/* #e8e8e8 */
+	--color-graydark: rgb(127,127,127);				/* #7f7f7f */
+	--color-live: rgb(182,5,5);						/* #B60505 */
+	--color-sg: rgb(118,188,237);					/* #76BCED */
+}
+
+@font-face {
+	font-family: "ProximaNova-Regular";
+	src: url('../../fonts/proximanova-regular-webfont.woff2') format('woff2'),
+		 url('../../fonts/proximanova-regular-webfont.woff') format('woff');
+}
+@font-face {
+	font-family: "ProximaNova-Bold";
+	src: url('../../fonts/proximanova-bold-webfont.woff2') format('woff2'),
+		 url('../../fonts/proximanova-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family: "PublicoHeadline-Bold";
+	src: url('../../fonts/PublicoHeadline-Bold-Web.woff2') format('woff2'),
+		 url('../../fonts/PublicoHeadline-Bold-Web.woff') format('woff');
+}
+
+@font-face {
+	font-family: "PublicoHeadline-Black";
+	src: url('../../fonts/PublicoHeadline-Black-Web.woff2') format('woff2'),
+		 url('../../fonts/PublicoHeadline-Black-Web.woff') format('woff');
+}
+
+
+
+/*
+/
+/		GRID
+/
+*/
+
+.grid-compact {
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid var(--color-graylight);
+}
+.heading {
+	padding: 20px 20px 15px 20px;
+}
+.heading h1 {
+	font-family: "PublicoHeadline-Bold", serif;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 26px;
+	color: rgba(var(--color-offblack),1);
+}
+
+.grid {
+	padding: 0 20px;
+	display: grid;
+	grid-gap: 20px;
+}
+.card {
+	margin: 0;
+	overflow: auto;
+}
+.chiclet {
+	margin: 0 0 5px 0;
+	padding: 4px 8px;
+	display: inline-block;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 11px;
+	line-height: 1;
+	letter-spacing: 1.7px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	color: rgba(var(--color-offwhite),1);
+	background-color: red;
+	background-image: linear-gradient(to bottom right, #E04105, #B60505);
+}
+.card h1 {
+	display: block;
+	margin: 0 0 10px 0;
+}
+.card h1 a {
+	font-family: "PublicoHeadline-Bold", serif;
+	font-style: normal;
+	font-size: 17px;
+	line-height: 20px;
+	color: rgba(var(--color-offblack),1);
+	text-decoration: none;
+}
+.card h1 a:hover {
+	text-decoration: underline;
+}
+.dek {
+	display: none;
+	margin: 0 0 10px 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 22px;
+	color: rgba(var(--color-offblack),1);
+	display: none;
+}
+.metadata {
+	margin: 0 0 15px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.metadata li {
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-style: normal;
+	font-size: 11px;
+	letter-spacing: 1.7px;
+	text-transform: uppercase;
+	color: rgba(var(--color-offblack),1);
+}
+.metadata li:first-of-type {
+	margin: 0 15px 0 0;
+}
+.metadata svg {
+	display: inline;
+	height: 7px;
+	width: 7px;
+	fill: rgba(var(--color-offblack),1);
+}
+.related li {
+	margin: 0 0 5px 0;
+}
+.related a {
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 17px;
+	letter-spacing: 0.3px;
+	text-transform: none;
+	text-decoration: none;
+	color: rgba(var(--color-offblack),1);
+}
+.related li:last-of-type {
+	margin: 0;
+}
+.related a:hover {
+	text-decoration: underline;
+}
+.thumb {
+	float: right;
+	margin: 0 0 10px 20px;
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.thumb-img {
+	float: right;
+	margin: 0 0 10px 20px;
+	width: 90px;
+	height: 90px;
+	object-fit: cover;
+}
+.thumb-btn {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: rgba(var(--color-offblack),.35);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.thumb-btn svg {
+	width: 22px;
+	height: 22px;
+	fill: rgba(var(--color-offwhite),1);
+}
+
+
+
+@media only screen and (min-width: 768px) {
+	.heading {
+		padding: 20px 20px 20px 20px;
+	}
+	.heading h1 {
+		font-family: "PublicoHeadline-Black", serif;
+		font-size: 32px;
+		line-height: 1;
+	}
+	.grid-one {
+	}
+	.grid-two {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.grid-three {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+
+
+@media only screen and (min-width: 1020px) {
+	.grid-compact {
+		padding: 0 0 40px 0;
+	}
+	.heading {
+		margin: 0 auto;
+		padding: 40px 0 30px 0;
+		width: 980px;
+	}
+	.heading h1 {
+		font-size: 45px;
+	}
+	.grid {
+		margin: 0 auto;
+		width: 980px;
+		grid-gap: 40px;
+	}
+	.dek {
+		display: block;
+	}
+	.thumb,
+	.thumb-img {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+
+
+@media only screen and (min-width: 1360px) {
+	.heading {
+		width: 1320px;
+	}
+	.heading h1 {
+		font-size: 56px;
+	}
+	.grid {
+		width: 1320px;
+	}
+	.card h1 a {
+		font-size: 24px;
+		line-height: 26px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

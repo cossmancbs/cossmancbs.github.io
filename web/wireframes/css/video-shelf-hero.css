@@ -1,0 +1,631 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, hr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+/* fix */
+img {
+	display: block;
+}
+/* fix webfont issues */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+/*
+/
+/		OVERRIDES
+/
+*/
+
+body {
+	background: white;
+}
+.card {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.wireframe {
+	background: rgba(118,188,237,.25);
+	box-shadow: inset 0 0 0 1px rgb(118,188,237);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 0.05em;
+	color: var(--color-sg);
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/*
+/
+/		HEADER
+/
+*/
+
+header {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 45px;
+}
+@media only screen and (min-width: 1020px) {
+	header {
+		margin: 0 auto;
+		width: 980px;
+		height: 104px;
+		left: 0;
+		right: 0;
+	}
+}
+@media only screen and (min-width: 1360px) {
+	header {
+		width: 1320px;
+	}
+}
+
+
+
+
+
+
+
+/*
+/
+/		COMPONENT LAYOUT
+/
+*/
+
+.shelfVideo {
+	margin: 0;
+	padding: 0 0 20px 0;
+	position: relative;
+	top: 0;
+	height: auto;
+	background-color: var(--color-offblack);
+	min-width: 320px;
+}
+.cardHero {
+	position: relative;
+	padding: 45px 20px 40px 20px;
+}
+.cardHero .lockup {
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	/*border: 1px solid salmon;*/
+}
+.cardHero .lockup li:first-child {
+	margin: 75px auto 0 auto;
+}
+.cardHero .lockup li:last-child {
+	margin: auto 0 0 0;
+}
+.cardHero button {
+	margin: 0 auto;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	background-color: rgba(16,16,16,.35);
+	border: none;
+	border-radius: 50%;
+}
+.cardHero button svg {
+	position: relative;
+	left: 3px;
+	width: 24px;
+	height: 24px;
+	fill: var(--color-offwhite);
+}
+.cardHero button.pill {
+	display: none;
+}
+.cardHero h1 {
+	margin: 0;
+	font-family: "PublicoHeadline-Black", serif;
+	font-size: 32px;
+	line-height: 1;
+	color: var(--color-offwhite);
+}
+
+.slider {
+	padding: 0 20px;
+	position: relative;
+	width: 728px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+}
+.card .thumbnail {
+	width: 100%;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	position: relative; /* If you want text inside of it */
+	background-image: url("../img/image.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.card .thumb-one {
+	background-image: url("../../img/thumb-mueller.jpg");
+}
+.card .thumb-two {
+	background-image: url("../../img/thumb-paula-reid.jpg");
+}
+.card .thumb-three {
+	background-image: url("../../img/thumb-white-house.jpg");
+}
+.card .thumb-four {
+	background-image: url("../../img/thumb-parliament.jpg");
+}
+.card button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(10,10,10,.35);
+	border: none;
+	border-radius: 50%;
+}
+.card button svg {
+	position: relative;
+	left: 2px;
+	fill: var(--color-offwhite);
+	width: 17px;
+	height: 17px;
+}
+.card h1 {
+	padding: 10px 0 0 0;
+	font-family: "ProximaNova-Bold", sans-serif;
+	font-style: normal;
+	font-weight: 400; /* normal weight necessary for Safari */
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	color: var(--color-offwhite);
+	text-transform: none;
+}
+.metadata {
+	padding: 10px 0 0 0;
+	font-family: "ProximaNova-Regular", sans-serif;
+	font-size: 11px;
+	letter-spacing: 1.7px;
+	text-transform: uppercase;
+	color: var(--color-offwhite);
+}
+.metadata svg {
+	margin: 0 0 0 15px;
+	width: 7px;
+	height: 7px;
+	fill: var(--color-offwhite);
+}
+.shelfLeaderboard {
+	position: relative;
+	margin: 20px 0;
+	border-top: 1px solid rgba(242,242,242,.15);
+	border-bottom: 1px solid rgba(242,242,242,.15);
+}
+.leaderboard {
+	margin: 20px auto;
+	width: 320px;
+	height: 50px;
+}
+.river {
+	position: relative;
+	margin: 20px 20px 0 20px;
+	padding: 0;
+	height: 500px;
+}
+#bgdVideoOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 320px;
+	background-image:
+		linear-gradient(rgba(11,106,177,0.25) 0%, rgba(24,66,117,0.25) 50%, #101010 100%);
+	border-bottom: 1px dashed yellow;
+}
+#bgdVideoOutline {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 768px;
+	height: calc(768px * .5625);
+	float: right;
+	border-bottom: 1px dashed green;
+}
+#bgdVideoWrapper {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 768px;
+	height: 320px;
+	overflow: hidden;
+	float: right;
+}
+#bgdVideoWrapper img,
+#bgdVideoWrapper video {
+	width: 768px;
+	height: auto;
+}
+
+/* HOVERS */
+button,
+.cardHero .lockup,
+.card {
+	cursor: pointer;
+}
+.cardHero .lockup:hover h1,
+.card:hover h1 {
+	text-decoration: underline;
+}
+.cardHero .lockup:hover button,
+.card:hover button {
+	background-color: var(--color-offblack);
+}
+.cardHero .lockup:hover button.pill {
+	background-color: var(--color-offwhite);
+}
+.cardHero button:focus {
+	outline: 0;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+	.cardHero .grid {
+		/*
+		display: grid;
+		height: auto;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 40px;
+		*/
+	}
+	.cardHero .lockup {
+		/*grid-column: 1/10;
+		flex-direction: row;*/
+	}
+	.cardHero .lockup li:first-child {
+	}
+	.cardHero .lockup li:last-child {
+	}
+	.cardHero h1 {
+		font-size: 45px;
+	}
+	.slider {
+		width: auto;
+	}
+	.leaderboard {
+		width: 728px;
+		height: 90px;
+	}
+	#bgdVideoOverlay {
+		width: 100vw;
+		height: 432px;
+		background-image:
+			linear-gradient(to right, #101010 0%, rgba(16,16,16,0.00) 50%),
+			linear-gradient(rgba(11,106,177,0.25) 0%, rgba(24,66,117,0.25) 50%, #101010 100%);
+	}
+	#bgdVideoOutline {
+		width: 100vw;
+		height: calc(100vw * .5625);
+		left: 0;
+		transform: none;
+	}
+	#bgdVideoWrapper {
+		width: 100vw;
+		height: 432px;
+		left: 0;
+		transform: none;
+	}
+	#bgdVideoWrapper img,
+	#bgdVideoWrapper video {
+		width: 100vw;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 1020px) {
+	.shelfVideo {
+		padding: 0 0 40px 0;
+	}
+	.cardHero {
+		margin: 0 auto;
+		padding: 104px 0 40px 0;
+		width: 980px;
+	}
+	.cardHero .lockup {
+		height: 380px;
+	}
+	.cardHero .lockup li:first-child {
+		display: none;
+	}
+	.cardHero .lockup li:last-child {
+	}
+	.cardHero h1 {
+		font-size: 56px;
+		line-height: 1;
+		letter-spacing: -1.2px;
+	}
+	.cardHero .metadata {
+		font-family: "ProximaNova-Bold", sans-serif;
+		font-style: normal;
+		font-weight: 400; /* normal weight necessary for Safari */
+		font-size: 12px;
+		letter-spacing: 2px;
+		color: var(--color-offwhite);
+		display: flex;
+		align-items: center;
+	}
+	.cardHero .metadata svg {
+		margin: 0 5px 0 15px;
+	}
+	.cardHero button.pill {
+		margin: 0 20px 0 0;
+		padding: 17px;
+		display: initial;
+		width: auto;
+		height: auto;
+		background-color: var(--color-offwhite);
+		border-radius: 25px;
+		font-family: "ProximaNova-Bold", sans-serif;
+		font-style: normal;
+		font-weight: 400; /* normal weight necessary for Safari */
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: var(--color-offblack);
+	}
+	.cardHero button.pill span {
+		display: flex;
+		align-items: center;
+	}
+	.cardHero button.pill svg {
+		margin: 0 10px 0 0;
+		fill: var(--color-offblack);
+		width: 18px;
+		height: 18px;
+	}
+
+	.slider {
+		margin: 0 auto;
+		padding: 0;
+		width: 980px;
+		grid-gap: 40px;
+	}
+	.card h1 {
+		font-family: "PublicoHeadline-Bold", serif;
+		font-size: 17px;
+		line-height: 20px;
+		letter-spacing: 0;
+	}
+
+	.shelfLeaderboard {
+		margin: 40px 0;
+	}
+	.leaderboard {
+		margin: 40px auto;
+		width: 970px;
+		height: 66px;
+	}
+	.river {
+		margin: 40px auto 0 auto;
+		width: 980px;
+	}
+	#bgdVideoOverlay {
+		height: 576px;
+	}
+	#bgdVideoWrapper {
+		height: 576px;
+	}
+}
+
+@media only screen and (min-width: 1360px) {
+	.cardHero {
+		width: 1320px;
+	}
+	.cardHero .lockup {
+		height: 425px;
+	}
+	.cardHero h1 {
+		font-size: 56px;
+		letter-spacing: -1.2px;
+		line-height: 1;
+	}
+	.slider {
+		width: 1320px;
+	}
+	.card h1 {
+		font-size: 24px;
+		line-height: 26px;
+	}
+	.river {
+		width: 1320px;
+	}
+	#bgdVideoOverlay {
+		width: 1360px;
+		height: 640px;
+		left: auto;
+		right: 0;
+		border-left: 1px dashed yellow;
+	}
+	#bgdVideoOutline {
+		width: 1360px;
+		height: calc(1360px * .5625);
+		left: auto;
+		right: 0;
+		border-left: 2px dashed green;
+	}
+	#bgdVideoWrapper {
+		width: 1360px;
+		height: 640px;
+		left: auto;
+		right: 0;
+	}
+	#bgdVideoWrapper img,
+	#bgdVideoWrapper video {
+		width: 1360px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/
+/	README
+/
+*/
+
+#readme {
+	padding: 20px;
+	position: fixed;
+	left: 15px;
+	bottom: 15px;
+	background: rgba(182,5,5,.9);
+	border-radius: 5px;
+	width: 300px;
+}
+#readme h1 {
+	padding: 0 0 20px 0;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: var(--color-offwhite);
+}
+#readme p {
+	padding: 0 0 15px 0;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: var(--color-offwhite);
+}
+#readme ul {
+	list-style-type: disc;
+	margin: 0 0 20px 20px;
+}
+#readme li {
+	display: list-item;
+	font-family: "proxima-nova", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--color-offwhite);
+}
+
+
+
+
+
+
+
+/*
+/
+/		Z-INDICES
+/
+*/
+
+#readme{
+	z-index: 999;
+}
+header,
+.cardHero,
+.slider,
+.shelfLeaderboard,
+.river {
+	z-index: 4;
+}
+#bgdVideoOverlay {
+	z-index: 3;
+}
+#bgdVideoOutline {
+	z-index: 2;
+}
+#bgdVideoWrapper {
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

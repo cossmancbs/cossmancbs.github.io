@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CBSN - mobile miniplayer v2b</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://use.typekit.net/lyi2bff.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="css/mobile-v2b.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../js/jquery.ui.touch-punch.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <main>
+
+
+
+        <!-- miniplayer -->
+        <div id="playerWrapper">
+	        <header>
+		        <ul>
+			        <li><img src="img/icon-close.svg" id="playerCloseIcon"></li>
+			    </ul>
+	        </header>
+            <div id="playerOverlay" onmousedown="playerLift()" onmouseup="playerDrop()">&nbsp;</div>
+            <video autoplay loop muted playsinline id="playerVideo">
+                <source src="../media/video-fires.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+
+        <!-- pill button -->
+        <div class="watchlive">
+        	<div class="pulseContainer">
+            	<div class="pulseRefillWhite"></div>
+				<div class="pulseRefillRed"></div>
+				<div class="pulse"></div>
+				<div class="disc"></div>
+    		</div>
+		<a href="javascript:;"><strong>Watch Live</strong><span class="slugHed">: White House budget eliminates Meals on Wheels</span></a>
+		</div>
+
+
+
+    </main>
+
+
+
+    <script>
+
+
+		/* drag */
+        $(function() {
+            $("#playerWrapper").draggable({
+                containment: "window"
+            });
+        });
+
+
+		/* player lift & drop */
+		var myPlayer = document.getElementById("playerWrapper");
+		function playerLift() {
+			myPlayer.style.borderRadius="4px";
+			myPlayer.style.transform=("scale(1.03)");
+			myPlayer.style.boxShadow=("0 5px 15px rgba(0, 0, 0, 0.3)");
+		};
+		function playerDrop() {
+			myPlayer.style.borderRadius="1px";
+			myPlayer.style.transform=("scale(1)");
+			myPlayer.style.boxShadow=("0 0 25px rgba(0, 0, 0, 0.3)");
+		};
+
+
+		/* pause video on click */
+		/* not currently used */
+		function playPause() {
+            var myVideo = document.getElementsByTagName('video')[0];
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        };
+
+
+		/* fullscreen video */
+		function goFullscreen() {
+			var elem = document.getElementById("playerVideo");
+			elem.webkitEnterFullscreen();
+			/*
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+    		} else if (elem.mozRequestFullScreen) {
+	    		elem.mozRequestFullScreen();
+	    	} else if (elem.webkitRequestFullscreen) {
+		    	elem.webkitRequestFullscreen();
+			};
+			*/
+        };
+
+
+        $("#playerCloseIcon").click(function() {
+	        $( "#playerWrapper" ).effect( "drop", {direction: "up"}, 200 );
+    	});
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Video Shelf: Big Event</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/video-shelf-big-event.css">
+	<link rel="stylesheet" href="https://use.typekit.net/lyi2bff.css">
+
+</head>
+
+<body>
+
+
+
+
+
+<!-- ICON PLAY LARGE -->
+
+<svg style="display:none;">
+	<symbol id="icon-play-large" viewBox="0 0 100 100">
+		<path fill-rule="evenodd" d="M86.8336994,44.0743042 C92.0448587,47.3479972 92.0432922,52.6566864 86.8336994,55.9293954 L18.6956386,98.7342844 C13.4844793,102.007977 9.26,98.7066797 9.26,91.4208631 L9.26,8.58283643 C9.26,1.27005235 13.4860458,-2.00329382 18.6956386,1.26941516 L86.8336994,44.0743042 Z"/>
+	</symbol>
+</svg>
+
+
+
+<!-- ICON PLAY SMALL -->
+
+<svg style="display:none;">
+	<symbol id="icon-play-small" viewBox="0 0 100 100">
+		<path fill-rule="evenodd" d="M5.3,7.56531713 C5.3,6.24897341 5.64355644,4.95541732 6.29671035,3.8125109 C8.36953279,0.185430014 12.9905079,-1.07471142 16.6179472,0.997906229 L90.8871124,43.4332363 C92.0598884,44.1033278 93.0318375,45.0751808 93.7019952,46.2478409 C95.7748176,49.8749218 94.5145517,54.4954404 90.8871124,56.5680581 L16.6179472,99.0033881 C15.4749279,99.6564775 14.181244,100 12.8647702,100 C8.68686297,100 5.3,96.6134716 5.3,92.4359772 L5.3,7.56531713 Z"/>
+	</symbol>
+</svg>
+
+
+
+
+
+<header class="wireframe">header</header>
+
+
+
+
+
+<main>
+
+
+
+
+
+	<!-- README -->
+
+	<div id="readme">
+		<h1>Video Shelf: Big Event</h1>
+		<p>This mid-fidelity prototype demonstrates ONLY:</p>
+		<ul>
+			<li>responsive logic</li>
+		</ul>
+		<p>Green dashed line demarcates the video dimensions. Yellow dashed line demarcates gradient overlay, and visible area of video.</p>
+		<p>Refer to Invision for current design.</p>
+	</div>
+
+
+
+
+
+	<section class="shelfVideo">
+
+		<div class="cardHero">
+			<div class="grid">
+				<div><button><svg><use xlink:href="#icon-play-large"></use></svg></button></div>
+				<div>
+					<h1>CBSN Live</h1>
+					<!-- 65 characters -->
+					<h2>Republican candidates debate climate change and economic issues</h2>
+					<ul>
+						<li><svg class="icon"><use xlink:href="#icon-play-small"></use></svg>  <span class="label">watch</span></li>
+						<li><!-- CBSN streaming now --></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!--
+		<ul class="slider">
+
+			<li>
+				<div class="card">
+					<div class="thumbnail"></div>
+					<h1>Lorem ipsum dolor sit amet consectetur adipiscing elit sed doeius</h1>
+					<p class="metadata">metadata</p>
+				</div>
+			</li>
+
+			<li>
+				<div class="card">
+					<div class="thumbnail"></div>
+					<h1>Totam at eius excepturi deleniti sed error repellat itaque omnise</h1>
+					<p class="metadata">metadata</p>
+				</div>
+			</li>
+
+			<li>
+				<div class="card">
+					<div class="thumbnail"></div>
+					<h1>Possimus deserunt nisi perferendis consequuntur odio et asperiamp</h1>
+					<p class="metadata">metadata</p>
+				</div>
+			</li>
+
+			<li>
+				<div class="card">
+					<div class="thumbnail"></div>
+					<h1>Vel nam odio dolorem voluptas sequi minus quo tempore animi estqu</h1>
+					<p class="metadata">metadata</p>
+				</div>
+			</li>
+
+		</ul>
+
+		<div class="shelfLeaderboard">
+			<div class="leaderboard wireframe">ad unit</div>
+		</div>
+
+		<div class="river wireframe">grid</div>
+-->
+
+		<div id="bgdVideoOverlay"></div>
+		<div id="bgdVideoOutline"></div>
+		<div id="bgdVideoWrapper">
+			<video autoplay loop muted>
+				<source src="../media/video-debate.mp4" type="video/mp4">
+			</video>
+		</div>
+
+	</section>
+
+<!--
+	<section>
+		<div class="river wireframe">grid</div>
+	</section>
+-->
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

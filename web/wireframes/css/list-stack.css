@@ -1,0 +1,78 @@
+/*
+/
+/	  GRID
+/
+*/
+
+.shelfTopicStack {
+	padding: 0 0 40px 0;
+}
+.shelfTopicStack .heading {
+	padding: 20px;
+}
+.shelfTopicStack .grid {
+	margin: 0 auto;
+	display: none;
+}
+.shelfTopicStack li {
+	background: white;
+}
+.shelfTopicStack .card {
+	background: none;
+}
+/*
+.shelfTopicStack .item9 {
+	background: lightgreen;
+	height: 250px;	
+}
+*/
+.thumb {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+	background-color: var(--color-graylight);
+	background-image: url("../img/image.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.annotation {
+	margin: 50px auto;
+	text-align: center;
+}
+
+@media only screen and (min-width: 650px) {
+}
+
+@media only screen and (min-width: 1020px) {
+	.shelfTopicStack .heading {
+		margin: 0 auto;
+		width: 980px;
+	}
+	.shelfTopicStack .grid {
+		display: grid;
+		grid-template-rows: repeat(3, 500px);
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 40px;
+		width: 980px;
+	}
+	.annotation {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1360px) {
+	.shelfTopicStack .heading {
+		width: 1320px;
+	}
+	.shelfTopicStack .grid {
+		display: grid;
+		grid-template-rows: repeat(2, 500px);
+		grid-template-columns: repeat(4, 1fr);
+		width: 1320px;
+	}
+	/*
+	.shelfTopicStack .item9 {
+		display: none;
+	}
+	*/
+}

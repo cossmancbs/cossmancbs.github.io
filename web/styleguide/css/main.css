@@ -4,7 +4,8 @@
 *
 */
 
-* {}
+* {
+}
 
 
 
@@ -23,8 +24,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video,
 button {
@@ -85,66 +86,66 @@ html {
 
 @font-face {
 	font-family: "ProximaNova-Regular";
-	src: url("../fonts/ProximaNova-Regular-webfont.eot"); 
-	src: url("../fonts/ProximaNova-Regular-webfont.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/ProximaNova-Regular-webfont.woff2") format("woff2"),
-		 url("../fonts/ProximaNova-Regular-webfont.woff") format("woff");
+	src: url("../../fonts/ProximaNova-Regular-webfont.eot");
+	src: url("../../fonts/ProximaNova-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/ProximaNova-Regular-webfont.woff2") format("woff2"),
+		 url("../../fonts/ProximaNova-Regular-webfont.woff") format("woff");
 }
 
 @font-face {
 	font-family: "ProximaNova-Bold";
-	src: url("../fonts/ProximaNova-Bold-webfont.eot"); 
-	src: url("../fonts/ProximaNova-Bold-webfont.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/ProximaNova-Bold-webfont.woff2") format("woff2"),
-		 url("../fonts/ProximaNova-Bold-webfont.woff") format("woff");
+	src: url("../../fonts/ProximaNova-Bold-webfont.eot");
+	src: url("../../fonts/ProximaNova-Bold-webfont.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/ProximaNova-Bold-webfont.woff2") format("woff2"),
+		 url("../../fonts/ProximaNova-Bold-webfont.woff") format("woff");
 }
 
 @font-face {
 	font-family: "PublicoHeadline-Bold";
-	src: url("../fonts/PublicoHeadline-Bold-Web.eot"); 
-	src: url("../fonts/PublicoHeadline-Bold-Web.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/PublicoHeadline-Bold-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoHeadline-Bold-Web.woff") format("woff");
+	src: url("../../fonts/PublicoHeadline-Bold-Web.eot");
+	src: url("../../fonts/PublicoHeadline-Bold-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/PublicoHeadline-Bold-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoHeadline-Bold-Web.woff") format("woff");
 }
 
 @font-face {
 	font-family: "PublicoHeadline-Black";
-	src: url("../fonts/PublicoHeadline-Black-Web.eot"); 
-	src: url("../fonts/PublicoHeadline-Black-Web.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/PublicoHeadline-Black-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoHeadline-Black-Web.woff") format("woff");
+	src: url("../../fonts/PublicoHeadline-Black-Web.eot");
+	src: url("../../fonts/PublicoHeadline-Black-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/PublicoHeadline-Black-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoHeadline-Black-Web.woff") format("woff");
 }
 
 @font-face {
 	font-family: "PublicoText-Roman";
-	src: url("../fonts/PublicoText-Roman-Web.eot"); 
-	src: url("../fonts/PublicoText-Roman-Web.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/PublicoText-Roman-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoText-Roman-Web.woff") format("woff");
+	src: url("../../fonts/PublicoText-Roman-Web.eot");
+	src: url("../../fonts/PublicoText-Roman-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/PublicoText-Roman-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoText-Roman-Web.woff") format("woff");
 }
 
 @font-face {
 	font-family: "PublicoText-Italic";
-	src: url("../fonts/PublicoText-Italic-Web.eot"); 
-	src: url("../fonts/PublicoText-Italic-Web.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/PublicoText-Italic-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoText-Italic-Web.woff") format("woff");
+	src: url("../../fonts/PublicoText-Italic-Web.eot");
+	src: url("../../fonts/PublicoText-Italic-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/PublicoText-Italic-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoText-Italic-Web.woff") format("woff");
 }
 
 @font-face {
 	font-family: "PublicoText-Bold";
-	src: url("../fonts/PublicoText-Bold-Web.eot"); 
-	src: url("../fonts/PublicoText-Bold-Web.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/PublicoText-Bold-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoText-Bold-Web.woff") format("woff");
+	src: url("../../fonts/PublicoText-Bold-Web.eot");
+	src: url("../../fonts/PublicoText-Bold-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/PublicoText-Bold-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoText-Bold-Web.woff") format("woff");
 }
 
 @font-face {
 	font-family: "PublicoText-BoldItalic";
-	src: url("../fonts/PublicoText-BoldItalic-Web.eot"); 
-	src: url("../fonts/PublicoText-BoldItalic-Web.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/PublicoText-BoldItalic-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoText-BoldItalic-Web.woff") format("woff");
+	src: url("../../fonts/PublicoText-BoldItalic-Web.eot");
+	src: url("../../fonts/PublicoText-BoldItalic-Web.eot?#iefix") format("embedded-opentype"),
+		 url("../../fonts/PublicoText-BoldItalic-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoText-BoldItalic-Web.woff") format("woff");
 }
 
 
@@ -539,7 +540,7 @@ label {
 
 /* inputs */
 input[type=text], textarea {
-	-webkit-appearance: none; 
+	-webkit-appearance: none;
 	appearance: none;
 	width: 320px;
 	padding: 14px 15px 13px 15px;
@@ -772,7 +773,7 @@ border: none;
 */
 
 .select-css {
-	display: block;	
+	display: block;
 	font-family: "ProximaNova-Regular", sans-serif;
 	font-style: normal;
 	font-size: 18px;
