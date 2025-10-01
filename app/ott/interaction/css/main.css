@@ -57,27 +57,27 @@ img, ul, li {
 
 @font-face {
 	font-family: "PublHeadBold";
-	src: url("../fonts/PublicoHeadline-Bold-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoHeadline-Bold-Web.woff") format("woff"),
-		 url("../fonts/PublicoHeadline-Bold.otf") format("opentype");
+	src: url("../../fonts/PublicoHeadline-Bold-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoHeadline-Bold-Web.woff") format("woff"),
+		 url("../../fonts/PublicoHeadline-Bold.otf") format("opentype");
 }
 @font-face {
 	font-family: "PublHeadBlack";
-	src: url("../fonts/PublicoHeadline-Black-Web.woff2") format("woff2"),
-		 url("../fonts/PublicoHeadline-Black-Web.woff") format("woff"),
-		 url("../fonts/PublicoHeadline-Black.otf") format("opentype");
+	src: url("../../fonts/PublicoHeadline-Black-Web.woff2") format("woff2"),
+		 url("../../fonts/PublicoHeadline-Black-Web.woff") format("woff"),
+		 url("../../fonts/PublicoHeadline-Black.otf") format("opentype");
 }
 @font-face {
 	font-family: "SFProText";
-	src: url("../fonts/SF-Pro-Text-Regular.woff2") format("woff2"),
-		 url("../fonts/SF-Pro-Text-Regular.woff") format("woff"),
-		 url("../fonts/SF-Pro-Text-Regular.otf") format("opentype");
+	src: url("../../fonts/SF-Pro-Text-Regular.woff2") format("woff2"),
+		 url("../../fonts/SF-Pro-Text-Regular.woff") format("woff"),
+		 url("../../fonts/SF-Pro-Text-Regular.otf") format("opentype");
 }
 @font-face {
 	font-family: "SFProTextBold";
-	src: url("../fonts/SF-Pro-Text-Bold.woff2") format("woff2"),
-		 url("../fonts/SF-Pro-Text-Bold.woff") format("woff"),
-		 url("../fonts/SF-Pro-Text-Bold.otf") format("opentype");
+	src: url("../../fonts/SF-Pro-Text-Bold.woff2") format("woff2"),
+		 url("../../fonts/SF-Pro-Text-Bold.woff") format("woff"),
+		 url("../../fonts/SF-Pro-Text-Bold.otf") format("opentype");
 }
 
 
@@ -200,7 +200,7 @@ main {
 #playerPanel h3 {
 	margin: 25px 0 0 0;
 	font-family: "SFProText", sans-serif;
-	font-weight: 400;	
+	font-weight: 400;
 	font-size: 22px;
 	color: rgb(var(--color-offwhite));
 }
@@ -488,7 +488,7 @@ h1#headingPill {
 }
 
 .scaleUp {
-	transform: scale(1.1);	
+	transform: scale(1.1);
 }
 .scaleDown {
 	transform: scale(1);
