@@ -1,0 +1,174 @@
+@import "../../css/colors.less";
+@import "../../css/typography-door2025.less";
+@import "../../css/utility.less";
+
+
+
+
+
+// // // BASIC STYLES
+
+body {
+	background-color: @fly-light-surface-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+
+
+
+
+
+// // // Stack
+
+.list-stack {
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-40;
+}
+
+
+
+
+
+// // // Component
+
+.list-stack {
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-16;
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: @spacing-20;
+		}
+	}
+}
+
+
+
+
+
+// // // Heading
+
+.list-stack {
+	.hgroup {
+		//display: flex;
+		//flex-direction: row;
+		//gap: @spacing-16;
+		//vertical-align: baseline;
+		text-decoration: none;
+		.door2025-heading-20();
+		color: @fly-light-text-link-primary;
+		//.wireframe-outline();
+		small {
+			display: inline-block;
+			margin: 0 0 0 @spacing-12;
+			.door2025-action-16();
+			color: @fly-light-text-link-secondary;
+			text-decoration: none;
+		}
+		&:hover {
+			small {
+				color: @fly-light-text-link-secondary-hover;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+
+
+
+// // // Cards
+
+.list-stack {
+	.card {
+		a {
+			display: flex;
+			flex-direction: column;
+			gap: @spacing-8;
+		}
+		h1 {
+			.door2025-heading-16();
+		}
+	}
+}
+
+
+
+
+
+
+
+// // // Thumbnails
+
+.list-stack {
+	.thumbnail {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(@color-placeholder);
+		overflow: hidden;
+		width: 100%;
+		.border-radius-4();
+		aspect-ratio: 16 / 9;
+		@media only screen and (min-width: @break-md) {
+			.border-radius-8();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// // // Card Links & Hovers
+
+.list-stack {
+	.card {
+		a {
+			&:link,
+			&:visited {
+				color: @fly-light-text-link-primary;
+				text-decoration: none;
+				@media (prefers-color-scheme: dark) {
+					color: @fly-dark-text-link-primary;
+				}
+			}
+			&:hover,
+			&:active {
+				color: @fly-light-text-link-primary-hover;
+				@media (prefers-color-scheme: dark) {
+					color: @fly-dark-text-link-primary-hover;
+				}
+			}
+		}
+		.cardHoverWrap {
+			* {
+				transition: all .1s ease-in-out;
+			}
+			&:hover {
+				h1 {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,407 @@
+@import "../../css/colors.less";
+@import "../../css/typography-door2025.less";
+@import "../../css/utility.less";
+@import "../../css/flags.less";
+
+
+
+
+
+// // // Basic Styles
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	min-width: 320px;
+	background-color: @fly-light-surface-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+::-moz-selection {
+	/* no Fly text style for light text, in light theme */
+	color: rgb(@color-neutral-0);
+	background: @fly-light-surface-brand;
+	@media (prefers-color-scheme: dark) {
+		/* no Fly text style for dark text, in dark theme */
+		color: rgb(@color-neutral-100);
+		background: @fly-dark-surface-brand;
+	}
+}
+::selection {
+	color: rgb(@color-neutral-0);
+	background: @fly-light-surface-brand;
+	@media (prefers-color-scheme: dark) {
+		color: rgb(@color-neutral-100);
+		background: @fly-dark-surface-brand;
+	}
+}
+
+
+
+
+
+// // // Z-Indices
+
+#stickers {
+	z-index: 999;
+}
+
+
+
+
+
+// // // Structure
+
+// for testing
+main,
+.door-rail,
+.door-main {
+	//.wireframe-outline();
+}
+
+#stickers {
+	/* top ad and sticky nav */
+	position: sticky;
+	top: 0;
+	width: 100%;
+}
+
+main {
+	margin: 0 0 @spacing-20 0;
+	@media only screen and (min-width: @break-sm) {
+		margin: 0 @spacing-20 @spacing-20 @spacing-20;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-rows: auto;
+		align-items: start;
+		gap: @spacing-20;
+	}
+	@media only screen and (min-width: @break-md) {
+		margin: 0 @spacing-20 @spacing-40 @spacing-20;
+		gap: @spacing-40;
+	}
+	@media only screen and (min-width: @break-lg) {
+		margin: 0 auto @spacing-40 auto;
+		width: @break-lg-container;
+	}
+}
+.door-rail {
+	position: sticky;
+	top: 48px;
+	@media only screen and (min-width: @break-sm) {
+		grid-column: 4;
+		position: relative; /* unstick */
+		top: 0;
+	}
+}
+.door-video {
+	top: 0;
+	@media only screen and (min-width: @break-sm) {
+		position: sticky;
+		top: 138px;
+	}
+	@media only screen and (min-width: @break-md) {
+		top: 154px;
+	}
+}
+.door-main {
+	@media only screen and (min-width: @break-sm) {
+		grid-column: 1/4;
+		grid-row: 1; // WHY IS THIS NECESSARY??????????????
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // // Rail and Sticky Video
+
+/* video player sizes */
+.vid-sm { video { width: 128px; } }
+.vid-md { video { width: 176px; } }
+.vid-lg { video { width: 192px; } }
+
+.door-rail {
+	background-color: rgba(@color-neutral-white,.9);
+	-webkit-backdrop-filter: saturate(200%) blur(20px);
+	backdrop-filter: saturate(200%) blur(20px);
+	.fly-light-utility-border();
+	@media only screen and (min-width: @break-sm) {
+		background-image: none;
+		background-color: transparent !important;
+		-webkit-backdrop-filter: none !important;
+		backdrop-filter: none !important;
+		border: none !important;
+		display: flex;
+		flex-direction: column;
+	}
+	@media (prefers-color-scheme: dark) {
+		background-color: rgba(@color-neutral-90,.9);
+		.fly-dark-utility-border();
+	}
+}
+.door-video {
+	padding: @spacing-8;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: @spacing-8;
+	@media only screen and (min-width: @break-sm) {
+		margin: 0 0 @spacing-20 0;
+		padding: @spacing-20 0 0 0;
+		flex-direction: column;
+		align-items: normal;
+		justify-content: normal;
+		gap: 0;
+		// @fly-light-surface-primary
+		background-color: rgba(@color-neutral-white,.8);
+		-webkit-backdrop-filter: saturate(200%) blur(20px);
+		backdrop-filter: saturate(200%) blur(20px);
+		.fly-light-utility-border();
+		@media (prefers-color-scheme: dark) {
+			// @fly-dark-surface-primary
+			background-color: rgba(@color-neutral-90,.8);
+			.fly-dark-utility-border();
+		}
+	}
+	video {
+		.border-radius-4();
+		transition: all .25s ease-out;
+		@media only screen and (min-width: @break-sm) {
+			width: 100%;
+		}
+		@media only screen and (min-width: @break-md) {
+			.border-radius-8();
+		}
+	}
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-8;
+		@media only screen and (min-width: @break-sm) {
+			padding: @spacing-8 0 @spacing-20 0;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+	h1 {
+		.door2025-heading-16-sans();
+		color: @fly-light-text-primary;
+		@media only screen and (min-width: @break-md) {
+			.door2025-heading-18-sans();
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
+	}
+}
+
+/* 768 AND SHORT */
+@media only screen and (min-width: @break-sm) and (max-height: 500px) {
+	.door-video {
+		padding: @spacing-20 0;
+		flex-direction: row;
+		align-items: center;
+		.vid-sm();
+		article {
+			padding: 0 0 0 @spacing-8;
+		}
+		h1 {
+			.door2025-heading-16();
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+		}
+	}
+}
+
+/* 1020 AND SHORT */
+@media only screen and (min-width: @break-md) and (max-height: 500px) {
+	.door-video {
+		padding: @spacing-20 0;
+		flex-direction: row;
+		align-items: center;
+		.vid-lg();
+		.card {
+			padding: 0 0 0 @spacing-8;
+		}
+		h1 {
+			.door2025-heading-16();
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4;
+			overflow: hidden;
+		}
+	}
+}
+
+/* DO I NEED THIS?
+@media (prefers-color-scheme: dark) and (min-width: @break-sm) {
+	.door-rail {
+		background-image: none;
+	}
+	.door-video {
+		background-color: rgba(@color-neutral-90,.8);
+		.fly-dark-utility-border();
+	}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+// // // Primary Column
+
+.door-main {
+	//display: flex;
+	//flex-direction: column;
+	//gap: 0;
+	.component {
+		padding: @spacing-20;
+		.fly-light-utility-border();
+		@media only screen and (min-width: @break-sm) {
+			padding: @spacing-20 0;
+		}
+		@media only screen and (min-width: @break-md) {
+			padding: @spacing-40 0;
+		}
+		div {
+			.wireframe();
+			height: 500px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // // List Stack
+
+#include-list-stack {
+	display: none;
+	@media only screen and (min-width: @break-sm) {
+		display: initial;
+	}
+}
+
+
+
+
+
+
+
+
+
+// // // Flags
+
+// in flags.less
+
+
+
+
+
+
+
+
+// // // Ads
+
+#topunit {
+	display: none;
+	@media only screen and (min-width: @break-sm) {
+		display: initial;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: @fly-light-surface-primary;
+		text-align: center;
+		div {
+			width: 768px;
+			height: 90px;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+.mainunit {
+	padding: @spacing-20 0;
+	.fly-light-utility-border();
+	@media only screen and (min-width: @break-md) {
+		padding: @spacing-40 0;
+	}
+	div {
+		margin: 0 auto;
+		.wireframe();
+		width: 300px;
+		height: 250px;
+		@media only screen and (min-width: @break-md) {
+			width: 728px;
+			height: 90px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

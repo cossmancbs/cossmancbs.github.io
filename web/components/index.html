@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Front Door 2025</title>
+	
+	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
+	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
+	<link rel="stylesheet/less" type="text/css" href="/web/components/css/main.less">
+	
+	<!--<link rel="icon" type="image/png" href="/web/img/favicon-96x96.png" sizes="96x96" />-->
+	<link rel="icon" type="image/svg+xml" href="/web/img/favicon.svg" />
+	<!--<link rel="shortcut icon" href="/web/img/favicon.ico" />-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/web/img/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-title" content="CBS News" />
+	<link rel="manifest" href="/web/img/site.webmanifest" />
+	
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121">
+	
+</head>
+
+<body>
+	
+	
+	
+	<div id="stickers">
+		<div id="topunit">
+			<div class="wireframe">Ad Unit</div>
+		</div>
+		<div id="include-nav-main"></div>
+	</div>
+	
+	
+	
+	<div id="include-nav-sub"></div>
+	
+	
+	
+	<main>
+		
+		
+		
+		<div class="door-rail">
+			
+			<section class="door-video">
+				<video autoplay muted loop playsinline>
+					<source src="/web/media/ukraine.mp4" type="video/mp4">
+				</video>
+				<article>
+					<div class="flag-pill flag-pill-live">
+						<span>live</span>
+					</div>
+					<h1>CBS News 24/7</h1>
+				</article>
+			</section>
+			
+			<section id="include-list-stack">List Stack</section>
+			
+		</div>
+		
+		
+		
+		<div class="door-main">
+			
+			<div id="include-grid-hero-list"></div>
+			
+			<section class="mainunit">
+				<div>Ad Unit</div>
+			</section>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<section class="mainunit">
+				<div>Ad Unit</div>
+			</section>
+			
+		</div>
+		
+		
+		
+	</main>
+	
+	
+	
+	
+	
+	<footer>
+	</footer>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	<!-- Scripts -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/js/less.js"></script>
+	
+	
+	
+	<script>
+	
+	// INCLUDES (JQUERY)
+	
+	$(function() {
+		$('#include-nav-main').load('/web/nav/nav-v1.3-main.html');
+		$('#include-nav-sub').load('/web/nav/nav-v1.3-national.html');
+		$('#include-grid-hero-list').load('/web/components/grid-hero-list-2025.html');
+		$('#include-list-stack').load('/web/components/list-stack-2025.html');
+		$('footer').load('/web/footer/2025.html');
+	});
+	
+	// NAV (JQUERY)
+	
+	$(document).ready(function() {
+		
+		function checkNav() {
+			//if ($(document).scrollTop() < 50) {
+			//	scrolled less than 50
+			//} else {
+			//	scrolled more than 50
+			//}
+			
+			// WINDOW WIDTH
+			var windowSize = $(window).width();
+			if (windowSize < 768) {
+				if ($(document).scrollTop() < 75) {
+					// mobile, top
+					// window is narrower than 768, and near top
+					$('#stickers').addClass('nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on');
+					$('.door-rail').addClass('nav-shadow-off');
+					$('.door-rail').removeClass('nav-shadow-on');
+					$('.door-video').addClass('vid-lg');
+					$('.door-video').removeClass('vid-sm');
+				} else {
+					// mobile, scrolled
+					// window is narrower than 768, and scrolled
+					$('#stickers').removeClass('nav-shadow-on nav-shadow-off');
+					$('.door-rail').addClass('nav-shadow-on');
+					$('.door-rail').removeClass('nav-shadow-off');
+					$('.door-video').addClass('vid-sm');
+					$('.door-video').removeClass('vid-lg');
+				}
+			} else {
+				if ($(document).scrollTop() < 75) {
+					// desktop, top
+					// window is wider than 768, and near top
+					$('#stickers').addClass('nav-shadow-off');
+					$('#stickers').removeClass('nav-shadow-on');
+					$('.door-rail').addClass('nav-shadow-off');
+					$('.door-rail').removeClass('nav-shadow-on');
+					$('.door-video').removeClass('vid-sm vid-lg');
+				} else {
+					// desktop, scrolled
+					// window is wider than 768, and scrolled
+					$('#stickers').addClass('nav-shadow-on');
+					$('#stickers').removeClass('nav-shadow-off');
+					$('.door-rail').addClass('nav-shadow-off');
+					$('.door-rail').removeClass('nav-shadow-on');
+					$('.door-video').removeClass('vid-sm vid-lg');
+				}
+			}
+			
+		}
+		
+		// Execute on load
+		checkNav();
+		// Event listener ("load" doesn't seem to work???)
+		$(window).on("load resize scroll",function(e){
+			checkNav();
+		});
+		
+	});
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

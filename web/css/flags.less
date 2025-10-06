@@ -1,0 +1,38 @@
+.flag-pill {
+	padding: 0 @spacing-8;
+	display: flex;
+	align-self: flex-start;
+	align-items: center;
+	flex-direction: row;
+	gap: @spacing-4;
+	.border-radius-4();
+	background-color: @fly-light-surface-overlay-solid-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-overlay-solid-primary;
+	}
+	svg {
+		width: 14px;
+		height: 14px;
+		fill: @fly-light-utility-icon-primary;
+		@media (prefers-color-scheme: dark) {
+			fill: @fly-dark-utility-icon-primary;
+		}
+	}
+	span {
+		padding: @spacing-8 0;
+		text-box: trim-both cap alphabetic;
+		text-transform: uppercase;
+		.door2025-detail-12-strong();
+		color: @fly-light-text-primary;
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
+	}
+}
+
+.flag-pill-live {
+	background-color: @fly-dynamic-utility-status-alert;
+	span {
+		color: @fly-dynamic-text-primary;
+	}
+}

@@ -1,0 +1,126 @@
+@import "../../css/colors.less";
+@import "../../css/typography-door2025.less";
+@import "../../css/utility.less";
+
+
+
+
+
+/*
+/
+/	BASIC STYLES
+/
+*/
+
+body {
+	background-color: @fly-light-surface-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+
+
+
+
+
+/*
+/
+/	FOOTER
+/
+*/
+
+#footer {
+	padding: @spacing-20;
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-20;
+	color: @fly-light-text-primary;
+	@media only screen and (min-width: @break-md) {
+		padding: @spacing-40;
+		gap: @spacing-40;
+	}
+	@media (prefers-color-scheme: dark) {
+		color: @fly-dark-text-primary;
+	}
+	svg {
+		margin: 0 auto;
+		fill: @fly-light-brand-primary;
+		width: 150px;
+		height: 20px;
+		@media only screen and (min-width: @break-sm) {
+			width: 200px;
+			height: 28px;
+		}
+		@media (prefers-color-scheme: dark) {
+			fill: @fly-dark-brand-primary;
+		}
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-20;
+		@media only screen and (min-width: @break-sm) {
+			display: grid;
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+			gap: @spacing-20;
+		}
+		@media only screen and (min-width: @break-lg) {
+			margin: 0 auto;
+			width: @break-lg-container;
+		}
+	}
+	dl {
+		padding: 0 0 20px 0;
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-16;
+		.fly-light-utility-border;
+		@media only screen and (min-width: @break-sm) {
+			border: none;
+		}
+		@media (prefers-color-scheme: dark) {
+			.fly-dark-utility-border;
+		}
+	}
+	dt {
+		.door2025-heading-18();
+		color: inherit;
+	}
+	dl .list {
+		display: flex;
+		flex-direction: column;
+		gap: @spacing-16;
+	}
+	dd {
+		.door2025-detail-16();
+		a {
+			color: @fly-light-text-link-primary;
+			text-decoration: none;
+			@media (prefers-color-scheme: dark) {
+				color: @fly-dark-text-link-primary;
+			}
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+	p {
+		.door2025-detail-16();
+		color: @fly-light-text-tertiary;
+		@media only screen and (min-width: @break-lg) {
+			margin: 0 auto;
+			width: @break-lg-container;
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-tertiary;
+		}
+	}
+}
+
+
+
+
+
+
+
+
