@@ -1,7 +1,7 @@
 @import "../../css/colors.less";
 @import "../../css/typography-door2025.less";
 @import "../../css/utility.less";
-@import "../../css/flags.less";
+@import "shared.less";
 
 
 
@@ -15,14 +15,14 @@ body {
 		background-color: @fly-dark-surface-primary;
 	}
 }
-/* TEST SCTRUCTURE */
+/* Test Structure */
 .card,
 .grid,
 .item-list,
 article {
 	//.wireframe-outline();
 }
-/* TEST TEXT */
+/* Test Text */
 h1,
 p {
 	//.wireframe-outline();
@@ -45,6 +45,7 @@ p {
 	}
 	@media only screen and (min-width: @break-sm) {
 		padding: @spacing-20 0 @spacing-40 0;
+		gap: @spacing-32;
 	}
 	@media (prefers-color-scheme: dark) {
 		.fly-dark-utility-border();
@@ -86,6 +87,9 @@ p {
 			display: flex;
 			flex-direction: column;
 			gap: @spacing-20;
+			@media only screen and (min-width: @break-md) {
+				gap: @spacing-32;
+			}
 		}
 	}
 	@media only screen and (min-width: @break-sm) {
@@ -139,7 +143,7 @@ p {
 
 .grid-hero-list {
 	.card {
-		a {
+		a.cardHoverWrap {
 			display: flex;
 			flex-direction: column;
 			gap: @spacing-12;
@@ -155,23 +159,6 @@ p {
 				.door2025-heading-20();
 			}
 		}
-		p {
-			.door2025-detail-16();
-			color: @fly-light-text-secondary;
-			@media only screen and (min-width: @break-md) {
-				.door2025-detail-18();
-			}
-			@media (prefers-color-scheme: dark) {
-				color: @fly-dark-text-secondary;
-			}
-		}
-		.metadata {
-			.door2025-detail-14();
-			color: @fly-light-text-secondary;
-			@media only screen and (min-width: @break-md) {
-				.door2025-detail-16();
-			}
-		}
 	}
 	.card-hero {
 		h1 {
@@ -182,7 +169,7 @@ p {
 		}
 	}
 	.item-list .card {
-		a {
+		a.cardHoverWrap {
 			flex-direction: row;
 			gap: @spacing-8;
 		}
@@ -221,9 +208,9 @@ p {
 		@media only screen and (min-width: @break-md) {
 			display: initial;
 			aspect-ratio: 1 / 1;
-			width: 64px;
-			min-width: 64px;
-			height: 64px;
+			width: 76px;
+			min-width: 76px;
+			height: 76px;
 		}
 	}
 }
@@ -301,43 +288,6 @@ p {
 
 
 
-
-
-
-// // // Hovers
-
-.grid-hero-list {
-	a {
-		&:link,
-		&:visited {
-			color: @fly-light-text-link-primary;
-			text-decoration: none;
-			@media (prefers-color-scheme: dark) {
-				color: @fly-dark-text-link-primary;
-			}
-		}
-		&:hover,
-		&:active {
-			color: @fly-light-text-link-primary-hover;
-			@media (prefers-color-scheme: dark) {
-				color: @fly-dark-text-link-primary-hover;
-			}
-		}
-	}
-	.cardHoverWrap {
-		* {
-			transition: all .1s ease-in-out;
-		}
-		&:hover {
-			h1 {
-				text-decoration: underline;
-			}
-			.button-thumb {
-				background-color: @fly-dark-utility-ui-background;
-			}
-		}
-	}
-}
 
 
 

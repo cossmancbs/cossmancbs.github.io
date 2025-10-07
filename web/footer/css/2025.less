@@ -74,12 +74,12 @@ body {
 		display: flex;
 		flex-direction: column;
 		gap: @spacing-16;
-		.fly-light-utility-border;
+		.fly-light-utility-border();
 		@media only screen and (min-width: @break-sm) {
 			border: none;
 		}
 		@media (prefers-color-scheme: dark) {
-			.fly-dark-utility-border;
+			.fly-dark-utility-border();
 		}
 	}
 	dt {

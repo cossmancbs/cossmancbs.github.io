@@ -5,7 +5,7 @@
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Front Door 2025</title>
+	<title>Front Door</title>
 	
 	<link rel="stylesheet" type="text/css" href="/web/css/reset.css">
 	<link rel="stylesheet/less" type="text/css" href="/web/css/fonts.less">
@@ -66,11 +66,25 @@
 		
 		<div class="door-main">
 			
+			<div id="include-grid-doomsday"></div>
+			
 			<div id="include-grid-hero-list"></div>
 			
 			<section class="mainunit">
 				<div>Ad Unit</div>
 			</section>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
+			
+			<div class="component">
+				<div>component</div>
+			</div>
 			
 			<div class="component">
 				<div>component</div>
@@ -140,10 +154,17 @@
 	// INCLUDES (JQUERY)
 	
 	$(function() {
+		// Primary Nav
 		$('#include-nav-main').load('/web/nav/nav-v1.3-main.html');
+		// Secondary Nav
 		$('#include-nav-sub').load('/web/nav/nav-v1.3-national.html');
+		// Grid Doomsday
+		$('#include-grid-doomsday').load('/web/components/grid-doomsday-2025.html');
+		// Grid Hero List
 		$('#include-grid-hero-list').load('/web/components/grid-hero-list-2025.html');
+		// List Stack
 		$('#include-list-stack').load('/web/components/list-stack-2025.html');
+		// Footer
 		$('footer').load('/web/footer/2025.html');
 	});
 	

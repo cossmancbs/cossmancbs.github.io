@@ -1,0 +1,181 @@
+@import "../../css/colors.less";
+@import "../../css/typography-door2025.less";
+@import "../../css/utility.less";
+@import "shared.less";
+
+
+
+
+
+// // // BASIC STYLES
+
+body {
+	background-color: @fly-light-surface-primary;
+	@media (prefers-color-scheme: dark) {
+		background-color: @fly-dark-surface-primary;
+	}
+}
+/* Test Structure */
+.card,
+.grid,
+.item-list,
+article {
+	//.wireframe-outline();
+}
+/* Test Text */
+h1,
+p {
+	//.wireframe-outline();
+}
+
+
+
+
+
+// // // Section
+
+.grid-doomsday {
+	padding: @spacing-20;
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-20;
+	.fly-light-utility-border();
+	.heading-doom {
+		.door2025-heading-24();
+		color: @fly-light-text-primary;
+		text-align: center;
+		@media only screen and (min-width: @break-md) {
+			.door2025-heading-32();
+		}
+		@media (prefers-color-scheme: dark) {
+			color: @fly-dark-text-primary;
+		}
+	}
+	@media only screen and (min-width: @break-sm) {
+		padding: @spacing-20 0;
+	}
+	@media only screen and (min-width: @break-sm) {
+		padding: @spacing-20 0 @spacing-40 0;
+	}
+	@media (prefers-color-scheme: dark) {
+		.fly-dark-utility-border();
+	}
+}
+
+
+
+
+
+
+
+
+// // // Grid
+
+.grid-doomsday {
+	display: flex;
+	flex-direction: column;
+	gap: @spacing-20;
+	.grid {
+		display: flex;
+		flex-direction: column;
+		//gap: @spacing-20;
+	}
+	@media only screen and (min-width: @break-md) {
+		gap: @spacing-32;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// // // Cards
+
+.grid-doomsday {
+	.card-hero {
+		a.cardHoverWrap {
+			display: grid;
+			gap: @spacing-12;
+			@media only screen and (min-width: @break-md) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				grid-template-rows: auto 1fr;
+				gap: @spacing-12 @spacing-40;
+			}
+		}
+		.thumbnail {
+			@media only screen and (min-width: @break-md) {
+				grid-column: 1/3;
+				grid-row: 1/3;
+			}
+		}
+		article {
+			display: flex;
+			flex-direction: column;
+			gap: @spacing-12;
+			@media only screen and (min-width: @break-md) {
+				grid-column: 3;
+				grid-row: 1;
+			}
+		}
+		h1 {
+			.door2025-heading-20();
+			@media only screen and (min-width: @break-md) {
+				.door2025-heading-24();
+			}
+		}
+		dl {
+			@media only screen and (min-width: @break-md) {
+				grid-column: 3;
+				grid-row: 2;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+// // // Thumbnails
+
+.grid-doomsday {
+	.thumbnail {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(@color-placeholder);
+		overflow: hidden;
+		width: 100%;
+		.border-radius-4();
+		aspect-ratio: 16 / 9;
+		@media only screen and (min-width: @break-md) {
+			.border-radius-8();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

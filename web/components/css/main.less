@@ -1,7 +1,7 @@
 @import "../../css/colors.less";
 @import "../../css/typography-door2025.less";
 @import "../../css/utility.less";
-@import "../../css/flags.less";
+@import "shared.less";
 
 
 
@@ -285,21 +285,21 @@ main {
 // // // Primary Column
 
 .door-main {
-	//display: flex;
-	//flex-direction: column;
-	//gap: 0;
 	.component {
 		padding: @spacing-20;
 		.fly-light-utility-border();
+		div {
+			.wireframe();
+			height: 500px;
+		}
 		@media only screen and (min-width: @break-sm) {
 			padding: @spacing-20 0;
 		}
 		@media only screen and (min-width: @break-md) {
 			padding: @spacing-40 0;
 		}
-		div {
-			.wireframe();
-			height: 500px;
+		@media (prefers-color-scheme: dark) {
+			.fly-dark-utility-border();
 		}
 	}
 }
@@ -378,6 +378,9 @@ main {
 	.fly-light-utility-border();
 	@media only screen and (min-width: @break-md) {
 		padding: @spacing-40 0;
+	}
+	@media (prefers-color-scheme: dark) {
+		.fly-dark-utility-border();
 	}
 	div {
 		margin: 0 auto;
