@@ -35,6 +35,21 @@
 
 .flag-pill-live {
 	background-color: @fly-dynamic-utility-status-alert;
+	.dot {
+		background-color: @fly-dynamic-text-primary;
+		width: 8px;
+		height: 8px;
+		min-width: 8px;
+		min-height: 8px;
+		border-radius: 50%;
+		opacity: 1;
+		animation: dotPulse 2s infinite ease-in-out;
+	}
+	@keyframes dotPulse {
+		0%   { opacity: 1; }
+		25%  { opacity: .25; }
+		50% { opacity: 1; }
+	}
 	span {
 		color: @fly-dynamic-text-primary;
 	}
@@ -59,12 +74,12 @@
 	}
 	.metadata {
 		.door2025-detail-14();
-		color: @fly-light-text-secondary;
+		color: @fly-light-text-tertiary;
 		@media only screen and (min-width: @break-md) {
 			.door2025-detail-16();
 		}
 		@media (prefers-color-scheme: dark) {
-			color: @fly-dark-text-secondary;
+			color: @fly-dark-text-tertiary;
 		}
 	}
 	dl {
@@ -94,12 +109,12 @@
 		}
 		h1 {
 			color: @fly-light-text-link-primary;
-			text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,0);
-			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,0);
+			text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
+			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
 			@media (prefers-color-scheme: dark) {
 				color: @fly-dark-text-link-primary;
-				text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,0);
-				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,0);
+				text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
 			}
 		}
 		&:hover,
@@ -124,10 +139,11 @@
 		cursor: default;
 		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-link-primary;
-			text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,0);
-			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-hover-rgb,0);
+			text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
 		}
-		&:hover {
+		&:hover,
+		&:active {
 			cursor: pointer;
 			color: @fly-light-text-link-primary-hover;
 			text-decoration: underline solid rgba(@fly-light-text-link-primary-hover-rgb,1);
@@ -163,23 +179,23 @@
 		margin: 0 0 0 @spacing-8;
 		.door2025-action-16();
 		color: @fly-light-text-link-secondary;
-		text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
-		-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
+		text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,0);
+		-webkit-text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,0);
 		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-link-secondary;
-			text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
-			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+			text-decoration: underline solid rgba(@fly-dark-text-link-secondary-rgb,0);
+			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-secondary-rgb,0);
 		}
 	}
 	&:hover {
 		span {
 			color: @fly-light-text-link-secondary-hover;
-			text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,1);
-			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,1);
+			text-decoration: underline solid rgba(@fly-light-text-link-secondary-hover-rgb,1);
+			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-secondary-hover-rgb,1);
 			@media (prefers-color-scheme: dark) {
 				color: @fly-dark-text-link-secondary-hover;
-				text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,1);
-				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,1);
+				text-decoration: underline solid rgba(@fly-dark-text-link-secondary-hover-rgb,1);
+				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-secondary-hover-rgb,1);
 			}
 		}
 	}
@@ -204,26 +220,26 @@
 		margin: 0 0 0 @spacing-8;
 		.door2025-action-16();
 		color: @fly-light-text-link-secondary;
-		text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
-		-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,0);
+		text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,0);
+		-webkit-text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,0);
 		@media only screen and (min-width: @break-md) {
 			.door2025-action-20();
 		}
 		@media (prefers-color-scheme: dark) {
 			color: @fly-dark-text-link-secondary;
-			text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
-			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,0);
+			text-decoration: underline solid rgba(@fly-dark-text-link-secondary-rgb,0);
+			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-secondary-rgb,0);
 		}
 	}
 	&:hover {
 		span {
 			color: @fly-light-text-link-secondary-hover;
-			text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,1);
-			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-primary-rgb,1);
+			text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,1);
+			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,1);
 			@media (prefers-color-scheme: dark) {
 				color: @fly-dark-text-link-secondary-hover;
-				text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,1);
-				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-primary-rgb,1);
+				text-decoration: underline solid rgba(@fly-dark-text-link-secondary-hover-rgb,1);
+				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-secondary-hover-rgb,1);
 			}
 		}
 	}
