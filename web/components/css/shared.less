@@ -62,9 +62,13 @@
 // // // Card Typography
 
 .card {
+	h1 {
+		text-wrap: pretty; // avoid orphans
+	}
 	.dek {
 		.door2025-detail-16();
 		color: @fly-light-text-secondary;
+		text-wrap: pretty; // avoid orphans
 		@media only screen and (min-width: @break-md) {
 			.door2025-detail-18();
 		}
@@ -163,7 +167,7 @@
 
 // // // Component Headings
 
-.component-heading-small {
+.component-heading {
 	* {
 		transition: all .25s ease-in-out;
 	}
@@ -202,45 +206,14 @@
 }
 
 .component-heading-large {
-	* {
-		transition: all .25s ease-in-out;
-	}
-	text-decoration: none;
-	-webkit-text-decoration: none;
 	.door2025-heading-20();
-	color: @fly-light-text-link-primary;
 	@media only screen and (min-width: @break-md) {
 		.door2025-heading-28();
 	}
-	@media (prefers-color-scheme: dark) {
-		color: @fly-dark-text-link-primary;
-	}
 	span {
-		display: inline-block;
-		margin: 0 0 0 @spacing-8;
 		.door2025-action-16();
-		color: @fly-light-text-link-secondary;
-		text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,0);
-		-webkit-text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,0);
 		@media only screen and (min-width: @break-md) {
 			.door2025-action-20();
-		}
-		@media (prefers-color-scheme: dark) {
-			color: @fly-dark-text-link-secondary;
-			text-decoration: underline solid rgba(@fly-dark-text-link-secondary-rgb,0);
-			-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-secondary-rgb,0);
-		}
-	}
-	&:hover {
-		span {
-			color: @fly-light-text-link-secondary-hover;
-			text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,1);
-			-webkit-text-decoration: underline solid rgba(@fly-light-text-link-secondary-rgb,1);
-			@media (prefers-color-scheme: dark) {
-				color: @fly-dark-text-link-secondary-hover;
-				text-decoration: underline solid rgba(@fly-dark-text-link-secondary-hover-rgb,1);
-				-webkit-text-decoration: underline solid rgba(@fly-dark-text-link-secondary-hover-rgb,1);
-			}
 		}
 	}
 }

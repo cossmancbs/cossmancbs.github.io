@@ -27,6 +27,24 @@
 	
 	
 	
+	
+	
+	<div id="prototype">
+		
+		<div>
+			<p>Breaking News:</p>
+			<label class="switch">
+				<input id="checkDoomsday" type="checkbox" checked>
+				<span class="slider round"></span>
+			</label>
+		</div>
+		
+	</div>
+	
+	
+	
+	
+	
 	<div id="stickers">
 		<div id="topunit">
 			<div class="wireframe">Ad Unit</div>
@@ -153,6 +171,13 @@
 	
 	
 	<script>
+	
+	// PROTOTYPE SETTINGS
+	
+	$('#checkDoomsday').change(function() {
+		$('#include-grid-doomsday').toggle();
+		$('#include-grid-hero-list .component-heading-large').toggle();
+	});
 	
 	// INCLUDES (JQUERY)
 	
