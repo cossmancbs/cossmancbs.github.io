@@ -32,6 +32,14 @@
 	<div id="prototype">
 		
 		<div>
+			<p>Sunday Morning:</p>
+			<label class="switch">
+				<input id="checkSunday" type="checkbox">
+				<span class="slider round"></span>
+			</label>
+		</div>
+		
+		<div>
 			<p>Breaking News:</p>
 			<label class="switch">
 				<input id="checkDoomsday" type="checkbox" checked>
@@ -84,6 +92,14 @@
 		
 		
 		<div class="door-main">
+			
+			<div id="component-brand">
+				<article>
+					<svg><use xlink:href="../img/sprite-logos-wide.svg#sunday-morning"></use></svg>
+					<p>Sunday 9AM ET on CBS<br>
+						11AM ET on the CBS News app</p>
+				</article>
+			</div>
 			
 			<div id="include-grid-doomsday"></div>
 			
@@ -173,6 +189,17 @@
 	<script>
 	
 	// PROTOTYPE SETTINGS
+	
+	$('#checkSunday').change(function() {
+		//$('#component-brand').toggle();
+		if ($('#checkSunday').is(':checked')) {
+			$('#component-brand').css('display', 'flex');
+			$('#include-nav-sub').load('../nav/nav-v1.3-sunday-morning.html');
+		} else {
+			$('#component-brand').css('display', 'none');
+			$('#include-nav-sub').load('../nav/nav-v1.3-national.html');
+		}
+	});
 	
 	$('#checkDoomsday').change(function() {
 		$('#include-grid-doomsday').toggle();

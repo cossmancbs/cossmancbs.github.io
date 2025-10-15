@@ -26,6 +26,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: right;
 		gap: 12px;
 		p {
 			color: white;
@@ -391,6 +392,99 @@ main {
 
 
 
+
+
+
+
+
+
+
+// // // Brand Header
+
+#component-brand {
+	display: none; // hide on load
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	justify-content: center;
+	//align-items: end;
+	background-color: rgb(@color-rgb-sunday-morning);
+	height: 240px;
+	background-image:
+		linear-gradient(to bottom,
+			rgba(@color-rgb-sunday-morning,0) 50%,
+			rgba(@color-rgb-sunday-morning,1)
+		),
+		url("../../show/img/show-header-cbsnews-sundaymorning-3200.jpg.webp");
+	background-size:
+		768px 216px,
+		768px 216px;
+	background-repeat:
+		no-repeat,
+		no-repeat;
+	background-position:
+		top right,
+		top right;
+	@media only screen and (min-width: @break-sm) {
+		flex-direction: row;
+		height: auto;
+		aspect-ratio: 5.8;
+		margin: @spacing-20 0;
+		justify-content: start;
+		align-items: center;
+		.border-radius-4();
+		background-image:
+			linear-gradient(to left,
+				rgba(@color-rgb-sunday-morning,0) 40%,
+				rgba(@color-rgb-sunday-morning,1) 60%
+			),
+			url("../../show/img/show-header-cbsnews-sundaymorning-3200.jpg.webp");
+		background-size: contain, contain;
+		background-position: right, right;
+	}
+	@media only screen and (min-width: @break-md) {
+		.border-radius-8();
+	}
+	article {
+		margin: auto 20px 20px 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		gap: @spacing-8;
+		@media only screen and (min-width: @break-sm) {
+			margin: 0 20px;
+			width: 50%;
+			justify-content: start;
+			text-align: left;
+		}
+	}
+	svg {
+		margin: 0 auto;
+		width: 200px;
+		height: 16px;
+		fill: @fly-dynamic-brand-primary;
+		@media only screen and (min-width: @break-sm) {
+			margin: 0;
+		}
+		@media only screen and (min-width: @break-md) {
+			width: 300px;
+			height: 24px;
+		}
+	}
+	p {
+		.door2025-detail-16();
+		color: @fly-dynamic-text-primary;
+		text-align: center;
+		text-wrap: balance; // wrap evenly
+		@media only screen and (min-width: @break-sm) {
+			text-align: left;
+		}
+		@media only screen and (min-width: @break-md) {
+			.door2025-detail-18();
+		}
+	}
+}
 
 
 
