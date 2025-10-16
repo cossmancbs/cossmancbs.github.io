@@ -212,35 +212,46 @@ main {
 // // // Rail and Sticky Video
 
 /* video player sizes */
+.vid-mobile-top {
+	margin: @spacing-20 @spacing-20 0 @spacing-20;
+	padding: 0 0 @spacing-20 0;
+	.fly-light-utility-border();
+}
+.vid-mobile-scrolled {
+	margin: 0;
+	padding: @spacing-8;
+	border: none;
+}
 .vid-sm { video { width: 128px; } }
-.vid-md { video { width: 176px; } }
+.vid-md { video { width: 160px; } }
 .vid-lg { video { width: 192px; } }
 
 .door-rail {
 	background-color: rgba(@color-neutral-white,.9);
 	-webkit-backdrop-filter: saturate(200%) blur(20px);
 	backdrop-filter: saturate(200%) blur(20px);
-	.fly-light-utility-border();
+	//.fly-light-utility-border();
 	@media only screen and (min-width: @break-sm) {
 		background-image: none;
 		background-color: transparent !important;
 		-webkit-backdrop-filter: none !important;
 		backdrop-filter: none !important;
-		border: none !important;
+		//border: none !important;
 		display: flex;
 		flex-direction: column;
 	}
 	@media (prefers-color-scheme: dark) {
 		background-color: rgba(@color-neutral-90,.9);
-		.fly-dark-utility-border();
+		//.fly-dark-utility-border();
 	}
 }
 .door-video {
-	padding: @spacing-8;
+	//padding: @spacing-20;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: @spacing-8;
+	transition: all .25s ease-out;
 	@media only screen and (min-width: @break-sm) {
 		margin: 0 0 @spacing-20 0;
 		padding: @spacing-20 0 0 0;

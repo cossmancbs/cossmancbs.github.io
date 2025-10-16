@@ -264,50 +264,40 @@
 	$(document).ready(function() {
 		
 		function checkNav() {
-			//if ($(document).scrollTop() < 50) {
-			//	scrolled less than 50
-			//} else {
-			//	scrolled more than 50
-			//}
-			
-			// WINDOW WIDTH
+			// get window width
 			var windowSize = $(window).width();
 			if (windowSize < 768) {
 				if ($(document).scrollTop() < 75) {
-					// mobile, top
-					// window is narrower than 768, and near top
+					// narrow, top
 					$('#stickers').addClass('nav-shadow-off');
 					$('#stickers').removeClass('nav-shadow-on');
 					$('.door-rail').addClass('nav-shadow-off');
 					$('.door-rail').removeClass('nav-shadow-on');
-					$('.door-video').addClass('vid-lg');
-					$('.door-video').removeClass('vid-sm');
+					$('.door-video').addClass('vid-md vid-mobile-top');
+					$('.door-video').removeClass('vid-sm vid-mobile-scrolled');
 				} else {
-					// mobile, scrolled
-					// window is narrower than 768, and scrolled
+					// narrow, scrolled
 					$('#stickers').removeClass('nav-shadow-on nav-shadow-off');
 					$('.door-rail').addClass('nav-shadow-on');
 					$('.door-rail').removeClass('nav-shadow-off');
-					$('.door-video').addClass('vid-sm');
-					$('.door-video').removeClass('vid-lg');
+					$('.door-video').addClass('vid-sm vid-mobile-scrolled');
+					$('.door-video').removeClass('vid-md vid-mobile-top');
 				}
 			} else {
 				if ($(document).scrollTop() < 75) {
-					// desktop, top
-					// window is wider than 768, and near top
+					// wide, top
 					$('#stickers').addClass('nav-shadow-off');
 					$('#stickers').removeClass('nav-shadow-on');
 					$('.door-rail').addClass('nav-shadow-off');
 					$('.door-rail').removeClass('nav-shadow-on');
-					$('.door-video').removeClass('vid-sm vid-lg');
+					$('.door-video').removeClass('vid-sm vid-md');
 				} else {
-					// desktop, scrolled
-					// window is wider than 768, and scrolled
+					// wide, scrolled
 					$('#stickers').addClass('nav-shadow-on');
 					$('#stickers').removeClass('nav-shadow-off');
 					$('.door-rail').addClass('nav-shadow-off');
 					$('.door-rail').removeClass('nav-shadow-on');
-					$('.door-video').removeClass('vid-sm vid-lg');
+					$('.door-video').removeClass('vid-sm vid-md');
 				}
 			}
 			
@@ -319,7 +309,6 @@
 		// Event listener ("load" doesn't seem to work???)
 		$(window).on("load resize scroll",function(e){
 			checkNav();
-			breakingOff();
 		});
 		
 	});
