@@ -42,7 +42,7 @@
 		<div>
 			<p>Breaking News:</p>
 			<label class="switch">
-				<input id="checkDoomsday" type="checkbox" checked>
+				<input id="checkDoomsday" type="checkbox">
 				<span class="slider round"></span>
 			</label>
 		</div>
@@ -192,20 +192,52 @@
 	
 	// PROTOTYPE SETTINGS
 	
+	function brandOn() {
+		$('#include-grid-hero-list .component-heading-large').css('display', 'block');
+		$('.door-brand').css('display', 'flex');
+		$('#include-nav-sub').load('../nav/nav-v1.3-sunday-morning.html');
+	}
+	function brandOff() {
+		$('#include-grid-hero-list .component-heading-large').css('display', 'none');
+		$('.door-brand').css('display', 'none');
+		$('#include-nav-sub').load('../nav/nav-v1.3-national.html');
+	}
+	function breakingOn() {
+		$('#include-grid-hero-list .component-heading-large').css('display', 'block');
+		$('#include-grid-doomsday').css('display', 'flex');
+	}
+	function breakingOff() {
+		$('#include-grid-hero-list .component-heading-large').css('display', 'none');
+		$('#include-grid-doomsday').css('display', 'none');
+	}
+	
 	$('#checkSunday').change(function() {
 		//$('#component-brand').toggle();
-		if ($('#checkSunday').is(':checked')) {
-			$('.door-brand').css('display', 'flex');
-			$('#include-nav-sub').load('../nav/nav-v1.3-sunday-morning.html');
+		if ($(this).is(':checked')) {
+			// hide Breaking News
+			breakingOff();
+			$('#checkDoomsday').prop('checked', false);
+			// show Sunday Morning
+			brandOn();
 		} else {
-			$('.door-brand').css('display', 'none');
-			$('#include-nav-sub').load('../nav/nav-v1.3-national.html');
+			// hide Sunday Morning
+			brandOff();
 		}
 	});
 	
 	$('#checkDoomsday').change(function() {
-		$('#include-grid-doomsday').toggle();
-		$('#include-grid-hero-list .component-heading-large').toggle();
+		//$('#include-grid-doomsday').toggle();
+		//$('#include-grid-hero-list .component-heading-large').toggle();
+		if ($(this).is(':checked')) {
+			// hide Sunday Morning
+			brandOff();
+			$('#checkSunday').prop('checked', false);
+			// show Breaking News
+			breakingOn();
+		} else {
+			// hide Breaking News
+			breakingOff();
+		}
 	});
 	
 	// INCLUDES (JQUERY)
@@ -283,9 +315,11 @@
 		
 		// Execute on load
 		checkNav();
+		breakingOff();
 		// Event listener ("load" doesn't seem to work???)
 		$(window).on("load resize scroll",function(e){
 			checkNav();
+			breakingOff();
 		});
 		
 	});
