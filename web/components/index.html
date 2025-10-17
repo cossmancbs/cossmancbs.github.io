@@ -304,10 +304,12 @@
 		}
 		
 		// Execute on load
-		checkNav();
-		breakingOff();
+		$('document').ready(function(){
+			checkNav();
+			breakingOff();
+		});
 		// Event listener ("load" doesn't seem to work???)
-		$(window).on("load resize scroll",function(e){
+		$(window).on("resize scroll",function(e){
 			checkNav();
 		});
 		
