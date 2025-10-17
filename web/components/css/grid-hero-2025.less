@@ -38,14 +38,14 @@ p {
 	padding: @spacing-20;
 	display: flex;
 	flex-direction: column;
-	gap: @spacing-20;
+	gap: @spacing-16;
 	.fly-light-utility-border();
 	@media only screen and (min-width: @break-sm) {
 		padding: @spacing-20 0;
 	}
 	@media only screen and (min-width: @break-md) {
-		padding: @spacing-20 0 @spacing-40 0;
-		gap: @spacing-32;
+		padding: @spacing-40 0 @spacing-40 0;
+		gap: @spacing-24;
 	}
 	@media (prefers-color-scheme: dark) {
 		.fly-dark-utility-border();
@@ -153,9 +153,9 @@ p {
 	}
 	.card-hero {
 		h1 {
-			//.door2025-heading-20();
+			.door2025-heading-20();
 			@media only screen and (min-width: @break-md) {
-				//.door2025-heading-24();
+				.door2025-heading-24();
 			}
 		}
 		@media only screen and (min-width: @break-sm) {
@@ -163,12 +163,13 @@ p {
 				display: grid;
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 				grid-template-rows: auto;
+				gap: @spacing-20;
 				.thumbnail {
-					grid-column: 2;
+					grid-column: 1;
 					grid-row: 1;
 				}
 				.article {
-					grid-column: 1;
+					grid-column: 2;
 					grid-row: 1;
 				}
 			}
@@ -177,7 +178,7 @@ p {
 			a.cardHoverWrap {
 				grid-template-columns: repeat(3, minmax(0, 1fr));
 				.thumbnail {
-					grid-column: 2/4;
+					grid-column: 1/3;
 				}
 				.article {
 				}

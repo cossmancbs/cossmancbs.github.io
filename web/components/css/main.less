@@ -208,23 +208,7 @@ main {
 
 
 
-
 // // // Rail and Sticky Video
-
-/* video player sizes */
-.vid-mobile-top {
-	margin: @spacing-20 @spacing-20 0 @spacing-20;
-	padding: 0 0 @spacing-20 0;
-	.fly-light-utility-border();
-}
-.vid-mobile-scrolled {
-	margin: 0;
-	padding: @spacing-8;
-	border: none;
-}
-.vid-sm { video { width: 128px; } }
-.vid-md { video { width: 160px; } }
-.vid-lg { video { width: 192px; } }
 
 .door-rail {
 	background-color: rgba(@color-neutral-white,.9);
@@ -245,6 +229,32 @@ main {
 		//.fly-dark-utility-border();
 	}
 }
+
+/* video player scrolling styles */
+.vid-mobile-top {
+	margin: @spacing-20 @spacing-20 0 @spacing-20;
+	padding: 0 0 @spacing-20 0;
+	.fly-light-utility-border();
+	@media (prefers-color-scheme: dark) {
+		.fly-dark-utility-border();
+	}
+}
+.vid-mobile-scrolled {
+	margin: 0;
+	padding: @spacing-8;
+	border: none;
+	.fly-light-utility-border();
+	@media (prefers-color-scheme: dark) {
+		.fly-dark-utility-border();
+	}
+}
+
+/* video player sizes */
+.vid-sm { video { width: 128px; } }
+.vid-md { video { width: 160px; } }
+.vid-lg { video { width: 192px; } }
+
+/* video */
 .door-video {
 	//padding: @spacing-20;
 	display: flex;
