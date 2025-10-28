@@ -7,25 +7,13 @@
 
 
 
-// // // BASIC STYLES
+// // // Basic Styles
 
 body {
 	background-color: @fly-light-surface-primary;
 	@media (prefers-color-scheme: dark) {
 		background-color: @fly-dark-surface-primary;
 	}
-}
-/* Test Structure */
-.card,
-.grid,
-.item-list,
-article {
-	//.wireframe-outline();
-}
-/* Test Text */
-h1,
-p {
-	//.wireframe-outline();
 }
 
 
@@ -165,6 +153,8 @@ p {
 				grid-template-rows: auto;
 				gap: @spacing-20;
 				.thumbnail {
+					position: sticky;
+					top: 156px; // account for nav
 					grid-column: 1;
 					grid-row: 1;
 				}
@@ -178,6 +168,7 @@ p {
 			a.cardHoverWrap {
 				grid-template-columns: repeat(3, minmax(0, 1fr));
 				.thumbnail {
+					top: 168px; // account for nav
 					grid-column: 1/3;
 				}
 				.article {
@@ -198,7 +189,7 @@ p {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: rgb(@color-placeholder);
+		background-color: @fly-light-surface-secondary;
 		overflow: hidden;
 		width: 100%;
 		.border-radius-4();
@@ -208,79 +199,6 @@ p {
 		}
 	}
 }
-
-
-
-
-
-// // // Thumbnail Buttons
-
-.grid-hero {
-	.button-thumb {
-		border: none;
-		border-radius: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: @fly-dynamic-surface-overlay-solid;
-		svg {
-			fill: @fly-dynamic-utility-ui-element-active;
-		}
-	}
-	.button-thumb-video svg {
-		/* stupid hack to make video buttons look better */
-		margin: 0 0 0 @spacing-4;
-	}
-	.item1 .button-thumb {
-		margin: auto;
-		padding: 0;
-		width: 50px;
-		height: 50px;
-		svg {
-			width: calc(50px/2.5);
-			height: calc(50px/2.5);
-		}
-	}
-	.item2 .button-thumb,
-	.item3 .button-thumb {
-		width: 40px;
-		height: 40px;
-	}
-	.item2 .button-thumb svg,
-	.item3 .button-thumb svg {
-		width: calc(40px/2.5);
-		height: calc(40px/2.5);
-	}
-}
-
-@media only screen and (min-width: @break-md) {
-	.grid-hero {
-		.item1 .button-thumb {
-			width: 70px;
-			height: 70px;
-		}
-		.item1 .button-thumb svg {
-			width: calc(70px/2.5);
-			height: calc(70px/2.5);
-		}
-		.item2 .button-thumb,
-		.item3 .button-thumb {
-			width: 50px;
-			height: 50px;
-		}
-		.item2 .button-thumb svg,
-		.item3 .button-thumb svg {
-			width: calc(50px/2.5);
-			height: calc(50px/2.5);
-		}
-	}
-}
-
-
-
-
-
-
 
 
 

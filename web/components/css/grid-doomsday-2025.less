@@ -144,12 +144,14 @@ p {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: rgb(@color-placeholder);
+		background-color: @fly-light-surface-secondary;
 		overflow: hidden;
 		width: 100%;
 		.border-radius-4();
-		aspect-ratio: 16 / 9;
+		// aspect-ratio: 16 / 9;
 		@media only screen and (min-width: @break-md) {
+			position: sticky;
+			top: 174px; // account for sticky nav
 			.border-radius-8();
 		}
 	}
