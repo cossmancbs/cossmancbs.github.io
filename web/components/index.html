@@ -193,21 +193,21 @@
 	// PROTOTYPE SETTINGS
 	
 	function brandOn() {
-		$('#include-grid-hero-list .component-heading-large').css('display', 'block');
+		$('#include-grid-hero-list .component-heading').css('display', 'block');
 		$('.door-brand').css('display', 'flex');
 		$('#include-nav-sub').load('../nav/nav-v1.3-sunday-morning.html');
 	}
 	function brandOff() {
-		$('#include-grid-hero-list .component-heading-large').css('display', 'none');
+		$('#include-grid-hero-list .component-heading').css('display', 'none');
 		$('.door-brand').css('display', 'none');
 		$('#include-nav-sub').load('../nav/nav-v1.3-national.html');
 	}
 	function breakingOn() {
-		$('#include-grid-hero-list .component-heading-large').css('display', 'block');
+		$('#include-grid-hero-list .component-heading').css('display', 'block');
 		$('#include-grid-doomsday').css('display', 'flex');
 	}
 	function breakingOff() {
-		$('#include-grid-hero-list .component-heading-large').css('display', 'none');
+		$('#include-grid-hero-list .component-heading').css('display', 'none');
 		$('#include-grid-doomsday').css('display', 'none');
 	}
 	
@@ -227,7 +227,7 @@
 	
 	$('#checkDoomsday').change(function() {
 		//$('#include-grid-doomsday').toggle();
-		//$('#include-grid-hero-list .component-heading-large').toggle();
+		//$('#include-grid-hero-list .component-heading').toggle();
 		if ($(this).is(':checked')) {
 			// hide Sunday Morning
 			brandOff();
